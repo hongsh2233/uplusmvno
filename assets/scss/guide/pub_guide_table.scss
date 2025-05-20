@@ -1,0 +1,250 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+$color-ref: #eafffd;
+$color-before: #fff;
+$color-ing: #edffdd;
+$color-hid: #444;
+$color-stop: #777;
+$color-exclude: #777;
+$color-end: #53b100;
+$color-rework: #ffe5f2;
+
+.pub-work-table,
+.pub-status-table {
+  td,
+  th,
+  a {
+    color: #000;
+    @include base-font;
+    font-size: rem(13);
+  }
+  .ta-c {
+    text-align: center;
+  }
+}
+.pub-status-table {
+  width: auto;
+  th {
+    font-weight: 700;
+    button,
+    span {
+      line-height: 1.2;
+    }
+    &.total {
+      button {
+        color: #fc6969;
+      }
+    }
+    &.before {
+      button {
+        background-color: $color-before;
+      }
+    }
+    &.ing {
+      button {
+        background-color: $color-ing;
+      }
+    }
+    &.end {
+      button {
+        background-color: $color-end;
+        color: #fff;
+      }
+    }
+    &.hid {
+      button {
+        background-color: $color-hid;
+        color: #fff;
+      }
+    }
+    &.stop {
+      button {
+        background-color: $color-stop;
+        color: #fff;
+      }
+    }
+    &.exclude {
+      button {
+        background-color: $color-exclude;
+        color: #fff;
+      }
+    }
+    &.rework {
+      button {
+        background-color: $color-rework;
+      }
+    }
+    &.rate {
+      span {
+        display: inline-block;
+        color: #fc6969;
+        font: inherit;
+      }
+    }
+  }
+  td {
+    border: none;
+  }
+}
+.pub-work-table {
+  &:deep() {
+    button {
+      border-radius: rem(4);
+      padding: rem(2) rem(8);
+      background-color: #eee;
+      white-space: nowrap;
+      border: 1px solid #ccc;
+      + button {
+        margin-top: rem(4);
+      }
+    }
+  }
+  thead {
+    position: sticky;
+    top: 168px;
+    th {
+      font-weight: 700;
+      border: none;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #666;
+      }
+      &:first-child {
+        &::after {
+          border-left: 1px solid #666;
+        }
+      }
+      &.th-id {
+        width: 120px;
+      }
+      &.th-status {
+        width: 120px;
+      }
+      &.th-publisher {
+        width: 100px;
+      }
+      &.th-date {
+        width: 100px;
+        white-space: nowrap;
+      }
+      &.th-path {
+        width: 220px;
+      }
+      &.th-etc {
+        width: 220px;
+      }
+    }
+  }
+
+  td,
+  a {
+    background: transparent;
+    color: #000;
+  }
+
+  tr {
+    &.ref {
+      .cell-status {
+        span {
+        }
+      }
+      background-color: $color-ref;
+    }
+    &.before {
+      background-color: $color-before;
+    }
+    &.ing {
+      background-color: $color-ing;
+    }
+    &.hid {
+      background-color: $color-hid;
+    }
+    &.stop {
+      background-color: $color-stop;
+    }
+    &.exclude {
+      background-color: $color-exclude;
+    }
+    &.end {
+      .cell-status {
+        span {
+          background-color: $color-end;
+          color: #fff;
+        }
+      }
+    }
+    &.rework {
+      background-color: #ffe5f2;
+    }
+  }
+  tbody {
+    tr {
+      &:hover {
+        outline: 1px dashed rgba(255, 0, 0, 0.8) !important;
+      }
+    }
+  }
+  &.only-show-before,
+  &.only-show-ing,
+  &.only-show-end,
+  &.only-show-hid,
+  &.only-show-stop,
+  &.only-show-rework {
+    tbody {
+      tr {
+        display: none;
+      }
+    }
+  }
+  &.only-show-before {
+    tr {
+      &.before {
+        display: table-row !important;
+      }
+    }
+  }
+  &.only-show-ing {
+    tr {
+      &.ing {
+        display: table-row !important;
+      }
+    }
+  }
+  &.only-show-end {
+    tr {
+      &.end {
+        display: table-row !important;
+      }
+    }
+  }
+  &.only-show-hid {
+    tr {
+      &.hid {
+        display: table-row !important;
+      }
+    }
+  }
+  &.only-show-stop {
+    tr {
+      &.stop {
+        display: table-row !important;
+      }
+    }
+  }
+  &.only-show-rework {
+    tr {
+      &.rework {
+        display: table-row !important;
+      }
+    }
+  }
+}

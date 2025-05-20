@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*
+* import
+*/
+/* @import url(./swiper-bundle.css); */
+@forward "@/assets/scss/abstract/variable.scss";
+@forward "@/assets/scss/base/common.scss";
+@forward "@/assets/scss/layout/form.scss";
+@forward "@/assets/scss/layout/content.scss";
+@forward "@/assets/scss/pages/main.scss";
+
+@forward "@/assets/scss/base/animation.scss";
+@forward "@/assets/scss/responsive.scss";
+@forward "@/assets/scss/pages/selfcare.scss";
+@forward "@/assets/scss/pages/roaming.scss";
+
+
+// @import "./abstract/variable";
+// @import "abstract/mixin";
+
+// 베이스
+// @import "base/common";
+// @import "base/animation";
+
+// // 레이아웃
+// @import "layout/content";
+// @import "layout/form";
+
+// // 유틸
+// @import "responsive";
+
+// // pages
+// @import "pages/main";
+// @import "pages/selfcare";
+// @import "pages/roaming";

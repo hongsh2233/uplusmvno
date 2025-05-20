@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../../assets/css/style.css" />
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <script src="https://js.tosspayments.com/v1/payment-widget"></script>
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/recommendation#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a>
+                    <span class="blind">알뜰폰닷컴</span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/recommendation"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/recommendation"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/recommendation"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/recommendation"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/recommendation"
+                        class="router-link-active router-link-exact-active"
+                        >로그아웃</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/recommendation"
+                        class="router-link-active router-link-exact-active"
+                        >내 정보 수정</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">친구추천 상세</div>
+          </header>
+          <!---->
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">가족/친구 추천하기</h2>
+              <div class="section">
+                <div class="invite_event">
+                  <div>
+                    <!-- 등록 화면 -->
+                    <!-- 추천 이벤트 안내 영역 -->
+                    <style>
+                      .event-friend-section {
+                        position: relative;
+                        margin: -1.2rem -1.6rem 0 -1.6rem;
+                      }
+                      .pc .event-friend-section {
+                        margin: 0;
+                      }
+
+                      .event-friend-section .seperate {
+                        position: relative;
+                      }
+
+                      .event-friend-section.event-recommend {
+                        background: #fffcf5;
+                      }
+
+                      .event-friend-section .event-date {
+                        margin: 0 auto;
+                        padding: 0 3rem 4rem 4rem;
+                        box-sizing: border-box;
+                      }
+                      .event-friend-section .event-date > div {
+                        display: flex;
+                        margin-top: 10px;
+                      }
+                      .event-friend-section .event-date dt {
+                        flex: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: clamp(13px, 3.2vw, 18px);
+                        font-weight: 700;
+                        line-height: 19px;
+                        letter-spacing: -0.96px;
+                        width: 54px;
+                        height: 24px;
+                        margin-right: 16px;
+                        padding: 4.5px 4px;
+                        text-align: center;
+                        color: #fff;
+                        border-radius: 15px;
+                        background: #222;
+                      }
+                      .event-friend-section .event-date dd {
+                        font-size: clamp(14px, 3.5vw, 20px);
+                        font-weight: 500;
+                        line-height: 140%;
+                        text-align: left;
+                        letter-spacing: -1px;
+                        color: #000;
+                        word-break: keep-all;
+                      }
+
+                      .pc .event-friend-section .event-date {
+                        padding: 0 10rem 6rem 12rem;
+                      }
+                      .pc .event-friend-section .event-date > div {
+                        margin-top: 2rem;
+                      }
+                      .pc .event-friend-section .event-date dt {
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 19px;
+                        letter-spacing: -0.96px;
+                        width: 108px;
+                        height: 37px;
+                        margin-right: 16px;
+                        padding: 4.5px 8px;
+                      }
+                      .pc .event-friend-section .event-date dd {
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 150%;
+                      }
+                      .btn-link-top {
+                        position: absolute;
+                        top: 78.08%;
+                        left: 6.07%;
+                        width: 88.59%;
+                        height: 14.58%;
+                      }
+                      .pc .btn-link-top {
+                        position: absolute;
+                        top: 80.18%;
+                        left: 20.37%;
+                        width: 59.57%;
+                        height: 12.86%;
+                      }
+                      .event-friend-section .accordion {
+                        position: relative;
+                      }
+                      .event-friend-section .btn-accordion {
+                        position: absolute;
+                        top: 91.63%;
+                        left: 17.23%;
+                        width: 63.35%;
+                        height: 5.63%;
+                      }
+                      .pc .event-friend-section .btn-accordion {
+                        position: absolute;
+                        top: 90.99%;
+                        left: 25.59%;
+                        width: 50.74%;
+                        height: 5.41%;
+                      }
+                      .event-friend-section .accordion .accordion__header {
+                        position: relative;
+                      }
+                      .event-friend-section .accordion .accordion__header + .accordion__body {
+                        display: none;
+                      }
+                      .event-friend-section .accordion.on .accordion__header + .accordion__body {
+                        display: block;
+                      }
+                      .event-friend-section .accordion .accordion__header .btn-accordion::after {
+                        content: "";
+                        position: absolute;
+                        right: 0%;
+                        top: 30%;
+                        width: 20px;
+                        height: 20px;
+                        background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/btn_friend_accordion.gif")
+                          no-repeat 50% 50%;
+                        background-size: contain;
+                        transform: rotate(180deg);
+                        transition: 0.5s;
+                      }
+                      .event-friend-section .accordion.on .accordion__header .btn-accordion::after {
+                        content: "";
+                        transform: rotate(0);
+                      }
+                      .pc
+                        .event-friend-section
+                        .accordion
+                        .accordion__header
+                        .btn-accordion::after {
+                        content: "";
+                        position: absolute;
+                        right: 5%;
+                        top: 17%;
+                        width: 40px;
+                        height: 40px;
+                      }
+                    </style>
+                    <div class="event-friend-section event-recommend">
+                      <div class="accordion">
+                        <div class="accordion__header">
+                          <button class="btn-accordion" onclick="handleAccordion(event)">
+                            <span class="blind">이용약관 선택동의 설정 방법</span>
+                          </button>
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/event_recommendation1.jpg"
+                            alt="마케팅 제공 동의 설정 방법"
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/event_recommendation1_m.jpg"
+                            alt="마케팅 제공 동의 설정 방법"
+                            class="pc_hide"
+                          />
+                        </div>
+                        <div class="accordion__body">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/event_recommendation2.png"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/event_recommendation2_m.png"
+                            alt=""
+                            class="pc_hide"
+                          />
+                        </div>
+                      </div>
+                      <div class="blind">
+                        <ol>
+                          <li>
+                            1. 회원 가입 시 이용약관 동의 알맞 서비스의 약관/방침을 읽고
+                            동의해주세요. ☑ 전체 약관에 모두 동의합니다. 만 14세 이상입니다. (필수)
+                            알맞 홈페이지 이용약관 (필수) 개인정보수집이용 동의 (필수) 알맞케어를
+                            위한 개인정보 제3자 제공동의 (필수) 고객 혜택 제공을 위한 개인정보 제3자
+                            제공동의 (선택) 고객 혜택 제공을 위한 정보 수집 및 이용 동의 (선택)
+                            혜택정보·광고 수신 동의 (선택) ✔ 회원 가입 시, '선택 동의' 내용 확인 후
+                            체크
+                          </li>
+                          <li>
+                            2. 로그인 > 내 정보 수정 상단 메뉴에서 ‘내 정보 수정’ 클릭 ‘선택 동의’
+                            수정 가능 고객 혜택 제공을 위한 개인정보 제3자 제공동의 (선택) 고객 혜택
+                            제공을 위한 정보 수집 및 이용 동의 (선택) 광고성 정보 수신 및 활용 동의
+                            설정 가능 문자 (토글 버튼 ON/OFF) 이메일 (토글 버튼 ON/OFF) 알림톡 (토글
+                            버튼 ON/OFF) ✔ ‘내 정보 수정’ 페이지 하단에서 선택 동의 및 광고성 정보
+                            수신·활용 동의 체크 가능 ✔ 여러 개의 회선이 있을 경우, 이벤트 대상 에
+                            해당하는 회선만 체크해 주세요. 예시) 1월 이벤트 참여 시, 1월에 가입한
+                            회선만 '선택 동의'와 광고성 정보 수신 및 활용 동의 체크
+                          </li>
+                        </ol>
+                      </div>
+
+                      <div class="seperate">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/event_recommendation3.png"
+                          alt="마케팅 제공 동의 설정 방법"
+                          class="pc_show"
+                        /><img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/2/3/event_recommendation3_m.png"
+                          alt="마케팅 제공 동의 설정 방법"
+                          class="pc_hide"
+                        />
+                        <button class="btn-link-top" onclick="handleLink()">
+                          <span class="blind">초대 링크 바로가기</span>
+                        </button>
+
+                        <div class="blind">
+                          <p>알닷 요금제를 친구에게 추천하면</p>
+                          <p>추천 받은 친구가 1월내 개통시 친구랑 나랑 스타벅스 아메리카노 2+2</p>
+                          <p>
+                            이용약관 선택동의(3가지)를 동의한 고객에 한함 (경품 지급시점까지 유지
+                            필수)
+                          </p>
+                          <ul>
+                            <li>추천받은 분 스타벅스 아메리카노 2개</li>
+                            <li>추천한 분도 스타벅스 아메리카노 2개</li>
+                          </ul>
+                          <p>스타벅스 아메리카노 2+2 증정 혜택!</p>
+                        </div>
+                      </div>
+
+                      <dl class="event-date">
+                        <div>
+                          <dt>기간</dt>
+                          <dd>2025년 2월 1일 ~ 2025년 2월 28일</dd>
+                        </div>
+                        <div>
+                          <dt>대상</dt>
+                          <dd>
+                            알닷에서 개통이 완료된 회원과<br />
+                            추천 받은 가족/친구 (개통 완료 시)<br />
+                          </dd>
+                        </div>
+                        <div>
+                          <dt>지급 시기</dt>
+                          <dd>피추천인 개통시, 개통월 다음달 말일(영업일 기준)</dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <script>
+                      function handleAccordion(event) {
+                        event.currentTarget.closest(".accordion").classList.toggle("on");
+                      }
+                    </script>
+                    <!-- // 추천 이벤트 안내 영역 -->
+
+                    <!-- 혜택 안내 영역 -->
+                    <style>
+                      .benefit-friend-section {
+                        position: relative;
+                        margin: 6rem 0 0 0;
+                      }
+                      .pc .benefit-friend-section {
+                        margin: 10rem 0 0 0;
+                      }
+                      .btn-link {
+                        position: absolute;
+                        top: 29.5%;
+                        left: 21%;
+                        width: 57%;
+                        height: 2%;
+                      }
+                      .pc .btn-link {
+                        position: absolute;
+                        top: 50.5%;
+                        left: 11%;
+                        width: 27%;
+                        height: 2%;
+                      }
+                    </style>
+                    <div class="benefit-friend-section">
+                      <img
+                        src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/29/event_recommendation_benefit.png"
+                        alt=""
+                        class="pc_show"
+                      />
+                      <img
+                        src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/29/event_recommendation_benefit_m.png"
+                        alt=""
+                        class="pc_hide"
+                      />
+                      <button class="btn-link" onclick="handleLink()">
+                        <span class="blind">초대 링크 바로가기</span>
+                      </button>
+                      <div class="blind">
+                        <p>친구추천은 어떻게 할 수 있죠?</p>
+                        <p>
+                          친구 추천 혜택은 친구가 알닷의 요금제를 가입할 때 내가 추천인으로 등록되어
+                          있어야 해요.
+                        </p>
+                        <h5>내가 추천할 때는</h5>
+                        <ol>
+                          <li>
+                            <p>방법 하나.</p>
+                            <p>초대 링크 생성하기</p>
+                            <p>
+                              아래 초대 링크 생성하기를 눌러 내 추천 링크를 가족과 친구에게 공유해
+                              주세요.
+                            </p>
+                          </li>
+                          <li>
+                            <p>방법 둘.</p>
+                            <p>이름과 전화번호 공유하기</p>
+                            <p>알닷에 가입된 내 이름과 전화번호를 가족과 친구에게 알려주세요.</p>
+                          </li>
+                        </ol>
+                        <h5>추천받은 친구가 요금제에 가입할 때는</h5>
+                        <ol>
+                          <li>
+                            <p>방법 하나.</p>
+                            <p>요금제 가입 신청서 작성하기</p>
+                            <p>
+                              초대 링크로 접속하여 알뜰폰닷컴에서 요금제 가입 신청서를 작성해
+                              주세요.
+                            </p>
+                          </li>
+                          <li>
+                            <p>방법 둘.</p>
+                            <p>추천인 정보 입력하기</p>
+                            <p>
+                              알뜰폰닷컴에서 요금제 가입 신청을 할 때 추천인 정보를 입력해 주세요.
+                            </p>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                    <!-- // 혜택 안내 영역 -->
+                    <script>
+                      function handleLink() {
+                        const header = document.querySelector(".header");
+                        const linkSection = document.querySelector(".page_info");
+
+                        if (linkSection) {
+                          const topOffset = linkSection.offsetTop - header.clientHeight;
+                          window.scrollTo({ top: topOffset, behavior: "smooth" });
+                        }
+                      }
+                    </script>
+                    <!-- // 등록화면 -->
+                  </div>
+                  <div class="page_info">초대 링크 생성하기</div>
+                  <h3 class="tit02">본인 인증</h3>
+                  <div class="form_wrap">
+                    <div class="form_group">
+                      <strong class="form_label">이름</strong>
+                      <div class="form_item">
+                        <div class="input_box">
+                          <!---->
+                          <input
+                            class="input"
+                            type="text"
+                            placeholder="이름 입력"
+                            autocomplete="off"
+                          />
+                        </div>
+                      </div>
+                      <!---->
+                    </div>
+                    <div class="form_group">
+                      <strong class="form_label">휴대폰 번호</strong>
+                      <div class="form_item">
+                        <div class="input_box">
+                          <!---->
+                          <input
+                            class="input"
+                            type="tel"
+                            placeholder="‘-’ 없이 숫자만 입력"
+                            autocomplete="off"
+                          />
+                        </div>
+                        <button type="button" class="btn md c03">인증번호 받기</button>
+                        <!---->
+                      </div>
+                      <!---->
+                      <div class="form_item">
+                        <div class="input_box auth_num">
+                          <!---->
+                          <input
+                            class="input"
+                            type="text"
+                            placeholder="인증번호 6자리 입력"
+                            autocomplete="off"
+                          />
+                        </div>
+                        <!---->
+                        <!---->
+                      </div>
+                      <div class="error">인증번호를 정확히 입력해주세요</div>
+                      <div class="error">인증번호 입력시간이 초과되었습니다</div>
+                    </div>
+                    <div class="btn_group">
+                      <button type="button" class="btn md c03">인증 확인</button>
+                    </div>
+                    <!---->
+                  </div>
+                  <div class="box_gray mgt32">
+                    <ul class="text_list bull">
+                      <li>
+                        인증요청 후 3분 안에 인증번호를 입력하셔야 하며, 3분 이내 인증번호 입력 또는
+                        재전송하지 않는 경우 다시 휴대폰 인증을 요청하여야 합니다.
+                      </li>
+                      <li>
+                        인증문자가 오지 않을 경우 아래와 같이 단말기 설정을 변경해주세요.
+                        <ul class="text_list dash">
+                          <li>
+                            휴대폰 문자 설정 메뉴 중 스팸 관련 항목의 번호 없는 메시지 차단 선택
+                            해제
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        수집된 개인정보 (이름, 생년월일, 성별, 휴대폰 번호)는 본인 인증에
+                        사용됩니다.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- 등록 화면 -->
+                  <!-- 유의사항 영역 -->
+                  <style>
+                    .notice-friend-section {
+                      margin: 3.2rem 0 0 0;
+                      text-align: left;
+                    }
+                    .notice-friend-section .title {
+                      font-size: 1.6rem;
+                      font-weight: bold;
+                    }
+                    .pc .notice-friend-section .title {
+                      font-size: 1.8rem;
+                    }
+                    .notice-friend-section .text_list li {
+                      word-break: keep-all;
+                    }
+                  </style>
+                  <div class="notice-friend-section">
+                    <div class="box_gray">
+                      <p class="title">유의사항</p>
+                      <ul class="text_list bull">
+                        <li>
+                          추천 내역은 추천인과 추천 받으시는 분이 같을 경우 적용되지 않습니다.
+                        </li>
+                        <li>
+                          추천 받으신 분이 가입신청서 작성시 추천하신 분(추천인) 정보를 기재해
+                          주셔야 정상 반영됩니다.
+                          <ul class="text_list dash">
+                            <li>
+                              초대 링크를 통해 가입신청서 작성 시 추천인 정보가 자동 입력되어
+                              있습니다.
+                            </li>
+                            <!-- <li>추천인 변경을 희망하는 경우 신청서 작성 완료 후 1:1 문의를 통해 문의해주시기 바랍니다. (가입 후 14일 이내)</li> -->
+                          </ul>
+                        </li>
+                        <li>
+                          추천 이벤트 대상 기준
+                          <ul class="text_list dash">
+                            <li>추천인 : 추천 받으신 분이 개통 유지 시</li>
+                            <li>
+                              추천 혜택을 받기 전에 추천인/추천받으신 분이 해지 시 대상에서
+                              제외됩니다.
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          비정상적이거나 부정한 방법으로 참여(추천개통)시 지급 대상에서 제외됩니다.
+                        </li>
+                        <li>
+                          당사 사정에 따라 추천 혜택은 사전 예고 없이 조기 종료 및 변경될 수
+                          있습니다.
+                        </li>
+                        <li>
+                          알닷 내 가족/친구추천 프로모션에 응모하시면 타 통신사 다이렉트몰에서 별도
+                          진행하는 가족/친구추천 프로모션 응모가 불가합니다.
+                        </li>
+                        <li>
+                          사은품 지급일정: 피추천인 개통시, 개통월 다음달 말일(영업일 기준, 예시,
+                          7월 가족/친구추천 통한 개통고객 : 8월 30일 지급)
+                        </li>
+                        <li>
+                          추천을 받은 고객 중 알닷에서 이벤트 기간 내 개통을 완료하신 모든 분들에게
+                          경품이 지급됩니다. 모바일 쿠폰 발송 시점까지 알닷 회원탈퇴, 피추천인의
+                          경우 알뜰폰 해지 또는 정지하신 경우, 경품 지급대상에서 제외됩니다.
+                        </li>
+                        <li>
+                          모바일 쿠폰 발송은 대행사인 주식회사 지에스엠비즈에서 업무를 대행합니다.
+                        </li>
+                        <li>발송 대행업무를 위해 가입정보가 대행사에 제공됩니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- // 유의사항 영역 -->
+                  <!-- // 등록 화면 -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="aside_float">
+            <div class="inner">
+              <a class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a href="/purchase/delivery" class="btn_deli">
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" class="">이용약관</a>
+                <a href="/footer/terms/privacyProcess" class="policy">개인정보처리방침</a>
+                <a href="/footer/terms/privacyUsage" class="">개인정보이용내역</a>
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+  </body>
+</html>

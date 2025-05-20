@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../assets/css/style.css" />
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device(){
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add('mobile') : elem.classList.add('pc');
+          ios.test(userAgent) ? elem.classList.add('ios') : null;
+          aos.test(userAgent) ? elem.classList.add('android') : null;
+          
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if( msie.test(userAgent) && trident.test(userAgent) ) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add('ie' + ieVer);
+
+          } else if( !msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add('ie11');
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add('edg') : null;
+          ( opr.test(userAgent) || opera.test(userAgent) ) ? elem.classList.add('opera') : null;
+          chrome.test(userAgent) ?  elem.classList.add('chrome') : null;
+          safari.test(userAgent) ? elem.classList.add('safari') : null;
+          firefox.test(userAgent) ? elem.classList.add('firefox') : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile(){
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        }
+      }
+
+      window.addEventListener('load', () => {
+        front.device()
+      })
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a aria-current="page" href="/benefit/event/detail#content" class="router-link-active router-link-exact-active">본문 바로가기</a>
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">
+              이벤트 상세
+            </div>
+          </header>
+          
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src="" alt="파트너사">
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span>
+                          <span>2023.12.08</span> - <span>2024.04.30</span>
+                        </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .pc .event-delivery-wrap {min-width: 92.4rem;}
+                        .event-delivery {position: relative;}
+                        .event-delivery.visual .btn1 {position: absolute; top: 59.3%; left: 14%; width: 72%; height: 2.2%;}
+                        .event-delivery.visual .btn2 {position: absolute; top: 59.3%; left: 14%; width: 72%; height: 2.2%;}
+                        .pc .event-delivery.visual .btn1 {position: absolute; top: 62.3%; left: 12%; width: 77%; height: 2.2%;}
+                        .pc .event-delivery.visual .btn2 {position: absolute; top: 93.7%; left: 12%; width: 77%; height: 2.2%;}
+
+                        .event-delivery.section-1 .btn2 {position: absolute; top: 91%; left: 4%; width: 92%; height: 7%;}
+                        .pc .event-delivery.section-1 .btn2 {position: absolute; top: 93.8%; left: 11%; width: 78%; height: 4%;}
+                      </style>
+                      <div class="event-delivery-wrap">
+                        <div class="event-delivery visual">
+                          <img src="/public/images/temp/지금배송/visual_delivery.jpg" alt="하단참조" class="pc_show" />
+                          <img src="/public/images/temp/지금배송/visual_delivery_m.jpg" alt="하단참조" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn1"><span class="blind">회원가입 하러 가기</span></a>
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn2"><span class="blind">회원가입 하러 가기</span></a>
+
+                          <div class="blind">
+                            <h3>유심이 총알처럼 빠르게 지금배송</h3>
+                            <p>국내 최초! 모두의 유심, 원칩 지금배송으로 2시간 만에 내손으로 배송 완료!</p>
+                            <p>2시간 안에 배송완료, 연중 무휴 11~22시 배송, 배송비 무료</p>
+                            <h4>원침 지금 배송이란?</h4>
+                            <p>원칩 지금 배송은 U+알뜰폰의 공용 유심 ‘원칩'을 2시간 내에 무료 배송해 드리는 서비스입니다.</p>
+                            <p>8월 한달 동안 지금배송 받은 원칩으로 알닷에서 개통한 고객분들께 드리는 푸짐한 선물!</p>
+                            <ul>
+                              <li>
+                                <p>24개월 요금제 개통시 메가커피 24잔 + BBQ 황금올리브 + 배스킨라빈스 파인트 아이스크림</p>
+                                <dl>
+                                  <dt>※ 커피 - </dt>
+                                  <dd>D+6개월차 : 6잔, 12개월차: 6잔 18개월차: 6잔, 24개월: 6잔</dd>
+                                  <dt>※ 치킨, 아이스크림 - </dt>
+                                  <dd>익월 말 지급</dd>
+                                </dl>
+                              </li>
+                              <li>
+                                <p>1만원 이상 요금제 개통시 메가커피 10잔 + 맥도날드 빅맥세트 + 배스킨라빈스 싱글컵</p>
+                                <dl>
+                                  <dt>※ 커피 - </dt>
+                                  <dd>D+3개월차 : 5잔, 5개월차: 5잔</dd>
+                                  <dt>※ 빅맥, 아이스크림 - </dt>
+                                  <dd>익월 말 지급</dd>
+                                </dl>
+                              </li>
+                              <li>
+                                <p>1만원 미만 요금제 개통시 메가커피 3잔</p>
+                                <dl>
+                                  <dt>※ 커피 3잔 </dt>
+                                  <dd>익월 말 지급</dd>
+                                </dl>
+                              </li>
+                            </ul>
+                            <h4>아임닭 * 알닷</h4>
+                            <p>알닷 회원가입하고 아임닭 5000원 적립금 받자!</p> 
+                            <p>지금 알닷에 회원가입을 하시면 건강하고 맛있는 아임닭 상품을 구입할 수 있는 적립금 5,000원을 드립니다!</p> 
+                            <h5>아임닭 5,000원 적립금 사용방법</h5>
+                            <ol>
+                              <li>stpe1 아임닭 홈페이지를 방문하여 회원가입을 해주세요. (www.imdak.com)</li>
+                              <li>stpe2 아임닭 홈페이지 로그인 후, 마이닭 > 쿠폰 조회 및 등록 페이지로 이동</li>
+                              <li>stpe3 알닷 회원가입 시, 받은 문자(SMS/MMS)로 수신한 티켓 번호를 등록 해주세요.</li>
+                            </ol>
+                          </div>
+                        </div>
+
+                        <div class="event-delivery section-1">
+                          <img src="/public/images/temp/지금배송/event_delivery1.jpg" alt="하단참조" class="pc_show" />
+                          <img src="/public/images/temp/지금배송/event_delivery1_m.jpg" alt="하단참조" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn1"><span class="blind">알닷 회원가입 하러 가기</span></a>
+                          
+                          <div class="blind">
+                            <p>원칩 지금배송 신청 방법</p>
+                            <p>온라인 가입 시, 유심 배송 방법을 ‘원칩 지금배송＇으로 선택 가능하며, 지금배송 가능 지역인지 꼭 확인해주세요!</p>
+                            <p>원칩 지금배송 신청방법 자세히 보기</p>
+                            <ol>
+                              <li>
+                                <p>Step 1. 원칩 지금배송 선택</p>
+                                <p>유심카드 구매 > 원칩 지금배송 선택하면 원칩 지금배송 페이지로 이동합니다.</p>
+                              </li>
+                              <li>
+                                <p>Step 2. 지금배송 가능 지역 확인</p>
+                                <p>지금배송 신청 전, ‘지금배송 가능 지역’이신지 확인해주세요.</p>
+                                <p>※ 아직 서울, 수도권 및 광역시, 제주도만 가능하니, 신청 시 서비스 가능 지역인지 확인이 필요합니다.</p>
+                              </li>
+                              <li>
+                                <p>Step 3. 지금배송 구매하기</p>
+                                <p>‘지금배송 가능 지역’이시라면 팝업을 닫고, ‘지금배송 구매하기’를 클릭하셔서 구매하시면 됩니다.</p>
+                                <p>혹시, 지금배송 가능 지역이 아니시라면… 원칩 구매 방법 보기</p>
+                              </li>
+                            </ol>
+                          </div>
+                        </div>
+                        <div class="event-delivery section-2">
+                          <img src="/public/images/temp/지금배송/event_delivery2.jpg" alt="하단참조" class="pc_show" />
+                          <img src="/public/images/temp/지금배송/event_delivery2_m.jpg" alt="하단참조" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn1"><span class="blind">알닷 회원가입 하러 가기</span></a>
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn2"><span class="blind">알닷 회원가입 하러 가기</span></a>
+                          <div class="blind">
+                            <p>지금배송 안되는 지역은 이렇게 구매해보세요!</p>
+                            <p>원칩 지금배송 서비스 지역이 아니시거나 다른 방법으로 구입을 원하신다면 가까운 지하철 역과 이마트 24, B마트, 다양한 온라인 쇼핑 채널은 물론 오프라인 매장에서도 언제든 쉽고 빠르게 원칩을 구매하고 셀프 개통이 가능합니다.</p>
+                            <ul>
+                              <li>
+                                <p>지하철 역 내 자판기</p>
+                                <p>나와 가까운 지하철 역 자판기에서 손 쉽게 원칩 구매!</p>
+                                <p>※ 기차/지하철 역사 내 스토리웨이 편의점 구매 가능!</p>
+                              </li>
+                              <li>
+                                <p>오프라인 컨설팅 매장</p>
+                                <p>알뜰폰 요금제 상담은 물론 개통까지 가능!</p>
+                              </li>
+                              <li>
+                                <p>이마트24 편의점</p>
+                                <p>우리 동네에 있는 이마트24에서 원칩 구매하고 바로 개통!</p>
+                              </li>
+                              <li>
+                                <p>배달의 민족 B마트</p>
+                                <p>나가기 번거롭다면? 배민 B마트로 원칩 배달 가능!</p>
+                                <p>B마트에서 원칩을 검색하세요!</p>
+                              </li>
+                            </ul>
+                            <p>온라인 쇼핑 채널 * 각 온라인 쇼핑 채널 로고를 클릭 하면 해당 홈페이지로 이동합니다.</p>
+                            <ul>
+                              <li>N쇼핑</li>
+                              <li>coupang</li>
+                              <li>위메프</li>
+                              <li>11번가</li>
+                              <li>TMON</li>
+                              <li>Gmarket</li>
+                              <li>AUCTION</li>
+                              <li>interpark</li>
+                              <li>LOTTE ON</li>
+                              <li>Homeplus</li>
+                              <li>SSG.COM</li>
+                              <li>카카오톡 쇼핑하기</li>
+                            </ul>
+                            <p>셀프 개통 방법</p>
+                            <ul>
+                              <li>원하는 곳에서 원칩 구매</li>
+                              <li>원하는 통신사와 요금제 선택</li>
+                              <li>본인 인증 후 가입신청서 작성하면 끝!</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="event-delivery notice">
+                          <img src="/public/images/temp/지금배송/event_delivery_notice.jpg" alt="하단참조" class="pc_show" />
+                          <img src="/public/images/temp/지금배송/event_delivery_notice_m.jpg" alt="하단참조" class="pc_hide" />
+
+                          <div class="blind">
+                            <p>꼭 확인하세요!</p>
+                            <p>원칩 지금배송 신청 사은품 유의사항</p>
+                            <ol>
+                              <li>1. 본 이벤트는 8월 1일부터 8월 15일까지 알닷에서 24개월 할인 요금제에 가입하고, 개통이 완료된 고객에 한해서 경품을 제공합니다.</li>
+                              <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                              <li>3. 24개월 요금제 가입 경품으로 지급되는 메가커피 아메리카노 24잔은 요금제 가입 후 D+6개월 차 말일(평일), D+12개월 차 말일(평일), D+18개월 차 말일(평일), D+24개월 차 말일(평일)에 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다. 예시) 8월 개통 시, 25년 2월 28일  6잔 지급 / 25년 8월 29일 6잔 지급 / 26년 2월 27일 6잔 지급 / 26년 8월 31일 6잔 지급</li>
+                              <li>4. 1만원 이상 요금제 가입 경품으로 지급되는 메가커피 아메리카노 10잔은 요금제 가입 후 D+3개월 차 말일(평일), D+5개월 차 말일(평일)에 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>5. 1만원 이하 요금제 가입 경품으로 지급되는 메가커피 아메리카노 3잔은 가입월 기준 익월 말에 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>6. 경품으로 지급되는 BBQ 황금올리브, 배스킨라빈스 파인트, 맥도날드 빅맥세트, 배스킨라빈스 싱글컵은 익월 말 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>7. 모바일 쿠폰 발송 시점까지 알뜰폰 해지 또는 정지하신 고객은 경품 지급 대상에서 제외됩니다.</li>
+                              <li>8. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 경품 지급 대상에서 제외됩니다.</li>
+                              <li>9. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                              <li>10. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                              <li>11. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다. </li>
+                            </ol>
+                            <p>리브모바일(Liiv M) 개통 시 유의사항</p>
+                            <ol>
+                              <li>1. 모두의 유심＇원칩＇을 이용하여 리브모바일(Liiv M) 개통하는 경우 Liiv M 전용 금융 연계 서비스인 USIM 보관 서비스 및 KB 모바일인증서 USIM 저장 서비스 이용이 불가하오니 참고 바랍니다.   </li>
+                            </ol>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a href="/purchase/delivery" rel="noopener noreferrer" target="_blank" class="btn_deli">
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송">
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a href="/footer/terms/privacyProcess" rel="noopener noreferrer" target="_blank" class="policy">개인정보처리방침</a>
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank">개인정보이용내역</a>
+                <a href="https://msafer.or.kr/index.do" rel="noopener noreferrer" target="_blank" title="새 창 열림">명의도용방지서비스</a>
+                <a href="https://spam.kisa.or.kr/" rel="noopener noreferrer" target="_blank" title="새 창 열림">불법스팸대응센터</a>
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright"> Copyright © LG Uplus Corp. All Rights Reserved. </div>
+              <div class="f_sns">
+                <a href="https://www.youtube.com/@uplusmvno_official" rel="noopener noreferrer" target="_blank" class="ico_youtube" title="새 창 열림">
+                  <span class="blind">youtube</span>
+                </a>
+                <a href="https://www.instagram.com/uplusalpha_official/" rel="noopener noreferrer" target="_blank" class="ico_instagram" title="새 창 열림">
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector('.btn_top').addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html>

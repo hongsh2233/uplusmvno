@@ -1,0 +1,20 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MS-04-004 {
+  .flag {
+    .bag {
+      margin-bottom: rem(12);
+    }
+  }
+
+  .mobile & {
+    .info-box-list {
+      .info-box {
+        &.type-round {
+          padding: rem(32) rem(20);
+        }
+      }
+    }
+  }
+}

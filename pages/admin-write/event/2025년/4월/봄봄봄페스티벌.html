@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <div>
+        <div class="wrap">
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_con">
+                    <div>
+                      <style>
+                        .pc .event-bombombom {
+                          min-width: 92.4rem;
+                        }
+                        .section-bombombom {
+                          position: relative;
+                        }
+                        .section-bombombom .hr {
+                          position: relative;
+                        }
+                        .section-bombombom.visual .tab1 {
+                          position: absolute;
+                          top: 65.42%;
+                          left: 8.68%;
+                          width: 37.89%;
+                          height: 4.29%;
+                        }
+                        .section-bombombom.visual .tab2 {
+                          position: absolute;
+                          top: 65.69%;
+                          left: 52.37%;
+                          width: 38.95%;
+                          height: 4.16%;
+                        }
+                        .section-bombombom.visual .tab3 {
+                          position: absolute;
+                          top: 92.9%;
+                          left: 67.37%;
+                          width: 28.16%;
+                          height: 3.89%;
+                        }
+                        .pc .section-bombombom.visual .tab1 {
+                          position: absolute;
+                          top: 72.14%;
+                          left: 8.23%;
+                          width: 38.74%;
+                          height: 3.27%;
+                        }
+                        .pc .section-bombombom.visual .tab2 {
+                          position: absolute;
+                          top: 72.33%;
+                          left: 53.03%;
+                          width: 37.88%;
+                          height: 3.08%;
+                        }
+                        .pc .section-bombombom.visual .tab3 {
+                          position: absolute;
+                          top: 93.52%;
+                          left: 70.35%;
+                          width: 23.38%;
+                          height: 3.52%;
+                        }
+
+                        .section-bombombom.section-1 .btn1 {
+                          position: absolute;
+                          top: 82.11%;
+                          left: 4.47%;
+                          width: 45%;
+                          height: 8.33%;
+                        }
+                        .section-bombombom.section-1 .btn2 {
+                          position: absolute;
+                          top: 82.52%;
+                          left: 50.79%;
+                          width: 43.16%;
+                          height: 7.72%;
+                        }
+                        .pc .section-bombombom.section-1 .btn1 {
+                          position: absolute;
+                          top: 83.27%;
+                          left: 5.41%;
+                          width: 43.61%;
+                          height: 7.72%;
+                        }
+                        .pc .section-bombombom.section-1 .btn2 {
+                          position: absolute;
+                          top: 83.56%;
+                          left: 50.87%;
+                          width: 43.72%;
+                          height: 7.62%;
+                        }
+
+                        .section-bombombom.section-2 .btn1 {
+                          position: absolute;
+                          top: 90.84%;
+                          left: 4.47%;
+                          width: 90.79%;
+                          height: 4.14%;
+                        }
+                        .pc .section-bombombom.section-2 .btn1 {
+                          position: absolute;
+                          top: 88.87%;
+                          left: 5.52%;
+                          width: 89.5%;
+                          height: 4.74%;
+                        }
+
+                        .section-bombombom.section-3 .btn1 {
+                          position: absolute;
+                          top: 79.18%;
+                          left: 5.53%;
+                          width: 89.74%;
+                          height: 2.1%;
+                        }
+                        .section-bombombom.section-3 .btn2 {
+                          position: absolute;
+                          top: 75.4%;
+                          left: 7.89%;
+                          width: 52.89%;
+                          height: 1.15%;
+                        }
+                        .pc .section-bombombom.section-3 .btn1 {
+                          position: absolute;
+                          top: 81.89%;
+                          left: 5.41%;
+                          width: 90.26%;
+                          height: 2%;
+                        }
+                        .pc .section-bombombom.section-3 .btn2 {
+                          position: absolute;
+                          top: 79.21%;
+                          left: 10.01%;
+                          width: 33.87%;
+                          height: 0.91%;
+                        }
+
+                        .section-bombombom.section-4 .btn1 {
+                          position: absolute;
+                          top: 93.54%;
+                          left: 5.26%;
+                          width: 90.53%;
+                          height: 3.63%;
+                        }
+                        .section-bombombom.section-4 .btn2 {
+                          position: absolute;
+                          top: 88.12%;
+                          left: 7.37%;
+                          width: 52.63%;
+                          height: 1.78%;
+                        }
+                        .pc .section-bombombom.section-4 .btn1 {
+                          position: absolute;
+                          top: 93.56%;
+                          left: 4.76%;
+                          width: 90.15%;
+                          height: 4.06%;
+                        }
+                        .pc .section-bombombom.section-4 .btn2 {
+                          position: absolute;
+                          top: 90.13%;
+                          left: 10.01%;
+                          width: 33.66%;
+                          height: 1.3%;
+                        }
+
+                        .section-bombombom.section-6 .btn1 {
+                          position: absolute;
+                          top: 85.11%;
+                          left: 4.47%;
+                          width: 90.79%;
+                          height: 8.49%;
+                        }
+                        .pc .section-bombombom.section-6 .btn1 {
+                          position: absolute;
+                          top: 86.66%;
+                          left: 5.41%;
+                          width: 89.39%;
+                          height: 7.07%;
+                        }
+                        .section-bombombom.section-6 .movie {
+                          position: absolute;
+                          top: 26.3%;
+                          left: 8.42%;
+                          width: 82.63%;
+                          height: 26.17%;
+
+                          border: none;
+                        }
+                        .pc .section-bombombom.section-6 .movie {
+                          position: absolute;
+                          top: 25.15%;
+                          left: 8.01%;
+                          width: 83.98%;
+                          height: 32.36%;
+                        }
+
+                        .section-bombombom.section-7 .btn1 {
+                          position: absolute;
+                          top: 83.95%;
+                          left: 6.05%;
+                          width: 89.47%;
+                          height: 8.84%;
+                        }
+                        .pc .section-bombombom.section-7 .btn1 {
+                          position: absolute;
+                          top: 88.24%;
+                          left: 5.03%;
+                          width: 90.37%;
+                          height: 5.7%;
+                        }
+
+                        .section-bombombom.section-8 .btn1 {
+                          position: absolute;
+                          top: 85.41%;
+                          left: 4.74%;
+                          width: 91.05%;
+                          height: 8.4%;
+                        }
+                        .pc .section-bombombom.section-8 .btn1 {
+                          position: absolute;
+                          top: 87.79%;
+                          left: 4.98%;
+                          width: 89.5%;
+                          height: 6.26%;
+                        }
+
+                        .section-bombombom.section-9 .btn1 {
+                          position: absolute;
+                          top: 86.36%;
+                          left: 4.74%;
+                          width: 90.53%;
+                          height: 7.56%;
+                        }
+                        .pc .section-bombombom.section-9 .btn1 {
+                          position: absolute;
+                          top: 85.65%;
+                          left: 5.41%;
+                          width: 89.07%;
+                          height: 7.63%;
+                        }
+
+                        .section-bombombom.section-10 .btn1 {
+                          position: absolute;
+                          top: 87.5%;
+                          left: 5.53%;
+                          width: 89.47%;
+                          height: 7.09%;
+                        }
+                        .pc .section-bombombom.section-10 .btn1 {
+                          position: absolute;
+                          top: 90.54%;
+                          left: 5.3%;
+                          width: 89.5%;
+                          height: 5.01%;
+                        }
+
+                        .event-bombombom .accordion {
+                          position: relative;
+                        }
+                        .event-bombombom .accordion .accordion__header {
+                          position: relative;
+                        }
+                        .event-bombombom .accordion .accordion__header + .accordion__body {
+                          display: none;
+                        }
+                        .event-bombombom .accordion.on .accordion__header + .accordion__body {
+                          display: block;
+                          margin-top: 1px;
+                        }
+
+                        .section-bombombom.section-7 .accordion .accordion__header {
+                          position: relative;
+                          margin-bottom: -1px;
+                        }
+
+                        .section-bombombom.section-7 .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 21%;
+                          top: 42%;
+                          width: 14px;
+                          height: 14px;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/btn_bombombom_dot.png")
+                            no-repeat 50% 50%;
+                          background-size: contain;
+                          transition: 0.5s;
+                          transform: rotate(0);
+                        }
+                        .pc .section-bombombom.section-7 .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 28%;
+                          top: 40%;
+                          width: 28px;
+                          height: 28px;
+                        }
+                        .event-bombombom .notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 32%;
+                          top: 45%;
+                          width: 10px;
+                          height: 10px;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/btn_bombombom_accordion.png")
+                            no-repeat 50% 50%;
+                          background-size: contain;
+                          transition: 0.5s;
+                          transform: rotate(45deg);
+                        }
+                        .pc .event-bombombom .notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 35%;
+                          top: 51%;
+                          width: 20px;
+                          height: 20px;
+                        }
+                        .event-bombombom .accordion.on .accordion__header::after {
+                          content: "";
+                          transform: rotate(180deg);
+                        }
+                        .event-bombombom .tabs {
+                          position: relative;
+                        }
+                        .event-bombombom .tabs .inner {
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          width: 100%;
+                          height: 100%;
+                          display: flex;
+                        }
+                        .event-bombombom .tabs .inner > button {
+                          flex: 1;
+                        }
+                      </style>
+                      <div class="event-bombombom">
+                        <div class="section-bombombom visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_visual.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_visual_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <button
+                            class="tab1"
+                            onclick="handleAnchor(3)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭1 장기 할인 요금제 가입 혜택"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭1 장기 할인 요금제 가입 혜택"
+                          >
+                            <span class="blind">장기 할인 요금제 가입 혜택</span>
+                          </button>
+                          <button
+                            class="tab2"
+                            onclick="handleAnchor(4)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭2 단기 할인 요금제 가입 혜택"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭2 단기 할인 요금제 가입 혜택"
+                          >
+                            <span class="blind">단기 할인 요금제 가입 혜택</span>
+                          </button>
+                          <button
+                            class="tab3"
+                            onclick="handleAnchor(6)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭3 알닷 케어 소개 자세히 보기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭3 알닷 케어 소개 자세히 보기"
+                          >
+                            <span class="blind">알닷 케어 소개 자세히 보기</span>
+                          </button>
+                        </div>
+
+                        <div class="section-bombombom section-1">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_1.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_1_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002166"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 외국인 셀프 개통 서비스 안내"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002166"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="요금제 리스트 보러가기"
+                            ><span class="blind">외국인 셀프 개통 서비스 안내</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002159"
+                            target="_blank"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 키즈 & 청소년 셀프 개통 서비스 안내"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002159"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="요금제 리스트 보러가기"
+                            ><span class="blind">키즈 &amp; 청소년 셀프 개통 서비스 안내</span></a
+                          >
+                        </div>
+
+                        <div class="section-bombombom section-2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_2.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_2_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 요금제 리스트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="요금제 리스트 보러가기"
+                            ><span class="blind">요금제 리스트 보러가기</span></a
+                          >
+                        </div>
+
+                        <div class="section-bombombom section-3">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_3.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_3_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <button
+                            class="btn1"
+                            onclick="handleAnchor('notice')"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 24개월 이상& 평생할인 요금제 더보기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="24개월 이상& 평생할인 요금제  더보기"
+                          >
+                            <span class="blind">24개월 이상& 평생할인 요금제 더보기</span>
+                          </button>
+                          <button
+                            class="btn2"
+                            onclick="handleAnchor(7)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 :이용약관 선택동의 설정 방법 확인하기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이용약관 선택동의 설정 방법 확인하기"
+                          >
+                            <span class="blind">이용약관 선택동의 설정 방법 확인하기</span>
+                          </button>
+                        </div>
+
+                        <div class="section-bombombom section-4">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_4.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_4_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <button
+                            class="btn1"
+                            onclick="handleAnchor('notice')"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 :24개월 요금제 더보기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="7개월/12개월 할인 요금제 더보기"
+                          >
+                            <span class="blind">7개월/12개월 할인 요금제 더보기</span>
+                          </button>
+                          <button
+                            class="btn2"
+                            onclick="handleAnchor(7)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 :이용약관 선택동의 설정 방법 확인하기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이용약관 선택동의 설정 방법 확인하기"
+                          >
+                            <span class="blind">이용약관 선택동의 설정 방법 확인하기</span>
+                          </button>
+                        </div>
+
+                        <div class="section-bombombom section-5">
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list"
+                            target="_blank"
+                            class="btn4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 요금제 리스트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="요금제 리스트 보러가기"
+                          >
+                            <span class="blind">요금제 리스트 보러가기</span>
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_5_.jpg"
+                              alt="알딸을 대표하는 요금제 한 번에 확인 가능! 알딸 대표 요금제 보러 가기"
+                              class="pc_show"
+                            />
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_5_m.jpg"
+                              alt="알딸을 대표하는 요금제 한 번에 확인 가능! 알딸 대표 요금제 보러 가기"
+                              class="pc_hide"
+                            />
+                          </a>
+                        </div>
+
+                        <div class="section-bombombom section-6">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_6.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_6_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <iframe
+                            src="https://www.youtube.com/embed/ROimPreq7Pk?si=-rFyzFbMMKeLV4UZ"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen=""
+                            class="movie"
+                          ></iframe>
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002149"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 유모바일 이벤트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002147"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : 알닷케어 자세히 보기"
+                            ><span class="blind">컨텐츠 : 알닷케어 자세히 보기</span></a
+                          >
+                        </div>
+
+                        <div class="section-bombombom section-7">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_accordion.jpg"
+                                alt="마케팅 제공 동의 설정 방법"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_accordion_m.jpg"
+                                alt="마케팅 제공 동의 설정 방법"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_7.jpg"
+                                alt=""
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_7_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="section-bombombom section-8">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_8.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_8_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 인터넷 결합 혜택 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002147"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : 인터넷 결합 혜택 보러가기"
+                            ><span class="blind">컨텐츠 : 인터넷 결합 혜택 보러가기</span></a
+                          >
+                        </div>
+
+                        <div class="section-bombombom section-9">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_9.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_9_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/benefit/recommendation"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 친구추천 이벤트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002147"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : 친구추천 이벤트  보러가기"
+                            ><span class="blind">컨텐츠 : 친구추천 이벤트 보러가기</span></a
+                          >
+                        </div>
+
+                        <div class="section-bombombom section-10">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_10.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_10_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 유모바일 이벤트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002147"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : 유모바일 이벤트 보러가기"
+                            ><span class="blind">컨텐츠 : 유모바일 이벤트 보러가기</span></a
+                          >
+                        </div>
+
+                        <div class="section-bombombom section-11_banner">
+                          <ul>
+                            <li data-aos="fade-up" class="aos-init">
+                              <a
+                                href="https://www.uplusmvno.com/benefit/affiliate-card"
+                                target="_blank"
+                                class="btn1"
+                                data-gtm-event-name="link_click"
+                                data-gtm-event-category="클릭"
+                                data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                                data-gtm-event-label="컨텐츠 : 제휴카드 혜택 보러가기"
+                                data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002147"
+                                data-gtm-click-location="이벤트 상세"
+                                data-gtm-click-direction="내부"
+                                data-gtm-click-text="컨텐츠 : 제휴카드 혜택 보러가기"
+                                ><span class="blind">컨텐츠 : 제휴카드 혜택 보러가기</span>
+                                <img
+                                  src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_bannner1.jpg"
+                                  alt="알닷 개통 후기를 남겨주세요! 후기만 작성하셔도 뜨끈한 육개장 사발면을 100% 제공!"
+                                  class="pc_show"
+                                />
+                                <img
+                                  src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_bannner1_m.jpg"
+                                  alt="알닷 개통 후기를 남겨주세요! 후기만 작성하셔도 뜨끈한 육개장 사발면을 100% 제공!"
+                                  class="pc_hide"
+                                />
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="section-bombombom notice">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_notice_accordion.jpg"
+                                alt=""
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_notice_accordion_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_notice.jpg"
+                                alt=""
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/3/28/event_bombombom_notice_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(num) {
+                          const header = document.querySelector(".header");
+                          const linkSection =
+                            num !== "notice"
+                              ? document.querySelector(`.section-bombombom.section-${num}`)
+                              : document.querySelector(`.section-bombombom.${num}`);
+                          const lastHeight = linkSection.clientHeight + 50;
+
+                          if (linkSection) {
+                            let topOffset = 0;
+                            num === "notice"
+                              ? (topOffset =
+                                  linkSection.offsetTop - header.clientHeight + lastHeight)
+                              : (topOffset = linkSection.offsetTop - header.clientHeight);
+                            window.scrollTo({ top: topOffset, behavior: "smooth" });
+                          }
+                        }
+
+                        function handleAccordion(event) {
+                          event.currentTarget.parentNode.classList.toggle("on");
+                        }
+
+                        setTimeout(() => {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3 class="tit03">이벤트와 관련 있는 요금제에요</h3>
+                <div class="item_list ty02">
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/3/14/tplus_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.7</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <span class="bag card ty01">U <sup>+</sup>인터넷결합 </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">티플 마음껏 매일5G+</span>
+                        <strong class="plan_tit_sub"
+                          >매일 5GB + 5Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <div class="month" aria-describedby="v-tooltip-7">
+                          월 28,600원
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip btn-tooltip-price"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">tooltip toggle</span>
+                            <!---->
+                            <!---->
+                          </button>
+                          <!---->
+                          <div
+                            class="v-overlay v-overlay--absolute v-overlay--contained v-theme--light v-locale--is-ltr v-tooltip tooltip-default"
+                            id="v-tooltip-7"
+                            role="tooltip"
+                            style="z-index: 2000"
+                          >
+                            <!---->
+                            <div
+                              class="v-overlay__content"
+                              target="[object HTMLDivElement]"
+                              style="min-width: 0px; display: none"
+                            >
+                              <div class="tooltip_content">
+                                <div class="tooltip-date-sale">
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>12개월 납부 총액</h4>
+                                    <div class="amout">총 343,200원</div>
+                                  </div>
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>24개월 납부 총액</h4>
+                                    <div class="amout">총 686,400원</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="period">24개월 이후 41,800원</span>
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>105
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/30/농심.png"
+                                    alt="농심"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/12/결합 이벤트.png"
+                                    alt="인터넷 결합"
+                                  />
+                                </div>
+                              </li>
+                              <!---->
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>4</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : 티플러스|티플 마음껏 매일5G+|매일 5GB + 5Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000003923&amp;mvnoPtnId=PC0000000026"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="티플러스|티플 마음껏 매일5G+|매일 5GB + 5Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/3/26/mobing_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <span class="bag card ty01">U <sup>+</sup>인터넷결합 </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[L] 데이터11GB+_24개월</span>
+                        <strong class="plan_tit_sub"
+                          >월 11GB + 매일 2GB + 3Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <div class="month" aria-describedby="v-tooltip-10">
+                          월 23,000원
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip btn-tooltip-price"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">tooltip toggle</span>
+                            <!---->
+                            <!---->
+                          </button>
+                          <!---->
+                          <div
+                            class="v-overlay v-overlay--absolute v-overlay--contained v-theme--light v-locale--is-ltr v-tooltip tooltip-default"
+                            id="v-tooltip-10"
+                            role="tooltip"
+                            style="z-index: 2000"
+                          >
+                            <!---->
+                            <div
+                              class="v-overlay__content"
+                              target="[object HTMLDivElement]"
+                              style="min-width: 0px; display: none"
+                            >
+                              <div class="tooltip_content">
+                                <div class="tooltip-date-sale">
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>12개월 납부 총액</h4>
+                                    <div class="amout">총 276,000원</div>
+                                  </div>
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>24개월 납부 총액</h4>
+                                    <div class="amout">총 552,000원</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="period">24개월 이후 37,200원</span>
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>199
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/30/농심.png"
+                                    alt="농심"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/12/결합 이벤트.png"
+                                    alt="인터넷 결합"
+                                  />
+                                </div>
+                              </li>
+                              <!---->
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>4</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : mobing|[L] 데이터11GB+_24개월|월 11GB + 매일 2GB + 3Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004181&amp;mvnoPtnId=PC0000000022"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="mobing|[L] 데이터11GB+_24개월|월 11GB + 매일 2GB + 3Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/3/26/mobing_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <span class="bag card ty01">U <sup>+</sup>인터넷결합 </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[L] 100분15GB+_24개월</span>
+                        <strong class="plan_tit_sub"
+                          >월 15GB + 3Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>100분 </span>
+                          <span class="message"> <span class="blind">문자량</span>100건 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <div class="month" aria-describedby="v-tooltip-13">
+                          월 18,000원
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip btn-tooltip-price"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">tooltip toggle</span>
+                            <!---->
+                            <!---->
+                          </button>
+                          <!---->
+                          <div
+                            class="v-overlay v-overlay--absolute v-overlay--contained v-theme--light v-locale--is-ltr v-tooltip tooltip-default"
+                            id="v-tooltip-13"
+                            role="tooltip"
+                            style="z-index: 2000"
+                          >
+                            <!---->
+                            <div
+                              class="v-overlay__content"
+                              target="[object HTMLDivElement]"
+                              style="min-width: 0px; display: none"
+                            >
+                              <div class="tooltip_content">
+                                <div class="tooltip-date-sale">
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>12개월 납부 총액</h4>
+                                    <div class="amout">총 216,000원</div>
+                                  </div>
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>24개월 납부 총액</h4>
+                                    <div class="amout">총 432,000원</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="period">24개월 이후 29,100원</span>
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>65
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/30/농심.png"
+                                    alt="농심"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/12/결합 이벤트.png"
+                                    alt="인터넷 결합"
+                                  />
+                                </div>
+                              </li>
+                              <!---->
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>4</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : mobing|[L] 100분15GB+_24개월|월 15GB + 3Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004088&amp;mvnoPtnId=PC0000000022"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="mobing|[L] 100분15GB+_24개월|월 15GB + 3Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="btn_wrap center">
+                  <button
+                    type="button"
+                    class="btn round more_d"
+                    data-gtm-event-name="button_click"
+                    data-gtm-event-category="클릭"
+                    data-gtm-event-action="요금제 추천 - 버튼 클릭"
+                    data-gtm-event-label="컨텐츠 : 요금제 더볼래요"
+                    data-gtm-click-location="요금제 추천"
+                    data-gtm-click-text="요금제 더볼래요"
+                  >
+                    더 볼래요
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      // document.querySelector(".btn_top").addEventListener("click", () => {
+      //   window.scrollTo({
+      //     top: 0,
+      //     behavior: "smooth",
+      //   });
+      // });
+      // AOS.init();
+    </script>
+  </body>
+</html>

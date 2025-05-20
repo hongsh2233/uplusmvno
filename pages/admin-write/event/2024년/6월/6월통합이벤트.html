@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device(){
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add('mobile') : elem.classList.add('pc');
+          ios.test(userAgent) ? elem.classList.add('ios') : null;
+          aos.test(userAgent) ? elem.classList.add('android') : null;
+          
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if( msie.test(userAgent) && trident.test(userAgent) ) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add('ie' + ieVer);
+
+          } else if( !msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add('ie11');
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add('edg') : null;
+          ( opr.test(userAgent) || opera.test(userAgent) ) ? elem.classList.add('opera') : null;
+          chrome.test(userAgent) ?  elem.classList.add('chrome') : null;
+          safari.test(userAgent) ? elem.classList.add('safari') : null;
+          firefox.test(userAgent) ? elem.classList.add('firefox') : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile(){
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        }
+      }
+
+      window.addEventListener('load', () => {
+        front.device()
+      })
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a aria-current="page" href="/benefit/event/detail#content" class="router-link-active router-link-exact-active">본문 바로가기</a>
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">
+              이벤트 상세
+            </div>
+          </header>
+          
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src="https://api.dev.uplusmvno.com/umah/fo/s3/getImage?filename=2024/2/23/header-logo.jpg" alt="파트너사">
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span>
+                          <span>2023.12.08</span> - <span>2024.04.30</span>
+                        </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .section-integration-event {position: relative;}
+                        .pc .section-integration-event {min-width: 92.4rem;}
+
+                        .section-integration-event {position: relative;}
+                        .section-integration-event.tab .inner {display: flex; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+                        .section-integration-event.tab .inner button {width: 25%; height: 100%; cursor: pointer;}
+
+                        .section-integration-event .accordion {position: relative;}
+                        .section-integration-event .accordion .accordion__header {position: relative;}
+                        .section-integration-event .accordion .accordion__header::after {
+                          content: ''; position: absolute; right: 18%; top: 55%; width: 2.5vw; height: 2.5vw; transform: rotate(225deg); transition: transform 0.5s;
+                          background: url('https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/btn_integration_accordion.png') no-repeat 50% 50%; background-size: contain;
+                        }
+                        .section-integration-event .accordion .accordion__body {display: none;}
+                        .section-integration-event .accordion .accordion__header.on::after {content: ''; transform: rotate(0deg);}
+                        .section-integration-event .accordion .accordion__header.on + .accordion__body {display: block;}
+                        .pc .section-integration-event .accordion .accordion__header::after {content: ''; width: 2rem; height: 2rem; right: 28%; top: 53%;}
+
+                        .section-integration-event.visual .tab1 {position: absolute;top: 48%;left: 21%;width: 58%;height: 6%;}
+                        .pc .section-integration-event.visual .tab1 {position: absolute;top: 48%;left: 30%;width: 40%;height: 7%;}
+
+                        .section-integration-event.section-1 .btn1 {position: absolute; top: 38%; left: 8%;width: 84%;height: 3%;}
+                        .pc .section-integration-event.section-1 .btn1 {top: 40.7%;}
+                        .section-integration-event.section-1 .btn2 {position: absolute; top: 45.5%;left: 52%;width: 42%;height: 3%;}
+                        .pc .section-integration-event.section-1 .btn2 {top: 47.5%; height: 2%;}
+                        .section-integration-event.section-1 .btn3 {position: absolute; top: 74%; left: 8%;width: 84%;height: 3%;}
+                        .pc .section-integration-event.section-1 .btn3 {top: 79.5%;height: 4%;}
+                        .section-integration-event.section-1 .btn-share {position: absolute;top: 43.5%;left: 8%;width: 40%;height: 3%;display: flex;}
+                        .pc .section-integration-event.section-1 .btn-share {width:38%; height: 4%; top: 46.5%;}
+                        .section-integration-event.section-1 .btn-share li {flex: 1 1;}
+                        .section-integration-event.section-1 .btn-share li > button {width: 100%; height: 100%;}
+
+                        .section-integration-event.section-2 .btn1 {position: absolute;top: 71%;left: 58%;width: 30%;height: 4%;}
+                        .pc .section-integration-event.section-2 .btn1 {top: 87%;left: 9%;width: 18%;height: 3%;}
+
+                        .section-integration-event.section-3 .btn1 {position: absolute;top: 45%;left: 4%;width: 91%;height: 5%;}
+                        .pc .section-integration-event.section-3 .btn1 {top: 39%;}
+
+                        .section-integration-event.section-3 .accordion {margin-top: -5%;}
+                        .section-integration-event.section-3 .accordion .accordion__body .youtube {position: absolute; top: 32%; left: 1.5rem; width: calc(100% - 3rem); padding-bottom: 51.3%;}
+                        .section-integration-event.section-3 .accordion .accordion__body .youtube iframe {border: none; border-radius: 1.2rem; height: 100%; -o-object-fit: fill; object-fit: fill; position: absolute; width: 100%;}
+                        .pc .section-integration-event.section-3 .accordion .accordion__body .youtube {top: 30%; width: calc(100% - 6rem); left: 3rem;}
+
+                        .section-integration-event.section-4 .btn1 {position: absolute;top: 85%;left: 4%;width: 91%;height: 8%;}
+                        .pc .section-integration-event.section-4 .btn1 {top: 84%;}
+
+                        .section-integration-event.section-5 .accordion .accordion__header .collapse img:nth-child(1) {display: block;}
+                        .section-integration-event.section-5 .accordion .accordion__header .collapse img:nth-child(2) {display: none;}
+                        .section-integration-event.section-5 .accordion .accordion__header.on .collapse img:nth-child(1) {display: none;}
+                        .section-integration-event.section-5 .accordion .accordion__header.on .collapse img:nth-child(2) {display: block;}
+                        .section-integration-event.section-5 .accordion .accordion__header::after {content: ''; right: 25%; top: 42%;}
+                        .pc .section-integration-event.section-5 .accordion .accordion__header::after {content: ''; right: 33%; top: 40%;}
+
+                        .section-integration-event.section-6 .btn1 {position: absolute;top: 85%;left: 4%;width: 91%;height: 8%;}
+                        .pc .section-integration-event.section-6 .btn1 {top: 84%;}
+
+                        .section-integration-event.section-7 .btn1 {position: absolute;top: 15%;left: 4%;width: 91%;height: 38%;}
+                        .pc .section-integration-event.section-7 .btn1 {position: absolute;top: 25%;left: 4%;width: 92%;height: 31%;}
+                        .section-integration-event.section-7 .btn2 {position: absolute;top: 54%;left: 4%;width: 91%;height: 38%;}
+                        .pc .section-integration-event.section-7 .btn2 {position: absolute;top: 57%;left: 4%;width: 92%;height: 31%;}
+
+                        .section-integration-event.notice .accordion .accordion__header::after {content: ''; top: 43%; right: 11%;}
+                        .pc .section-integration-event.notice .accordion .accordion__header::after {content: ''; top: 41%; right: 23%;}
+
+                      </style>
+                      <div class="event-integration">
+                        <div class="section-integration-event visual">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_visual.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_visual_m.jpg" alt="" class="pc_hide" />
+                          <button class="tab1" onclick="handleAnchor(0)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 호캉스 신청하기_상단" data-gtm-click-location="이벤트 상세" data-gtm-click-text=" 호캉스 신청하기_상단"><span class="blind">호캉스 신청하기</span></button>
+
+                          <div class="blind">
+                            <p>친구야! 알닷 회원가입하고 함께 호캉스 가자!</p>
+                            <p>올여름알닷이 호캉스 1박 쏜다.</p>
+                            <p>여행의 계절 6월! 알닷에 초대한 친구가 회원 가입하면 파라다이스 시티 or 인스파이어 리조트 1박 숙박권을 드립니다~ 알닷을 친구에게 추천하고, 친구와 함께 호캉스를 떠나보세요!</p>
+                            <p>호캉스 1박 지원 외에도 다양한 혜택을 드립니다! 아래 알닷 혜택존에서 원하는 혜택을 확인해보세요!</p>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event tab">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_tab.png" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_tab_m.png" alt="" class="pc_hide" />
+                          
+                          <div class="inner">
+                            <button class="tab1" onclick="handleAnchor(1)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭1 알닷 개통 맥머핀 100%" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭1 알닷 개통 맥머핀 100%"><span class="blind">알닷에서 개통 시 햄버거 100% 제공</span></button>
+                            <button class="tab2" onclick="handleAnchor(2)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭2 원칩 지금배송 신청 이벤트" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭2 원칩 지금배송 신청 이벤트" ><span class="blind">지금배송 신청 시 아메리카노 100% 제공</span></button>
+                            <button class="tab3" onclick="handleAnchor(3)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭3 알뜰폰+인터넷 결합 혜택" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭3 알뜰폰+인터넷 결합 혜택" ><span class="blind">인터넷 + 알뜰폰 결합 시 최대 117만원 혜택 제공</span></button>
+                            <button class="tab4" onclick="handleAnchor(4)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭4 친구추천 이벤트" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭4 친구추천 이벤트" ><span class="blind">초대한 친구가 개통 시 아이스크림 100% 제공</span></button>
+                            <button class="tab5" onclick="handleAnchor(5)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭5 알닷 개통 후기 이벤트" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭5 알닷 개통 후기 이벤트" ><span class="blind">개통 후기 작성 시 육개장 컵라면 100% 제공</span></button>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-1">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration1.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration1_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 회원가입 하러 가기" data-gtm-click-url="https://www.uplusmvno.com/register" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="회원가입 하러 가기" ><span class="blind">회원가입 하러 가기</span></a>
+                          <ul class="btn-share">
+                            <li><button id="facebookShare" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 페이스북 공유하기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="페이스북 공유하기"><span class="blind">페이스북</span></button></li>
+                            <li><button id="kakaoShare" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 카카오톡 공유하기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="카카오톡 공유하기"><span class="blind">카카오톡</span></button></li>
+                            <li><button id="copyURL" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : URL복사하기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="URL복사하기"><span class="blind">URL복사</span></button></li>
+                          </ul>
+                          <button id="aplyEvet" class="btn2" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 추천인 아이디 입력하기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="추천인 아이디 입력하기"><span class="blind">추천인 아이디 입력하기</span></button>
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn3" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 회원가입 하러 가기" data-gtm-click-url="https://www.uplusmvno.com/register" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="회원가입 하러 가기"><span class="blind">회원가입 하러 가기</span></a>
+
+                          <div class="blind">
+                            <h2>알닷 회원가입 이벤트</h2>
+                            <p>알닷에 친구랑 회원가입하면 최대 300만원, 총 6팀에게 호텔 숙박권을 드립니다!</p>
+                            <dl>
+                              <div>
+                                <dt>응모 기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 31일</dd>
+                              </div>
+                              <div>
+                                <dt>응모 대상</dt>
+                                <dd>6월 중 친구와 함께 회원가입한 고객님 (마케팅 동의 필수)  (추천인-피추천인 모두 6월 중 회원가입 시 해당됨)</dd>
+                              </div>
+                              <div>
+                                <dt>당첨자 발표</dt>
+                                <dd>월 31일 당첨자 발표 페이지에서 진행</dd>
+                              </div>
+                              <div>
+                                <dt>지급 시기</dt>
+                                <dd>익월 말 지급 (2024년 7월 31일)</dd>
+                              </div>
+                            </dl>
+                            <ul>
+                              <li>
+                                <p>인스파이어 리조트</p>
+                                <p>1박 숙박권 (50만원 상당) 총 3팀 (추천인+피추천인)</p>
+                              </li>
+                              <li>
+                                <p>파라다이스 시티 호텔</p>
+                                <p>1박 숙박권 (50만원 상당)총 3팀 (추천인+피추천인)</p>
+                              </li>
+                            </ul>
+                            <ol>
+                              <li>추천인</li>
+                              <li>1. 알닷에 회원가입을 한 뒤, 친구를 초대할 수 있습니다.</li>
+                              <li>2. 친구 초대하기 공유하시면서 본인의 ID를 친구에게 꼭 알려주세요.</li>
+                            </ol>
+                            <ol>
+                              <li>초대받은 친구</li>
+                              <li>1. 초대를 받으셨다면 알닷에 회원가입해 주세요!</li>
+                              <li>2. 회원가입 후 추천인 아이디를 입력해주세요.</li>
+                            </ol>
+
+                            <p>이 달의 추가 혜택! 알닷 회원 가입만 해도 100% 증정</p>
+                            <dl>
+                              <div>
+                                <dt>응모 기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 30일</dd>
+                              </div>
+                              <div>
+                                <dt>응모 대상</dt>
+                                <dd>회원가입 시, 마케팅 수신 동의를 한 회원일 경우 자동 응모 완료</dd>
+                              </div>
+                              <div>
+                                <dt>당첨자 발표</dt>
+                                <dd>월 31일 당첨자 발표 페이지에서 진행</dd>
+                              </div>
+                              <div>
+                                <dt>지급 시기</dt>
+                                <dd>익월 말 지급 (2024년 7월 31일)</dd>
+                              </div>
+                            </dl>
+                            <p>알닷에 가입해야 하는 이유</p>
+                            <ul>
+                              <li>
+                                <p>셀프개통</p>
+                                <p>5분이면 비대면으로 간편하게 셀프 개통 가능</p>
+                              </li>
+                              <li>
+                                <p>간편한 요금제 검색</p>
+                                <p>나에게 맞는 요금제 찾기와 요금제 비교 가능</p>
+                              </li>
+                              <li>
+                                <p>원칩 지금배송</p>
+                                <p>2시간 내 무료, 유심 퀵 배송 서비스 신청 가능 </p>
+                              </li>
+                              <li>
+                                <p>다양한 혜택</p>
+                                <p>다양한 이벤트와 혜택 확인 가능</p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-2">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration2.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration2_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/plan/plan-list" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 요금제 보기" data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="요금제 보기" ><span class="blind">요금제 보기</span></a>
+
+                          <div class="blind">
+                            <h2>알닷 개통 이벤트</h2>
+                            <p>알닷에서 요금제 셀프개통하면 베이컨 에그 맥머핀을 100% 드립니다!</p>
+                            <dl>
+                              <div>
+                                <dt>응모 기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 31일</dd>
+                              </div>
+                              <div>
+                                <dt>응모 대상</dt>
+                                <dd>알닷 홈페이지에서 5,000원 이상 요금제 셀프개통 시, 자동 응모 완료</dd>
+                              </div>
+                              <div>
+                                <dt>당첨자 발표</dt>
+                                <dd>월 31일 당첨자 발표 페이지에서 진행</dd>
+                              </div>
+                              <div>
+                                <dt>지급 시기</dt>
+                                <dd>익월 말 지급 (2024년 7월 31일)</dd>
+                              </div>
+                            </dl>
+                            <p>100% 알닷에서 5,000원 이상 요금제를 셀프개통하면 베이컨 에그 맥머핀을드립니다!</p>
+                            <p>알닷에서 셀프 개통하는 방법</p>
+                            <ol>
+                              <li>step1 요금제 선택</li>
+                              <li>step2 가입유형, 개통방식 선택</li>
+                              <li>step3 고객 정보 입력</li>
+                              <li>step4 개통 정보 입력</li>
+                            </ol>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-3">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration3_1.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration3_1_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/purchase/delivery" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 원칩 지금배송 신청하기" data-gtm-click-url="https://www.uplusmvno.com/purchase/delivery" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="원칩 지금배송 신청하기" ><span class="blind">원칩 지금배송 신청하기</span></a>
+
+                          <div class="blind">
+                            <h2>원칩 지금배송 신청 혜택 이벤트</h2>
+                            <p>원칩 지금배송 신청하면 스타벅스 아이스아메리카노 100% 제공</p>
+                            <dl>
+                              <div>
+                                <dt>응모 기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 30일</dd>
+                              </div>
+                              <div>
+                                <dt>응모 대상</dt>
+                                <dd>원칩 지금배송 신청 후, 6월 내 개통 고객</dd>
+                              </div>
+                              <div>
+                                <dt>당첨자 발표</dt>
+                                <dd>7월 31일 당첨자 발표 페이지에서 진행</dd>
+                              </div>
+                              <div>
+                                <dt>지급 시기</dt>
+                                <dd>익월 말 지급 (2024년 7월 31일)</dd>
+                              </div>
+                            </dl>
+                            <p>원칩 지금배송 신청 후, 6월 내로 개통하시면 스타벅스 아이스아메리카노를 100% 드립니다!</p>
+                          </div>
+
+                          <div class="accordion">
+                            <button class="accordion__header on" onclick="handleAccordion(event)">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration3_2_accordion.png" alt="" class="pc_show" />
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration3_2_accordion_m.png" alt="" class="pc_hide" />
+                            </button>
+                            <div class="accordion__body">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration3_2.jpg" alt="" class="pc_show" />
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration3_2_m.jpg" alt="" class="pc_hide" />
+
+                              <div class="youtube">
+                                <iframe src="https://www.youtube.com/embed/tNt854Xv97s?si=_IjoJk2vO3fmDZl1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="blind">
+                            <p>원칩 지금배송은 U+알뜰폰의 공용 유심 '원칩'을 2시간 내에 무료 배송해드리는 서비스 입니다.</p>
+                            <ul>
+                              <li>매일 10~22시까지 신청 가능</li>
+                              <li>배송비 무료</li>
+                              <li>2시간 이내 유심 배송 완료</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-4">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration4.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration4_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 결합 혜택 자세히보기" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="결합 혜택 자세히보기"><span class="blind">인터넷 결합 혜택 자세히 보기</span></a>
+
+                          <div class="blind">
+                            <h2>인터넷 결합 혜택 소개</h2>
+                            <p>알뜰폰 개통 시, 인터넷 결합하면 최대 117만원 올인원 결합 혜택</p>
+                            <dl>
+                              <div>
+                                <dt>기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 30일</dd>
+                              </div>
+                            </dl>
+                            <p>알뜰폰은 결합이 안된다는 오해는 NO 알닷에서 개통하시면 인터넷과 IPTV를 결합할 수 있어요.</p>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-5">
+                          <div class="param">
+                            <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration5_1.jpg" alt="" class="pc_show" />
+                            <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration5_1_m.jpg" alt="" class="pc_hide" />
+                          </div>
+                          <div class="accordion">
+                            <button class="accordion__header on" onclick="handleAccordion(event)">
+                              <div class="pc_show collapse">
+                                <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_2_accordion.png" alt="" />
+                                <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_2_accordion_open.png" alt="" />
+                              </div>
+                              <div class="pc_hide collapse">
+                                <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_2_accordion_m.png" alt="" />
+                                <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_2_accordion_m_open.png" alt="" />
+                              </div>
+                            </button>
+                            <div class="accordion__body">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_2.png" alt="" class="pc_show" />
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_2_m.png" alt="" class="pc_hide" />
+                            </div>
+                          </div>
+                          <div class="param">
+                            <a href="https://www.uplusmvno.com/benefit/recommendation" target="_blank" class="pc_show" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 가족친구 추천하기" data-gtm-click-url="https://www.uplusmvno.com/benefit/recommendation" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="가족친구 추천하기">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_3.jpg" alt="가족/친구 추천하기" />
+                            </a>
+                            <a href="https://www.uplusmvno.com/benefit/recommendation" target="_blank" class="pc_hide"  data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 가족친구 추천하기" data-gtm-click-url="https://www.uplusmvno.com/benefit/recommendation" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="가족친구 추천하기">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration5_3_m.jpg" alt="가족/친구 추천하기" />
+                            </a>
+                          </div>
+
+                          <div class="blind">
+                            <h2>친구추천 이벤트</h2>
+                            <p>알닷 요금제를 가족/친구에게 추천해주세요! </p>
+                            <dl>
+                              <div>
+                                <dt>응모 기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 31일</dd>
+                              </div>
+                              <div>
+                                <dt>응모 대상</dt>
+                                <dd>개통 완료 회원과 추천 받은 가족, 친구</dd>
+                              </div>
+                              <div>
+                                <dt>당첨자 발표</dt>
+                                <dd>7월 31일 당첨자 발표 페이지에서 진행</dd>
+                              </div>
+                              <div>
+                                <dt>지급 시기</dt>
+                                <dd>익월 말 지급 (2024년 7월 31일)</dd>
+                              </div>
+                            </dl>
+                            <p>추천 받은 친구가 알닷 요금제에 가입하면 추천하신 분과 가족/친구 모두에게 배스킨라빈스 아이스크림을 드립니다!</p>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-6">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration6.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/event_integration6_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/mypage/rate-manage" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 개통후기 쓰러가기" data-gtm-click-url="https://www.uplusmvno.com/mypage/rate-manage" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="개통후기 쓰러가기"><span class="blind">후기 쓰러 가기</span></a>
+
+                          <div class="blind">
+                            <h2>알닷 후기 이벤트</h2>
+                            <p>알닷 개통 후기를 남겨주세요!</p>
+                            <p>셀프개통, 원칩 지금배송으로 유심칩 구입 등 알닷에서 개통 하시면서 느끼셨던 점을 정성스런 후기로 남겨주세요!</p>
+                            <p>후기를 남겨주신 모든 분들에게 선물을 드립니다!</p>
+                            <dl>
+                              <div>
+                                <dt>응모 기간</dt>
+                                <dd>2024년 6월 1일~2024년 6월 31일</dd>
+                              </div>
+                              <div>
+                                <dt>응모 대상</dt>
+                                <dd>알닷 개통 후기 작성 시, 자동 응모 완료</dd>
+                              </div>
+                              <div>
+                                <dt>당첨자 발표</dt>
+                                <dd>7월 31일 당첨자 발표 페이지에서 진행</dd>
+                              </div>
+                              <div>
+                                <dt>지급 시기</dt>
+                                <dd>익월 말 지급 (2024년 7월 31일)</dd>
+                              </div>
+                            </dl>
+                            <p>육개장 사발면 100% 제공</p>
+                          </div>
+                        </div>
+
+                        <div class="section-integration-event section-7">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration7.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration7_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002035" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 알뜰폰 플러스" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002035" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="알뜰폰 플러스" >
+                            <span class="blind">알뜰폰 플러스 국내 최초 알뜰폰 오프라인 컨설팅 매장에 방문하시면 알뜰폰 요금제 상담은 물론 개통까지 가능합니다!</span>
+                          </a>
+                          <a href="https://www.uplusmvno.com/benefit/affiliate-card" target="_blank" class="btn2" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 삼성카드 X 알닷" data-gtm-click-url="https://www.uplusmvno.com/benefit/affiliate-card" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="삼성카드 X 알닷">
+                            <span class="blind">유플러스 알뜰폰 전용 제휴카드 사용 가능 알닷 전용 제휴 카드의 할인 혜택을 받아보세요!</span>
+                          </a>
+                        </div>
+
+                        <div class="section-integration-event notice">
+                          <div class="accordion">
+                            <button class="accordion__header on" onclick="handleAccordion(event)">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_notice_accordion.png" alt="" class="pc_show" />
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_notice_accordion_m.png" alt="" class="pc_hide" />
+                            </button>
+                            <div class="accordion__body">
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_notice.jpg" alt="" class="pc_show" />
+                              <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/30/event_integration_notice_m.jpg" alt="" class="pc_hide" />
+                            </div>
+                          </div>
+
+                          <div class="blind">
+                            <p>알닷 회원가입 혜택 사은품 유의사항</p>
+                            <ol>
+                              1. 본 이벤트는 제공 기간 내 알닷에 회원가입이 완료되고, 마케팅 정보 제공 동의를 하신 고객에 한해서 경품을 제공합니다.
+                              2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.
+                              3. 경품으로 지급되는 메가MGC커피 아메리카노 쿠폰은 2024년 7월 31일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.
+                              4. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은 경품 지급 대상에서 제외됩니다.
+                              5. 번호 변경, 유심 변경 시 경품 지급 대상에서 제외됩니다.
+                              6. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.
+                              7. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.
+                              8. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.
+                            </ol>
+                            <p>알닷 호캉스 1박 지원 이벤트 유의사항</p>
+                            <ol>
+                              <li>1.  본 이벤트는 6월 중, 알닷에 회원가입을 완료하신 추천인과 피추천인에 한해서 경품을 제공합니다. </li>
+                              <li>2. 경품 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 추천인과 피추천인은 사은품 대상에서 제외됩니다.</li>
+                              <li>3. 추천인은 추천 인원 수에 상관없이 1개의 경품만 지급되며, 중복 지급은 불가하며, 피추천인도 1개의 경품만 지급됩니다.</li>
+                              <li>4  경품 추첨 결과는 알닷 홈페이지에서 2024년 7월 31일 공지 될 예정입니다.</li>
+                              <li>5. 이용 중인 휴대폰에 스팸 설정이 되어 있는 경우, 경품 대행사의 당첨 및 배송 안내 연락을 받지 못할 수 있습니다.</li>
+                              <li>6. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                              <li>7.  당첨자와 경품 수령자는 동일해야 하며 경품 양도는 불가합니다.</li>
+                              <li>8. 이벤트/경품 관련 문의는 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                              <li>9. 사은품 취급 및 배송 업무는 ㈜더브리즈에서 위탁 진행합니다.</li>
+                              <li>10. 발송 대행업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                              <li>11. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                            </ol>
+                            <p>알닷 개통 혜택 사은품 유의사항</p>
+                            <ol>
+                              <li>1. 본 이벤트는 제공 기간 내 알닷에서 5,000원 이상 요금제에 가입하고, 개통이 완료된 고객에 한해서 경품을 제공합니다.</li>
+                              <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                              <li>3. 경품으로 지급되는 베이컨 에그 맥머핀 쿠폰은 2024년 7월 31일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>4. 모바일 쿠폰 발송 시점까지 알뜰폰 해지 또는 정지하신 고객은 경품 지급 대상에서 제외됩니다.</li>
+                              <li>5. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 경품 지급 대상에서 제외됩니다.</li>
+                              <li>6. 해당 이벤트는 리브엠, 토스모바일 개통 고객은 제외됩니다.</li>
+                              <li>7. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                              <li>8. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                              <li>9. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                            </ol>
+                            <p>알닷 원칩 지금배송 사은품 유의사항</p>
+                            <ol>
+                              <li>1. 본 이벤트는 제공 기간 내 알닷에서 원칩 지금배송을 신청하여 원칩을 구매한 고객에 한해서 경품을 제공합니다.</li>
+                              <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                              <li>3. 경품으로 지급되는 스타벅스 아이스 아메리카노 쿠폰은 2024년 7월 31일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>4. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은 사은품 대상에서 제외됩니다.</li>
+                              <li>5. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 사은품 지급 대상에서 제외됩니다.</li>
+                              <li>6. 해당 이벤트는 리브엠, 토스모바일 개통 고객은 제외됩니다.</li>
+                              <li>7. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                              <li>8. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                              <li>9. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                              <li>10. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                            </ol>
+                            <p>알닷 친구 추천 이벤트 사은품 유의사항</p>
+                            <ol>
+                              <li>1. 이벤트 기간 내 알닷에서 개통이 완료된 고객에 한해서 친구 추천 이벤트에 참여가 가능합니다.</li>
+                              <li>2. 추천한 고객에게는 추천 인원 수에 상관없이 1개의 경품만 지급되며, 중복 지급은 불가합니다.</li>
+                              <li>3. 추천을 받은 고객 중 알닷에서 이벤트 기간 내 개통을 완료하신 모든 분들에게 경품이 지급됩니다.</li>
+                              <li>4. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객과 가족/친구가 있을 경우, 경품 지급대상에서 제외됩니다.</li>
+                              <li>5. 경품 당첨 결과는 알닷 홈페이지에서 2024년 7월 31일 공지 될 예정입니다.</li>
+                              <li>6. 경품으로 지급되는 배스킨라빈스 싱글레귤러 쿠폰은 2024년 7월 31일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>7. 이벤트/경품 관련 문의는 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                              <li>8. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                              <li>9. 발송 대행업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                              <li>10. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                            </ol>
+                            <p>알닷 후기 이벤트 사은품 유의사항</p>
+                            <ol>
+                              <li>1. 본 이벤트는 6월 알닷에서 후기를 작성한 고객에  경품을 제공합니다.</li>
+                              <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                              <li>3. 경품 당첨 결과는 알닷 홈페이지에서 2024년 7월 31일 공지 될 예정입니다.</li>
+                              <li>4. 경품으로 지급되는 육개장 사발면 쿠폰은 2024년 7월 31일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                              <li>5. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은 사은품 대상에서 제외됩니다.</li>
+                              <li>6. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 경품 지급 대상에서 제외됩니다.</li>
+                              <li>7. 모바일 쿠폰 발송은 대행사인 ㈜더브리즈에서 업무를 대행합니다.</li>
+                              <li>8. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                              <li>9. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                              <li>10. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다. </li>
+                            </ol>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(num) {
+                          const header = document.querySelector('.header');
+                          const linkSection = document.querySelector(`.section-integration-event.section-${num + 1}`);
+                          
+                          if (linkSection) {
+                            const topOffset = linkSection.offsetTop - header.clientHeight;
+                            window.scrollTo({ top: topOffset, behavior: 'smooth' });
+                          }
+                        }
+                        function handleAccordion(event) {
+                          event.currentTarget.classList.toggle('on');
+                        }
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a href="/purchase/delivery" rel="noopener noreferrer" target="_blank" class="btn_deli">
+                <span>
+                  <img src="/images/common/tit_direct_delivery.jpg" alt="지금배송">
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a href="/footer/terms/privacyProcess" rel="noopener noreferrer" target="_blank" class="policy">개인정보처리방침</a>
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank">개인정보이용내역</a>
+                <a href="https://msafer.or.kr/index.do" rel="noopener noreferrer" target="_blank" title="새 창 열림">명의도용방지서비스</a>
+                <a href="https://spam.kisa.or.kr/" rel="noopener noreferrer" target="_blank" title="새 창 열림">불법스팸대응센터</a>
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright"> Copyright © LG Uplus Corp. All Rights Reserved. </div>
+              <div class="f_sns">
+                <a href="https://www.youtube.com/@uplusmvno_official" rel="noopener noreferrer" target="_blank" class="ico_youtube" title="새 창 열림">
+                  <span class="blind">youtube</span>
+                </a>
+                <a href="https://www.instagram.com/uplusalpha_official/" rel="noopener noreferrer" target="_blank" class="ico_instagram" title="새 창 열림">
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector('.btn_top').addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html>

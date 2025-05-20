@@ -1,0 +1,401 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', '맑은 고딕', Apple Gothic, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+html {
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+body {
+    min-width: 1200px;
+    font-size: 12px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #444;
+}
+
+a:visited,
+a:focus,
+a:active {
+    color: #444;
+}
+
+caption {
+    display: none;
+}
+
+
+
+/* color */
+.fc {
+    color: #000000;
+}
+
+.guide_wrap {
+    position: relative;
+    padding: 190px 20px 50px;
+}
+
+/* header */
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 170px;
+    box-sizing: border-box;
+    padding: 20px 20px 0;
+    background: #fff;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    color: #222;
+    font-size: 30px;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+header h1 img {
+    width: 96px;
+}
+
+header .status {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+header .status li {
+    display: flex;
+    align-items: center;
+}
+
+header .status li+li {
+    margin-left: 10px;
+}
+
+header .status li span {
+    line-height: 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    background: #fc6969;
+    padding: 0 5px;
+    margin-left: 5px;
+}
+
+nav.gnb .btn-group {
+    display: flex;
+    gap: 0 4px;
+}
+
+nav.gnb {
+    display: flex;
+}
+
+nav.gnb .business {
+    margin-left: auto;
+}
+
+nav.gnb ul {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+nav.gnb li {
+    display: flex;
+    gap: 0 4px;
+}
+
+nav.gnb li+li {
+    margin-left: 7px;
+}
+
+nav.gnb li a {
+    display: block;
+    padding: 0 10px;
+    border: 1px solid #73819B;
+    border-radius: 4px;
+    color: #222;
+    font-size: 13px;
+    line-height: 28px;
+    background: #fff;
+    transition: all .2s ease;
+}
+
+nav.gnb li a:hover {
+    background: #73819B;
+    color: #fff;
+    opacity: 0.8;
+}
+
+nav.gnb li .on a {
+    background: #73819B;
+    color: #fff;
+}
+
+header .marker {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+header .marker .btn.c01 {
+    margin-right: 10px;
+}
+
+header .marker .info {
+    color: #e80000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+header .marker .info strong {
+    font-weight: 700;
+}
+
+header .marker ul {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+header .marker ul li {
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 12px;
+}
+
+header .marker ul li+li {
+    margin-left: 15px;
+}
+
+header .marker ul li:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #888;
+    margin-right: 5px;
+}
+
+header .marker ul li.com:before {
+    background: #53b100;
+}
+
+header .marker ul li.end:before {
+    background: #0142b3;
+}
+
+header .marker ul li.mod:before {
+    background: #e30101;
+    animation: marker both linear infinite 1.3s;
+}
+
+h2 {
+    padding: 7px 10px;
+    font-size: 12px;
+    background: #555;
+    color: #fff;
+    font-weight: 700;
+}
+
+.guide_cont {
+    border-top: 1px solid #444;
+    overflow: auto;
+}
+
+.guide_cont+h2 {
+    margin-top: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+}
+
+table colgroup col:nth-child(5) {
+    width: 190px;
+}
+
+table colgroup col:nth-child(6) {
+    width: 60px;
+}
+
+table colgroup col:nth-child(7) {
+    width: 70px;
+}
+
+table colgroup col:nth-child(8) {
+    width: 20%;
+}
+
+table.new colgroup col:nth-child(6) {
+    width: 80px;
+}
+
+table.new colgroup col:nth-child(7) {
+    width: 300px;
+}
+
+table.new colgroup col:nth-child(8) {
+    width: 80px;
+}
+
+table.new colgroup col:nth-child(10) {
+    width: 20%;
+}
+
+table thead th {
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    background: #ddd;
+    font-size: 11px;
+}
+
+table tbody td {
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 11px;
+    text-align: left;
+    color: #898989;
+}
+
+table tbody td.url a {
+    font-weight: 700;
+}
+
+table tbody td.date {
+    text-align: center;
+}
+
+table tbody td.marker {
+    text-align: center;
+}
+
+table tbody td.marker:before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+
+table tbody tr.com td.marker:before {
+    background: #53b100;
+}
+
+table tbody tr.end td.marker:before {
+    background: #0142b3;
+}
+
+table tbody tr.mod td.marker:before {
+    background: #e30101;
+    animation: over_a both linear infinite 1.3s;
+    animation: marker-0125a7ea both linear infinite 1.3s;
+}
+
+table tbody tr.hid td {
+    background: #eee;
+    color: #444;
+    text-decoration: line-through;
+}
+
+table tbody tr.two td {
+    background: #eee;
+    color: #444;
+    opacity: 0.6;
+}
+
+table tbody tr.two td a {
+    pointer-events: none;
+}
+
+table tbody tr.hid td.marker:before {
+    background: #aaa !important;
+    animation: none !important;
+    display: none;
+}
+
+
+@keyframes marker {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0.2;
+    }
+
+    60% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width:800px) {
+    .guide_wrap {
+        padding-top: 120px;
+    }
+
+    header {
+        height: 120px;
+        padding-top: 10px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header h1 img {
+        width: 60px;
+    }
+
+    header .marker {
+        display: none;
+    }
+}
+
+@media screen and (max-width:640px) {
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .guide_wrap {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

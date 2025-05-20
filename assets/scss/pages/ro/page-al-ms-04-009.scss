@@ -1,0 +1,19 @@
+.AL-MS-04-009 {
+  margin-top: 5.6rem;
+
+  .certify_wrap {
+    max-width: 640px;
+    margin: 0 auto;
+
+    .confirm-area {
+      .content-inner {
+        &.common {
+        }
+
+        .certified {
+          margin-top: 5rem;
+        }
+      }
+    }
+  }
+}

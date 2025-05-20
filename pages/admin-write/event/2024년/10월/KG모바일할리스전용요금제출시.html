@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/event/detail#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit"><img src=" alt="파트너사" /></div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span> <span>2023.12.08</span> - <span>2024.04.30</span> </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .event-kghollys {
+                          position: relative;
+                        }
+
+                        .event-kghollys.section1 .btn1 {
+                          position: absolute;
+                          top: 87%;
+                          left: 5%;
+                          width: 90%;
+                          height: 8%;
+                        }
+                        .pc .event-kghollys.section1 .btn1 {
+                          position: absolute;
+                          top: 86%;
+                          left: 12%;
+                          width: 76%;
+                          height: 8%;
+                        }
+
+                        .event-kghollys.section2 .btn1 {
+                          position: absolute;
+                          top: 93.7%;
+                          left: 0%;
+                          width: 100%;
+                          height: 6%;
+                        }
+                        .pc .event-kghollys.section2 .btn1 {
+                          position: absolute;
+                          top: 87.7%;
+                          left: 3%;
+                          width: 94%;
+                          height: 7%;
+                        }
+
+                        .collapse.hidden .spread,
+                        .collapse .folding {
+                          display: none;
+                        }
+                        .collapse.hidden .folding {
+                          display: block;
+                        }
+                        .collapse .btn-collpase {
+                          position: absolute;
+                          bottom: 10%;
+                          left: 3%;
+                          width: 94%;
+                          height: 8.5%;
+                        }
+                        .collapse.hidden .btn-collpase {
+                          height: 5%;
+                        }
+                        .collapse .btn-collpase {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                        }
+                        .collapse.hidden .btn-collpase {
+                          top: 97%;
+                          height: 3%;
+                        }
+                        .pc .collapse.hidden .btn-collpase {
+                          top: 96%;
+                          height: 4%;
+                        }
+                      </style>
+                      <div class="event-kghollys-wrap">
+                        <div class="event-kghollys visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys_visual_2410.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys_visual_m_2410.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <div class="blind">
+                            <p>HOLLYS X KG모바일</p>
+                            <p>할리스 전용 요금제 출시 가입당월 요금 0원, 아메리카노 50잔 증정</p>
+                            <p>
+                              KG모바일에서 제공하는 할리스 전용 요금제의 아메리카노는 HOT/ICED 모두
+                              선택 가능합니다!
+                            </p>
+                          </div>
+                        </div>
+                        <div class="event-kghollys section1">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys1_2410.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys1_m_2410.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><button
+                            onclick="handleAnchor('notice')"
+                            class="btn1"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 요금제 보러가기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="요금제 보러가기"
+                          >
+                            <span class="blind">요금제 보러가기</span>
+                          </button>
+                          <div class="blind">
+                            <p>할리스 전용 요금제 가입 시 혜택</p>
+                            <p>어떤 요금제를 가입해도 가입 당월 요금 무료!</p>
+                            <p>설마 유심비 내고 가입하세요? 유심비,배송비도 모두 무료!</p>
+                            <p>
+                              25개월 동안 50잔! 매달 할리스 아메리카노 2잔 무료 따뜻한 커피, 시원한
+                              커피 골라 마셔요!
+                            </p>
+                            <p>
+                              각종 할인/구독/금액권 받는 유독 6개월 이용권 무료 넷플릭스, 티빙, GS25
+                              등 할인받을 수 있어요!
+                            </p>
+                            <p>KG모바일과 함께하는 할리스 전용 요금제</p>
+                            <p>지금 가입하고 역대급 혜택 받으세요!</p>
+                            <p>
+                              유심비+배송비 무료 + 할리스 아메리카노 증정 매월 2잔씩 25개월 동안 +
+                              유독 할인쿠폰 6개월간 증정
+                            </p>
+                          </div>
+                        </div>
+                        <div class="event-kghollys section2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys2_2410.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys2_m_2410.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><a
+                            href="http://pf.kakao.com/_hQxexaxj/friend"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : KG모바일 카카오톡 채널 추가하기"
+                            data-gtm-click-url="http://pf.kakao.com/_hQxexaxj/friend"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="KG모바일 카카오톡 채널 추가하기"
+                            ><span class="blind">KG모바일 카카오톡 채널 추가하기</span></a
+                          >
+                          <div class="blind">
+                            <p>고민 멈춰! 지금 가입하고 통장 잔고를 지키세요!</p>
+                            <p>요금 할인도 최대 20만원대 절약해요!</p>
+                            <p>
+                              이통 3사 보다 합리적인 금액에서 추가로 더 절약할 수 있는 기회! 가입
+                              당월 요금 0원 혜택은 덤!
+                            </p>
+                            <p>기존 데이터 월 150GB + 5Mbps 47,300원 X 24개월 = 1,135,200원</p>
+                            <p>
+                              특별혜택 데이터 월 150GB + 5Mbps 38,500원 X 24개월(가입 당월 0원) =
+                              885,500원 24개월 간 249,700원 절약!
+                            </p>
+                            <p>
+                              지금 데이터 월 150GB + 5Mbps 요금제 가입하면 최대 총 511,700원 상당의
+                              혜택을 받을 수 있어요!
+                            </p>
+                            <p>안심하고 쓸 수 있는 KG모바일 알고 계신가요?</p>
+                            <p>KG모바일은 믿을 수 있는 LG U+망을 사용하고 있습니다.</p>
+                            <p>
+                              동일한 수준이나 비슷한 망이 아니라 바로 그 망! 유플러스 고객과 똑같은
+                              망을 쓰기 때문에 통화품질, 네트워크 환경이 완.전 유플러스라는 점!
+                            </p>
+                            <p>KG모바일은 ISMS 정보보호 관리체계를 인증받은 통신사입니다.</p>
+                            <p>
+                              금융보안원에서 심사하여 정보보호 관리체계를 인증받아 고객 정보를 더
+                              안전하게 관리하고 있습니다. 지금 쓰고 있는 통신사가 금융보안원 인증
+                              통신사인지 꼭 확인하세요!
+                            </p>
+                            <p>지금 카카오톡 채널 추가하고 가장 먼저 혜택 소식을 받아보세요!</p>
+                            <p>KG모바일 카카오톡 채널 추가하기</p>
+                          </div>
+                        </div>
+                        <div class="event-kghollys notice">
+                          <div class="pc_show collapse">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys_notice1_2410.jpg"
+                              alt=""
+                              class="spread"
+                            /><img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/2/event_kghollys_notice2.jpg"
+                              alt=""
+                              class="folding"
+                            /><button class="btn-collpase" onclick="collapsed()">
+                              <span class="blind">약정 자세기보기</span>
+                            </button>
+                          </div>
+                          <div class="pc_hide collapse">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/event_kghollys_notice1_m_2410.jpg"
+                              alt=""
+                              class="spread"
+                            /><img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/2/event_kghollys_notice2_m.jpg"
+                              alt=""
+                              class="folding"
+                            /><button class="btn-collpase" onclick="collapsed()">
+                              <span class="blind">리뷰 더보기 접기</span>
+                            </button>
+                          </div>
+                          <div class="blind">
+                            <p>꼭 확인하세요!</p>
+                            <p>할리스 쿠폰 사용 유의사항</p>
+                            <p>
+                              [대상 메뉴] 아메리카노 R 해당 쿠폰은 할리스 X KG모바일 요금제 이용
+                              고객에 한해 제공되며, 행사 참여 매장에서만 쿠폰 사용 가능합니다. 쿠폰
+                              유효 기간은 1개월이며(매월 1일부터 말일까지), 기간 연장은 불가합니다.
+                              구매 제품과 동일한 메뉴로만 증정 가능합니다. (메뉴, 원두, 사이즈 변경
+                              불가. 단 HOT/ICED 선택 가능)? 비용 지불 시 엑스트라 추가 가능합니다.
+                              (시럽, 샷, 소스 추가 등) 타 쿠폰 및 멤버십 혜택, 개인컵 할인 등 다른
+                              제휴 및 할인 혜택과 중복 적용 불가합니다. (크라운 적립 불가)단, 쿠폰
+                              사용 외, 추가 구매 건에 한해 크라운 적립 및 개인컵 할인 적용 가능 쿠폰
+                              사용 시 현금영수증 발급 불가합니다. 중도에 요금제 해지, 탈퇴, 변경,
+                              명의 변경, 번호이동 등의 변동 사항 발생 시 쿠폰 지급 제외 됩니다 본
+                              혜택은 매장 방문 시에만 사용 가능하며, 할리스 APP(스마트오더 및
+                              딜리버리)에서는 사용이 불가합니다. 매장 상황에 따라 제품 판매 여부가
+                              상이할 수 있습니다. 해당 쿠폰 메뉴는 가격 변동, 리뉴얼 및 단종 등이 될
+                              수 있습니다. 이 경우 동일 금액의 타 상품으로 교환이 가능하며,
+                              구매하시고자 하는 제품이 해당 금액보다 높을 경우 초과 금액 결제 후
+                              교환이 가능합니다. 행사 참여 매장 리스트는 매장 운영 상황에 따라
+                              변경될 수 있습니다. 캡쳐한 쿠폰 이미지는 사용하실 수 없습니다. 번호 및
+                              기기 변경 또는 쿠폰 삭제 등으로 인한 쿠폰 재발행은 불가합니다. [사용
+                              안내] 본 모바일 상품권은 키오스크 및 매장 포스(직원 제시)를 통해 이용
+                              가능합니다. 키오스크 사용 방법 : 키오스크 화면 터치 → 상품 선택 → 포장
+                              또는 매장 선택 → 결제하기 단계에서 하단 우측 ‘쿠폰사용’ 선택 → 바코드
+                              스캔 또는 번호 입력 → 최종 결제 금액 확인 → 결제 수단 선택 및 결제????
+                              매장 포스(직원 제시) : 매장에서 결제 시 모바일 쿠폰을 직원에게 제시
+                              [문의처] 쿠폰 관련 문의 : ㈜한국페이즈서비스 (1644-5368) 프로모션 관련
+                              문의 : KG모바일 고객센터 (무료 114 / 유료 1644-9388) [이용 불가 매장]
+                              할리스 공식 홈페이지 참고 (홈페이지 접속 → HOLLYS NEWS → EVENT) 매장
+                              리스트는 상황에 따라 변경될 수 있습니다. [환불 정책] 해당 상품권은
+                              무료로 제공 되는 이벤트 상품권으로써, 기간연장 및 잔액환불이
+                              불가합니다.
+                            </p>
+                            <p>할리스 쿠폰 발송 안내</p>
+                            <p>
+                              할리스 쿠폰 발송일 : 가입 익월 말 부터 25개월 간 매월 말일 경 1회,
+                              2매(2잔) 발송 매월 쿠폰 제공일 이전에 탈퇴, 해지, 정지, 요금제 변경,
+                              명의 변경 시 혜택 제공되지 않습니다. 모바일 쿠폰은 최초 가입한 번호로
+                              발송되며, 가입 후 번호를 변경할 경우 반드시 고객센터를 통해 정보
+                              수정을 요청해주시기 바랍니다. 요금제 가입 후 정지 시 정지된 개월 수
+                              만큼 쿠폰 지급 횟수에서 차감 됩니다.
+                            </p>
+                            <p>24개월 요금제 프로모션 유의사항</p>
+                            <p>
+                              기본료 할인 프로모션은 가입 월 포함 24개월간 적용됩니다. 명의변경 또는
+                              요금제 변경 시 기본료 할인은 종료됩니다. 프로모션 할인 기간 종료에
+                              대한 안내는 별도 고지되지 않으며, 이에 따른 할인 미제공은 당사가
+                              책임지지 않습니다. 본 프로모션은 당사 사정에 따라 조기종료 또는 변경될
+                              수 있습니다. 기타 이벤트 관련 문의는 당사 고객센터(1644-9388)로
+                              해주시기 바랍니다. 비정상적이거나 불법적인 방법으로 이벤트 참여 시
+                              혜택이 제공되지 않을 수 있습니다.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(el) {
+                          const header = document.querySelector(".header");
+                          const notice = document.querySelector(`.notice`);
+
+                          if (notice) {
+                            const topOffset =
+                              notice.offsetTop - header.clientHeight + notice.clientHeight;
+                            window.scrollTo({ top: topOffset, behavior: "smooth" });
+                          }
+                        }
+
+                        const collapsed = () => {
+                          const header = document.querySelector(".header");
+                          const content2 = document.querySelector(".notice");
+                          Array.from(document.querySelectorAll(".collapse")).forEach((item) => {
+                            item.classList.toggle("hidden");
+                            if (!item.classList.contains("hidden")) {
+                              window.scrollTo({ top: content2.offsetTop - header.clientHeight });
+                            }
+                          });
+                        };
+
+                        setTimeout(function () {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a
+                href="/purchase/delivery"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn_deli"
+              >
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector(".btn_top").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+      AOS.init();
+    </script>
+  </body>
+</html>

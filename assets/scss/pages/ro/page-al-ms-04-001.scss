@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MS-04-001 {
+  .content {
+    min-height: 100vh;
+  }
+  .mobile & {
+    .ro-nav-title {
+      display: none;
+    }
+    .ro-sec-title {
+      @include mo-lo-title-h3;
+      &.sticky {
+        margin-top: rem(32);
+        margin-bottom: 0;
+      }
+    }
+
+    .section {
+      min-height: calc(100vh - (72px + 52px));
+    }
+    .scroll-sticky {
+      position: sticky;
+      top: 52px;
+      margin: 0 rem(-20);
+      padding: rem(16) rem(20);
+      z-index: 5;
+      &.sticky-active {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+  .pc & {
+    .banner-swiper-wrap {
+      margin-top: rem(24);
+    }
+    .ro-sec-title {
+      @include pc-lo-title-h3;
+      &.sticky {
+        margin-top: rem(48);
+      }
+    }
+  }
+}

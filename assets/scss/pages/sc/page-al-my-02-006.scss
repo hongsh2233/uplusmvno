@@ -1,0 +1,78 @@
+.AL-MY-02-006 {
+  .receipt-email {
+    background: linear-gradient(175deg, #f3f5f6 3.21%, #f8e7e8 45.11%, #f3f5f6 96.33%);
+  }
+  .card-group {
+    .total-value {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .content-item {
+    .content-inner {
+      .consect-cardlist {
+        .consent-tit {
+          margin-top: 2.4rem;
+          font-size: var(--font-size-md);
+        }
+        .consent-inner {
+          margin-top: 1.2rem !important;
+        }
+
+        & + .consect-cardlist {
+          margin-top: 4.8rem;
+          padding-top: 3.2rem;
+          border-top: 1px solid #dce0e5;
+        }
+
+        &:last-child {
+          .consent-inner {
+            margin-bottom: 4.8rem !important;
+          }
+        }
+      }
+    }
+
+    .text_info {
+      padding-left: 2.2rem;
+      color: #66707a;
+
+      &::before {
+        top: -0.1rem;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
+      }
+    }
+  }
+
+  .tab-content {
+    .form-box {
+      margin-top: 2.4rem;
+      padding-top: 2.4rem;
+      border-top: 1px solid #dce0e5;
+
+      &.flex {
+        display: flex;
+        align-items: center;
+
+        .total-price {
+          margin-left: auto;
+          font-size: var(--font-size-md);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .btn-area {
+    position: relative;
+
+    .btn-setup {
+      position: absolute;
+      right: 0;
+      z-index: 2;
+    }
+  }
+}

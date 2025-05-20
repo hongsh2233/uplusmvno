@@ -1,0 +1,272 @@
+@use "sass:math";
+@use "@/assets/scss/abstract/variable.scss" as *;
+
+// $base-fz: 16;
+
+/* px 을 rem으로 변환 */
+@function rem($px) {
+  $remValue: (math.div($px, $base-fz)) + rem;
+  @return $remValue;
+}
+
+@function lh($h, $fz) {
+  $lhValue: (math.div($h, $fz));
+  @return $lhValue;
+}
+
+/* 글자 말줄임 */
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; // 공백 없을때 글자 짤림 방지
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+}
+
+/*버튼 기본 스타일 리셋*/
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 이미지 비율 유지 */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* absolute 요소 세로 가운데 정렬 */
+@mixin absolute-middle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @content;
+}
+
+/* 글자에 메뉴에 알록달록 글자처럼 색상 넣기 */
+@mixin color-text-1 {
+  position: relative;
+  background: #1d1d1f;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-image: linear-gradient(96deg, #088f98 -1.4%, #d331ed 107.31%);
+}
+
+@mixin base-font {
+  font-family: "Pretendard JP", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+@mixin has-bg-skyblue {
+  background: linear-gradient(175deg, #f3f5f6 3.84%, #eaf4ff 45.46%, #f3f5f6 96.33%) no-repeat;
+  background-position: center 78px;
+  background-size: 100% 600px;
+  background-color: #f3f5f6;
+  min-height: calc(100vh - 82px);
+}
+
+@mixin pc-lo-title-h2($fs: 30px, $fw: 700, $lh: 1, $mt: 60px, $mb: 34px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: 1;
+  padding-top: $mt;
+  margin-bottom: $mb;
+  color: #000;
+  @content;
+}
+
+// @mixin mo-lo-title-h2($fs: 20px, $fw: 700, $lh: 1, $mt: 32px, $mb: 16px) {
+//   font-size: $fs;
+//   font-weight: $fw;
+//   line-height: 1;
+//   margin-top: $mt;
+//   margin-bottom: $mb;
+//   color: #000;
+//   @content;
+// }
+
+@mixin pc-lo-title-h3($fs: 26px, $fw: 700, $lh: 1, $mt: 60px, $mb: 24px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: 1;
+  margin-top: $mt;
+  margin-bottom: $mb;
+  color: #000;
+  @content;
+}
+
+@mixin mo-lo-title-h3($fs: 20px, $fw: 700, $lh: 1, $mt: 60px, $mb: 16px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: 1;
+  margin-top: $mt;
+  margin-bottom: $mb;
+  color: #000;
+  @content;
+}
+
+@mixin Pg_xSm_s13_lh19 {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+}
+@mixin Pg_Sm_s14_lh20 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+@mixin Pg_Md_s16_lh22 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+@mixin Pg_Lg_s18_lh24 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+@mixin Pg_xLg_s20_lh26 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+}
+@mixin Lb_xxSm_s12_lh18 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+@mixin Lb_xSm_s13_lh19 {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19px;
+}
+@mixin Lb_Sm_s14_lh20 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+@mixin Lb_Md_s16_lh22 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+@mixin Lb_Lg_s18_lh24 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+@mixin Lb_xLg_s20_lh26 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+@mixin Lb_xxLg_s22_lh28 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+}
+@mixin Hd_xSm_s20_lh26 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+@mixin Hd_Sm_s22_lh28 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+}
+@mixin Hd_Md_s26_lh32 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@mixin Hd_Lg_s30_lh36 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+}
+@mixin Hd_xLg_s32_lh38 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+}
+@mixin Hd_xxLg_s34_lh40 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+@mixin badge {
+  .bag.clr.c01 {
+    background-color: #fff4f6;
+    color: #fc6969;
+  }
+
+  .bag.clr.c02 {
+    background-color: #f0f4fa;
+    color: #73819b;
+  }
+
+  .bag.clr.c03 {
+    background-color: #ecfaec;
+    color: #59ac80;
+  }
+
+  .bag.clr.c04 {
+    background-color: #fff7e3;
+    color: #ffb100;
+  }
+
+  .bag.clr.c05 {
+    background-color: #f0eafa;
+    color: #9a83c1;
+  }
+
+  .bag.clr.c06 {
+    background-color: #fc6969;
+    color: #ffffff;
+  }
+
+  .bag.clr.c07 {
+    background-color: #f8f8f8;
+    color: #909090;
+  }
+
+  .bag.clr.c08 {
+    background-color: #ffffff;
+    color: #909090;
+  }
+
+  .bag.clr.c09 {
+    background-color: #ebf3ff;
+    color: #6485dd;
+  }
+}

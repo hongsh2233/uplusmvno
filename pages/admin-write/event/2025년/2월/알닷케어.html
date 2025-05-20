@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <div>
+        <div class="wrap">
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_con">
+                    <div>
+                      <style>
+                        .pc .event-aldotcare {
+                          min-width: 92.4rem;
+                        }
+                        .section-aldotcare {
+                          position: relative;
+                        }
+                        .section-aldotcare .hr {
+                          position: relative;
+                        }
+
+                        .section6_banner li {
+                          margin-top: 1rem;
+                        }
+                        .section-aldotcare.visual .tab1 {
+                          position: absolute;
+                          top: 72.09%;
+                          left: 67.38%;
+                          width: 25%;
+                          height: 4.9%;
+                        }
+                        .section-aldotcare.visual .tab2 {
+                          position: absolute;
+                          top: 78.18%;
+                          left: 69.51%;
+                          width: 21.04%;
+                          height: 4.31%;
+                        }
+                        .section-aldotcare.visual .tab3 {
+                          position: absolute;
+                          top: 83.98%;
+                          left: 67.99%;
+                          width: 22.56%;
+                          height: 4.61%;
+                        }
+                        .section-aldotcare.visual .tab4 {
+                          position: absolute;
+                          top: 89.77%;
+                          left: 67.99%;
+                          width: 22.56%;
+                          height: 4.76%;
+                        }
+                        .section-aldotcare.visual .btn1 {
+                          position: absolute;
+                          top: 54.1%;
+                          left: 75.3%;
+                          width: 21.34%;
+                          height: 10.26%;
+                        }
+                        .pc .section-aldotcare.visual .tab1 {
+                          position: absolute;
+                          top: 77.59%;
+                          left: 76.84%;
+                          width: 12.99%;
+                          height: 3.23%;
+                        }
+                        .pc .section-aldotcare.visual .tab2 {
+                          position: absolute;
+                          top: 82.18%;
+                          left: 76.84%;
+                          width: 12.66%;
+                          height: 3.29%;
+                        }
+                        .pc .section-aldotcare.visual .tab3 {
+                          position: absolute;
+                          top: 86.96%;
+                          left: 76.52%;
+                          width: 13.2%;
+                          height: 3.17%;
+                        }
+                        .pc .section-aldotcare.visual .tab4 {
+                          position: absolute;
+                          top: 91.68%;
+                          left: 76.52%;
+                          width: 13.2%;
+                          height: 3.23%;
+                        }
+                        .pc .section-aldotcare.visual .btn1 {
+                          position: absolute;
+                          top: 61.33%;
+                          left: 75.65%;
+                          width: 15.15%;
+                          height: 8.32%;
+                        }
+
+                        .section-aldotcare.section-1 .movie {
+                          position: absolute;
+                          top: 18.67%;
+                          left: 4.47%;
+                          width: 91.05%;
+                          height: 36.2%;
+                          border: none;
+                        }
+                        .pc .section-aldotcare.section-1 .movie {
+                          position: absolute;
+                          top: 17.52%;
+                          left: 5.3%;
+                          width: 89.61%;
+                          height: 42.45%;
+                        }
+
+                        .section-aldotcare.section-2 .btn1 {
+                          position: absolute;
+                          top: 81.21%;
+                          left: 5%;
+                          width: 90%;
+                          height: 9.08%;
+                        }
+                        .pc .section-aldotcare.section-2 .btn1 {
+                          position: absolute;
+                          top: 80.23%;
+                          left: 5.3%;
+                          width: 89.5%;
+                          height: 11.1%;
+                        }
+
+                        .section-aldotcare.section-3 .btn1 {
+                          position: absolute;
+                          top: 51.03%;
+                          left: 5.53%;
+                          width: 89.21%;
+                          height: 4.65%;
+                        }
+                        .section-aldotcare.section-3 .btn2 {
+                          position: absolute;
+                          top: 46.31%;
+                          left: 7.89%;
+                          width: 52.63%;
+                          height: 1.87%;
+                        }
+                        .pc .section-aldotcare.section-3 .btn1 {
+                          position: absolute;
+                          top: 51.84%;
+                          left: 5.19%;
+                          width: 89.72%;
+                          height: 5.58%;
+                        }
+                        .pc .section-aldotcare.section-3 .btn2 {
+                          position: absolute;
+                          top: 47.58%;
+                          left: 12.99%;
+                          width: 32.25%;
+                          height: 1.74%;
+                        }
+
+                        .section-aldotcare.section-4 .btn1 {
+                          position: absolute;
+                          top: 83.12%;
+                          left: 4.21%;
+                          width: 90.53%;
+                          height: 7.64%;
+                        }
+                        .section-aldotcare.section-4 .btn2 {
+                          position: absolute;
+                          top: 74.48%;
+                          left: 8.16%;
+                          width: 52.89%;
+                          height: 3.11%;
+                        }
+                        .pc .section-aldotcare.section-4 .btn1 {
+                          position: absolute;
+                          top: 83.23%;
+                          left: 5.3%;
+                          width: 89.29%;
+                          height: 9.57%;
+                        }
+                        .pc .section-aldotcare.section-4 .btn2 {
+                          position: absolute;
+                          top: 75.75%;
+                          left: 12.99%;
+                          width: 31.71%;
+                          height: 3.28%;
+                        }
+
+                        .section-aldotcare.section-5 .btn1 {
+                          position: absolute;
+                          top: 82.98%;
+                          left: 6.05%;
+                          width: 88.42%;
+                          height: 8.07%;
+                        }
+                        .section-aldotcare.section-5 .btn2 {
+                          position: absolute;
+                          top: 75.31%;
+                          left: 7.37%;
+                          width: 53.16%;
+                          height: 3.41%;
+                        }
+                        .pc .section-aldotcare.section-5 .btn1 {
+                          position: absolute;
+                          top: 80.52%;
+                          left: 5.41%;
+                          width: 89.39%;
+                          height: 9.17%;
+                        }
+                        .pc .section-aldotcare.section-5 .btn2 {
+                          position: absolute;
+                          top: 73.19%;
+                          left: 12.77%;
+                          width: 32.47%;
+                          height: 2.88%;
+                        }
+
+                        .section-aldotcare.section-6 .btn1 {
+                          position: absolute;
+                          top: 69.01%;
+                          left: 6.05%;
+                          width: 71.84%;
+                          height: 22.35%;
+                        }
+                        .pc .section-aldotcare.section-6 .btn1 {
+                          position: absolute;
+                          top: 62.74%;
+                          left: 10.12%;
+                          width: 65.91%;
+                          height: 18.63%;
+                        }
+
+                        .section-aldotcare.section-7 .btn1 {
+                          position: absolute;
+                          top: 83.95%;
+                          left: 6.05%;
+                          width: 89.47%;
+                          height: 8.84%;
+                        }
+                        .pc .section-aldotcare.section-7 .btn1 {
+                          position: absolute;
+                          top: 88.24%;
+                          left: 5.03%;
+                          width: 90.37%;
+                          height: 5.7%;
+                        }
+
+                        .section-aldotcare.section-8 .btn1 {
+                          position: absolute;
+                          top: 84.85%;
+                          left: 7.11%;
+                          width: 86.32%;
+                          height: 7.63%;
+                        }
+                        .pc .section-aldotcare.section-8 .btn1 {
+                          position: absolute;
+                          top: 86.61%;
+                          left: 5.09%;
+                          width: 89.72%;
+                          height: 7.7%;
+                        }
+
+                        .section-aldotcare.section-9 .btn1 {
+                          position: absolute;
+                          top: 85.59%;
+                          left: 5.26%;
+                          width: 88.68%;
+                          height: 8.15%;
+                        }
+                        .pc .section-aldotcare.section-9 .btn1 {
+                          position: absolute;
+                          top: 86.44%;
+                          left: 5.09%;
+                          width: 89.5%;
+                          height: 8.04%;
+                        }
+
+                        .section-aldotcare.section-10 .btn1 {
+                          position: absolute;
+                          top: 81.7%;
+                          left: 5.79%;
+                          width: 89.21%;
+                          height: 8.87%;
+                        }
+                        .pc .section-aldotcare.section-10 .btn1 {
+                          position: absolute;
+                          top: 84.41%;
+                          left: 5.63%;
+                          width: 89.18%;
+                          height: 9.47%;
+                        }
+
+                        .event-aldotcare .accordion {
+                          position: relative;
+                        }
+                        .event-aldotcare .accordion .accordion__header {
+                          position: relative;
+                        }
+                        .event-aldotcare .accordion .accordion__header + .accordion__body {
+                          display: none;
+                        }
+                        .event-aldotcare .accordion.on .accordion__header + .accordion__body {
+                          display: block;
+                          margin-top: 1px;
+                        }
+
+                        .section-aldotcare.section-7 .accordion .accordion__header {
+                          position: relative;
+                          margin-bottom: -1px;
+                        }
+
+                        .section-aldotcare.section-7 .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 21%;
+                          top: 63%;
+                          width: 14px;
+                          height: 14px;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/btn_aldotcare_dot.png")
+                            no-repeat 50% 50%;
+                          background-size: contain;
+                          transition: 0.5s;
+                          transform: rotate(0);
+                        }
+                        .pc .section-aldotcare.section-7 .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 28%;
+                          top: 53%;
+                          width: 28px;
+                          height: 28px;
+                        }
+                        .event-aldotcare .notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 32%;
+                          top: 45%;
+                          width: 10px;
+                          height: 10px;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/btn_aldotcare_accordion.png")
+                            no-repeat 50% 50%;
+                          background-size: contain;
+                          transition: 0.5s;
+                          transform: rotate(45deg);
+                        }
+                        .pc .event-aldotcare .notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 35%;
+                          top: 51%;
+                          width: 20px;
+                          height: 20px;
+                        }
+                        .event-aldotcare .accordion.on .accordion__header::after {
+                          content: "";
+                          transform: rotate(180deg);
+                        }
+                        .event-aldotcare .tabs {
+                          position: relative;
+                        }
+                        .event-aldotcare .tabs .inner {
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          width: 100%;
+                          height: 100%;
+                          display: flex;
+                        }
+                        .event-aldotcare .tabs .inner > button {
+                          flex: 1;
+                        }
+                      </style>
+                      <div class="event-aldotcare">
+                        <div class="section-aldotcare visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_visual.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_visual_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><button
+                            class="tab1"
+                            onclick="handleAnchor(2)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭4  알닷케어 퀴즈 이벤트"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭4 알닷케어 퀴즈  이벤트"
+                          >
+                            <span class="blind">회원 인증 이벤트</span></button
+                          ><button
+                            class="tab2"
+                            onclick="handleAnchor(3)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭1 24개월 요금제 가입시 혜택"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭1 24개월 요금제 가입시 혜택"
+                          >
+                            <span class="blind">24개월 요금제 혜택 영역 이동</span></button
+                          ><button
+                            class="tab3"
+                            onclick="handleAnchor(4)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭2 1만원 이상 요금제 가입시 혜택"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭2 1만원 이상 요금제 가입시 혜택"
+                          >
+                            <span class="blind">1만원 이상 요금제 혜택 영역 이동</span></button
+                          ><button
+                            class="tab4"
+                            onclick="handleAnchor(5)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭3 1만원 미만 요금제 가입시 혜택"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭3 1만원 미만 요금제 가입시 혜택"
+                          >
+                            <span class="blind">1만원 미만 요금제 혜택 영역 이동</span>
+                          </button>
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002132"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 알닷 케어 자세히 보기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002132"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="알닷 케어 자세히 보기"
+                            ><span class="blind">알닷 케어 자세히 보기</span></a
+                          >
+                          <div class="blind">
+                            알뜰폰 케어는 알딸에서! 알뜰폰을 부탁해 알딸 알딸케어란? U+알뜰폰 사용
+                            중인 고객님이라면 누구나, 사용량 확인부터 명세서 관리까지 한 번에 확인할
+                            수 있는 U+알뜰폰의 통합 서비스입니다. 콜센터에 전화하는 불편 없이
+                            **'알딸케어'**로 간편하게 확인해 보세요. 알딸에서 알뜰폰 케어도 받고!
+                            푸짐한 개통 혜택도 받으세요! 알딸케어 U+회원 인증 시 100% 혜택 지급!
+                            24개월 요금제 개통 시 100% 혜택 지급! 1만 원 이상 요금제 개통 시 100%
+                            혜택 지급! 1만 원 미만 요금제 개통 시 100% 혜택 지급!
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-1">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_1.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_1_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><iframe
+                            src="https://www.youtube.com/embed/ROimPreq7Pk?si=-rFyzFbMMKeLV4UZ"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen=""
+                            class="movie"
+                          ></iframe>
+                          <div class="blind">
+                            U+ 알뜰폰의 모든 정보를 알고 싶다면? 알딸케어로 확인하세요! 알뜰폰
+                            케어가 필요한 순간! 이런 것들을 이용하실 수 있어요! 사용현황 실시간
+                            사용량, 실시간 요금, 월별 사용량 요금/납부 납부정보 조회 및 변경, 청구
+                            정보 조회 가입 정보 관리 가입 정보, 회선관리, 휴대폰 정보 등록
+                            분실/정지/해제 휴대폰 분실 등록/해제, 일시정지/해제
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_2.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_2_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002139"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 알닷 케어 이벤트 자세히 보기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002139"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="알닷 케어 자세히 보기"
+                            ><span class="blind">알닷 케어 이벤트 자세히 보기</span></a
+                          >
+                          <div class="blind">
+                            알딸케어 오픈 기념 이벤트 U+알뜰폰 회원 인증하고 선물 받자! 알딸 케어를
+                            사용하기 위해서는 'U+알뜰폰' 회원 인증이 필수입니다. 'U+알뜰폰' 회원
+                            인증을 완료하신 회원 분들에게 100% 선물을 드립니다! * 이용약관
+                            선택동의(3가지)를 동일한 고객에 한함. (경품 지급시점까지 유지 필수)
+                            이벤트 기간 2025.02.01 ~ 02.28 메가MGC커피 아메리카노 100% 제공 U+알뜰폰
+                            회원 인증 자세히 보기 혹시 추가적으로 궁금한 점이 있으면 알려주세요! ​
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-3">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_3.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_3_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <div class="blind">
+                            알딸에서 24개월 & 평생 요금제 가입 시 요금제 혜택 적용 기간 |
+                            2025.02.01~02.14 메가커피 아메리카노 24잔 D+6개월 차 6잔, D+12개월 차
+                            6잔, D+18개월 차 6잔, D+24개월 차 6잔 100% 제공 BBQ 황금올리브치킨 +
+                            콜라 1.25L 세트 익월 말 일괄 지급 혜택 지급 조건 1만 원 이상 24개월 &
+                            평생 요금제 가입 시, 혜택 적용 가능합니다. 회원가입 시 이용약관
+                            선택동의(3가지)에 동의하거나 내 정보 수정에서 이용약관 선택동의(3가지)에
+                            동의한 회원에 한해 지급하며, 경품 지급 시점까지 유지되어야 합니다. * 1년
+                            내 알딸에서 개통 이력이 있는 고객은 제외됩니다. 24개월 요금제를 선택해야
+                            하는 이유! 24개월 요금제 할인기간 24개월 동안 할인된 요금으로 통신비
+                            부담을 줄일 수 있어요! 알뜰폰은 할인이 짧다? NO! 7~8개월마다 옮겨 다니기
+                            귀찮은 사람들 모두 집중! 게다가 2월 한정 추가 혜택까지 알딸에서 24개월
+                            요금제 가입 시, 메가커피 아메리카노 24잔 BBQ 황금올리브치킨 + 콜라 1.25L
+                            세트 100% 드립니다!
+                          </div>
+                          <button
+                            class="btn1"
+                            onclick="handleAnchor('notice')"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 :24개월 요금제 더보기"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="24개월 요금제 더보기"
+                          >
+                            <span class="blind">하단 이벤트와 관련 있는 요금제에요 영역 이동</span>
+                          </button>
+                          <button
+                            class="btn2"
+                            onclick="handleAnchor(7)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 이용약관 선택동의 설정 방법"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이용약관 선택동의 설정 방법"
+                          >
+                            <span class="blind">이용약관 선택동의 설정 방법</span>
+                          </button>
+                        </div>
+
+                        <div class="section-aldotcare section-4">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_4.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_4_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><button
+                            class="btn1"
+                            onclick="handleAnchor('notice')"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 이벤트와 관련 있는 요금제에요"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이벤트와 관련 있는 요금제에요"
+                          >
+                            <span class="blind">이벤트와 관련 있는 요금제에요</span>
+                          </button>
+                          <button
+                            class="btn2"
+                            onclick="handleAnchor(7)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 이용약관 선택동의 설정 방법"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이용약관 선택동의 설정 방법"
+                          >
+                            <span class="blind">이용약관 선택동의 설정 방법</span>
+                          </button>
+                          <div class="blind">
+                            알딸에서 1만 원 이상 요금제 가입 시 요금제 혜택 적용 기간 |
+                            2025.02.01~02.14 메가커피 아메리카노 5잔 D+3개월 차 2잔 D+5개월 차 3잔
+                            100% 제공 혜택 지급 조건 이벤트 기간 중 알딸에서 요금제 가입 및 개통을
+                            완료한 고객. 회원가입 시 이용약관 선택동의(3가지)에 동의하거나 내 정보
+                            수정에서 이용약관 선택동의(3가지)에 동일한 회원에 한해 지급하며, 경품
+                            지급 시점까지 유지되어야 합니다. (이용약관 선택 동의 설정 방법 확인하기
+                            버튼 참고) * 1년 내 알딸에서 개통 이력이 있는 고객은 제외됩니다. 1만 원
+                            이상 요금제 더보기
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-5">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_5_.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_5_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><button
+                            class="btn1"
+                            onclick="handleAnchor('notice')"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 이벤트와 관련 있는 요금제에요"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이벤트와 관련 있는 요금제에요"
+                          >
+                            <span class="blind">이벤트와 관련 있는 요금제에요</span>
+                          </button>
+                          <button
+                            class="btn2"
+                            onclick="handleAnchor(7)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 이용약관 선택동의 설정 방법"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="이용약관 선택동의 설정 방법"
+                          >
+                            <span class="blind">이용약관 선택동의 설정 방법</span>
+                          </button>
+                          <div class="blind">
+                            알딸에서 1만 원 미만 요금제 가입 시 요금제 혜택 적용 기간 |
+                            2025.02.01~02.14 메가커피 아메리카노 1잔 D+1개월 차 1잔 100% 제공 혜택
+                            지급 조건 이벤트 기간 중 알딸에서 요금제 가입 및 개통을 완료한 고객.
+                            회원가입 시 이용약관 선택동의(3가지)에 동의하거나 내 정보 수정에서
+                            이용약관 선택동의(3가지)에 동일한 회원에 한해 지급하며, 경품 지급
+                            시점까지 유지되어야 합니다. (이용약관 선택 동의 설정 방법 확인하기 버튼
+                            참고) * 1년 내 알딸에서 개통 이력이 있는 고객은 제외됩니다.
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-6">
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list"
+                            target="_blank"
+                            class="btn4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 요금제 리스트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="요금제 리스트 보러가기"
+                            ><span class="blind">요금제 리스트 보러가기</span>
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_6_.jpg"
+                              alt="알딸을 대표하는 요금제 한 번에 확인 가능! 알딸 대표 요금제 보러 가기"
+                              class="pc_show"
+                            /><img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_6_m.jpg"
+                              alt="알딸을 대표하는 요금제 한 번에 확인 가능! 알딸 대표 요금제 보러 가기"
+                              class="pc_hide"
+                            />
+                          </a>
+                        </div>
+
+                        <div class="section-aldotcare section-7">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_accordion.jpg"
+                                alt="마케팅 제공 동의 설정 방법"
+                                class="pc_show"
+                              /><img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_accordion_m.jpg"
+                                alt="마케팅 제공 동의 설정 방법"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_7.jpg"
+                                alt=""
+                                class="pc_show"
+                              /><img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_7_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+                          <div class="blind">
+                            <h3>이용약관 선택동의 설정 방법</h3>
+                            <p>
+                              1. 회원 가입 시, 이용약관 동의 알딸 서비스의 약관/방침을 읽고
+                              동의해주세요. 만 14세 이상입니다. (필수) 알딸 홈페이지 이용약관 (필수)
+                              개인정보수집 및 이용 동의 (필수) 알딸케어를 위한 개인정보 제3자
+                              제공동의 (필수) 고객 혜택 제공을 위한 개인정보 제3자 제공동의 (선택)
+                              고객 혜택 제공을 위한 정보 수집 및 이용 동의 (선택) 혜택정보·광고 수신
+                              동의 (선택) 회원 가입 시, ‘선택 동의’ 내용 확인 후 체크 2. 로그인 > 내
+                              정보 수정 상단 메뉴에서 ‘내 정보 수정’ 클릭 **‘선택 동의’**와 ‘광고성
+                              정보 수신 및 활용 동의’ 체크 문자 이메일 알림톡 * 여러 개의 회선이
+                              있을 경우, 이벤트 대상에 해당하는 회선만 체크해주세요.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-8">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_8.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_8_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002141"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 유모바일 이벤트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002141"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="유모바일 이벤트 보러가기"
+                            ><span class="blind">유모바일 이벤트 보러가기</span></a
+                          >
+                          <div class="blind">
+                            통신비 절약 혜택 2월 한정! 7개월 Npay 혜택 요금제! 7개월간 Npay 받고
+                            체감가격 최저가로! 71GB 무제한 11GB + 일2GB + 최대 3Mbps 7개월간 2만
+                            Npay 지급 7개월 체감가 12,990원 (기존 32,990원 → 12,990원) 7GB 무제한
+                            7GB + 최대 1Mbps 7개월간 1만 Npay 지급 7개월 체감가 5,900원 (기존
+                            15,900원 → 5,900원)
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-9">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_9.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_9_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 인터넷 트리플 혜택 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="인터넷 트리플 혜택 보러가기"
+                            ><span class="blind">인터넷 트리플 혜택 보러가기</span></a
+                          >
+                          <div class="blind">
+                            1. 회원 가입 시: 이용약관 동의: 알닷 서비스 약관 및 방침을 읽고 동의
+                            필요. 선택 동의 항목: 고객 혜택 제공을 위한 개인정보 제3자 제공 동의
+                            (선택). 고객 혜택 제공을 위한 정보 수집 및 이용 동의 (선택). 혜택
+                            정보·광고 수신 동의 (선택). 절차: '선택 동의' 내용을 확인한 후 체크
+                            필요. 2. 로그인 후 내 정보 수정: 진입 방법: 고객 지원 메뉴 &gt; 내 정보
+                            수정 클릭. '선택 동의' 항목에서 다음 옵션 확인 및 설정: 고객 혜택 제공을
+                            위한 개인정보 제3자 제공 동의 (선택). 고객 혜택 제공을 위한 정보 수집 및
+                            이용 동의 (선택). 광고성 정보 수신 및 활용 동의 (문자/이메일/알림톡).
+                            주의사항: 여러 개의 회선이 있을 경우, 이벤트 대상에 해당하는 회선을
+                            체크해야 혜택 적용 가능. 예시: 1월 이벤트 참여 시, 1월에 가입한 회선만
+                            선택 동의 및 광고성 정보 수신 동의 체크 필요. 이미지의 특징: 각 절차를
+                            시각적으로 강조하며 단계별로 안내. 핑크색 박스를 사용해 사용자가 반드시
+                            확인해야 할 항목을 명확히 표시. 친근한 UI와 상세한 텍스트로 사용
+                            편의성을 높임.
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-10">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_10.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_10_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><a
+                            href="https://www.uplusmvno.com/benefit/recommendation"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 친구추천 이벤트 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/recommendation"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="친구추천 이벤트 보러가기"
+                            ><span class="blind">친구추천 이벤트 보러가기</span></a
+                          >
+                          <div class="blind">
+                            알딸에 가족/친구를 추천해 주세요! 추천 받은 가족/친구가 개통까지
+                            완료하면 스타벅스 아메리카노를 드립니다! 추천받은 분 스타벅스 아메리카노
+                            2잔 추천한 분도 스타벅스 아메리카노 2잔 기간 2025년 2월 1일 ~ 2025년 2월
+                            28일 대상 2025년 2월 1일 ~ 2025년 2월 28일까지 알딸에서 개통이 완료된
+                            회원과 추천 받은 가족/친구 (개통 완료 시)
+                          </div>
+                        </div>
+
+                        <div class="section-aldotcare section-11_banner">
+                          <ul>
+                            <li data-aos="fade-up" class="aos-init">
+                              <a
+                                href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002034"
+                                target="_blank"
+                                class="btn1"
+                                data-gtm-event-name="link_click"
+                                data-gtm-event-category="클릭"
+                                data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                                data-gtm-event-label="컨텐츠 : 개통 후기 이벤트 보러가기"
+                                data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002034"
+                                data-gtm-click-location="이벤트 상세"
+                                data-gtm-click-direction="내부"
+                                data-gtm-click-text="개통 후기 이벤트 보러가기"
+                                ><img
+                                  src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_bannner1.jpg"
+                                  alt="알닷 개통 후기를 남겨주세요! 후기만 작성하셔도 뜨끈한 육개장 사발면을 100% 제공!"
+                                  class="pc_show" /><img
+                                  src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_bannner1_m.jpg"
+                                  alt="알닷 개통 후기를 남겨주세요! 후기만 작성하셔도 뜨끈한 육개장 사발면을 100% 제공!"
+                                  class="pc_hide"
+                              /></a>
+                            </li>
+                            <li data-aos="fade-up" class="aos-init">
+                              <a
+                                href="https://www.uplusmvno.com/benefit/affiliate-card"
+                                target="_blank"
+                                class="btn2"
+                                data-gtm-event-name="link_click"
+                                data-gtm-event-category="클릭"
+                                data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                                data-gtm-event-label="컨텐츠 : 제휴카드 혜택 보러가기"
+                                data-gtm-click-url="https://www.uplusmvno.com/benefit/affiliate-card"
+                                data-gtm-click-location="이벤트 상세"
+                                data-gtm-click-direction="내부"
+                                data-gtm-click-text="제휴카드 혜택 보러가기"
+                                ><img
+                                  src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_bannner2.jpg"
+                                  alt="삼성카드 * 알닷 유플러스 알뜰폰 전용 제휴카드 사용 가능 알닷 전용 제휴 카드의 할인 혜택을 받아보세요!"
+                                  class="pc_show" /><img
+                                  src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_bannner2_m.jpg"
+                                  alt="삼성카드 * 알닷 유플러스 알뜰폰 전용 제휴카드 사용 가능 알닷 전용 제휴 카드의 할인 혜택을 받아보세요!"
+                                  class="pc_hide"
+                              /></a>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="section-aldotcare notice">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_notice_accordion.jpg"
+                                alt=""
+                                class="pc_show"
+                              /><img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_notice_accordion_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_notice.jpg"
+                                alt=""
+                                class="pc_show"
+                              /><img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/22/event_aldotcare_notice_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+                          <div class="blind">
+                            <p>유의사항 확인하기</p>
+                            알딸 24개월 & 평생 요금제 가입 혜택 사은품 유의사항 본 이벤트는 2월
+                            14일까지 진행됩니다. 1만 원 이상의 요금제 가입 고객에게 적용됩니다. 1년
+                            내 알딸에서 개통 이력이 있는 고객은 제외됩니다. 특정 조건을 충족해야
+                            경품이 지급됩니다. (예: 선택 동의, 가입 정보 유지 등) 알딸 1만 원 이상
+                            요금제 가입 혜택 사은품 유의사항 이벤트 기간 및 사은품 지급 조건이
+                            24개월 요금제와 유사합니다. 경품은 메가커피 아메리카노(5잔)이며, 일정에
+                            따라 순차 지급됩니다. 알딸 1만 원 미만 요금제 가입 혜택 사은품 유의사항
+                            1만 원 미만 요금제 가입 고객에게는 메가커피 1잔이 제공됩니다. 혜택
+                            조건은 동일하게 유지됩니다. 알딸 가족/친구 추천하기 유의사항 추천 받은
+                            가족/친구가 개통을 완료하면 스타벅스 아메리카노를 제공합니다. 추천
+                            조건과 관련된 자세한 정보는 이미지를 참고하세요. 알딸케어 정회원 인증
+                            사은품 유의사항 정회원 인증을 완료한 고객에게 제공되는 혜택은 메가커피
+                            쿠폰입니다. 인증 유지 및 조건을 충족해야 합니다.
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(num) {
+                          const header = document.querySelector(".header");
+                          const linkSection =
+                            num !== "notice"
+                              ? document.querySelector(`.section-aldotcare.section-${num}`)
+                              : document.querySelector(`.section-aldotcare.${num}`);
+                          const lastHeight = linkSection.clientHeight + 50;
+
+                          if (linkSection) {
+                            let topOffset = 0;
+                            num === "notice"
+                              ? (topOffset =
+                                  linkSection.offsetTop - header.clientHeight + lastHeight)
+                              : (topOffset = linkSection.offsetTop - header.clientHeight);
+                            window.scrollTo({ top: topOffset, behavior: "smooth" });
+                          }
+                        }
+
+                        function handleAccordion(event) {
+                          event.currentTarget.parentNode.classList.toggle("on");
+                        }
+
+                        setTimeout(() => {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3 class="tit03">이벤트와 관련 있는 요금제에요</h3>
+                <div class="item_list ty02">
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/3/14/tplus_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.7</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <span class="bag card ty01">U <sup>+</sup>인터넷결합 </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">티플 마음껏 매일5G+</span>
+                        <strong class="plan_tit_sub"
+                          >매일 5GB + 5Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <div class="month" aria-describedby="v-tooltip-7">
+                          월 28,600원
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip btn-tooltip-price"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">tooltip toggle</span>
+                            <!---->
+                            <!---->
+                          </button>
+                          <!---->
+                          <div
+                            class="v-overlay v-overlay--absolute v-overlay--contained v-theme--light v-locale--is-ltr v-tooltip tooltip-default"
+                            id="v-tooltip-7"
+                            role="tooltip"
+                            style="z-index: 2000"
+                          >
+                            <!---->
+                            <div
+                              class="v-overlay__content"
+                              target="[object HTMLDivElement]"
+                              style="min-width: 0px; display: none"
+                            >
+                              <div class="tooltip_content">
+                                <div class="tooltip-date-sale">
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>12개월 납부 총액</h4>
+                                    <div class="amout">총 343,200원</div>
+                                  </div>
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>24개월 납부 총액</h4>
+                                    <div class="amout">총 686,400원</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="period">24개월 이후 41,800원</span>
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>105
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/30/농심.png"
+                                    alt="농심"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/12/결합 이벤트.png"
+                                    alt="인터넷 결합"
+                                  />
+                                </div>
+                              </li>
+                              <!---->
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>4</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : 티플러스|티플 마음껏 매일5G+|매일 5GB + 5Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000003923&amp;mvnoPtnId=PC0000000026"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="티플러스|티플 마음껏 매일5G+|매일 5GB + 5Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/3/26/mobing_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <span class="bag card ty01">U <sup>+</sup>인터넷결합 </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[L] 데이터11GB+_24개월</span>
+                        <strong class="plan_tit_sub"
+                          >월 11GB + 매일 2GB + 3Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <div class="month" aria-describedby="v-tooltip-10">
+                          월 23,000원
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip btn-tooltip-price"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">tooltip toggle</span>
+                            <!---->
+                            <!---->
+                          </button>
+                          <!---->
+                          <div
+                            class="v-overlay v-overlay--absolute v-overlay--contained v-theme--light v-locale--is-ltr v-tooltip tooltip-default"
+                            id="v-tooltip-10"
+                            role="tooltip"
+                            style="z-index: 2000"
+                          >
+                            <!---->
+                            <div
+                              class="v-overlay__content"
+                              target="[object HTMLDivElement]"
+                              style="min-width: 0px; display: none"
+                            >
+                              <div class="tooltip_content">
+                                <div class="tooltip-date-sale">
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>12개월 납부 총액</h4>
+                                    <div class="amout">총 276,000원</div>
+                                  </div>
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>24개월 납부 총액</h4>
+                                    <div class="amout">총 552,000원</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="period">24개월 이후 37,200원</span>
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>199
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/30/농심.png"
+                                    alt="농심"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/12/결합 이벤트.png"
+                                    alt="인터넷 결합"
+                                  />
+                                </div>
+                              </li>
+                              <!---->
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>4</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : mobing|[L] 데이터11GB+_24개월|월 11GB + 매일 2GB + 3Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004181&amp;mvnoPtnId=PC0000000022"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="mobing|[L] 데이터11GB+_24개월|월 11GB + 매일 2GB + 3Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/3/26/mobing_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <span class="bag card ty01">U <sup>+</sup>인터넷결합 </span>
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[L] 100분15GB+_24개월</span>
+                        <strong class="plan_tit_sub"
+                          >월 15GB + 3Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>100분 </span>
+                          <span class="message"> <span class="blind">문자량</span>100건 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <div class="month" aria-describedby="v-tooltip-13">
+                          월 18,000원
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip btn-tooltip-price"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">tooltip toggle</span>
+                            <!---->
+                            <!---->
+                          </button>
+                          <!---->
+                          <div
+                            class="v-overlay v-overlay--absolute v-overlay--contained v-theme--light v-locale--is-ltr v-tooltip tooltip-default"
+                            id="v-tooltip-13"
+                            role="tooltip"
+                            style="z-index: 2000"
+                          >
+                            <!---->
+                            <div
+                              class="v-overlay__content"
+                              target="[object HTMLDivElement]"
+                              style="min-width: 0px; display: none"
+                            >
+                              <div class="tooltip_content">
+                                <div class="tooltip-date-sale">
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>12개월 납부 총액</h4>
+                                    <div class="amout">총 216,000원</div>
+                                  </div>
+                                  <div class="tooltip-date-sale__item">
+                                    <h4>24개월 납부 총액</h4>
+                                    <div class="amout">총 432,000원</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="period">24개월 이후 29,100원</span>
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>65
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/30/농심.png"
+                                    alt="농심"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/23/스타벅스.png"
+                                    alt="스타벅스"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/8/12/결합 이벤트.png"
+                                    alt="인터넷 결합"
+                                  />
+                                </div>
+                              </li>
+                              <!---->
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>4</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : mobing|[L] 100분15GB+_24개월|월 15GB + 3Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004088&amp;mvnoPtnId=PC0000000022"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="mobing|[L] 100분15GB+_24개월|월 15GB + 3Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="btn_wrap center">
+                  <button
+                    type="button"
+                    class="btn round more_d"
+                    data-gtm-event-name="button_click"
+                    data-gtm-event-category="클릭"
+                    data-gtm-event-action="요금제 추천 - 버튼 클릭"
+                    data-gtm-event-label="컨텐츠 : 요금제 더볼래요"
+                    data-gtm-click-location="요금제 추천"
+                    data-gtm-click-text="요금제 더볼래요"
+                  >
+                    더 볼래요
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      // document.querySelector(".btn_top").addEventListener("click", () => {
+      //   window.scrollTo({
+      //     top: 0,
+      //     behavior: "smooth",
+      //   });
+      // });
+      // AOS.init();
+    </script>
+  </body>
+</html>

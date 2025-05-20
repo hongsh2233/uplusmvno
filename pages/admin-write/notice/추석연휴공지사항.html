@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <style>
+      .lottie-animation-container {
+        width: var(--lottie-animation-container-width);
+        height: var(--lottie-animation-container-height);
+        background-color: var(--lottie-animation-container-background-color);
+        overflow: hidden;
+        margin: var(--lottie-animation-margin)
+      }
+
+      .lottie-animation-container svg {
+        transform: scale(var(--lottie-animation-scale))
+      }
+      .content {
+        height: auto;
+      }
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device(){
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add('mobile') : elem.classList.add('pc');
+          ios.test(userAgent) ? elem.classList.add('ios') : null;
+          aos.test(userAgent) ? elem.classList.add('android') : null;
+          
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if( msie.test(userAgent) && trident.test(userAgent) ) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add('ie' + ieVer);
+
+          } else if( !msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add('ie11');
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add('edg') : null;
+          ( opr.test(userAgent) || opera.test(userAgent) ) ? elem.classList.add('opera') : null;
+          chrome.test(userAgent) ?  elem.classList.add('chrome') : null;
+          safari.test(userAgent) ? elem.classList.add('safari') : null;
+          firefox.test(userAgent) ? elem.classList.add('firefox') : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile(){
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        }
+      }
+
+      window.addEventListener('load', () => {
+        front.device()
+      })
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="header">
+        <div class="pc_header">
+          <div class="inner">
+            <h1>
+              <a href="/ma/ALFM-MA01-PG00" class="">
+                <span class="blind">알뜰폰닷컴</span>
+              </a>
+            </h1>
+            <nav class="nav on">
+              <ul>
+                <li>
+                  <button class="menu_class">
+                    <span>유심구매</span>
+                  </button>
+                  <!--v-if-->
+                </li>
+                <li>
+                  <button class="menu_class on">
+                    <span>요금제</span>
+                  </button>
+                  <!--v-if-->
+                </li>
+                <li>
+                  <button class="menu_class">
+                    <span>혜택</span>
+                  </button>
+                  <!--v-if-->
+                </li>
+                <li>
+                  <button class="menu_class">
+                    <span>고객지원</span>
+                  </button>
+                  <!--v-if-->
+                </li>
+              </ul>
+            </nav>
+            <div class="header_menu">
+              <ul>
+                <li>
+                  <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">로그인</a>
+                </li>
+                <li>
+                  <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">회원가입</a>
+                </li>
+                <!--v-if-->
+                <!--v-if-->
+                <li>
+                  <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">마이페이지</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--v-if-->
+      <div class="container" frontdata="[object Object]" popupitem="[object Object]">
+        <div class="content" id="content">
+          <h2 class="title_nav">공지사항</h2>
+          <div class="section">
+            <div class="bsc_dtl_tit">
+              <strong class="tit">매장 주소 리스트</strong>
+              <span class="date">2022.02.02</span>
+            </div>
+            <div class="bsc_dtl_con">
+              <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .section-notice-chuseok {position: relative;}
+                        .section-notice-chuseok.section-1 .btn1 {position: absolute;
+    top: 90.3%;
+    left: 12%;
+    width: 77%;
+    height: 1.6%;}
+    .pc .section-notice-chuseok.section-1 .btn1 {position: absolute;
+    top: 88.9%;
+    left: 23%;
+    width: 54%;
+    height: 2%;}
+                      </style>
+                      <div class="event-notice-chuseok">
+                        <div class="section-notice-chuseok section-1">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/12/notice_chuseok_240912.jpg" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/12/notice_chuseok_240912_m.jpg" alt="" class="pc_hide" />
+                          <a href="https://www.uplusmvno.com/purchase/pickup" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 편의점 구매 바로가기" data-gtm-click-url="https://www.uplusmvno.com/purchase/pickup" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="편의점 구매 바로가기"><span class="blind">편의점 구매 바로가기</span></a>
+                          
+                          <div class="blind">
+                            추석 연휴 운영 안내
+2024년 추석 연휴 기간 동안 일부 서비스 운영이 불가합니다.
+신청하시기 전에 확인하셔서 서비스 이용에 불편함이 없으시길 바랍니다!
+
+2024년 9월 연휴기간 운영 공지
+번호 이동 불가 (9/15~9/17, 3일간)
+셀프 개통 시 번호이동으로 개통 불가. 신규가입 시 개통 가능합니다.
+
+유심 택배배송 불가 (9/12~9/18, 7일간)
+셀프 개통 진행 시 유심 배송방법 선택 단계에서 택배배송 불가합니다.
+
+유심 지급배송 불가 (9/15~9/18, 4일간)
+업체 사정으로 인해 원칩 지급배송 서비스가 이용 불가합니다.
+
+※ 가까운 이마트24 편의점 픽업으로 구매하시면 연휴기간 동안에도 구매 가능합니다.
+
+편의점 구매 바로가기
+
+연휴가 끝난 9/19부터 정상 운영하며, 택배배송의 경우 접수된 순서에 따라 순차적으로 배송이 진행됩니다.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+            </div>
+            <div class="btn_group">
+              <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active btn md c05" role="button">목록 보기</a>
+            </div>
+          </div>
+          <!-- // section -->
+        </div>
+        <!-- // content -->
+      </div>
+      <!-- // container -->
+      <div class="aside_float">
+        <div class="inner">
+          <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active btn_kakao">
+            <span class="blind">카카오톡으로 상담하기</span>
+          </a>
+          <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active btn_reco">
+            <span>친구 추천</span>
+          </a>
+          <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active btn_deli">
+            <span>
+              <img src="/images/common/tit_direct_delivery.png" alt="지금배송">
+            </span>
+          </a>
+          <button type="button" class="btn_top">
+            <span>TOP</span>
+          </button>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="inner">
+          <div class="f_logo">
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">
+              <span class="blind">LG U+</span>
+            </a>
+          </div>
+          <div class="f_buttom">
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">이용약관</a>
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active policy">개인정보처리방침</a>
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">개인정보이용내역</a>
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active">이메일무단수집거부</a>
+            <a href="https://msafer.or.kr/index.do" rel="noopener noreferrer" target="_blank" title="새 창 열림">명의도용방지서비스</a>
+            <a href="https://spam.kisa.or.kr/" rel="noopener noreferrer" target="_blank" title="새 창 열림">불법스팸대응센터</a>
+          </div>
+          <div class="f_info">
+            <p>(주)엘지유플러스</p>
+            <p>
+              <span>대표이사 황현식</span>
+              <span>사업자등록번호 220-81-39938</span>
+            </p>
+            <p>서울특별시 용산구 한강대로 32</p>
+            <p>통신판매신고 제 2015-서울용산-00481호</p>
+          </div>
+          <div class="f_copyright"> Copyright © LG Uplus Corp. All Rights Reserved. </div>
+          <div class="f_sns">
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active ico_youtube" title="새 창 열림">
+              <span class="blind">youtube</span>
+            </a>
+            <a aria-current="page" href="/cs/ALFM-CS03-PG01" class="router-link-active router-link-exact-active ico_instagram" title="새 창 열림">
+              <span class="blind">instagram</span>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

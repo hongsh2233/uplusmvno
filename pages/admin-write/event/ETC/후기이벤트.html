@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device(){
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add('mobile') : elem.classList.add('pc');
+          ios.test(userAgent) ? elem.classList.add('ios') : null;
+          aos.test(userAgent) ? elem.classList.add('android') : null;
+          
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if( msie.test(userAgent) && trident.test(userAgent) ) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add('ie' + ieVer);
+
+          } else if( !msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add('ie11');
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add('edg') : null;
+          ( opr.test(userAgent) || opera.test(userAgent) ) ? elem.classList.add('opera') : null;
+          chrome.test(userAgent) ?  elem.classList.add('chrome') : null;
+          safari.test(userAgent) ? elem.classList.add('safari') : null;
+          firefox.test(userAgent) ? elem.classList.add('firefox') : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile(){
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        }
+      }
+
+      window.addEventListener('load', () => {
+        front.device()
+      })
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a aria-current="page" href="/benefit/event/detail#content" class="router-link-active router-link-exact-active">본문 바로가기</a>
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">
+              이벤트 상세
+            </div>
+          </header>
+          
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src="https://api.dev.uplusmvno.com/umah/fo/s3/getImage?filename=2024/2/23/header-logo.png" alt="파트너사">
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span>
+                          <span>2023.12.08</span> - <span>2024.04.30</span>
+                        </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        #tabReview1 {
+                          margin-top: -62px;
+                        }
+                        #tabReview2 {
+                          margin-top: -40px;
+                        }
+                        .pc #tabReview1 {
+                          margin-top: -100px;
+                        }
+                        .pc #tabReview2 {
+                          margin-top: -100px;
+                        }
+                        .event-section-review {
+                          position: relative;
+                        }
+                        #tabReview1 .tabReview1,
+                        #tabReview2 .tabReview1 {
+                          position: absolute;
+                          left: 0;
+                          top: 0;
+                          width: 50%;
+                          height: 5%;
+                        }
+                        #tabReview1 .tabReview2,
+                        #tabReview2 .tabReview2 {
+                          position: absolute;
+                          left: 50%;
+                          top: 0;
+                          width: 50%;
+                          height: 5%;
+                        }
+                        #tabReview2 .tabReview1,
+                        #tabReview2 .tabReview2 {
+                          height: 8%;
+                        }
+                        .pc #tabReview1 .tabReview1,
+                        .pc #tabReview1 .tabReview2 {
+                          height: 7%;
+                        }
+                        .pc #tabReview2 .tabReview1,
+                        .pc #tabReview2 .tabReview2 {
+                          height: 11%;
+                        }
+                        #tabReview1 .tabReview3 {
+                          position: absolute;
+                          left: 9%;
+                          top: 32.3%;
+                          width: 82%;
+                          height: 3%;
+                        }
+                        .pc #tabReview1 .tabReview3 {
+                          position: absolute;
+                          left: 32%;
+                          top: 43%;
+                          width: 36%;
+                          height: 4%;
+                        }
+                        #tabReview1 .tabReview4 {
+                          position: absolute;
+                          left: 9%;
+                          top: 62%;
+                          width: 82%;
+                          height: 3%;
+                        }
+                        .pc #tabReview1 .tabReview4 {
+                          position: absolute;
+                          left: 9%;
+                          top: 82%;
+                          width: 36%;
+                          height: 4%;
+                        }
+                        #tabReview2 .tabReview3 {
+                          position: absolute;
+                          left: 9%;
+                          top: 55%;
+                          width: 81%;
+                          height: 6%;
+                        }
+                        .pc #tabReview2 .tabReview3 {
+                          position: absolute;
+                          left: 9%;
+                          top: 80%;
+                          width: 36%;
+                          height: 7%;
+                        }
+                      </style>
+                      <div class="event-cont-review">
+                        <div class="event-section-review visual">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/visual_review.png" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/visual_review_m.png" alt="" class="pc_hide" />
+                          <div class="blind">
+                            <p>알닷 후기 이벤트 후기만 작성하셔도 시원한 커피를 보내드려요!</p>
+                            <p>고객님의 알닷 요금제 경험을 알려주세요 소중한 후기를 남겨 주시면 시원한 커피를 보내드립니다!</p>
+                          </div>
+                        </div>
+
+                        <div id="tabReview1" class="event-section-review section-1">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/tab_review1_1.png" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/tab_review1_1_m.png" alt="" class="pc_hide" />
+
+                          <button class="tabReview1" onclick="handleAnchor(0)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭1 후기는 어떻게 작성하나요 상단" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭1 후기는 어떻게 작성하나요 상단"><span class="blind">후기는 어떻게 작성하나요?</span></button>
+                          <button class="tabReview2" onclick="handleAnchor(1)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭2 내가 쓴 후기는 어디서 보나요 상단" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭2 내가 쓴 후기는 어디서 보나요 상단"><span class="blind">내가 쓴 후기는 어디서 볼 수 있나요?</span></button>
+                          <a href="https://www.umah.lguplus.co.kr/plan/plan-list" class="tabReview3" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 알닷 요금제 보러가기" data-gtm-click-url="https://www.umah.lguplus.co.kr/plan/plan-list" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="알닷 요금제 보러가기"><span class="blind">알닷 요금제 보러가기</span></a>
+                          <a href="https://www.umah.lguplus.co.kr/mypage/rate-manage" class="tabReview4" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 평점 후기 남기러가기" data-gtm-click-url="https://www.umah.lguplus.co.kr/mypage/rate-manage" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="평점 후기 남기러가기"><span class="blind">평점/후기 남기러 가기</span></a>
+                          <div class="blind">
+                            <p>후기는 어떻게 작성하나요?</p>
+                            <p>고객님께서 알닷의 요금제를 가입하실 때의 개통 경험을 작성해 별점과 함께 작성해 주시면 더 나은 알닷을 만들기 위해 노력할게요.</p>
+                            <ol>
+                              <li>
+                                <p>01 알닷의 요금제를 가입해 주세요.</p>
+                                <p>알닷의 다양하고 좋은 요금제 중에서 고객님께 맞는 요금제를 찾아서 가입해 주세요.</p>
+                              </li>
+                              <li>
+                                <p>02 마이페이지에서 평점/후기를 남겨주세요.</p>
+                                <p>요금제의 가입과 개통이 완료되셨다면 마이페이지의 사용자 평점/후기 관리로 이동해 주세요.</p>
+                                <p>최근에 가입하신 요금제명을 찾아서 [후기등록]을 선택해 주세요.</p>
+                              </li>
+                              <li>
+                                <p>03 별점 평가와 후기를 남겨주세요.</p>
+                                <p>개통 과정과 고객상담, 그리고 개통 이후의 만족도에 대해서 별점을 평가해 주세요. 마지막으로 고객님의 소중한 후기를 남겨 주세요.</p>
+                                <p>개통 이후 만족하셨나요?</p>
+                                <p>어떤점이 좋았나요? 가성비 넘치는 요금제..</p>
+                              </li>
+                            </ol>
+                          </div>
+                        </div>
+
+                        <div id="tabReview2" class="event-section-review section-2">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/tab_review1_2.png" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/tab_review1_2_m.png" alt="" class="pc_hide" />
+                          <button class="tabReview1" onclick="handleAnchor(0)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭1 후기는 어떻게 작성하나요 상단" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭1 후기는 어떻게 작성하나요 상단"><span class="blind">후기는 어떻게 작성하나요?</span></button>
+                          <button class="tabReview2" onclick="handleAnchor(1)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭2 내가 쓴 후기는 어디서 보나요 상단" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭2 내가 쓴 후기는 어디서 보나요 상단"><span class="blind">내가 쓴 후기는 어디서 볼 수 있나요?</span></button>
+
+                          <a href="https://www.umah.lguplus.co.kr/partners" class="tabReview3" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 파트너사 소개 보러가기" data-gtm-click-url="https://www.umah.lguplus.co.kr/partners" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="파트너사 소개 보러가기"><span class="blind">파트너사 소개 보러 가기</span></a>
+                          <div class="blind">
+                            <p>내가 쓴 후기는 어디서 볼 수 있나요?</p>
+                            <p>고객님께서 작성하신 후기는 선택해 주신 파트너사의 상세화면과 요금제에서 확인할 수 있어요.</p>
+                            <ul>
+                              <li>
+                                <p>파트너사 상세에서 확인하는 법.</p>
+                                <p>파트너사 소개에서 파트너사를 선택하시면 리뷰란에서 확인하실 수 있어요</p>
+                              </li>
+                              <li>
+                                <p>요금제 상세에서 확인하는 법</p>
+                                <p>고객님이 선택해 주신 파트너사의 요금제 상세의 리뷰란에서도 확인하실 수 있어요</p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="event-section-review">
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/notice_review.png" alt="" class="pc_show" />
+                          <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/5/31/notice_review_m.png" alt="" class="pc_hide" />
+                          <div class="blind">
+                            <p>유의사항 </p>
+                            <ul>
+                              <li>후기 등록 이벤트 대상은 개통 완료하신 요금제 당 최초 1회 등록한 내용으로 적용됩니다.</li>
+                              <li>후기를 등록하신 시점으로 미납/일시정지/명의 변경 시 이벤트 대상에서 제외될 수 있습니다.</li>
+                              <li>비정상적이거나 부정한 방법으로 참여시 지급 대상에서 제외됩니다.</li>
+                              <li>당사 사정에 따라 추천 혜택은 사전 예고 없이 조기종료 및 변경될 수 있습니다.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(num) {
+                          const header = document.querySelector('.header');
+                          const linkSection = document.querySelector(`.event-section-review.section-${num + 1}`);
+                          
+                          if (linkSection) {
+                            const topOffset = linkSection.offsetTop - header.clientHeight;
+                            window.scrollTo({ top: topOffset, behavior: 'smooth' });
+                          }
+                        }
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a href="/purchase/delivery" rel="noopener noreferrer" target="_blank" class="btn_deli">
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송">
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a href="/footer/terms/privacyProcess" rel="noopener noreferrer" target="_blank" class="policy">개인정보처리방침</a>
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank">개인정보이용내역</a>
+                <a href="https://msafer.or.kr/index.do" rel="noopener noreferrer" target="_blank" title="새 창 열림">명의도용방지서비스</a>
+                <a href="https://spam.kisa.or.kr/" rel="noopener noreferrer" target="_blank" title="새 창 열림">불법스팸대응센터</a>
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright"> Copyright © LG Uplus Corp. All Rights Reserved. </div>
+              <div class="f_sns">
+                <a href="https://www.youtube.com/@uplusmvno_official" rel="noopener noreferrer" target="_blank" class="ico_youtube" title="새 창 열림">
+                  <span class="blind">youtube</span>
+                </a>
+                <a href="https://www.instagram.com/uplusalpha_official/" rel="noopener noreferrer" target="_blank" class="ico_instagram" title="새 창 열림">
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector('.btn_top').addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html>

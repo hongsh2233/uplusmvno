@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/event/detail#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit"><img src=" alt="파트너사" /></div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span> <span>2023.12.08</span> - <span>2024.04.30</span> </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .event-price {
+                          position: relative;
+                          background: #000;
+                        }
+
+                        .event-price.notice {
+                          background: transparent;
+                        }
+
+                        .event-price:not(.notice) .toggle {
+                          display: block;
+                          width: 100%;
+                          height: 26px;
+                          font-size: 10px;
+                          font-weight: bold;
+                          color: #fff;
+                          padding-left: 12%;
+                          text-align: left;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_toggle_m.jpg")
+                            no-repeat 0 0;
+                          background-size: 100% 52px;
+                        }
+                        .event-price:not(.notice) .toggle.open {
+                          background-position: 0 -26px;
+                        }
+                        .pc .event-price:not(.notice) .toggle {
+                          height: 53px;
+                          font-size: 18px;
+                          padding-left: 12%;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_toggle.jpg")
+                            no-repeat 0 0;
+                          background-size: 100% 106px;
+                        }
+                        .pc .event-price:not(.notice) .toggle.open {
+                          background-position: 0 -53px;
+                        }
+                        .answer {
+                          display: none;
+                        }
+                        .question,
+                        .answer.open {
+                          display: block;
+                        }
+
+                        .event-price.notice .param:nth-child(2) ~ .param {
+                          margin-top: 10px;
+                        }
+                        .pc .event-price.notice .param:nth-child(2) ~ .param {
+                          margin-top: 25px;
+                        }
+
+                        .event-price.section3 {
+                          padding-bottom: 30px;
+                        }
+                        .pc .event-price.section3 {
+                          padding-bottom: 100px;
+                        }
+                      </style>
+                      <div class="event-price-wrap">
+                        <div class="event-price visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/price_visual.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/price_visual_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <div class="blind">
+                            <p>HOLLYS X KG모바일</p>
+                            <p>할리스 전용 요금제 출시 가입당월 요금 0원, 아메리카노 50잔 증정</p>
+                            <p>
+                              KG모바일에서 제공하는 할리스 전용 요금제의 아메리카노는 HOT/ICED 모두
+                              선택 가능합니다!
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="event-price section1">
+                          <div class="param">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price1.jpg"
+                              alt="알닷에서 가장 저렴한 100원대 알닷 최저가 TOP3 요금제"
+                              class="pc_show"
+                            />
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price1_m.jpg"
+                              alt="알닷에서 가장 저렴한 100원대 알닷 최저가 TOP3 요금제"
+                              class="pc_hide"
+                            />
+                          </div>
+
+                          <div class="param param1">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001769&mvnopPtnId=PC0000000025"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 :[KNI]모나300분4.5G 요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001769&mvnopPtnId=PC0000000025"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="[KNI]모나300분4.5G요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price11_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price11_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price11_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price11_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 3개
+                            </button>
+                            <div class="blind">
+                              98% OFF 4.5GB 최저가 [KNI] 모나 300분 4.5GB 월 4.5GB 4.5GB 300분 ✉
+                              200건 월 110원 (12개월 이후 4,400원) 혜택1: 1만원 미만 요금제 가입 시
+                              메가커피 아메리카노 1잔 혜택 제공 혜택2: 알뜰에서 개통하고 후기 남기면
+                              컬러펜 100% 증정 혜택3: 알뜰 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정
+                            </div>
+                          </div>
+                          <div class="param param2">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000000696&mvnopPtnId=PC0000000012"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 :에르엘 300분 5GB요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000000696&mvnopPtnId=PC0000000012"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="에르엘 300분 5GB 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price12_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price12_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price12_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price12_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 4개
+                            </button>
+                            <div class="blind">
+                              99% OFF 월 71GB+ 최다 판매 [네이버페이 10,000P] [모바일카드 스페셜]
+                              통화, 데이터 마음대로 11GB+ 월 11GB+매일 2GB+3Mbps 71GB 기본제공 ✉
+                              기본제공 월 23,100원 (7개월 이후 41,800원) 1만원 미만 요금제 가입 시
+                              메가커피 아메리카노 1잔 혜택 제공 알닷에서 개통하고 후기 남기면 컵라면
+                              100% 증정 알닷 요금제 추천 후 개통하면 1+1 배스킨라빈스 싱글레귤러
+                              증정 LG전자 렌탈+알뜰폰 결합시 12개월간 매월 최대 15,400원 요금할인
+                            </div>
+                          </div>
+                          <div class="param param3">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000000450&mvnopPtnId=PC0000000020"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : A 갓성비 6GB/300분 요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000000450&mvnopPtnId=PC0000000020"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="A 갓성비 6GB/300분 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price13_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price13_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price13_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price13_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 3개
+                            </button>
+                            <div class="blind">
+                              96% OFF 월 6GB 최저가 A 갓성비 6GB/300분 월 6GB 월 330원 12개월 이후
+                              7,700원 1만원 미만 요금제 가입 시 메가커피 아메리카노 1잔 혜택 제공
+                              알닷에서 개통하고 후기 남기면 컵라면 100% 증정 알닷 요금제 추천 후
+                              개통하면 1+1 배스킨라빈스 싱글레귤러 증정
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="event-price section2">
+                          <div class="param">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price2.jpg"
+                              alt="가장 많이 판매된 요금제군 별 알닷 누적 판매 TOP3 요금제"
+                              class="pc_show"
+                            />
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price2_m.jpg"
+                              alt="가장 많이 판매된 요금제군 별 알닷 누적 판매 TOP3 요금제"
+                              class="pc_hide"
+                            />
+                          </div>
+
+                          <div class="param param1">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001356&mvnopPtnId=PC0000000021"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : [N페이 5,000P] 인스 유심 스트롱 15GB+ 월 15GB + 3Mbps 요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001356&mvnopPtnId=PC0000000021"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="[N페이 5,000P] 인스 유심 스트롱 15GB+ 월 15GB + 3Mbps 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price21_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price21_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price21_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price21_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 5개
+                            </button>
+                            <div class="blind">
+                              40% OFF 월 15GB+ 최다 판매 [N페이 5,000P] 인스 유심 스트롱 15GB+ 월
+                              16,000원 7개월 이후 26,560원 혜택1: 1만원 이상 요금제 가입 시 메가커피
+                              아메리카노 7잔 혜택 제공 혜택2: 알닷에서 개통하고 후기 남기면 컵라면
+                              100% 증정 혜택3: 알닷 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정 혜택4: 인터넷+TV 가입시 최대 126만원 혜택
+                              (상품권+요금할인+톤28비누바 세트 증정) 혜택5: 인스모바일 혜택 -
+                              네이버페이 5,000P 증정
+                            </div>
+                          </div>
+                          <div class="param param2">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001918&mvnopPtnId=PC0000000013"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : [네이버페이 10,000P] [모빌카드 스페셜] 통화, 데이터 마음대로 11GB+ 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001918&mvnopPtnId=PC0000000013"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="[네이버페이 10,000P] [모빌카드 스페셜] 통화, 데이터 마음대로 11GB+ 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price22_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price22_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price22_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price22_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 5개
+                            </button>
+                            <div class="blind">
+                              45% OFF 월 71GB+ 최다 판매 [네이버페이 10,000P] [모빌카드 스페셜]
+                              통화, 데이터 마음대로 11GB+ 월 23,100원 7개월 이후 41,800원 혜택1:
+                              1만원 이상 요금제 가입 시 메가커피 아메리카노 7잔 혜택 제공 혜택2:
+                              알닷에서 개통하고 후기 남기면 컵라면 100% 증정 혜택3: 알닷 요금제 추천
+                              후 개통하면 1+1 배스킨라빈스 싱글레귤러 증정 혜택4: 인터넷+TV 가입시
+                              최대 126만원 혜택 (상품권+요금할인+톤28비누바 세트 증정) 혜택5:
+                              인스모바일 혜택 - 네이버페이 5,000P 증정
+                            </div>
+                          </div>
+                          <div class="param param3">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002903&mvnopPtnId=PC0000000004"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : 마블링 프라임 매일 5GB+5Mbps  요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002903&mvnopPtnId=PC0000000004"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="마블링 프라임 매일 5GB+5Mbps 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price23_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price23_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price23_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price23_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 4개
+                            </button>
+                            <div class="blind">
+                              38% OFF 월 150GB+ 최다 판매 마블링 프라임 매일 5GB+5Mbps 월 28, 500원
+                              7개월 이후 45,990원 혜택1: 1만원 이상 요금제 가입 시 메가커피
+                              아메리카노 7잔 혜택 제공 혜택2: 알닷에서 개통하고 후기 남기면 컵라면
+                              100% 증정 혜택3: 알닷 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정 혜택4: 인터넷+TV 가입시 최대 126만원 혜택
+                              (상품권+요금할인+톤28비누바 세트 증정)
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="event-price section3">
+                          <div class="param">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price3.jpg"
+                              alt="합리적인 요금과 혜택 모두 챙겨갈 수 있는 최대 혜택 알닷 가성비 TOP3 요금제"
+                              class="pc_show"
+                            />
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price3_m.jpg"
+                              alt="합리적인 요금과 혜택 모두 챙겨갈 수 있는 최대 혜택 알닷 가성비 TOP3 요금제"
+                              class="pc_hide"
+                            />
+                          </div>
+
+                          <div class="param param1">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004088&mvnopPtnId=PC0000000022"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : [CU상품권 2만4천원 지급] [L] 100분15GB+_24개월 월 15GB + 3Mbps 요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004088&mvnopPtnId=PC0000000022"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="[CU상품권 2만4천원 지급] [L] 100분15GB+_24개월 월 15GB + 3Mbps 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price31_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price31_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price31_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price31_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 5개
+                            </button>
+                            <div class="blind">
+                              32% OFF 월 15GB+ 최다 혜택 [CU상품권 2만4천원 지급] [L]
+                              100분15GB+_24개월 월 19,700원 24개월 이후 29,100원 CU 상품권 2만 4천원
+                              지급(12개월간) 혜택1: 24개월 요금제 가입 시 아메리카노
+                              12잔+햄버거+아이스크림 제공 혜택2: 알닷에서 개통하고 후기 남기면
+                              컵라면 100% 증정 혜택3: 알닷 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정 혜택4: 인터넷+TV 가입시 최대 126만원 혜택
+                              (상품권+요금할인+톤28비누바 세트 증정) 혜택5: LG전자 렌탈+알뜰폰
+                              결합시 12개월간 매월 최대 15,400원 요금할인
+                            </div>
+                          </div>
+                          <div class="param param2">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004181&mvnopPtnId=PC0000000022"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : [CU상품권 2만4천원 지급] [L] 데이터11GB+_24개월 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004181&mvnopPtnId=PC0000000022"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="[CU상품권 2만4천원 지급] [L] 데이터11GB+_24개월 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price32_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price32_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price32_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price32_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 5개
+                            </button>
+                            <div class="blind">
+                              33% OFF 월 71GB+ 최다 혜택 [CU상품권 2만4천원 지급] [L] 데이터
+                              11GB+_24개월 월 25,000원 24개월 이후 37,200원 CU 상품권 2만 4천원
+                              지급(12개월간) 혜택1: 24개월 요금제 가입 시 아메리카노
+                              12잔+햄버거+아이스크림 제공 혜택2: 알닷에서 개통하고 후기 남기면
+                              컵라면 100% 증정 혜택3: 알닷 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정 혜택4: 인터넷+TV 가입시 최대 126만원 혜택
+                              (상품권+요금할인+톤28비누바 세트 증정) 혜택5: LG전자 렌탈+알뜰폰
+                              결합시 12개월간 매월 최대 15,400원 요금할인
+                            </div>
+                          </div>
+                          <div class="param param3">
+                            <a
+                              href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001342&mvnopPtnId=PC0000000021"
+                              target="_blank"
+                              class="question"
+                              data-gtm-event-name="link_click"
+                              data-gtm-event-category="클릭"
+                              data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                              data-gtm-event-label="컨텐츠 : [N페이 5,000P] 인스 유심 스트롱 매일 5GB+(24개월) 매일 5GB + 5Mbps  요금제 보러가기"
+                              data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002903&mvnopPtnId=PC0000000004"
+                              data-gtm-click-location="이벤트 상세"
+                              data-gtm-click-direction="내부"
+                              data-gtm-click-text="[N페이 5,000P] 인스 유심 스트롱 매일 5GB+(24개월) 매일 5GB + 5Mbps 요금제 보러가기"
+                            >
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price33_q.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price33_q_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </a>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price33_a.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price33_a_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              사은품 최대 4개
+                            </button>
+                            <div class="blind">
+                              35% OFF 월 150GB+ 최다 혜택 [N페이 5,000P] 인스 유심 스트롱 매일
+                              5GB+(24개월) 월 30,500원 24개월 이후 47,000원 네이버페이 5,000P지급
+                              혜택1: 24개월 요금제 가입 시 아메리카노 12잔+햄버거+아이스크림 제공
+                              혜택2: 알닷에서 개통하고 후기 남기면 컵라면 100% 증정 혜택3: 알닷
+                              요금제 추천 후 개통하면 1+1 배스킨라빈스 싱글레귤러 증정 혜택4:
+                              인터넷+TV 가입시 최대 126만원 혜택 (상품권+요금할인+톤28비누바 세트
+                              증정)
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="event-price notice">
+                          <div class="param">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price_notice.jpg"
+                              alt="꼭 확인해주세요~"
+                              class="pc_show"
+                            />
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/tit_price_notice_m.jpg"
+                              alt="꼭 확인해주세요~"
+                              class="pc_hide"
+                            />
+                          </div>
+
+                          <div class="param">
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice11.jpg"
+                                alt="초과 이용  요금 상세정보"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice11_m.jpg"
+                                alt="초과 이용  요금 상세정보"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice12.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice12_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <div class="blind">
+                              98% OFF 4.5GB 최저가 [KNI] 모나 300분 4.5GB 월 4.5GB 4.5GB 300분 ✉
+                              200건 월 110원 (12개월 이후 4,400원) 혜택1: 1만원 미만 요금제 가입 시
+                              메가커피 아메리카노 1잔 혜택 제공 혜택2: 알뜰에서 개통하고 후기 남기면
+                              컬러펜 100% 증정 혜택3: 알뜰 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정
+                            </div>
+                          </div>
+                          <div class="param">
+                            <button type="button" class="toggle" onclick="handleToggle(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice21.jpg"
+                                alt="초과 이용  요금 상세정보"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice21_m.jpg"
+                                alt="초과 이용  요금 상세정보"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="answer">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice22.jpg"
+                                alt="하단참조"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/10/23/event_price_notice22_m.jpg"
+                                alt="하단참조"
+                                class="pc_hide"
+                              />
+                            </div>
+                            <div class="blind">
+                              98% OFF 4.5GB 최저가 [KNI] 모나 300분 4.5GB 월 4.5GB 4.5GB 300분 ✉
+                              200건 월 110원 (12개월 이후 4,400원) 혜택1: 1만원 미만 요금제 가입 시
+                              메가커피 아메리카노 1잔 혜택 제공 혜택2: 알뜰에서 개통하고 후기 남기면
+                              컬러펜 100% 증정 혜택3: 알뜰 요금제 추천 후 개통하면 1+1 배스킨라빈스
+                              싱글레귤러 증정
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleToggle(event) {
+                          event.currentTarget.classList.toggle("open");
+                          if (event.currentTarget.previousElementSibling) {
+                            event.currentTarget.previousElementSibling.classList.toggle("open");
+                          } else {
+                            event.currentTarget.nextElementSibling.classList.toggle("open");
+                          }
+                        }
+
+                        setTimeout(function () {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a
+                href="/purchase/delivery"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn_deli"
+              >
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector(".btn_top").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+      AOS.init();
+    </script>
+  </body>
+</html>

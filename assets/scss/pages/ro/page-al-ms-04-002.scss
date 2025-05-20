@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MS-04-002 {
+  .info-box-list {
+    &.use_roaming {
+      .info-box-contensts {
+        display: flex;
+        justify-content: space-between;
+      }
+      .right-side {
+        min-width: rem(66);
+        .gallery-wrap {
+          position: relative;
+          display: block;
+          width: rem(112);
+          height: rem(80);
+          background-color: pink;
+          img {
+            position: absolute;
+            left: 0;
+            height: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .info-box-contensts {
+        position: relative;
+      }
+      .mobile & {
+        .info-box-contensts {
+          padding-bottom: rem(44 + 24);
+        }
+        .left-side {
+          .text_info_wrap {
+            font-size: rem(16);
+            padding-right: rem(16);
+          }
+        }
+        .btn-area {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          .btn-rounded {
+            height: rem(44);
+            font-size: rem(16);
+          }
+        }
+      }
+      .pc & {
+        .left-side {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .text_info_wrap {
+            font-size: rem(30);
+            padding-right: rem(12);
+            line-height: rem(36);
+          }
+          .btn-rounded {
+            &.type-fs16 {
+              margin-top: rem(24);
+            }
+          }
+        }
+        .right-side {
+          min-width: rem(200);
+
+          .gallery-wrap {
+            display: block;
+            width: rem(200);
+            height: rem(144);
+            background-color: pink;
+          }
+        }
+      }
+    }
+  }
+}

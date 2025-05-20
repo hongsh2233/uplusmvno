@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/event/detail#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit"><img src=" alt="파트너사" /></div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span> <span>2023.12.08</span> - <span>2024.04.30</span> </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .section-onechip {
+                          position: relative;
+                        }
+                        .section-onechip.visual .tab1 {
+                          position: absolute;
+                          top: 50%;
+                          left: 0;
+                          width: 50%;
+                          height: 12%;
+                        }
+                        .section-onechip.visual .tab2 {
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          width: 50%;
+                          height: 12%;
+                        }
+                        .pc .section-onechip.visual .tab1 {
+                          position: absolute;
+                          top: 63%;
+                          left: 0;
+                          width: 50%;
+                          height: 11%;
+                        }
+                        .pc .section-onechip.visual .tab2 {
+                          position: absolute;
+                          top: 63%;
+                          left: 50%;
+                          width: 50%;
+                          height: 11%;
+                        }
+
+                        .section-onechip.section-1 .btn1 {
+                          position: absolute;
+                          top: 21%;
+                          left: 6%;
+                          width: 88%;
+                          height: 14%;
+                        }
+                        .section-onechip.section-1 .btn2 {
+                          position: absolute;
+                          top: 35%;
+                          left: 6%;
+                          width: 88%;
+                          height: 13%;
+                        }
+                        .section-onechip.section-1 .btn3 {
+                          position: absolute;
+                          top: 59%;
+                          left: 10%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn4 {
+                          position: absolute;
+                          top: 59%;
+                          left: 50%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn5 {
+                          position: absolute;
+                          top: 67%;
+                          left: 10%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn6 {
+                          position: absolute;
+                          top: 67%;
+                          left: 50%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn7 {
+                          position: absolute;
+                          top: 73%;
+                          left: 10%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn8 {
+                          position: absolute;
+                          top: 73%;
+                          left: 50%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn9 {
+                          position: absolute;
+                          top: 80%;
+                          left: 10%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn10 {
+                          position: absolute;
+                          top: 80%;
+                          left: 50%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .section-onechip.section-1 .btn11 {
+                          position: absolute;
+                          top: 87.5%;
+                          left: 10%;
+                          width: 40%;
+                          height: 6.5%;
+                        }
+                        .pc .section-onechip.section-1 .btn1 {
+                          position: absolute;
+                          top: 27%;
+                          left: 8%;
+                          width: 41%;
+                          height: 21%;
+                        }
+                        .pc .section-onechip.section-1 .btn2 {
+                          position: absolute;
+                          top: 27%;
+                          left: 51%;
+                          width: 41%;
+                          height: 20%;
+                        }
+                        .pc .section-onechip.section-1 .btn3 {
+                          position: absolute;
+                          top: 64%;
+                          left: 10%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn4 {
+                          position: absolute;
+                          top: 64%;
+                          left: 37%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn5 {
+                          position: absolute;
+                          top: 64%;
+                          left: 65%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn6 {
+                          position: absolute;
+                          top: 72%;
+                          left: 65%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn7 {
+                          position: absolute;
+                          top: 72%;
+                          left: 10%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn8 {
+                          position: absolute;
+                          top: 72%;
+                          left: 37%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn9 {
+                          position: absolute;
+                          top: 79.5%;
+                          left: 10%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn10 {
+                          position: absolute;
+                          top: 79.5%;
+                          left: 37%;
+                          width: 26%;
+                          height: 7%;
+                        }
+                        .pc .section-onechip.section-1 .btn11 {
+                          position: absolute;
+                          top: 79.5%;
+                          left: 65%;
+                          width: 26%;
+                          height: 7%;
+                        }
+
+                        .section-onechip.section-2 .btn1 {
+                          position: absolute;
+                          top: 29%;
+                          left: 6%;
+                          width: 88%;
+                          height: 20%;
+                        }
+                        .section-onechip.section-2 .btn2 {
+                          position: absolute;
+                          top: 50%;
+                          left: 6%;
+                          width: 88%;
+                          height: 20%;
+                        }
+                        .section-onechip.section-2 .btn3 {
+                          position: absolute;
+                          top: 82%;
+                          left: 34%;
+                          width: 51%;
+                          height: 5%;
+                        }
+                        .section-onechip.section-2 .btn4 {
+                          position: absolute;
+                          top: 87%;
+                          left: 34%;
+                          width: 51%;
+                          height: 5%;
+                        }
+                        .pc .section-onechip.section-2 .btn1 {
+                          position: absolute;
+                          top: 44%;
+                          left: 58%;
+                          width: 31%;
+                          height: 6%;
+                        }
+                        .pc .section-onechip.section-2 .btn2 {
+                          position: absolute;
+                          top: 78%;
+                          left: 11%;
+                          width: 36%;
+                          height: 4%;
+                        }
+                        .pc .section-onechip.section-2 .btn3 {
+                          position: absolute;
+                          top: 73%;
+                          left: 54%;
+                          width: 36%;
+                          height: 4%;
+                        }
+                        .pc .section-onechip.section-2 .btn4 {
+                          position: absolute;
+                          top: 78%;
+                          left: 54%;
+                          width: 36%;
+                          height: 4%;
+                        }
+                      </style>
+                      <div class="event-onechip">
+                        <div class="section-onechip visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/10/event_onechip_visual.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/10/event_onechip_visual_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <button
+                            class="tab1"
+                            onclick="handleAnchor(1)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭1 온라인 판매처"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭1 온라인 판매처"
+                          >
+                            <span class="blind">온라인 판매처</span>
+                          </button>
+                          <button
+                            class="tab2"
+                            onclick="handleAnchor(2)"
+                            data-gtm-event-name="button_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 버튼 클릭"
+                            data-gtm-event-label="컨텐츠 : 탭2 오프라인 판매처"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-text="탭2 오프라인 판매처"
+                          >
+                            <span class="blind">오프라인 판매처</span>
+                          </button>
+                          <div class="blind">
+                            <h2>원칩 구매처 원칩 어디서 구매할 수 있나요?</h2>
+                            <p>
+                              셀프 개통하려면 필수인 유심 ‘원칩’! 어디서 구매하는지 궁금하시다고요?
+                            </p>
+                            <p>U+알뜰폰의 모든 요금제, ONE으로 즐겨!</p>
+                            <p>모두의 유심, 원칩이란?</p>
+                            <p>
+                              U+망을 사용하는 모든 알뜰폰 요금제를 개통할 수 있는 국내 최초 통합
+                              공용 유심!
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="section-onechip section-1">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/10/event_onechip1.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/10/event_onechip1_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+
+                          <a
+                            href="https://www.uplusmvno.com/purchase/delivery"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 원칩 지금배송으로 가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/purchase/delivery"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="원칩 지금배송으로 가기"
+                          >
+                            <span class="blind">원칩 지금배송으로 가기</span>
+                          </a>
+                          <a
+                            href=""
+                            target="_blank"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 배민 B마트로 가기"
+                            data-gtm-click-url="링크확인"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="배민 B마트로 가기"
+                          >
+                            <span class="blind">배민 B마트로 가기</span>
+                          </a>
+                          <a
+                            href="https://smartstore.naver.com/uinplus/products/9779883432"
+                            target="_blank"
+                            class="btn3"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 네이버 쇼핑으로 가기"
+                            data-gtm-click-ur
+                            l="https://smartstore.naver.com/uinplus/products/9779883432"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="네이버 쇼핑으로 가기"
+                          >
+                            <span class="blind">네이버 쇼핑으로 가기</span>
+                          </a>
+                          <a
+                            href="https://www.coupang.com/vp/products/6741246311?itemId=15737398218&vendorItemId=82951318277&q=%EC%9B%90%EC%B9%A9%EC%9C%A0%EC%8B%AC&itemsCount=36&searchId=5646bb5794ad42479123abc4d6e76343&rank=1&isAddedCart="
+                            target="_blank"
+                            class="btn4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 쿠팡으로 가기"
+                            data-gtm-click-url="https://www.coupang.com/vp/products/6741246311?itemId=15737398218&vendorItemId=82951318277&q=%EC%9B%90%EC%B9%A9%EC%9C%A0%EC%8B%AC&itemsCount=36&searchId=5646bb5794ad42479123abc4d6e76343&rank=1&isAddedCart="
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="쿠팡으로 가기"
+                          >
+                            <span class="blind">쿠팡으로 가기</span>
+                          </a>
+                          <a
+                            href="https://www.11st.co.kr/products/4885072573"
+                            target="_blank"
+                            class="btn5"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 11번가로 가기"
+                            data-gtm-click-url="http://www.11st.co.kr/products/4885072573/share"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="11번가로 가기"
+                          >
+                            <span class="blind">11번가로 가기</span>
+                          </a>
+                          <a
+                            href="http://auction.kr/iDl6tH_"
+                            target="_blank"
+                            class="btn6"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 옥션 으로 가기"
+                            data-gtm-click-url="http://auction.kr/iDl6tH_"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="옥션 으로 가기"
+                          >
+                            <span class="blind">옥션 으로 가기</span>
+                          </a>
+                          <a
+                            href="https://link.gmarket.co.kr/ls11KXLRfZ"
+                            target="_blank"
+                            class="btn7"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : G마켓으로 가기"
+                            data-gtm-click-url="https://link.gmarket.co.kr/ls11KXLRfZ"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="G마켓으로 가기"
+                          >
+                            <span class="blind">G마켓으로 가기</span>
+                          </a>
+                          <a
+                            href="https://www.ssg.com/item/itemView.ssg?itemId=1000575890011&siteNo=6004&salestrNo=6005&tlidSrchWd=%EC%9B%90%EC%B9%A9%EC%9C%A0%EC%8B%AC&srchPgNo=1&src_area=ssglist"
+                            target="_blank"
+                            class="btn8"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : SSG닷컴 으로 가기"
+                            data-gtm-click-url="https://www.ssg.com/item/itemView.ssg?itemId=1000575890011&siteNo=6004&salestrNo=6005&tlidSrchWd=%EC%9B%90%EC%B9%A9%EC%9C%A0%EC%8B%AC&srchPgNo=1&src_area=ssglist"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="SSG닷컴 으로 가기"
+                          >
+                            <span class="blind">SSG닷컴 으로 가기</span>
+                          </a>
+                          <a
+                            href="https://s.lotteon.com/KCwKmGkjsk"
+                            target="_blank"
+                            class="btn9"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 롯데온 으로 가기"
+                            data-gtm-click-url="https://s.lotteon.com/KCwKmGkjsk"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="롯데온 으로 가기"
+                          >
+                            <span class="blind">롯데온 으로 가기</span>
+                          </a>
+                          <a
+                            href="https://store.kakao.com/uinplus/products/331694197?ref=share"
+                            target="_blank"
+                            class="btn10"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 카카오톡 쇼핑 으로 가기"
+                            data-gtm-click-url="https://store.kakao.com/uinplus/products/331694197?ref=share"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="카카오톡 쇼핑 으로 가기"
+                          >
+                            <span class="blind">카카오톡 쇼핑 으로 가기</span>
+                          </a>
+                          <a
+                            href="https://mfront.homeplus.co.kr/item?itemNo=10000302882183&storeType=DS&storeId=0&optNo"
+                            target="_blank"
+                            class="btn11"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 홈플러스 온라인 으로 가기"
+                            data-gtm-click-url="https://mfront.homeplus.co.kr/item?itemNo=10000302882183&storeType=DS&storeId=0&optNo"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="홈플러스 온라인 으로 가기"
+                          >
+                            <span class="blind">홈플러스 온라인 으로 가기</span>
+                          </a>
+
+                          <div class="blind">
+                            <h3>온라인 구매</h3>
+                            <p>
+                              집 밖에 나가기 귀찮은 분들을 위한 쉽고 편하게 원칩을 배송 받아볼 수
+                              있는 온라인 구매처
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="section-onechip section-2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/10/event_onechip2.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/12/10/event_onechip2_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/purchase/pickup"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 이마트24 편의점 찾기"
+                            data-gtm-click-url="https://www.uplusmvno.com/purchase/pickup"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="이마트24 편의점 찾기"
+                          >
+                            <span class="blind">이마트24 편의점 찾기</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/support/notice/detail?mvnopAnncId=AN0000003046"
+                            target="_blank"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 전국 스토리웨이 매장 찾기"
+                            data-gtm-click-url="https://www.uplusmvno.com/support/notice/detail?mvnopAnncId=AN0000003046"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="전국 스토리웨이 매장 찾기"
+                          >
+                            <span class="blind">전국 스토리웨이 매장 찾기</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/support/notice/detail?mvnopAnncId=AN0000003043"
+                            target="_blank"
+                            class="btn3"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 수도권 지하철역 위치보기"
+                            data-gtm-click-url="https://www.uplusmvno.com/support/notice/detail?mvnopAnncId=AN0000003043"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="수도권 지하철역 위치보기"
+                            ><span class="blind">서울 지하철역 위치 역사 확인하기</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/support/notice/detail?mvnopAnncId=AN0000003042"
+                            target="_blank"
+                            class="btn4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 대구 지하철역 위치보기"
+                            data-gtm-click-url="https://www.uplusmvno.com/support/notice/detail?mvnopAnncId=AN0000003042"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="대구 지하철역 위치보기"
+                            ><span class="blind">대구 지하철역 위치 역사 확인하기</span></a
+                          >
+
+                          <div class="blind">
+                            <h3>오프라인 구매</h3>
+                            <p>
+                              빨리 구매해서 셀프 개통이 급하다고~! 지금 내 근처에 유심 구매할 수
+                              있는 곳이 어디 있는지 궁금하신 분들을 위한 오프라인 구매처
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(num) {
+                          const header = document.querySelector(".header");
+                          const linkSection = document.querySelector(
+                            `.section-onechip.section-${num}`
+                          );
+
+                          if (linkSection) {
+                            const topOffset = linkSection.offsetTop - header.clientHeight;
+                            window.scrollTo({ top: topOffset, behavior: "smooth" });
+                          }
+                        }
+
+                        setTimeout(() => {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a
+                href="/purchase/delivery"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn_deli"
+              >
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector(".btn_top").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+      AOS.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/event/detail#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src="" alt="파트너사" />
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span> <span>2023.12.08</span> - <span>2024.04.30</span> </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .event-section-umobile {
+                          position: relative;
+                        }
+
+                        .event-section-umobile.section-2 .btn1 {
+                          position: absolute;
+                          top: 30%;
+                          left: 6.32%;
+                          width: 88.16%;
+                          height: 28.74%;
+                        }
+                        .pc .event-section-umobile.section-2 .btn1 {
+                          position: absolute;
+                          top: 27.18%;
+                          left: 3.97%;
+                          width: 92.07%;
+                          height: 29.07%;
+                        }
+                        .event-section-umobile.section-2 .btn2 {
+                          position: absolute;
+                          top: 65.66%;
+                          left: 6.84%;
+                          width: 87.11%;
+                          height: 29.51%;
+                        }
+                        .pc .event-section-umobile.section-2 .btn2 {
+                          position: absolute;
+                          top: 64.22%;
+                          left: 3.53%;
+                          width: 92.72%;
+                          height: 29.49%;
+                        }
+
+                        .event-section-umobile.section-3 .btn1 {
+                          position: absolute;
+                          top: 16.12%;
+                          left: 6.32%;
+                          width: 89.47%;
+                          height: 24.03%;
+                        }
+                        .pc .event-section-umobile.section-3 .btn1 {
+                          position: absolute;
+                          top: 17.17%;
+                          left: 3.64%;
+                          width: 91.96%;
+                          height: 21.97%;
+                        }
+                        .event-section-umobile.section-3 .btn2 {
+                          position: absolute;
+                          top: 45.9%;
+                          left: 7.11%;
+                          width: 87.63%;
+                          height: 20.65%;
+                        }
+                        .pc .event-section-umobile.section-3 .btn2 {
+                          position: absolute;
+                          top: 45.91%;
+                          left: 3.75%;
+                          width: 92.07%;
+                          height: 21.57%;
+                        }
+                        .event-section-umobile.section-3 .btn3 {
+                          position: absolute;
+                          top: 72.91%;
+                          left: 6.32%;
+                          width: 89.21%;
+                          height: 23.43%;
+                        }
+                        .pc .event-section-umobile.section-3 .btn3 {
+                          position: absolute;
+                          top: 74.33%;
+                          left: 3.32%;
+                          width: 92.83%;
+                          height: 22.28%;
+                        }
+
+                        .event-section-umobile.section-4 .btn1 {
+                          position: absolute;
+                          top: 22.05%;
+                          left: 6.84%;
+                          width: 87.89%;
+                          height: 31.24%;
+                        }
+                        .pc .event-section-umobile.section-4 .btn1 {
+                          position: absolute;
+                          top: 22.19%;
+                          left: 3.64%;
+                          width: 92.07%;
+                          height: 27.76%;
+                        }
+                        .event-section-umobile.section-4 .btn2 {
+                          position: absolute;
+                          top: 57.82%;
+                          left: 5.53%;
+                          width: 90%;
+                          height: 34.18%;
+                        }
+                        .pc .event-section-umobile.section-4 .btn2 {
+                          position: absolute;
+                          top: 58.01%;
+                          left: 3.75%;
+                          width: 92.83%;
+                          height: 27.76%;
+                        }
+
+                        .event-section-umobile .accordion {
+                          position: relative;
+                        }
+                        .event-section-umobile .accordion .accordion__header {
+                          position: relative;
+                        }
+                        .event-section-umobile .accordion .accordion__header + .accordion__body {
+                          display: none;
+                        }
+                        .event-section-umobile .accordion.on .accordion__header + .accordion__body {
+                          display: block;
+                          margin-top: 1px;
+                        }
+                        .event-section-umobile.notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 26%;
+                          top: 44%;
+                          width: 10px;
+                          height: 10px;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/btn_umobile_accordion.png")
+                            no-repeat 50% 50%;
+                          background-size: contain;
+                          transition: 0.5s;
+                          transform: rotate(45deg);
+                        }
+                        .pc .event-section-umobile.notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 26%;
+                          top: 47%;
+                          width: 20px;
+                          height: 20px;
+                        }
+                        .event-section-umobile .accordion.on .accordion__header::after {
+                          content: "";
+                          transform: rotate(180deg);
+                        }
+                      </style>
+                      <div class="event-cont-umobile">
+                        <div class="event-section-umobile visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_visual.jpg"
+                            alt="알뜰폰플러스 스페셜 이벤트"
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_visual_m.jpg"
+                            alt="알뜰폰플러스 스페셜 이벤트"
+                            class="pc_hide"
+                          />
+
+                          <div class="blind">
+                            새해 목표는 통신비 절약! 1월 한정! 더블 최저가 혜택! 가입 후 7개월도
+                            최저가, 7개월 후에도 최저가! 71GB 무제한 11GB + 일2GB + 최대 3Mbps
+                            7개월간 2만 N pay 지급 7개월 체감가 32,990 → 12,990원 100GB 무제한 100GB
+                            + 최대 5Mbps 7개월간 2만 N pay 지급 7개월 체감가 38,990 → 18,990원
+                          </div>
+                        </div>
+
+                        <div class="event-section-umobile section-1">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section1.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section1_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <div class="blind">
+                            100GB+/통화기본 11GB+매일2GB/통화기본 가입 혜택 (백다방 100잔, 교보문고
+                            복합무비 요금제 포함 3종) 7개월간 Npay 2만 지급 7GB+/통화기본 가입 혜택
+                            (백다방 100잔 요금제 포함 2종) 7개월간 Npay 1만 지급 7개월간 매월 Npay
+                            지급! Npay Npay Npay Npay Npay Npay Npay 100GB+/통화기본 (LTE) 100GB +
+                            최대 5Mbps 기본 제공 38,990원 → 18,990원!
+                          </div>
+                        </div>
+
+                        <div class="event-section-umobile section-2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section2.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section2_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002720&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 :Npay 7만원 지급 (매월 1만원씩 7개월) 월 7GB + 1Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002720&mvnopPtnId=PC0000000003"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : Npay 7만원 지급 (매월 1만원씩 7개월) 월 7GB + 1Mbps 요금제 보러가기"
+                            ><span class="blind">1만원 이하 7GB+ 데이터 무제한</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004407&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 :Npay 7만원 지급 (매월 1만원씩 7개월)+빽다방 100잔 월 7GB + 1Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004407&mvnopPtnId=PC0000000003
+"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : Npay 7만원 지급 (매월 1만원씩 7개월)+빽다방 100잔 월 7GB + 1Mbps 요금제 보러가기"
+                            ><span class="blind"
+                              >Npay 7만원 지급(1만원 x 7개월) + 커피 100잔까지</span
+                            >
+                          </a>
+                          <div class="blind">
+                            1만원 이하 7GB+ 데이터 무제한 Npay 7만원 지급(1만원 x 7개월) 7GB+ /
+                            통화기본(LTE) 7GB+ + 최대 1Mbps 기본제공 기본제공 월 16,900원 → 월
+                            5,900원 (특별 혜택) Npay 7만원 지급(1만원 x 7개월) + 커피 100잔까지 7GB+
+                            / 통화기본 (백다방 커피 100잔) 7GB+ + 최대 1Mbps 기본제공 기본제공 커피
+                            100잔 월 17,900원 → 월 7,900원 (특별 혜택)
+                          </div>
+                        </div>
+
+                        <div class="event-section-umobile section-3">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section3.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section3_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002439&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 :Npay 14만원 지급 (매월 2만원씩 7개월) 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002439&mvnopPtnId=PC0000000003"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : Npay 14만원 지급 (매월 2만원씩 7개월) 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                            ><span class="blind">Npay 14만원 지급(2만원 x 7개월)</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004574&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 :Npay 14만원 지급(매월 2만원씩 7개월)+매월 책1권 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002870&mvnopPtnId=PC0000000003"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : Npay 14만원 지급(매월 2만원씩 7개월)+매월 책1권 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                            ><span class="blind"
+                              >Npay 14만원 지급(2만원 x 7개월) + 매달 책 1권과 영화까지</span
+                            >
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004405&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn3"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 :Npay 14만원 지급 (매월 2만원씩 7개월)+빽다방 100잔 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002870&mvnopPtnId=PC0000000003"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : Npay 14만원 지급 (매월 2만원씩 7개월)+빽다방 100잔 월 11GB + 매일 2GB + 3Mbps 요금제 보러가기"
+                            ><span class="blind"
+                              >Npay 14만원 지급(2만원 x 7개월) + 커피 100잔까지</span
+                            >
+                          </a>
+                          <div class="blind">
+                            3Mbps 고속 데이터 무제한 Npay 14만원 지급(2만원 x 7개월) 71GB+ /
+                            통화기본 (LTE) 11GB+ 매일 2GB + 3Mbps 기본제공 기본제공 월 32,990원 → 월
+                            12,990원 (특별 혜택) Npay 14만원 지급(2만원 x 7개월) + 매달 책 1권과
+                            영화까지 71GB+ / 통화기본 (교보문고 eBook + 롯데시네마) 11GB+ 매일 2GB +
+                            3Mbps 기본제공 기본제공 교보 eBook + 롯데시네마 월 33,680원 → 월
+                            13,500원 (특별 혜택) Npay 14만원 지급(2만원 x 7개월) + 커피 100잔까지
+                            71GB+ / 통화기본 (백다방 커피 100잔) 11GB+ 매일 2GB + 3Mbps 기본제공
+                            기본제공 커피 100잔 월 34,680원 → 월 14,500원 (특별 혜택)
+                          </div>
+                        </div>
+
+                        <div class="event-section-umobile section-4">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section4.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section4_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002870&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 :Npay 14만원 지급 (매월 2만원씩 7개월) 월 100GB + 5Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000002870&mvnopPtnId=PC0000000003"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : Npay 14만원 지급 (매월 2만원씩 7개월) 월 100GB + 5Mbps 요금제 보러가기"
+                            ><span class="blind">Npay 14만원 지급(2만원 x 7개월)</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004573&mvnopPtnId=PC0000000003"
+                            target="_blank"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : pay 14만원 지급(매월 2만원씩 7개월)+매월 책1권 월 100GB + 5Mbps 요금제 보러가기 "
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000004573&mvnopPtnId=PC0000000003"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="컨텐츠 : pay 14만원 지급(매월 2만원씩 7개월)+매월 책1권 월 100GB + 5Mbps 요금제 보러가기"
+                            ><span class="blind"
+                              >Npay 14만원 지급(2만원 x 7개월) + 매달 책 1권과 영화까지</span
+                            >
+                          </a>
+                          <div class="blind">
+                            5Mbps 초고속 데이터 무제한 Npay 14만원 지급(2만원 x 7개월) 100GB+ /
+                            통화기본 (LTE) 100GB + 최대 5Mbps 기본제공 기본제공 월 38,990원 → 월
+                            18,990원 (특별 혜택) Npay 14만원 지급(2만원 x 7개월) + 매달 책 1권과
+                            영화까지 100GB+ / 통화기본 (교보문고 eBook + 롯데시네마) 100GB + 최대
+                            5Mbps 기본제공 기본제공 교보 eBook + 롯데시네마 월 39,990원 → 월
+                            19,990원 (특별 혜택)
+                          </div>
+                        </div>
+
+                        <div class="event-section-umobile section-5">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section5.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_section5_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <div class="blind">
+                            100GB+ / 통화기본 요금제 타사 요금 비교 7개월 간 알뜰폰 타사: 28,050원
+                            유모바일: 18,990원 (*Npay 혜택 적용 시) 7개월 이후 알뜰폰 타사: 46,200원
+                            유모바일: 38,990원 가입 후 7개월도 최저가, 7개월 후에도 최저가로!
+                            알뜰폰은 U+유모바일인 이유는? 믿을 수 있는 LG U+ 자회사 LG U+의 통신망을
+                            그대로 사용하여 안정적이고 빠른 네트워크 품질을 제공합니다. 전국 LG U+
+                            직영점에서 친절한 고객 서비스를 받을 수 있어요. 편리한 고객 지원 전문
+                            상담사와 연결이 편리해요. 전용 앱으로 사용량 실시간 조회가 가능해요.
+                          </div>
+                        </div>
+
+                        <div class="event-section-umobile notice">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_notice_accordion.jpg"
+                                alt="유의사항 확인하기"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_notice_accordion_m.jpg"
+                                alt="유의사항 확인하기"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_notice.jpg"
+                                alt=""
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/1/3/umobile_notice_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="blind">
+                            [이벤트 공통사항] 이벤트 기간: 1월 1일 ~ 1월 31일 사은품 지급일: 2월
+                            20일경부터 사은품이 지급됩니다. (25년 2월부터, 7개월간 매월 지급) 대상
+                            요금제를 신규 가입 / 번호이동으로 가입한 고객님 대상 신규가입: 신규
+                            번호로 가입한 경우 번호이동: 기존 사용중인 번호로 다른 통신사에서
+                            U+유모바일로 통신사를 변경하여 가입한 경우 본 이벤트는 당사 사정에 따라
+                            조기종료, 변경될 수 있습니다. 사은품 발송 시점에 가입한 요금제를 변경,
+                            해지, 일시정지, 명의변경 시 사은품 증정 대상에서 제외됩니다. ["7개월간
+                            Npay 혜택" 증정] 본 프로모션은 기간 내 대상 요금제를 가입 완료한
+                            고객님께 사은품을 증정하는 프로모션입니다. 대상 요금제: 100GB+ /
+                            통화기본 요금제 2종, 11GB+매일2GB / 통화기본 요금제 3종, 7GB+ /
+                            통화기본(LTE) 요금제 2종 대상 (백다방 100잔, 교보문고 복합무비 요금제
+                            포함) 사은품: 7개월간 매월 Npay 2만원 지급: 100GB+ / 통화기본 요금제
+                            2종, 11GB+매일2GB / 통화기본 요금제 3종 가입 시 7개월간 매월 Npay 1만원
+                            지급: 7GB+ / 통화기본 요금제 2종 가입 시 ※ U+유모바일 홈페이지에서
+                            진행하는 사은품은 제공되지 않습니다.
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAccordion(event) {
+                          event.currentTarget.parentNode.classList.toggle("on");
+                        }
+
+                        setTimeout(function () {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3 class="tit03">다른 이벤트도 둘러보세요</h3>
+                <div
+                  class="swiper swiper-initialized swiper-horizontal cardSwiper swiper-backface-hidden isBeginning isEnd"
+                >
+                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+                    <div class="swiper-slide swiper-slide-active" style="margin-right: 12px">
+                      <!----><!----><a
+                        href="/benefit/event/detail?mvnopEvetId=EV0000002063"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        class="link_list"
+                        data-event='{"mkt_event_name":"알닷과 떠나는 추캉스","mkt_event_type":"","mkt_event_period":""}'
+                        data-gtm-event-name="link_click"
+                        data-gtm-event-category="클릭"
+                        data-gtm-event-action="이벤트 추천 - 링크 클릭"
+                        data-gtm-event-label="컨텐츠 : 알닷과 떠나는 추캉스"
+                        data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063"
+                        data-gtm-click-location="이벤트 추천"
+                        data-gtm-click-direction="내부"
+                        data-gtm-click-text="알닷과 떠나는 추캉스"
+                        ><span class="blind">이벤트 상세페이지 이동</span>
+                        <div class="thum_item no_border">
+                          <div class="thum_img">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/evt_thumb_10choo_656x360_3.jpg"
+                              alt="알닷과 떠나는 추캉스 "
+                            />
+                          </div>
+                          <div class="thum_con"><strong>알닷과 떠나는 추캉스</strong></div>
+                        </div></a
+                      ><!----><!----><!---->
+                    </div>
+                  </div>
+                  <!----><!----><!---->
+                  <div class="swiper-navigation">
+                    <div class="left">
+                      <button
+                        type="button"
+                        class="swiper-button-prev swiper-button-disabled swiper-button-lock"
+                        disabled=""
+                      ></button>
+                    </div>
+                    <div class="right">
+                      <button
+                        type="button"
+                        class="swiper-button-next swiper-button-disabled swiper-button-lock"
+                        disabled=""
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn_group">
+                  <button
+                    type="button"
+                    class="btn md c05"
+                    data-gtm-event-name="button_click"
+                    data-gtm-event-category="클릭"
+                    data-gtm-event-action="이벤트 추천 - 버튼 클릭"
+                    data-gtm-event-label="컨텐츠 : 이벤트 목록보기"
+                    data-gtm-click-location="이벤트 추천"
+                    data-gtm-click-text="이벤트 목록보기"
+                  >
+                    목록보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a
+                href="/purchase/delivery"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn_deli"
+              >
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector(".btn_top").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

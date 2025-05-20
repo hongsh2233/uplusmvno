@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/event/detail#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src="" alt="파트너사" />
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span> <span>2023.12.08</span> - <span>2024.04.30</span> </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .event-cont-hello-mobile {
+                          position: relative;
+                        }
+
+                        .section-hello-mobile {
+                          position: relative;
+                        }
+
+                        .section-hello-mobile a[class^="btn"],
+                        .section-hello-mobile button[class^="btn"] {
+                          position: absolute;
+                        }
+
+                        .section-hello-mobile.visual .btn1 {
+                          top: 66.9%;
+                          left: 28.48%;
+                          width: 43%;
+                          height: 2.62%;
+                        }
+
+
+                        .section-hello-mobile.section-3 a.btn1{
+                          top: 12.32%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 9.26%;
+                        }
+                        .section-hello-mobile.section-3 a.btn2 {
+                          top: 24.68%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 9.26%;
+                        }
+                        .section-hello-mobile.section-3 a.btn3 {
+                          top: 36.8%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 9.26%;
+                        }
+                        .section-hello-mobile.section-3 a.btn4 {
+                          top: 48.9%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 9.26%;
+                        }
+                        .section-hello-mobile.section-3 a.btn5 {
+                          top: 61.48%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 9.26%;
+                        }
+                        .section-hello-mobile.section-3 a.btn6 {
+                          top: 73.52%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 9.26%;
+                        }
+
+                        .section-hello-mobile.section-5 a.btn1 {
+                          top: 28.13%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 14.73%;
+                        }
+                        .section-hello-mobile.section-5 a.btn2 {
+                          top: 46.1%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 14.73%;
+                        }
+                        .section-hello-mobile.section-5 a.btn3 {
+                          top: 64.3%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 14.73%;
+                        }
+                        .section-hello-mobile.section-5 a.btn4 {
+                          top: 82.26%;
+                          left: 8.37%;
+                          width: 83.37%;
+                          height: 14.73%;
+                        }
+
+                        .pc .section-hello-mobile.visual .btn1 {
+                          top: 67.6%;
+                          left: 36.17%;
+                          width: 27.09%;
+                          height: 2.50%;
+                        }
+
+                        .pc .section-hello-mobile.section-3 a.btn1{
+                          top: 17.4%;
+                          height: 8.74%;
+                        }
+                        .pc .section-hello-mobile.section-3 a.btn2 {
+                          top: 28.5%;
+                          height: 8.74%;
+                        }
+                        .pc .section-hello-mobile.section-3 a.btn3 {
+                          top: 39.8%;
+                          height: 8.74%;
+                        }
+                        .pc .section-hello-mobile.section-3 a.btn4 {
+                          top: 50.99%;
+                          height: 8.74%;
+                        }
+                        .pc .section-hello-mobile.section-3 a.btn5 {
+                          top: 62.36%;
+                          height: 8.74%;
+                        }
+                        .pc .section-hello-mobile.section-3 a.btn6 {
+                          top: 73.52%;
+                          height: 8.74%;
+                        }
+
+                        .pc .section-hello-mobile.section-5 a.btn1 {
+                          top: 37%;
+                          height: 12.24%;
+                        }
+                        .pc .section-hello-mobile.section-5 a.btn2 {
+                          top: 52.38%;
+                          height: 12.24%;
+                        }
+                        .pc .section-hello-mobile.section-5 a.btn3 {
+                          top: 67.41%;
+                          height: 12.24%;
+                        }
+                        .pc .section-hello-mobile.section-5 a.btn4 {
+                          top: 82.26%;
+                          height: 12.24%;
+                        }
+
+                        .section-hello-mobile .accordion {
+                          position: relative;
+                        }
+                        .section-hello-mobile .accordion .accordion__header {
+                          position: relative;
+                        }
+                        .section-hello-mobile .accordion .accordion__header + .accordion__body {
+                          display: none;
+                        }
+                        .section-hello-mobile .accordion.on .accordion__header + .accordion__body {
+                          display: block;
+                          margin-top: 1px;
+                        }
+                        .section-hello-mobile.notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 26%;
+                          top: 44%;
+                          width: 10px;
+                          height: 10px;
+                        }
+                        .pc .section-hello-mobile.notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 26%;
+                          top: 47%;
+                          width: 20px;
+                          height: 20px;
+                        }
+                        .section-hello-mobile .accordion.on .accordion__header::after {
+                          content: "";
+                          transform: rotate(180deg);
+                        }
+                      </style>
+                      <div class="event-cont-hello-mobile">
+                        <div class="section-hello-mobile visual">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/23/hello04_visual.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/23/hello04_visual_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <button class="btn1" onclick="handleAnchor('notice')" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 헬로모바일 요금제 보러가기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="모나 요금제 보러가기"><span class="blind">모나 요금제 보러가기</span></button>
+                          <div class="blind">
+                            자세한 지급조건 및 지금일정은 하단 유의사항을 참고바랍니다. 본 혜택은
+                            사전예고없이 조기종료될 수 있습니다.
+                          </div>
+                        </div>
+
+                        <div class="section-hello-mobile section-2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile2.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile2_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                        </div>
+
+                        <div class="section-hello-mobile section-3">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile3.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile3_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001217&mvnopPtnId=PC0000000006"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : DATA 걱정없는 유심 7GB 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001217&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="DATA 걱정없는 유심 7GB 요금제 보러가기"
+                            ><span class="blind">DATA 걱정없는 유심 7GB 요금제 보러가기</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001260&mvnopPtnId=PC0000000006"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : DATA 걱정없는 유심 10GB 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001260&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="DATA 걱정없는 유심 10GB 요금제 보러가기"
+                            ><span class="blind">DATA 걱정없는 유심 10GB 요금제 보러가기</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001265&mvnopPtnId=PC0000000006"
+                            class="btn3"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : DATA 걱정없는 유심 15GB 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001265&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="DATA 걱정없는 유심 15GB 요금제 보러가기"
+                            ><span class="blind">DATA 걱정없는 유심 15GB 요금제 보러가기</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001109&mvnopPtnId=PC0000000006"
+                            class="btn4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : The 착한 데이터 유심 11GB 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001109&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="The 착한 데이터 유심 11GB 요금제 보러가기"
+                            ><span class="blind">The 착한 데이터 유심 11GB 요금제 보러가기</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001153&mvnopPtnId=PC0000000006"
+                            class="btn5"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : DATA 걱정없는 유심 일5GB 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001153&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="DATA 걱정없는 유심 일5GB 요금제 보러가기"
+                            ><span class="blind">DATA 걱정없는 유심 일5GB 요금제 보러가기</span></a
+                          >
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001094&mvnopPtnId=PC0000000006"
+                            class="btn6"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 5G 유심 중간요금제 125GB 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001094&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="5G 유심 중간요금제 125GB 요금제 보러가기"
+                            ><span class="blind">5G 유심 중간요금제 125GB 요금제 보러가기</span></a
+                          >
+                        </div>
+
+                        <div class="section-hello-mobile section-4">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile4.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile4_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                        </div>
+
+                        <div class="section-hello-mobile section-5">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile5.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile5_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001132&mvnopPtnId=PC0000000006"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 보편 유심 5GB 200분 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001132&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="보편 유심 5GB 200분 요금제 보러가기"
+                            ><span class="blind">보편 유심 5GB 200분 요금제 보러가기</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001241&mvnopPtnId=PC0000000006"
+                            class="btn2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 슬림 안심 유심 2.5GB 250분 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001241&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="슬림 안심 유심 2.5GB 250분 요금제 보러가기"
+                            ><span class="blind">슬림 안심 유심 2.5GB 250분 요금제 보러가기</span>
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001247&mvnopPtnId=PC0000000006"
+                            class="btn3"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : The 착한 데이터 유심 9GB 3000분 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001247&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="The 착한 데이터 유심 9GB 3000분 요금제 보러가기"
+                          >
+                            <span class="blind"
+                              >The 착한 데이터 유심 9GB 3000분 요금제 보러가기</span
+                            >
+                          </a>
+                          <a
+                            href="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001246&mvnopPtnId=PC0000000006"
+                            class="btn4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 보편 안심 유심 10GB 100분 요금제 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnopPpId=CP0000001246&mvnopPtnId=PC0000000006"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="보편 안심 유심 10GB 100분 요금제 보러가기"
+                          >
+                            <span class="blind">보편 안심 유심 10GB 100분 요금제 보러가기</span>
+                          </a>
+                          <div class="blind">
+                            유의사항 1. 본 혜택은 최초 가입하신 요금제를 유지하는 조건으로 지급되며,
+                            해지, 일시정지, 명의변경, 개통취소, 요금제변경(6종 요금제 포함) 시 혜택
+                            지급이 중지됩니다. 2. 가입축하금, 6개월및 1년 유지 축하금, 기본 사은품은
+                            개통일 기준 D+15,16,17에 사은품 선택 문자가 발송되며 미선택 시 사은품
+                            지급이 불가합니다. 3. 상세 지급 기준 및 지급일정은 하단 유의사항을
+                            확인바랍니다. 4. 본 이벤트 혜택은 알닷에서 헬로모바일을 가입한 고객을
+                            대상으로만 지급되며, 헬로모바일 다이렉트몰 가입사은품은
+                            지급하지않습니다.
+                          </div>
+                        </div>
+
+                        <div class="section-hello-mobile section-6">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile6.jpg"
+                            alt=""
+                            class="pc_show"
+                          />
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_mobile6_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                        </div>
+
+                        <div class="section-hello-mobile notice">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_04_notice_accordion.png"
+                                alt="유의사항 확인하기"
+                                class="pc_show"
+                              /><img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/9/hello_04_notice_accordion_m.png"
+                                alt="유의사항 확인하기"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/8/hello04_notice.png"
+                                alt=""
+                                class="pc_show"
+                              /><img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/4/8/hello04_notice_m.png"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+                          <div class="blind">
+                            [6개월간 Npay 혜택, 이마트24 혜택 공통사항] 1. 이벤트 기간 : 4월 8일 ~
+                            4월 15일 (※ 당사 사정으로 인해 조기종료될 수 있습니다.) 2. 사은품 지급일
+                            : 5월 20일경 부터 사은품이 지급됩니다. 3. 대상요금제를 신규 가입 /
+                            번호이동으로 가입한 고객님 대상으로 증정됩니다. (휴대폰 요금제 개통건
+                            제외) - 신규가입 : 신규 번호로 가입한 경우 - 번호이동 : 기존 사용중인
+                            번호로 다른 통신사에서 U+유모바일로 통신사를 변경해서 가입한 경우 4. 본
+                            이벤트는 당시 사정에 따라 조기종료, 변경될 수 있습니다. 5. 사은품 발송
+                            시점에 가입한 요금제를 변경, 해지, 일시정지, 명의변경 시 사은품 증정
+                            대상에서 제외됩니다. ※ U+유모바일 홈페이지에서 진행하는 사은품은
+                            제공되지 않습니다. [지급 혜택 유의사항] ⁃ 요금제 혜택은 요금제
+                            정지/해지/변경/명의 변경 시 지급이 중단됩니다. ※ 요금제 정지 시 혜택
+                            지급이 중단되지만, 정지 기간이 24개월에 포함됩니다. ※ 이마트24 혜택 대상
+                            요금제 내에서 요금제 변경 시 혜택 지급은 유지됩니다. (ex. LTE
+                            유심(1GB+/통화기본)에서 LTE 유심 스페셜로 변경 시 혜택 유지) ※ 이마트24
+                            혜택은 대상 요금제로 최초 개통한 회선에만 제공됩니다.(1인 1회선) ※ 14세
+                            미만은 이마트24 앱 가입이 불가하여 이마트24 쿠폰 혜택 제공이 어렵습니다.
+                            ["6개월간 Npay 혜택" 증정] 본 프로모션은 기간 내 대상요금제를 가입
+                            완료한 고객님께 사은품을 증정하는 프로모션입니다. 1. 대상요금제 :
+                            100GB+/통화기본 (LTE), 11GB+매일2GB/통화기본 (LTE) 요금제, 15GB+/300분
+                            (LTE) 15GB+/통화기본 (LTE), 10GB+/통화기본 (LTE), 7GB+/통화기본 (LTE)
+                            요금제 2. 사은품 지급일 : 5월 20일경 부터 사은품이 지급됩니다. (25년
+                            5월부터, 8개월간 매월 지급) 3. 사은품 : 대상요금제 가입시 Npay 2만원,
+                            1만원 혜택 증정 (6개월간 매월지급) - 100GB+/통화기본 (LTE) : Npay 2만원
+                            6개월 동안 매월 지급 - 11GB+매일2GB/통화기본 (LTE) : Npay 2만원 6개월
+                            동안 매월 지급 - 15GB+/300분 (LTE) : Npay 2만원 6개월 동안 매월 지급 -
+                            15GB+/통화기본 (LTE) : Npay 1만원 6개월 동안 매월 지급 - 10GB+/통화기본
+                            (LTE) : Npay 1만원 6개월 동안 매월 지급 - 7GB+/통화기본 (LTE) : Npay
+                            1만원 6개월 동안 매월 지급 ["24개월간 이마트24 혜택" 증정] 본 프로모션은
+                            기간 내 대상요금제를 가입 완료한 고객님께 사은품을 증정하는
+                            프로모션입니다. 1. 대상요금제 : 100GB+/통화기본 (LTE),
+                            11GB+매일2GB/통화기본 (LTE) 요금제, 15GB+/통화기본 (LTE), 10GB+/통화기본
+                            (LTE), 7GB+/통화기본 (LTE) 요금제 5종 대상 2. 사은품 지급일 : 5월 20일경
+                            부터 사은품이 지급됩니다. 3. 사은품 : 대상요금제 가입시, 이마트 24 5천원
+                            혜택 증정 (24개월간 매월 지급) ※ 이마트 24 5천원 혜택 구성 : 2천원
+                            금액권, 5천원 이상 구매시 1천원 할인권, 1만원 이상 구매시 2천원 할인권
+                            [이마트 24 쿠폰 유의사항] 쿠폰 다운로드 기간 : 요금제 가입 익월
+                            1일~말일까지 쿠폰 유효기간 : 쿠폰 다운로드 월의 말일까지 ex) 4월 10일
+                            요금제 가입 → 5월 1일 ~ 5월 30일까지 쿠폰 다운로드 가능 5월 10일 쿠폰
+                            다운로드 → 5월 1일 ~ 5월 30일까지 쿠폰 사용 가능 주류, 담배, 서비스,
+                            노브랜드 상품은 쿠폰 사용 불가합니다.
+                            쿠폰은&nbsp;하나의&nbsp;결제&nbsp;건당&nbsp;1장만&nbsp;사용&nbsp;가능합니다.&nbsp;(중복&nbsp;사용&nbsp;불가합니다.)
+                            쿠폰별&nbsp;사용&nbsp;가능&nbsp;매장이&nbsp;다를&nbsp;수&nbsp;있으니&nbsp;사용매장&nbsp;정보를&nbsp;확인해주세요.
+                            주문&nbsp;취소&nbsp;시&nbsp;쿠폰은&nbsp;자동&nbsp;재발행됩니다.
+                            쿠폰을&nbsp;사용한&nbsp;결제&nbsp;건의&nbsp;경우&nbsp;일부&nbsp;상품만&nbsp;취소는&nbsp;불가합니다.
+                            쿠폰은&nbsp;유효기간&nbsp;이후&nbsp;자동&nbsp;소멸되며,&nbsp;소멸된&nbsp;쿠폰은&nbsp;재발행되지&nbsp;않습니다.
+                            쿠폰은&nbsp;타인에게&nbsp;양도&nbsp;혹은&nbsp;재판매&nbsp;하실&nbsp;수&nbsp;없으며,&nbsp;이로&nbsp;인해&nbsp;발생한&nbsp;불이익은&nbsp;이마트24에서&nbsp;책임지지&nbsp;않습니다.
+                            해당&nbsp;쿠폰은&nbsp;여러&nbsp;결제&nbsp;건에&nbsp;중복하여&nbsp;사용할&nbsp;수&nbsp;없으며,&nbsp;1회&nbsp;사용&nbsp;시&nbsp;소멸됩니다.
+                            구독쿠폰&nbsp;할인&nbsp;또는&nbsp;통신사&nbsp;할인&nbsp;적용&nbsp;시,&nbsp;해당&nbsp;할인이&nbsp;적용된&nbsp;최종&nbsp;금액에&nbsp;쿠폰이&nbsp;사용됩니다.
+                            노브랜드&nbsp;상품은&nbsp;쿠폰&nbsp;적용이&nbsp;불가하며,&nbsp;최소구매금액은&nbsp;노브랜드&nbsp;상품을&nbsp;제외한&nbsp;금액&nbsp;기준입니다.
+                            사이먼,&nbsp;주유소,&nbsp;휴게소&nbsp;내&nbsp;입점&nbsp;점포&nbsp;등&nbsp;일부&nbsp;특수매장&nbsp;및&nbsp;이마트,&nbsp;이마트에브리데이&nbsp;매장을&nbsp;제외한
+                            이마트24&nbsp;전&nbsp;매장에서&nbsp;사용&nbsp;가능합니다 ※ 14세 미만은
+                            이마트24 앱 가입이 불가하여 이마트24 쿠폰 혜택 제공이 어렵습니다. [최대
+                            8.3만원 알닷 추가 혜택 사은품 유의사항] 1. 본 이벤트는 4월 1일부터 4월
+                            15일까지 알닷에서 알닷 장기 할인 요금제 (24개월 할인~평생
+                            할인요금제)가입 및 개통이 완료된 고객에 한해서 경품을 제공합니다. 2. 1년
+                            내 알닷에서 개통 이력이 있는 고객은 혜택에서 제외됩니다. 3. 회원가입 시
+                            이용약관 선택동의(3가지)에 동의하거나 내 정보 수정에서 이용약관
+                            선택동의(3가지) 동의한 회원에 한해 지급하며 경품 지급 시점까지
+                            유지되어야 합니다. 4. 고객이 잘못 입력한 정보로 인한 혜택 미제공은
+                            당사가 책임지지 않습니다. 5. 월 100GB+5Mbps / 매일 5GB+5Mbps 요금제 가입
+                            시, 경품으로 지급되는 스타벅스 아메리카노 16잔은 요금제 가입 후 D+6개월
+                            차 말일(평일), D+12개월 차 말일(평일), D+18개월 차 말일(평일), D+24개월
+                            차 말일(평일)에 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다. 예시)
+                            2025년 4월 개통 시, 2025년 10월 31일 4잔 지급 / 2026년 4월 30일 4잔 지급
+                            / 2026년 10월 30일 4잔 지급 / 2027년 4월 30일 4잔 지급 6. 월 100GB+5Mbps
+                            / 매일 5GB+5Mbps 요금제 가입 시, 경품으로 지급되는 싸이버거세트는 요금제
+                            가입 후, 익월 말 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다. 예시)
+                            2025년 4월 개통 시, 2025년 5월 30일 일괄 지급 7. 월 11GB+매일 2GB+3Mbps
+                            요금제 가입 시, 경품으로 지급되는 스타벅스 아메리카노 16잔은 요금제 가입
+                            후 D+6개월 차 말일(평일), D+12개월 차 말일(평일), D+18개월 차
+                            말일(평일), D+24개월 차 말일(평일)에 개통하신 휴대전화로 모바일 쿠폰이
+                            발송됩니다. 예시) 2025년 4월 개통 시, 2025년 10월 31일 4잔 지급 / 2026년
+                            4월 30일 4잔 지급 / 2026년 10월 30일 4잔 지급 / 2027년 4월 30일 4잔 지급
+                            8. 월 15GB+3Mbps 요금제 가입 시, 경품으로 지급되는 스타벅스 아메리카노
+                            5잔은 요금제 가입 후 D+3개월 차 말일(평일), D+5개월 차 말일(평일)에
+                            개통하신 휴대전화로 모바일 쿠폰이 발송됩니다. 예시) 2025년 4월 개통 시,
+                            2025년 7월 31일 2잔 지급 / 2025년 9월 30일 3잔 지급 9. 그 외 요금제 가입
+                            시, 경품으로 지급되는 스타벅스 아메리카노 1잔은 익월 말 개통하신
+                            휴대전화로 모바일 쿠폰이 발송됩니다. 예시) 2025년 4월 개통 시, 2025년
+                            5월 30일 일괄 지급 10. 모바일 쿠폰 발송 시점까지 알뜰폰 해지 또는
+                            정지하신 고객은 경품 지급 대상에서 제외됩니다. 11. 모바일 쿠폰 발송
+                            시점까지 번호 변경, 유심 변경 시에도 경품 지급 대상에서 제외됩니다. 12.
+                            모바일 쿠폰 사용 가능한 유효기간은 발송일로부터 60일입니다. 13. 모바일
+                            쿠폰 발송처 : GS엠비즈 주식회사(고객센터 전화번호 : 1544-1151) 14. 발송
+                            대행 업무를 위해 가입 정보가 대행사에 제공됩니다. 15. 이벤트/경품 관련
+                            문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기
+                            바랍니다. 16. 본 이벤트는 당사의 사정에 따라 변경 혹은 중지될 수
+                            있습니다. 17. 알닷에서 개통 시에만 혜택이 적용되며, 오프라인 매장에서
+                            개통 시 혜택이 제외 됩니다. 18. 미성년자 개통 시, 사은품은 개통하신
+                            법정대리인 전화번호로 발송됩니다.
+                          </div>
+                        </div>
+                      </div>
+
+                      <script>
+                        function handleAccordion(event) {
+                          event.currentTarget.parentNode.classList.toggle("on");
+                        }
+
+                        setTimeout(function () {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+
+                        function handleAnchor(num) {
+                          const header = document.querySelector(".header");
+                          const linkSection =
+                            num !== "notice"
+                              ? document.querySelector(`.section-hello-mobile.section-${num}`)
+                              : document.querySelector(`.section-hello-mobile.${num}`);
+                          const lastHeight = linkSection.clientHeight + 50;
+
+                          if (linkSection) {
+                            let topOffset = 0;
+                            num === "notice"
+                              ? (topOffset =
+                                  linkSection.offsetTop - header.clientHeight + lastHeight)
+                              : (topOffset = linkSection.offsetTop - header.clientHeight);
+                            window.scrollTo({ top: topOffset, behavior: "smooth" });
+                          }
+                        }
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3 class="tit03">이벤트와 관련 있는 요금제에요</h3>
+                <div class="item_list ty02">
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/15/umo_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <!---->
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[빽다방 100잔] 평생할인 1GB+/통화기본 (LTE)</span>
+                        <strong class="plan_tit_sub"
+                          >월 1GB + 1Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <p class="month">월 11,410원</p>
+                        <!---->
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>38
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/23/로고-맥도날드.png"
+                                    alt="알닷에서 개통하면 에그 맥머핀 100%증정 - 개통 대상"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/스타벅스.png"
+                                    alt="스타벅스"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/농심.png"
+                                    alt="농심"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/배스킨라빈스.png"
+                                    alt="베라"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/5/240605_알뜰폰닷컴 가입혜택 배너_96x96.png"
+                                    alt="빽다방 요금제 가입 시 매월 아메리카노 4잔 증정 (25개월간)"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">+5</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>10</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : U+유모바일|[빽다방 100잔] 평생할인 1GB+/통화기본 (LTE)|월 1GB + 1Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004408&amp;mvnoPtnId=PC0000000003"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="U+유모바일|[빽다방 100잔] 평생할인 1GB+/통화기본 (LTE)|월 1GB + 1Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/15/umo_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <!---->
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[빽다방 100잔] 평생할인 71GB+/통화기본 (LTE)</span>
+                        <strong class="plan_tit_sub"
+                          >월 11GB + 매일 2GB + 3Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <p class="month">월 35,400원</p>
+                        <!---->
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>41
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/23/로고-맥도날드.png"
+                                    alt="알닷에서 개통하면 에그 맥머핀 100%증정 - 개통 대상"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/스타벅스.png"
+                                    alt="스타벅스"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/농심.png"
+                                    alt="농심"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/배스킨라빈스.png"
+                                    alt="베라"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/5/240605_알뜰폰닷컴 가입혜택 배너_96x96.png"
+                                    alt="빽다방 요금제 가입 시 매월 아메리카노 4잔 증정 (25개월간)"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">+6</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>11</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : U+유모바일|[빽다방 100잔] 평생할인 71GB+/통화기본 (LTE)|월 11GB + 매일 2GB + 3Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004405&amp;mvnoPtnId=PC0000000003"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="U+유모바일|[빽다방 100잔] 평생할인 71GB+/통화기본 (LTE)|월 11GB + 매일 2GB + 3Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                  <div class="plan_item">
+                    <!---->
+                    <div class="card_top">
+                      <div class="partner">
+                        <img
+                          src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/15/umo_logo.png"
+                          alt="협력사 로고이미지."
+                        />
+                        <div class="star">
+                          <span class="blind">별점</span>
+                          <span class="score">4.8</span>
+                        </div>
+                      </div>
+                      <div class="beft">
+                        <!---->
+                        <!---->
+                      </div>
+                    </div>
+                    <div class="card_mid big_card">
+                      <div class="card_info">
+                        <span class="plan_tit">[빽다방 100잔] 평생할인 15GB+/통화기본 (LTE)</span>
+                        <strong class="plan_tit_sub"
+                          >월 15GB + 1Mbps
+                          <button
+                            type="button"
+                            class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated btn_tooltip"
+                            id="rateplan1-1"
+                            title="툴팁"
+                          >
+                            <span class="v-btn__overlay"></span>
+                            <span class="v-btn__underlay"></span>
+                            <!---->
+                            <span class="v-btn__content" data-no-activator="">요금제 툴팁</span>
+                            <!---->
+                            <!---->
+                          </button>
+                        </strong>
+                        <div class="plan_info">
+                          <span class="phone"> <span class="blind">통화량</span>기본제공 </span>
+                          <span class="message"> <span class="blind">문자량</span>기본제공 </span>
+                          <span class="cellular"> <span class="blind">통신기술</span>LTE </span>
+                        </div>
+                      </div>
+                      <div class="card_price">
+                        <p class="month">월 22,410원</p>
+                        <!---->
+                      </div>
+                    </div>
+                    <!---->
+                    <div class="combi">
+                      <div class="card_bot">
+                        <div class="paln_badge">
+                          <button type="button" class="btn bag c01">
+                            <span class="blind">찜하기</span>39
+                          </button>
+                          <!---->
+                        </div>
+                        <div class="gift_box">
+                          <div class="bag_list">
+                            <ul>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/23/로고-맥도날드.png"
+                                    alt="알닷에서 개통하면 에그 맥머핀 100%증정 - 개통 대상"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/스타벅스.png"
+                                    alt="스타벅스"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/농심.png"
+                                    alt="농심"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/4/26/배스킨라빈스.png"
+                                    alt="베라"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">
+                                  <img
+                                    src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/5/240605_알뜰폰닷컴 가입혜택 배너_96x96.png"
+                                    alt="빽다방 요금제 가입 시 매월 아메리카노 4잔 증정 (25개월간)"
+                                    onerror="this.src='/images/content/img_icon_empty.png'"
+                                  />
+                                </div>
+                              </li>
+                              <li>
+                                <div class="bag_git">+6</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="acc_box">
+                            <button type="button" aria-expanded="false" class="btn_acc">
+                              사은품 최대 <span>11</span>개
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <a
+                      class="link_list"
+                      data-gtm-event-name="link_click"
+                      data-gtm-event-category="클릭"
+                      data-gtm-event-action="요금제 추천 - 링크 클릭"
+                      data-gtm-event-label="컨텐츠 : U+유모바일|[빽다방 100잔] 평생할인 15GB+/통화기본 (LTE)|월 15GB + 1Mbps"
+                      data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list/detail?mvnoPpId=CP0000004406&amp;mvnoPtnId=PC0000000003"
+                      data-gtm-click-location="요금제 추천"
+                      data-gtm-click-direction="내부"
+                      data-gtm-click-text="U+유모바일|[빽다방 100잔] 평생할인 15GB+/통화기본 (LTE)|월 15GB + 1Mbps"
+                    >
+                      <span class="blind">요금제 상세페이지 이동</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="btn_wrap center">
+                  <button type="button" class="btn round more_d">더 볼래요</button>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3 class="tit03">다른 이벤트도 둘러보세요</h3>
+                <div
+                  class="swiper swiper-initialized swiper-horizontal cardSwiper swiper-backface-hidden isBeginning isEnd"
+                >
+                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+                    <div class="swiper-slide swiper-slide-active" style="margin-right: 12px">
+                      <!----><!----><a
+                        href="/benefit/event/detail?mvnopEvetId=EV0000002063"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        class="link_list"
+                        data-event='{"mkt_event_name":"알닷과 떠나는 추캉스","mkt_event_type":"","mkt_event_period":""}'
+                        data-gtm-event-name="link_click"
+                        data-gtm-event-category="클릭"
+                        data-gtm-event-action="이벤트 추천 - 링크 클릭"
+                        data-gtm-event-label="컨텐츠 : 알닷과 떠나는 추캉스"
+                        data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063"
+                        data-gtm-click-location="이벤트 추천"
+                        data-gtm-click-direction="내부"
+                        data-gtm-click-text="알닷과 떠나는 추캉스"
+                        ><span class="blind">이벤트 상세페이지 이동</span>
+                        <div class="thum_item no_border">
+                          <div class="thum_img">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/evt_thumb_10choo_656x360_3.jpg"
+                              alt="알닷과 떠나는 추캉스 "
+                            />
+                          </div>
+                          <div class="thum_con"><strong>알닷과 떠나는 추캉스</strong></div>
+                        </div></a
+                      ><!----><!----><!---->
+                    </div>
+                  </div>
+                  <!----><!----><!---->
+                  <div class="swiper-navigation">
+                    <div class="left">
+                      <button
+                        type="button"
+                        class="swiper-button-prev swiper-button-disabled swiper-button-lock"
+                        disabled=""
+                      ></button>
+                    </div>
+                    <div class="right">
+                      <button
+                        type="button"
+                        class="swiper-button-next swiper-button-disabled swiper-button-lock"
+                        disabled=""
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn_group">
+                  <button
+                    type="button"
+                    class="btn md c05"
+                    data-gtm-event-name="button_click"
+                    data-gtm-event-category="클릭"
+                    data-gtm-event-action="이벤트 추천 - 버튼 클릭"
+                    data-gtm-event-label="컨텐츠 : 이벤트 목록보기"
+                    data-gtm-click-location="이벤트 추천"
+                    data-gtm-click-text="이벤트 목록보기"
+                  >
+                    목록보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a
+                href="/purchase/delivery"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn_deli"
+              >
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector(".btn_top").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+    </script>
+  </body>
+</html>

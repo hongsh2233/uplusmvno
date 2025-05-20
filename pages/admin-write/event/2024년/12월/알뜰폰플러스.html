@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../../../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device() {
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add("mobile") : elem.classList.add("pc");
+          ios.test(userAgent) ? elem.classList.add("ios") : null;
+          aos.test(userAgent) ? elem.classList.add("android") : null;
+
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if (msie.test(userAgent) && trident.test(userAgent)) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add("ie" + ieVer);
+          } else if (!msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add("ie11");
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add("edg") : null;
+          opr.test(userAgent) || opera.test(userAgent) ? elem.classList.add("opera") : null;
+          chrome.test(userAgent) ? elem.classList.add("chrome") : null;
+          safari.test(userAgent) ? elem.classList.add("safari") : null;
+          firefox.test(userAgent) ? elem.classList.add("firefox") : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile() {
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        },
+      };
+
+      window.addEventListener("load", () => {
+        front.device();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a
+            aria-current="page"
+            href="/benefit/event/detail#content"
+            class="router-link-active router-link-exact-active"
+            >본문 바로가기</a
+          >
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a
+                        aria-current="page"
+                        href="/benefit/event/detail"
+                        class="router-link-active router-link-exact-active menu_class"
+                      >
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">이벤트 상세</div>
+          </header>
+
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src="" alt="파트너사" />
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span> <span>2023.12.08</span> - <span>2024.04.30</span> </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .pc .event-cont-specialplus {
+                          min-width: 92.4rem;
+                        }
+                        .event-section-specialplus {
+                          position: relative;
+                        }
+
+                        .event-section-specialplus.section-1 .btn1 {
+                          position: absolute;
+                          top: 94%;
+                          left: 24%;
+                          width: 48%;
+                          height: 4%;
+                        }
+                        .pc .event-section-specialplus.section-1 .btn1 {
+                          position: absolute;
+                          top: 91.8%;
+                          left: 31%;
+                          width: 37%;
+                          height: 5%;
+                        }
+
+                        .event-section-specialplus.section-3 .btn-shop1 {
+                          position: absolute;
+                          top: 15%;
+                          left: 10.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop2 {
+                          position: absolute;
+                          top: 15%;
+                          left: 50.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop3 {
+                          position: absolute;
+                          top: 37%;
+                          left: 10.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop4 {
+                          position: absolute;
+                          top: 37%;
+                          left: 50.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop5 {
+                          position: absolute;
+                          top: 58%;
+                          left: 10.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop6 {
+                          position: absolute;
+                          top: 58%;
+                          left: 50.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop7 {
+                          position: absolute;
+                          top: 79%;
+                          left: 10.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .event-section-specialplus.section-3 .btn-shop8 {
+                          position: absolute;
+                          top: 79%;
+                          left: 50.5%;
+                          width: 39%;
+                          height: 8.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop1 {
+                          position: absolute;
+                          top: 30%;
+                          left: 5.5%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop2 {
+                          position: absolute;
+                          top: 30%;
+                          left: 28%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop3 {
+                          position: absolute;
+                          top: 30%;
+                          left: 50.5%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop4 {
+                          position: absolute;
+                          top: 30%;
+                          left: 73%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop5 {
+                          position: absolute;
+                          top: 67%;
+                          left: 5.5%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop6 {
+                          position: absolute;
+                          top: 67%;
+                          left: 28%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop7 {
+                          position: absolute;
+                          top: 67%;
+                          left: 50.5%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .pc .event-section-specialplus.section-3 .btn-shop8 {
+                          position: absolute;
+                          top: 67%;
+                          left: 73%;
+                          width: 22%;
+                          height: 11.5%;
+                        }
+                        .event-section-specialplus .accordion {
+                          position: relative;
+                        }
+                        .event-section-specialplus .accordion .accordion__header {
+                          position: relative;
+                        }
+                        .event-section-specialplus
+                          .accordion
+                          .accordion__header
+                          + .accordion__body {
+                          display: none;
+                        }
+                        .event-section-specialplus
+                          .accordion.on
+                          .accordion__header
+                          + .accordion__body {
+                          display: block;
+                          margin-top: 1px;
+                        }
+                        .event-section-specialplus.notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 34%;
+                          top: 42%;
+                          width: 10px;
+                          height: 10px;
+                          background: url("https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/btn_aldotplus_accordion.png")
+                            no-repeat 50% 50%;
+                          background-size: contain;
+                          transition: 0.5s;
+                          transform: rotate(45deg);
+                        }
+                        .pc .event-section-specialplus.notice .accordion .accordion__header::after {
+                          content: "";
+                          position: absolute;
+                          right: 39%;
+                          top: 40%;
+                          width: 20px;
+                          height: 20px;
+                        }
+                        .event-section-specialplus .accordion.on .accordion__header::after {
+                          content: "";
+                          transform: rotate(180deg);
+                        }
+                      </style>
+                      <div class="event-cont-specialplus">
+                        <div class="event-section-specialplus section-1">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/aldotplus_visual.jpg"
+                            alt="알뜰폰플러스 스페셜 이벤트"
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/aldotplus_visual_m.jpg"
+                            alt="알뜰폰플러스 스페셜 이벤트"
+                            class="pc_hide"
+                          />
+                          <a
+                            href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002094"
+                            target="_blank"
+                            class="btn1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 매장 자세히 보러가기"
+                            data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002094"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="내부"
+                            data-gtm-click-text="매장 자세히 보러가기"
+                            ><span class="blind">매장 자세히 보러가기</span></a
+                          >
+
+                          <div class="blind">
+                            알뜰폰플러스 오페닝 이벤트 #일정점 #잠실점 #인천점 #분당점 #대전점
+                            #대구점 #광주점 #부산점 알뜰폰 플러스란? 오프라인 상담이 가능한 국내
+                            최초 알뜰폰 전용 매장 [주요 특징] 모바일 요금제 개통 선불/후불 상품 모두
+                            쉽고 빠르게 개통 상담 진행 홈상품 결합 상담 인터넷+IPTV+알뜰폰 결합
+                            상담까지 가능 전국 8개 플러스 매장 마트에 잘 보려 했다가 편하게 상담
+                            받고 가입 가능 CS 업무 가능 불편하신 점이나 요금수납 관련된 CS 업무 처리
+                          </div>
+                        </div>
+
+                        <div class="event-section-specialplus section-2">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/aldotplus_section1.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/aldotplus_section1_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          />
+                          <div class="blind">
+                            SPECIAL EVENT 이벤트 기간 | 2024.12.01 ~ 12.31 매장 방문하면 요금제 추가
+                            할인 더! 알뜰폰플러스 매장 방문 고객 대상 데이터 월11GB+월2GB+3Mbps
+                            요금제 기준 정상가 38,000원 → 25,900원 오직 알뜰폰플러스 매장에서만 월
+                            20,900원 (24개월간 할인 적용) 24개월간 120,000원 SAVE!
+                          </div>
+                        </div>
+
+                        <div class="event-section-specialplus section-3">
+                          <img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/aldotplus_section2.jpg"
+                            alt=""
+                            class="pc_show"
+                          /><img
+                            src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/aldotplus_section2_m.jpg"
+                            alt=""
+                            class="pc_hide"
+                          /><a
+                            href="https://map.naver.com/p/entry/place/1211582947?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop1"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 서울 합정점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1211582947?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="서울 합정점 예약하기"
+                            ><span class="blind"
+                              >서울 합정점 서울시 마포구 양화로 45 홈플러스 지하2층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1615255539?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop2"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 서울 잠실점 예약하기"
+                            data-gtm-click-url=""
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="서울 잠실점 예약하기"
+                            ><span class="blind"
+                              >서울시 송파구 올림픽로35가길 16 홈플러스 지하1층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1186333901?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop3"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 분당 야탑점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1186333901?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="분당 야탑점 예약하기"
+                            ><span class="blind"
+                              >분당 야탑점 경기도 성남시 분당구 야탑동 341 테마폴리스 3층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1652442029?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop4"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 인천 작전점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1652442029?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="인천 작전점 예약하기"
+                            ><span class="blind"
+                              >인천 작전점 인천 계양구 계양대로 27 홈플러스 1층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1172195527?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop5"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 대전 문화점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1172195527?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="대전 문화점 예약하기"
+                            ><span class="blind"
+                              >대전 문화점 대전 중구 계백로 1690 홈플러스 지하1층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1590359335?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop6"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 광주 동광주점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1590359335?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="광주 동광주점 예약하기"
+                            ><span class="blind"
+                              >광주 동광주점 광주시 북구 동문대로 200 홈플러스 지하1층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1724101845?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop7"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 대구 상인점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1724101845?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="대구 상인점 예약하기"
+                            ><span class="blind"
+                              >대구 상인점 대구 달서구 월배로 183 홈플러스 지하1층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          ><a
+                            href="https://map.naver.com/p/entry/place/1224340736?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            target="_blank"
+                            class="btn-shop8"
+                            data-gtm-event-name="link_click"
+                            data-gtm-event-category="클릭"
+                            data-gtm-event-action="이벤트 상세 - 링크 클릭"
+                            data-gtm-event-label="컨텐츠 : 부산 서부산점 예약하기"
+                            data-gtm-click-url="https://map.naver.com/p/entry/place/1224340736?placePath=%2Fhome&amp;c=15.00,0,0,0,dh"
+                            data-gtm-click-location="이벤트 상세"
+                            data-gtm-click-direction="외부"
+                            data-gtm-click-text="부산 서부산점 예약하기"
+                            ><span class="blind"
+                              >부산 서부산점 부산 사상구 광장로 7 홈플러스 지하1층 알뜰폰+
+                              예약하기</span
+                            ></a
+                          >
+                          <div class="blind">
+                            <ul>
+                              <li>합정점 예약하기</li>
+                              <li>잠실점 예약하기</li>
+                              <li>인천점 예약하기</li>
+                              <li>분당점 예약하기</li>
+                              <li>대전점 예약하기</li>
+                              <li>대구점 예약하기</li>
+                              <li>광주점 예약하기</li>
+                              <li>부산점 예약하기</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="event-section-specialplus notice">
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/event_aldotplus_notice_accordion.jpg"
+                                alt="유의사항 확인하기"
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/event_aldotplus_notice_accordion_m.jpg"
+                                alt="유의사항 확인하기"
+                                class="pc_hide"
+                              />
+                            </button>
+                            <div class="accordion__body">
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/event_aldotplus_notice.jpg"
+                                alt=""
+                                class="pc_show"
+                              />
+                              <img
+                                src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/11/28/event_aldotplus_notice_m.jpg"
+                                alt=""
+                                class="pc_hide"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="blind">
+                            이벤트 유의사항 본 이벤트는 12월 1일~31일 사이에 개통 완료된 고객에게
+                            한해 적용되며 사전에 예고 없이 종료 될 수 있습니다. 요금제는 11GB+, 7GB+
+                            2종만 해당되며 코나아이, 유니컴즈, 큰사람, 인스코리아, 슈가모바일에서
+                            운영하는 요금제만 해당됩니다. 요금제 할인 금액은 개통일 기준으로 일할
+                            계산되며, 가입한 달로부터 24개월까지 적용됩니다. 본 이벤트는 U+ 알뜰폰
+                            플러스 매장에서 상담 후에만 가입이 가능하며 90일 유지 기간이 있습니다.
+                            요금제 변경 또는 해지 시 할인 적용이 중단되며, 위약할 경우에도 기준에
+                            따라 할인이 적용되지 않을 수 있습니다. 기존 가입자 분들은 새로운 이벤트
+                            요금제로 변경 처리 불가능하며 통신망 이동 시 변경 가능합니다.
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        function handleAnchor(num) {
+                          const header = document.querySelector(".header");
+                          const linkSection = document.querySelector(
+                            `.event-section-specialplus.section-${num}`
+                          );
+
+                          if (linkSection) {
+                            const topOffset = linkSection.offsetTop - header.clientHeight;
+                            window.scrollTo({ top: topOffset, behavior: "smooth" });
+                          }
+                        }
+
+                        function handleAccordion(event) {
+                          event.currentTarget.parentNode.classList.toggle("on");
+                        }
+
+                        setTimeout(function () {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }, 500);
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <h3 class="tit03">다른 이벤트도 둘러보세요</h3>
+                <div
+                  class="swiper swiper-initialized swiper-horizontal cardSwiper swiper-backface-hidden isBeginning isEnd"
+                >
+                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+                    <div class="swiper-slide swiper-slide-active" style="margin-right: 12px">
+                      <!----><!----><a
+                        href="/benefit/event/detail?mvnopEvetId=EV0000002063"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        class="link_list"
+                        data-event='{"mkt_event_name":"알닷과 떠나는 추캉스","mkt_event_type":"","mkt_event_period":""}'
+                        data-gtm-event-name="link_click"
+                        data-gtm-event-category="클릭"
+                        data-gtm-event-action="이벤트 추천 - 링크 클릭"
+                        data-gtm-event-label="컨텐츠 : 알닷과 떠나는 추캉스"
+                        data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063"
+                        data-gtm-click-location="이벤트 추천"
+                        data-gtm-click-direction="내부"
+                        data-gtm-click-text="알닷과 떠나는 추캉스"
+                        ><span class="blind">이벤트 상세페이지 이동</span>
+                        <div class="thum_item no_border">
+                          <div class="thum_img">
+                            <img
+                              src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/9/30/evt_thumb_10choo_656x360_3.jpg"
+                              alt="알닷과 떠나는 추캉스 "
+                            />
+                          </div>
+                          <div class="thum_con"><strong>알닷과 떠나는 추캉스</strong></div>
+                        </div></a
+                      ><!----><!----><!---->
+                    </div>
+                  </div>
+                  <!----><!----><!---->
+                  <div class="swiper-navigation">
+                    <div class="left">
+                      <button
+                        type="button"
+                        class="swiper-button-prev swiper-button-disabled swiper-button-lock"
+                        disabled=""
+                      ></button>
+                    </div>
+                    <div class="right">
+                      <button
+                        type="button"
+                        class="swiper-button-next swiper-button-disabled swiper-button-lock"
+                        disabled=""
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn_group">
+                  <button
+                    type="button"
+                    class="btn md c05"
+                    data-gtm-event-name="button_click"
+                    data-gtm-event-category="클릭"
+                    data-gtm-event-action="이벤트 추천 - 버튼 클릭"
+                    data-gtm-event-label="컨텐츠 : 이벤트 목록보기"
+                    data-gtm-click-location="이벤트 추천"
+                    data-gtm-click-text="이벤트 목록보기"
+                  >
+                    목록보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a
+                href="/purchase/delivery"
+                rel="noopener noreferrer"
+                target="_blank"
+                class="btn_deli"
+              >
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송" />
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a
+                  href="/footer/terms/privacyProcess"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="policy"
+                  >개인정보처리방침</a
+                >
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank"
+                  >개인정보이용내역</a
+                >
+                <a
+                  href="https://msafer.or.kr/index.do"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >명의도용방지서비스</a
+                >
+                <a
+                  href="https://spam.kisa.or.kr/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="새 창 열림"
+                  >불법스팸대응센터</a
+                >
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright">Copyright © LG Uplus Corp. All Rights Reserved.</div>
+              <div class="f_sns">
+                <a
+                  href="https://www.youtube.com/@uplusmvno_official"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_youtube"
+                  title="새 창 열림"
+                >
+                  <span class="blind">youtube</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/uplusalpha_official/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="ico_instagram"
+                  title="새 창 열림"
+                >
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector(".btn_top").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

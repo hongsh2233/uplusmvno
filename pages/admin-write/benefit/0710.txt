@@ -1,0 +1,224 @@
+1. 알닷 슈퍼위크 개통이벤트-스타벅스 아메리카노 10잔
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/7/10/혜택_슈퍼위크_스벅1잔.png" alt="혜택_원칩지금배송_아이스아메리카노1잔" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 슈퍼위크 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="슈퍼위크 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+
+2. 알닷 슈퍼위크 개통이벤트-스타벅스 아메리카노 1잔
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/7/10/혜택_슈퍼위크_스벅5잔.png" alt="혜택_슈퍼위크_스벅5잔" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 슈퍼위크 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002063" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="슈퍼위크 이벤트 혜택 보러가기" >혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+3. 알뜰폰+ 인터넷/IPTV 결합 이벤트 - 최대 117만원 혜택 증정
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/28/2024_6_28_혜텍_팝업_결합이벤트_117만원.png" alt="2024_6_28_혜텍_팝업_결합이벤트_117만원.png" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 결합 할인 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002032" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="결합 할인 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+4. 지금배송 유심 구매 이벤트-스타벅스 아메리카노 1잔
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/28/2024_6_28_혜텍_원칩지금배송_아이스아메리카노.png" alt="2024_6_28_혜텍_원칩지금배송_아이스아메리카노.png" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/purchase/delivery" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 지금배송 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/purchase/delivery" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="지금배송 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+5. 친구 추천 개통 이벤트-2+2 배스킨라빈스 싱글레귤러
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/28/2024_6_28_혜텍_요금제추천_베라.png" alt="2024_6_28_혜텍_요금제추천_베라.png" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/recommendation" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 친구추천 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/recommendation" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="친구추천 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+6. 친구 추천 개통 이벤트-2+2 배스킨라빈스 싱글레귤러
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/28/2024_6_28_혜텍_요금제추천_베라.png" alt="2024_6_28_혜텍_요금제추천_베라.png" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/recommendation" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 친구추천 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/recommendation" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="친구추천 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+7. 알닷 회원가입 이벤트-네이버페이, 아임닭 적립금 100% 증정
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/7/3/2024_7_3_혜택_회원가입_네이버페이아임닭_3.png" alt="2024_7_3_혜택_회원가입_네이버페이아임닭_3.png" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002065" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 회원가입 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002065" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="회원가입 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->
+
+8. 알닷 회원가입 이벤트-네이버페이, 아임닭 적립금 100% 증정
+<!-- 어드민 등록 -->
+<style>
+    .admin-detail__link {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .admin-detail__link button,
+    .admin-detail__link a {
+        width: 100%;
+        border-radius: 30px;
+        background: #3071F4;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.4rem;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+</style>
+<div class="admin-detail">
+    <p class="admin-detail__img"><img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2024/6/28/2024_6_28_혜텍_알닷후기이벤트_사발면.png" alt="2024_6_28_혜텍_알닷후기이벤트_사발면.png" style="width: 100%;"></p>
+    <div class="admin-detail__link">
+        <a href="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002034" target="_blank" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="알닷 혜택 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 알닷후기 이벤트 혜택 보러가기" data-gtm-click-url="https://www.uplusmvno.com/benefit/event/detail?mvnopEvetId=EV0000002034" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="알닷후기 이벤트 혜택 보러가기">혜택 보러가기</a>
+    </div>
+</div>
+<!-- // 어드민 등록 -->

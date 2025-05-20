@@ -1,0 +1,282 @@
+@charset "utf-8";
+
+
+/*********************** keyframes animation ***********************/
+/* popup, alert, sort, aside dimBG, graph-etc */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* [ALFM-PR02-PO07] 내게 맞는 요금제 찾기 graph */
+@keyframes graph {
+  from {
+    stroke-dashoffset: 450px;
+  }
+
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+
+
+/*********************** vue Transition ***********************/
+/* gnb */
+.gnb-enter-active,
+.gnb-leave-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.gnb-enter-from,
+.gnb-leave-to {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.gnb-enter-to,
+.gnb-leave-from {
+  max-height: 22.7rem;
+  overflow: hidden;
+}
+
+/* aside submenu */
+.subMenu-enter-active {
+  transition: max-height 1s ease;
+  will-change: max-height, contents;
+}
+
+.subMenu-leave-active {
+  transition: max-height .2s ease;
+  will-change: max-height, contents;
+}
+
+.subMenu-enter-from,
+.subMenu-leave-to {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.subMenu-enter-to,
+.subMenu-leave-from {
+  max-height: 50rem;
+  overflow: hidden;
+}
+
+/* 요금제 card */
+.cardDetail-enter-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.cardDetail-leave-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.cardDetail-enter-from,
+.cardDetail-leave-to {
+  max-height: 0;
+}
+
+.cardDetail-enter-to,
+.cardDetail-leave-from {
+  max-height: 25rem;
+}
+
+.cardDetail2-enter-active {
+  transition: max-height .0s ease;
+  will-change: max-height, contents;
+}
+
+.cardDetail2-leave-active {
+  transition: max-height .0s ease;
+  will-change: max-height, contents;
+}
+
+.cardDetail2-enter-from,
+.cardDetail2-leave-to {
+  max-height: 0;
+}
+
+.cardDetail2-enter-to,
+.cardDetail2-leave-from {
+  max-height: 25rem;
+}
+
+/* 요금제 비교하기 바텀시트 compCon */
+.compCon-enter-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.compCon-leave-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.compCon-enter-from,
+.compCon-leave-to {
+  max-height: 0;
+}
+
+.compCon-enter-to,
+.compCon-leave-from {
+  max-height: 28rem;
+}
+
+/* popupAlert */
+.popupAlert-enter-active>.pop_wrap,
+.popupAlert-leave-active>.pop_wrap {
+  transition: transform .2s ease;
+  will-change: transform, contents;
+}
+
+.popupAlert-enter-from>.pop_wrap,
+.popupAlert-leave-to>.pop_wrap {
+  transform: scale(50%);
+}
+
+.popupAlert-enter-to>.pop_wrap,
+.popupAlert-leave-from>.pop_wrap {
+  transform: scale(100%);
+}
+
+/* popupNormal */
+.popupNormal-enter-active>.pop_wrap,
+.popupNormal-leave-active>.pop_wrap {
+  transition: transform .2s ease;
+  will-change: transform;
+}
+
+.popupNormal-enter-from>.pop_wrap,
+.popupNormal-leave-to>.pop_wrap {
+  transform: translateY(100%);
+}
+
+.popupNormal-enter-to>.pop_wrap,
+.popupNormal-leave-from>.pop_wrap {
+  transform: translateY(0);
+}
+
+/* popupFull */
+.popupFull-enter-active>.pop_wrap,
+.popupFull-leave-active>.pop_wrap {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.popupFull-enter-from>.pop_wrap,
+.popupFull-leave-to>.pop_wrap {
+  transform: translateY(100%);
+}
+
+.popupFull-enter-to>.pop_wrap,
+.popupFull-leave-from>.pop_wrap {
+  transform: translateY(0);
+}
+
+/* popupNotice */
+.popupNotice-enter-active>.pop_wrap,
+.popupNotice-leave-active>.pop_wrap {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+.popupNotice-enter-from>.pop_wrap,
+.popupNotice-leave-to>.pop_wrap {
+  transform: scale(50%);
+}
+
+.popupNotice-enter-to>.pop_wrap,
+.popupNotice-leave-from>.pop_wrap {
+  transform: scale(100%);
+}
+
+/* [ALFM-CS02-PG00] 내 주변 매장찾기 map bottom sheet animation */
+.mapBottomSheet-enter-active {
+  transition: max-height .5s ease;
+  will-change: max-height, contents;
+}
+
+.mapBottomSheet-leave-active {
+  transition: max-height .2s ease;
+  will-change: max-height, contents;
+}
+
+.mapBottomSheet-enter-from,
+.mapBottomSheet-leave-to {
+  max-height: 0;
+}
+
+.mapBottomSheet-enter-to,
+.mapBottomSheet-leave-from {
+  max-height: 100rem;
+}
+
+/* [ALFM-CS02-PG00] 내 주변 매장찾기 map tooltip animation */
+.mapTooltip-enter-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.mapTooltip-leave-active {
+  transition: max-height .3s ease;
+  will-change: max-height, contents;
+}
+
+.mapTooltip-enter-from,
+.mapTooltip-leave-to {
+  max-height: 0;
+}
+
+.mapTooltip-enter-to,
+.mapTooltip-leave-from {
+  max-height: 15rem;
+}
+
+
+
+
+
+@media screen and (min-width:640px) and (max-width:99999px) {
+
+  /* popupNormal */
+  .popupNormal-enter-active>.pop_wrap,
+  .popupNormal-leave-active>.pop_wrap {
+    transition: transform 0.2s ease;
+    will-change: transform;
+  }
+
+  .popupNormal-enter-from>.pop_wrap,
+  .popupNormal-leave-to>.pop_wrap {
+    transform: translateY(0) scale(50%);
+  }
+
+  .popupNormal-enter-to>.pop_wrap,
+  .popupNormal-leave-from>.pop_wrap {
+    transform: translateY(0) scale(100%);
+  }
+
+  /* popupFull */
+  .popupFull-enter-active>.pop_wrap,
+  .popupFull-leave-active>.pop_wrap {
+    transition: transform 0.2s ease;
+    will-change: transform;
+  }
+
+  .popupFull-enter-from>.pop_wrap,
+  .popupFull-leave-to>.pop_wrap {
+    transform: translateY(0) scale(50%);
+  }
+
+  .popupFull-enter-to>.pop_wrap,
+  .popupFull-leave-from>.pop_wrap {
+    transform: translateY(0) scale(100%);
+  }
+}

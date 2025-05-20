@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MS-04-003 {
+  .gallery-title {
+    font-size: rem(16);
+  }
+  .pc & {
+    .map_gallery-wrap {
+      .info-box-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(6);
+        .item {
+          &:nth-of-type(2) {
+            margin-top: 0;
+          }
+          width: calc(50% - rem(6));
+        }
+      }
+    }
+  }
+}

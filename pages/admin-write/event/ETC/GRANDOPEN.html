@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../../assets/css/animation.css" />
+    <link rel="stylesheet" href="../../../assets/css/common.css" />
+    <link rel="stylesheet" href="../../../assets/css/content.css" />
+    <link rel="stylesheet" href="../../../assets/css/form.css" />
+    <link rel="stylesheet" href="../../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <style>
+      .mobile_header {
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.5);
+        background: #fff;
+      }
+    </style>
+    <script>
+      const front = {
+        device(){
+          const elem = document.querySelector("html");
+          const userAgent = navigator.userAgent;
+
+          const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+          const ios = /iPhone|iPad|iPop/i;
+          const aos = /Android/i;
+
+          mobile.test(userAgent) ? elem.classList.add('mobile') : elem.classList.add('pc');
+          ios.test(userAgent) ? elem.classList.add('ios') : null;
+          aos.test(userAgent) ? elem.classList.add('android') : null;
+          
+          // ie check
+          const msie = /MSIE/i;
+          const trident = /Trident/i;
+
+          if( msie.test(userAgent) && trident.test(userAgent) ) {
+            const ieVer = document.documentMode; // IE 브라우저 버전
+            elem.classList.add('ie' + ieVer);
+
+          } else if( !msie.test(userAgent) && trident.test(userAgent)) {
+            elem.classList.add('ie11');
+          }
+
+          // etc browser check
+          const edge = /Edg/i;
+          const opr = /OPR/i;
+          const opera = /Opera/i;
+          const chrome = /Chrome/i;
+          const safari = /Safari/i;
+          const firefox = /Firefox/i;
+
+          edge.test(userAgent) ? elem.classList.add('edg') : null;
+          ( opr.test(userAgent) || opera.test(userAgent) ) ? elem.classList.add('opera') : null;
+          chrome.test(userAgent) ?  elem.classList.add('chrome') : null;
+          safari.test(userAgent) ? elem.classList.add('safari') : null;
+          firefox.test(userAgent) ? elem.classList.add('firefox') : null;
+        },
+        /**
+         * 디바이스 모바일 체크
+         * @returns Boolean, html이 mobile 클래스를 가지고 있으면 true 반환
+         */
+        isMobile(){
+          // const userAgent = navigator.userAgent;
+          // const mobile = /Android|webOS|iPhone|iPad|iPop|BlackBerry|IEmobile|Opera Mini/i;
+
+          // return mobile.test(userAgent);
+
+          return document.querySelector("html").classList.contains("mobile");
+        }
+      }
+
+      window.addEventListener('load', () => {
+        front.device()
+      })
+    </script>
+  </head>
+  <body>
+    <div id="__nuxt">
+      <!--[-->
+      <div>
+        <!---->
+        <div class="skip">
+          <a aria-current="page" href="/benefit/event/detail#content" class="router-link-active router-link-exact-active">본문 바로가기</a>
+        </div>
+        <div class="wrap">
+          <!---->
+          <header class="header">
+            <div class="pc_header">
+              <div class="inner">
+                <h1>
+                  <a href="/" class="">
+                    <span class="blind">U <sup>+</sup>알뜰폰닷컴 </span>
+                  </a>
+                </h1>
+                <nav class="nav">
+                  <ul>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>유심구매</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>요금제</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>혜택</span>
+                      </a>
+                      <!---->
+                    </li>
+                    <li>
+                      <a aria-current="page" href="/benefit/event/detail" class="router-link-active router-link-exact-active menu_class">
+                        <span>고객지원</span>
+                      </a>
+                      <!---->
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header_menu">
+                  <ul>
+                    <li>
+                      <a href="/login" class="">로그인</a>
+                    </li>
+                    <li>
+                      <a href="/register" class="">회원가입</a>
+                    </li>
+                    <!---->
+                    <!---->
+                    <li>
+                      <a href="/mypage" class="">마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_header">
+              이벤트 상세
+            </div>
+          </header>
+          
+          <div class="container">
+            <div class="content" id="content">
+              <h2 class="title_nav">이벤트 상세</h2>
+              <div class="section">
+                <div class="evt_dtl_item">
+                  <div class="evt_dtl_tit">
+                    <div class="dtl_tit_top">
+                      <div class="bag_lft">
+                        <div class="bag evt dday">
+                          <b>D-55</b>
+                        </div>
+                        <div class="bag evt ty01">
+                          <b>이번달 이벤트</b>
+                        </div>
+                      </div>
+                      <div class="bag_rit">
+                        <img src=".png" alt="파트너사">
+                      </div>
+                    </div>
+                    <div class="dtl_tit_bot">
+                      <strong>이벤트 제목이 들어가야 할 공간</strong>
+                      <div class="share_box">
+                        <span>
+                          <span>2023.12.08</span> - <span>2024.04.30</span>
+                        </span>
+                        <button type="button" class="btn_share" id="btn_CM12PG00">
+                          <span class="blind">공유하기</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+                  <div class="evt_dtl_con">
+                    <div>
+                      <!-- 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                      <style>
+                        .event-grandopen img {width: auto; max-width: 100%;}
+                        .pc .event-grandopen {min-width: 92.4rem;}
+                        .section-grandopen {position: relative;}
+                        .section-grandopen.tab .inner {display: flex; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+                        .section-grandopen.tab .inner button {width: calc(100% / 6); height: 100%; cursor: pointer;}
+
+                        .section-grandopen.section-1 .btn1 {position: absolute; top: 92.5%; left: 3%; width: 94%; height: 4%;}
+                        .section-grandopen.section-1 .btn2 {position: absolute; top: 96.5%; left: 3%; width: 94%; height: 4%;}
+                        .pc .section-grandopen.section-1 .btn1 {position: absolute; top: 96%; left: 7%; width: 42%; height: 4%;}
+                        .pc .section-grandopen.section-1 .btn2 {position: absolute; top: 96%; left: 51%; width: 42%; height: 4%;}
+
+                        .section-grandopen.section-2 .btn1 {position: absolute; top: 81%; left: 15%; width: 28%; height: 5%;}
+                        .pc .section-grandopen.section-2 .btn1 {position: absolute; top: 93%; left: 6%; width: 19%; height: 6%;}
+
+                        .section-grandopen.section-3 .btn1 {position: absolute; top: 43%; left: 44%; width: 52%; height: 5%;}
+                        .pc .section-grandopen.section-3 .btn1 {position: absolute; top: 39%; left: 49%; width: 35%; height: 5%;}
+
+                        .section-grandopen.section-4 .btn1 {position: absolute; bottom: 0%; left: 4%; width: 92%; height: 9%;}
+                        .pc .section-grandopen.section-4 .btn1 {position: absolute; bottom: 0%; left: 24%; width: 52%; height: 9%;}
+
+                        .section-grandopen.section-6 .btn1 {position: absolute; top: 38.5%; left: 5%; width: 91%; height: 4.5%;}
+                        .section-grandopen.section-6 .btn2 {position: absolute; top: 52%; left: 5%; width: 91%; height: 17%;}
+                        .section-grandopen.section-6 .btn3 {position: absolute; top: 52%; left: 5%; width: 91%; height: 17%;}
+                        .section-grandopen.section-6 .btn4 {position: absolute; top: 69%; left: 5%; width: 91%; height: 17%;}
+                        .pc .section-grandopen.section-6 .btn1 {position: absolute; top: 39.7%; left: 51%; width: 35%; height: 4%;}
+                        .pc .section-grandopen.section-6 .btn2 {position: absolute; top: 60%; left: 3%; width: 94%; height: 12%;}
+                        .pc .section-grandopen.section-6 .btn3 {position: absolute; top: 60%; left: 3%; width: 94%; height: 12%;}
+                        .pc .section-grandopen.section-6 .btn4 {position: absolute; top: 73%; left: 3%; width: 94%; height: 12%;}
+
+                        .section-grandopen .accordion {padding: 0 1.5rem; background: #000;}
+                        .pc .section-grandopen .accordion {padding: 0 3.05rem; background: #000;}
+                        .section-grandopen .accordion .accordion__header {
+                          position: relative; font-size: 3.3333vw; font-weight: bold; color: #fff; padding: 3.3333vw; text-align: center; border-radius: 1.2rem; 
+                          background: #4771ff; width: 100%;
+                        }
+                        .pc .section-grandopen .accordion .accordion__header {
+                          font-size: 2.4rem; padding: 2.4rem;
+                        }
+                        .section-grandopen .accordion .accordion__header:after {
+                          content: '';
+                          display: inline-block;
+                          width: 3.0556vw;
+                          height: 1.6667vw;
+                          max-width: 2.2rem;
+                          max-height: 1.2rem;
+                          margin-left: 2.2222vw;
+                          background: url(/public/images/temp/GRANDOPEN/ico_grandopen_accodion_arrow.png);
+                          background-size: contain;
+                          transition: 0.2s;
+                        }
+                        .pc .section-grandopen .accordion .accordion__header:after {margin-left: 1rem;}
+                        
+                        .section-grandopen .accordion .accordion__header.on {border-radius: 1.2rem 1.2rem 0 0;}
+                        .section-grandopen .accordion .accordion__header.on:after {transform: rotate(180deg);}
+
+                        .section-grandopen .accordion .accordion__body {position: relative; display: none;}
+                        .section-grandopen .accordion .accordion__header.on + .accordion__body {display: block;}
+
+                        .section-grandopen.section-3 .accordion img {width: 100%;}
+                        .section-grandopen.section-3 .accordion {padding-top: 2.2rem;}
+                        .pc .section-grandopen.section-3 .accordion {padding-top: 4.4rem;}
+                        .section-grandopen.section-3 .accordion .chip {position: absolute; bottom: 0; left: 4vw; width: calc(43.3333vw / 2);}
+                        .pc .section-grandopen.section-3 .accordion .chip {left: 16%; width: 14.8rem;}
+                        .section-grandopen.section-3 .accordion .chip img {max-width: 100%;}
+                        .section-grandopen.section-3 .accordion .accordion__body .youtube {position: absolute; top: 26%; left: 1rem; width: calc(100% - 2rem); padding-bottom: 51.3%;}
+                        .pc .section-grandopen.section-3 .accordion .accordion__body .youtube {top: 19%; left: 3.55rem; width: calc(100% - 7.1rem);}
+                        .section-grandopen.section-3 .accordion .accordion__body .youtube iframe {border: none; border-radius: 1.2rem; height: 100%; -o-object-fit: fill; object-fit: fill; position: absolute; width: 100%;}
+
+                        .section-grandopen.section-6 .accordion {padding-bottom: 4rem;}
+                        .section-grandopen.section-6 .accordion .accordion__header .check {display: block;}
+                        .pc .section-grandopen.section-6 .accordion .accordion__header .check {display: inline-block; vertical-align: middle;}
+                        .section-grandopen.section-6 .accordion .accordion__header .check ~ em {display: none;}
+                        .pc .section-grandopen.section-6 .accordion .accordion__header .check ~ em {display: inline-block;}
+                        .section-grandopen.section-6 .accordion .accordion__header .check {max-width: 23.5rem; max-height: 3.6rem; width: calc(65.2778vw / 2); height: calc(10vw / 2); text-align: center; margin: 0 auto 0.5rem auto;}
+                        .section-grandopen.section-6 .accordion .accordion__header .check img {width: 100%; object-fit: contain;}
+
+                        .grandopenSwiper {position: relative; width: 100%; background: #000; padding: 0 1.5rem; margin-top: -1px;}
+                        .pc .grandopenSwiper {padding: 0 3rem; margin-top: 0;}
+                        .grandopenSwiper .swiper-container {width: 100%;}
+                        .grandopenSwiper .swiper-slide {text-align: center; display: flex; justify-content: center; align-items: center;}
+                        .grandopenSwiper .swiper-button-next, 
+                        .grandopenSwiper .swiper-button-prev {
+                          border-radius: 0.8rem; background: #eee; top: 5%; width: 8vw; height: 8vw; max-width: 5.6rem; max-height: 5.6rem; color: #000; 
+                          margin-top: 0; display: flex; align-items: center; justify-content: center;
+                        }
+                        @media (min-width: 460px) {
+                          .mobile .grandopenSwiper .swiper-button-next,
+                          .mobile .grandopenSwiper .swiper-button-prev {
+                            width: 8.7778vw; height: 8.7778vw;
+                          }
+                          .mobile .grandopenSwiper .swiper-button-prev {left: 6%;}
+                          .mobile .grandopenSwiper .swiper-button-next {right: 6%;}
+                        }
+                        .grandopenSwiper .swiper-button-prev {left: 7%;}
+                        .grandopenSwiper .swiper-button-next {right: 7%;}
+                        .pc .grandopenSwiper .swiper-button-next, 
+                        .pc .grandopenSwiper .swiper-button-prev {top: 35%; width: 7.2rem; height: 7.2rem;}
+                        .pc .grandopenSwiper .swiper-button-prev {left: 6%;}
+                        .pc .grandopenSwiper .swiper-button-next {right: 6%;}
+                        .grandopenSwiper .swiper-button-next:after, 
+                        .grandopenSwiper .swiper-button-prev:after {font-size: 1.5rem; font-weight: bold;}
+                        .pc .grandopenSwiper .swiper-button-next:after, 
+                        .pc .grandopenSwiper .swiper-button-prev:after {font-size: 3rem;}
+                        .grandopenSwiper .swiper-pagination {position: static; margin-top: 1.2rem;}
+                        .pc .grandopenSwiper .swiper-pagination {margin-top: 2.4rem;}
+                        .grandopenSwiper .swiper-pagination .swiper-pagination-bullet {width: calc(1.6rem / 2); height: calc(1.6rem / 2); border-radius: 100%; background: #fff; opacity: 0.4; margin: 0 0.25rem;}
+                        .pc .grandopenSwiper .swiper-pagination .swiper-pagination-bullet {width: 1.6rem; height: 1.6rem; margin: 0 0.5rem;}
+                        .grandopenSwiper .swiper-pagination .swiper-pagination-bullet-active {opacity: 1;}
+
+                        .grandopenSwiper .event-end {
+                          display: none; align-items: center; justify-content: center; font-size: 2rem; font-weight: 500; color: #fff;
+                          position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1;
+                        }
+                        .grandopenSwiper .swiper-slide:nth-child(1) .event-end {display: flex;}
+                        .pc .grandopenSwiper .event-end {font-size: 4rem;}
+                      </style>
+                      <div class="event-grandopen">
+                        <div class="section-grandopen visual">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_visual.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_visual_m.png" alt="" class="pc_hide" />
+
+                          <div class="blind">
+                            <h3>알뜰폰닷컴 알닷 GRAND OPEN!</h3>
+                            <p>이제 알뜰폰은 알닷에서 새롭게 준비한 다양한 이벤트와 혜택을 만나보세요!</p>
+                            <p>알닷 U+ 알파가 알닷으로 새로워졌습니다.</p>
+                            <p>알닷에서는 셀프 개통은 물론, 나에게 꼭 맞는 요금제 찾기부터 추천 요금제 안내까지 알뜰폰 개통에 필요한 모든 정보를 알닷을 통해 만나보실 수 있습니다!</p>
+                          </div>
+                        </div>
+
+                        <div class="section-grandopen tab">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_tab.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_tab_m.png" alt="" class="pc_hide" />
+                          
+                          <div class="inner">
+                            <button class="tab1" onclick="handleAnchor(0)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭1 알닷 회원가입" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭1 알닷 회원가입" ><span class="blind">알닷 회원가입</span></button>
+                            <button class="tab2" onclick="handleAnchor(1)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭2 알닷 개통 맥머핀 100%" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭2 알닷 개통 맥머핀 100%" ><span class="blind">알닷 개통 맥머핀 100%</span></button>
+                            <button class="tab3" onclick="handleAnchor(2)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭3 원칩 지금배송 신청 이벤트" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭3 원칩 지금배송 신청 이벤트" ><span class="blind">원칩 지금배송 신청 이벤트</span></button>
+                            <button class="tab4" onclick="handleAnchor(3)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭4 알뜰폰+인터넷 결합 혜택" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭4 알뜰폰+인터넷 결합 혜택" ><span class="blind">알뜰폰 + 인터넷 결합 혜택</span></button>
+                            <button class="tab5" onclick="handleAnchor(4)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭5 친구추천 이벤트" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭5 친구추천 이벤트" ><span class="blind">친구추천 이벤트</span></button>
+                            <button class="tab6" onclick="handleAnchor(5)" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭6 알닷 개통 후기 이벤트" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭6 알닷 개통 후기 이벤트" ><span class="blind">알닷 개통 후기 이벤트</span></button>
+                          </div>
+                        </div>
+
+                        <div class="section-grandopen section-1">
+                          <div class="top">
+                            <img src="/public/images/temp/GRANDOPEN/img_open_section1_1.png" alt="" class="pc_show" />
+                            <img src="/public/images/temp/GRANDOPEN/img_open_section1_1_m.png" alt="" class="pc_hide" />
+                          </div>
+                          <div class="blind">
+                            <h4>EVENT1. 회원가입 이벤트</h4>
+                            <p>알닷 회원 가입시</p>
+                            <dl>
+                              <dt>응모 기간</dt>
+                              <dd>2024년 5월 1일~2024년 5월 31일</dd>
+                              <dt>응모 대상</dt>
+                              <dd>2024년 5월 1일부터 5월 31일까지 알닷 홈페이지 회원 가입 시, ‘마케팅 활용 및 광고성 정보 수신 동의’에 동의를 하시면 자동 응모 완료 (미동의 시, 응모X) </dd>
+                              <dt>당첨자 발표</dt>
+                              <dd>6월 28일 당첨자 발표 페이지에서 진행</dd>
+                              <dt>지급 시기</dt>
+                              <dd>익월 말 지급 (2024년 6월 28일)</dd>
+                            </dl>
+                            <p>알닷에 가입해야 하는 이유</p>
+                            <ol>
+                              <li>셀프개통 5분이면 비대면으로 간편하게 셀프 개통가능</li>
+                              <li>간편한 요금제 검색 나에게 맞는 요금제 찾기와 요금제 비교 가능</li>
+                              <li>원칩 지금배송 2시간 내 무료! 유심 퀵배송 서비스 신청 가능</li>
+                              <li>다양한 혜택 다양한 이벤트와 혜택 확인 가능</li>
+                            </ol>
+                            <p>메가 MEGA커피 아메리카노 가입시 100%제공</p>
+                            <h4>알닷 회원만을 위한 알닷 럭키 드로우</h4>
+                            <p>매주 새로워지는 럭키드로우 상품에 응모해보세요! 원하는 상품을 선택하고 0원에 받을 수 있는 행운을 드립니다.</p>
+                            <dl>
+                              <dt>응모 기간</dt>
+                              <dd>
+                                <ul>
+                                  <li>1주차 2024년 5월 1일~2024년 5월 8일</li>
+                                  <li>2주차 2024년 5월 9일~2024년 5월 16일</li>
+                                  <li>3주차 2024년 5월 17일~2024년 5월 24일</li>
+                                  <li>4주차 2024년 5월 25일~2024년 5월 31일</li>
+                                </ul>
+                              </dd>
+                              <dt>응모 대상</dt>
+                              <dd>2024년 5월 1일부터 5월 31일까지 알닷 홈페이지에 가입한 회원만 참여 가능 ‘마케팅 활용 및 광고성 정보 수신 동의’에 동의하신 회원은 당첨 확률 UP!</dd>
+                              <dt>당첨자 발표</dt>
+                              <dd>6월 28일 당첨자 발표 페이지에서 진행</dd>
+                              <dt>경품 지급 시기</dt>
+                              <dd>경품 당첨자에게는 당첨자 발표 이후 당첨 및 배송 안내 전화 진행 예정 기프티콘 당첨자에게는 6월 28일 당첨자 발표 후, 발송</dd>
+                            </dl>
+                          </div>
+
+                          <div class="swiper grandopenSwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper1.png" alt="" class="pc_show" />
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper1_m.png" alt="" class="pc_hide" />
+                                <div class="event-end">종료 되었습니다.</div>
+
+                                <div class="blind">
+                                  <p>1주차 상품 (24.05.01 ~ 24.05.08)</p>
+                                  <ol>
+                                    <li>1명 다이슨 슈퍼소닉 뉴럴 헤어드라이어</li>
+                                    <li>100명 맘스터치 싸이버거 단품</li>
+                                  </ol>
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper2.png" alt="" class="pc_show" />
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper2_m.png" alt="" class="pc_hide" />
+                                <div class="event-end">종료 되었습니다.</div>
+
+                                <div class="blind">
+                                  <p>2주차 상품 (24.05.09 ~ 24.05.16)</p>
+                                  <ol>
+                                    <li>1명 아이패드 10세대 (64GB, Wi-Fi) </li>
+                                    <li>100명 공차 블랙밀크티+펄L </li>
+                                  </ol>
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper3.png" alt="" class="pc_show" />
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper3_m.png" alt="" class="pc_hide" />
+                                <div class="event-end">종료 되었습니다.</div>
+
+                                <div class="blind">
+                                  <p>3주차 상품 (24.05.17 ~ 24.05.24)</p>
+                                  <ol>
+                                    <li>1명 다이슨 쿨 포름알데히드 공기청정기(화이트/골드)</li>
+                                    <li>100명 배스킨라빈스 싱글킹 아이스크림</li>
+                                  </ol>
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper4.png" alt="" class="pc_show" />
+                                <img src="/public/images/temp/GRANDOPEN/img_grandopen_swiper4_m.png" alt="" class="pc_hide" />
+                                <div class="event-end">종료 되었습니다.</div>
+
+                                <div class="blind">
+                                  <p>4주차 상품 (24.05.25 ~ 24.05.31)</p>
+                                  <ol>
+                                    <li>1명 LG 코드제로 R5</li>
+                                    <li>100명 조스 떡볶이</li>
+                                  </ol>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <button class="swiper-button-next"></button>
+                            <button class="swiper-button-prev"></button>
+                          </div>
+
+                          <div class="bottom">
+                            <img src="/public/images/temp/GRANDOPEN/img_open_section1_2.png" alt="" class="pc_show" />
+                            <img src="/public/images/temp/GRANDOPEN/img_open_section1_2_m.png" alt="" class="pc_hide" />
+                          </div>
+                          <div class="blind">
+                            <p>이벤트 참여 방법</p>
+                            <ul>
+                              <li>알닷 회원가입하기 *마케팅 정보 동의 필수</li>
+                              <li>주차별 경품 확인하기</li>
+                              <li>원하는 상품 선택하여 응모</li>
+                            </ul>
+                          </div>
+                          <a href="https://www.uplusmvno.com/register" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 회원가입 하러 가기" data-gtm-click-url="링크입력" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="회원가입 하러 가기" ><span class="blind">회원가입 하러 가기</span></a>
+                          <a href="#" target="_blank" class="btn2"><span class="blind" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 럭키드로우 신청하기" data-gtm-click-url="링크입력" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="럭키드로우 신청하기" >럭키드로우 신청하기</span></a>
+                        </div>
+
+                        <div class="section-grandopen section-2">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section2_1.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section2_1_m.png" alt="" class="pc_hide" />
+                          <a href="http://www.uplusmvno.com/plan/plan-list" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 요금제 보기" data-gtm-click-url="https://www.uplusmvno.com/plan/plan-list" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="요금제 보기" ><span class="blind">요금제 보기</span></a>
+
+                          <div class="blind">
+                            <h4>EVENT2. 알닷 개통 이벤트</h4>
+                            <p>알닷에서 셀프개통하면 베이컨 에그 맥머핀을100% 드립니다!</p>
+                            <dl>
+                              <dt>응모 기간</dt>
+                              <dd>2024년 5월 1일~2024년 5월 31일</dd>
+                              <dt>응모 대상</dt>
+                              <dd>2024년 5월 1일부터 5월 31일까지 알닷 홈페이지에서 셀프개통을 완료 시, 자동 응모 완료</dd>
+                              <dt>당첨자 발표</dt>
+                              <dd>6월 28일 당첨자 발표 페이지에서 진행</dd>
+                              <dt>지급 시기</dt>
+                              <dd>익월 말 지급 (2024년 6월 28일)</dd>
+                            </dl>
+                            <p>알닷에서 셀프 개통하면 베이컨 에그 맥머핀을 100% 드립니다!</p>
+                            <h5>알닷에서 셀프 개통하는 방법</h5>
+                            <ol>
+                              <li>
+                                <p>step1</p>
+                                <p>요금제 선택</p>
+                                <p>알닷 홈페이지에서 원하는 요금제를 선택해주세요</p>
+                              </li>
+                              <li>
+                                <p>step2</p>
+                                <p>가입유형, 개통방식 선택</p>
+                                <p>가입 유형과 개통 방식을 선택하고, USIM이 있을 경우, 즉시 개통이 가능하고, USIM이 없어도 가입 신청이 가능합니다.</p>
+                              </li>
+                              <li>
+                                <p>step3</p>
+                                <p>고객 정보 입력</p>
+                                <p>본인인증 후, 휴대폰번호, 주소, 이메일 등 고객 정보를 입력합니다.</p>
+                              </li>
+                              <li>
+                                <p>step4</p>
+                                <p>개통 정보 입력</p>
+                                <p>개통 희망 번호, 납부 정보, 청구서 수령 방법 등 개통에 필요한 정보를 입력하면 가입이 완료 됩니다.</p>
+                              </li>
+                            </ol>
+                          </div>
+                        </div>
+
+                        <div class="section-grandopen section-3">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section3_1.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section3_1_m.png" alt="" class="pc_hide" />
+                          <a href="http://www.uplusmvno.com/purchase/delivery" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 원칩 지금배송 신청하기" data-gtm-click-url="http://www.uplusmvno.com/purchase/delivery" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="원칩 지금배송 신청하기" ><span class="blind">원칩 지금배송 신청하기</span></a>
+
+                          <div class="blind">
+                            <h4>EVENT3. 원칩 지금배송 신청 헤택 이벤트</h4>
+                            <p>원칩 지금배송 신청하면 스타벅스 아이스아메리카노 100% 제공</p>
+                            <dl>
+                              <dt>응모 기간</dt>
+                              <dd>2024년 5월 1일~2024년 5월 31일</dd>
+                              <dt>응모 대상</dt>
+                              <dd>2024년 5월 1일부터 5월 31일까지 알닷 홈페이지에서 원칩 지금배송으로 유심 구매 시, 자동 응모 완료</dd>
+                              <dt>당첨자 발표</dt>
+                              <dd>6월 28일 당첨자 발표 페이지에서 진행</dd>
+                              <dt>지급 시기</dt>
+                              <dd>익월 말 지급 (2024년 6월 28일)</dd>
+                            </dl>
+                            <p>알닷에서 유심칩 구입 시, 원칩 지금배송을 신청하시면 스타벅스 아이스아메리카노를 100% 드립니다!</p>
+                          </div>
+
+                          <div class="accordion">
+                            <button class="accordion__header on" onclick="handleAccordion(event)">
+                              <span class="chip" data-aos="fade-right"><img src="/public/images/temp/GRANDOPEN/img_grandopen_chip.png" alt="" /></span>
+                              원칩 지급배송 혜택 보기
+                            </button>
+                            <div class="accordion__body">
+                              <img src="/public/images/temp/GRANDOPEN/youtube_grandopen.png" alt="" class="pc_show" />
+                              <img src="/public/images/temp/GRANDOPEN/youtube_grandopen_m.png" alt="" class="pc_hide" />
+
+                              <div class="youtube">
+                                <iframe src="https://www.youtube.com/embed/tNt854Xv97s?si=_IjoJk2vO3fmDZl1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="section-grandopen section-4">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section4_1.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section4_1_m.png" alt="" class="pc_hide" />
+                          <a href="#" target="_blank" class="btn1" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 결합 혜택 자세히보기" data-gtm-click-url="링크입력" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="결합 혜택 자세히보기" ><span class="blind">자세히 보기</span></a>
+
+                          <div class="blind">
+                            <h4>EVENT4. 인터넷 결합 혜택 소개</h4>
+                            <p>알뜰폰 개통 시, 인터넷 결합하면 최대 117만원 올인원 결합 혜택</p>
+                            <dl>
+                              <dt>기간</dt>
+                              <dd>2024년 5월 1일~2024년 5월 31일</dd>
+                            </dl>
+                            <p>알뜰폰은 결합이 안된다는 오해는 NO 알닷에서 개통하시면 인터넷과 IPTV를 결합할 수 있어요.</p>
+                          </div>
+                        </div>
+
+                        <div class="section-grandopen section-5">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section5_1.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section5_1_m.png" alt="" class="pc_hide" />
+
+                          <div class="blind">
+                            <h4>EVENT5. 친구추천 이벤트</h4>
+                            <p>새로워진 알닷을 가족·친구에게 알리고 선물바닷!</p>
+                            <p>새로워진 알닷을 가족·친구들에게 알려주세요! 추천 받은 가족·친구가 개통까지 완료하면 베스킨라빈스 아이스크림을 드립니다!</p>
+                            <dl>
+                              <dt>응모 기간</dt>
+                              <dd>2024년 5월 1일~2024년 5월 31일</dd>
+                              <dt>응모 대상</dt>
+                              <dd>2024년 5월 1일부터 5월 31일까지 알닷에서 개통이 완료된 회원과 추천 받은 가족·친구 (개통 완료 시)</dd>
+                              <dt>당첨자 발표</dt>
+                              <dd>6월 28일 당첨자 발표 페이지에서 진행</dd>
+                              <dt>지급 시기</dt>
+                              <dd>익월 말 지급 (2024년 6월 28일)</dd>
+                            </dl>
+                            <ul>
+                              <li>
+                                <p>추천한 가족·친구가개통 완료 시</p>
+                                <p>배스킨라빈스 싱글레귤러 1개 제공! (1개 제공, 중복 지급 불가)</p>
+                              </li>
+                              <li>추천</li>
+                              <li>
+                                <p>추천 받고 개통 완료 시</p>
+                                <p>배스킨라빈스 싱글레귤러 1개 제공! (1개 제공, 중복 지급 불가)</p>
+                              </li>
+                          </div>
+
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">이벤트 참여 전 꼭 읽어주세요!</button>
+                            <div class="accordion__body">
+                              <img src="/public/images/temp/GRANDOPEN/img_open_section5_2.png" alt="" class="pc_show" />
+                              <img src="/public/images/temp/GRANDOPEN/img_open_section5_2_m.png" alt="" class="pc_hide" />
+
+                              <div class="blind">
+                                <p class="obj">친구추천 이벤트 참여자 필독!</p>
+                                <ul class="list">
+                                  <li>
+                                    <p class="title">추천하시는 분 필독!</p>
+                                    <p class="text">
+                                      <strong class="point">
+                                        이벤트 기간 동안 알닷에서 개통하신 고객만 참여가 가능해요!<br />
+                                        추천한 인원이 가입을 해야 경품을 받을 수 있어요!<br />
+                                      </strong>
+                                      많은 분을 추천하셨더라도 경품은 딱 1개만 드려요~
+                                      경품 발송 전까지 혹시라도 회원 탈퇴, 해지, 번호 변경, 유심칩 변경을 
+                                      하시면 경품을 받으실 수 없어요
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p class="title">추천 받으신 분 필독!</p>
+                                    <p class="text">
+                                      <strong class="point">
+                                        추천을 받고 알닷에 오셔서 개통을 하셔야 경품을 받을 수 있어요!<br />
+                                        추천을 받아 알닷에서 개통하신 모든 분들에게 경품을 드려요!<br />
+                                      </strong>
+                                      경품 발송 전까지 혹시라도 회원 탈퇴, 해지, 번호 변경, 유심칩 변경을 하시면 경품을 받으실 수 없어요
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p class="title">경품 발송 관련</p>
+                                    <p class="text">
+                                      당첨 결과는 알닷 홈페이지에서 2024년 6월 28일 공지 될 
+                                      예정이에요!  경품으로 지급되는 배스킨라빈스 싱글레귤러 쿠폰은 
+                                      2024년 6월 28일 개통하신 휴대전화로 모바일 쿠폰을 
+                                      발송해드립니다!
+                                    </p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="pc_show" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 가족친구 추천하기" data-gtm-click-url="링크입력" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="가족친구 추천하기" ><img src="/public/images/temp/GRANDOPEN/img_open_section5_3.png" alt="가족.친구 추천하기" /></a>
+                          <a href="" target="_blank" class="pc_hide" data-gtm-event-name="link_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 링크 클릭" data-gtm-event-label="컨텐츠 : 개통후기 쓰러가기" data-gtm-click-url="링크입력" data-gtm-click-location="이벤트 상세" data-gtm-click-direction="내부" data-gtm-click-text="개통후기 쓰러가기" ><img src="/public/images/temp/GRANDOPEN/img_open_section5_3_m.png" alt="가족.친구 추천하기" /></a>
+                        </div>
+
+                        <div class="section-grandopen section-6">
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section6_1.png" alt="" class="pc_show" />
+                          <img src="/public/images/temp/GRANDOPEN/img_open_section6_1_m.png" alt="" class="pc_hide" />
+                          <a href="" target="_blank" class="btn1"><span class="blind">개통 후기 쓰러 가기</span></a>
+
+                          <a href="" target="_blank" class="btn2"><span class="blind">유독 PICK 바로가기</span></a>
+                          <a href="" target="_blank" class="btn3"><span class="blind">알뜰폰 플러스 바로가기</span></a>
+                          <a href="https://www.uplusmvno.com/benefit/affiliate-card" target="_blank" class="btn4"><span class="blind">삼성카드 * 알닷 바로가기</span></a>
+
+                          <div class="blind">
+                            <h4>EVENT6. 알닷 후기 이벤트</h4>
+                            <p>알닷 개통 후기를 남겨주세요!</p>
+                            <dl>
+                              <dt>응목 기간</dt>
+                              <dd>2024년 5월 1일~2024년 5월 31일</dd>
+                              <dt>응목 대상</dt>
+                              <dd>2024년 5월 1일부터 5월 31일까지 알닷에서 후기 작성 시, 자동 응모 완료</dd>
+                              <dt>당첨자 발표</dt>
+                              <dd>6월 28일 당첨자 발표 페이지에서 진행</dd>
+                              <dt>지급 시기</dt>
+                              <dd>익월 말 지급 (2024년 6월 28일)</dd>
+                            </dl>
+                            <p>셀프개통, 원칩 지금배송으로 유심칩 구입 등 알닷에서 개통 하시면서 느끼셨던 점을 정성스런 후기로 남겨주세요! 후기를 남겨주신 모든 분들에게 선물을 드립니다!</p>
+                            <h4>알닷에서 드리는 추가 혜택</h4>
+                            <ul>
+                              <li>유독Pick 유튜브 프리미엄에 혜택 하나 더해도 유독 할인쿠폰 등록 시 월 5,500원!</li>
+                              <li>알뜰폰 플러스 국내 최초 알뜰폰 오프라인 컨설팅 매장에 방문하시면 알뜰폰 요금제 상담은 물론 개통까지 가능합니다!</li>
+                              <li>삼성카드 X 알닷 알닷 전용 제휴 카드의 할인 혜택을 받아보세요!</li>
+                            </ul>
+                          </div>
+
+                          <div class="accordion">
+                            <button class="accordion__header" onclick="handleAccordion(event)">
+                              <p class="check"><img src="/public/images/temp/GRANDOPEN/tit_grandopen_notice.png" alt="꼭 확인하세요!" /></p>
+                              <em>(</em>이벤트별 유의사항 확인하기<em>)</em>
+                            </button>
+                            <div class="accordion__body">
+                              <img src="/public/images/temp/GRANDOPEN/txt_grandopen_notice.png" alt="" class="pc_show" />
+                              <img src="/public/images/temp/GRANDOPEN/txt_grandopen_notice_m.png" alt="" class="pc_hide" />
+
+                              <div class="blind">
+                                <p class="title">알닷 회원가입 혜택 사은품 유의사항</p>
+                                <ol class="order-list">
+                                  <li>1. 본 이벤트는 이벤트 기간 중 알닷 홈페이지 회원가입 시, ‘마케팅 활용 및 광고성 정보 수신 동의’에 동의하신 고객에 한해서 경품을 제공합니다.</li>
+                                  <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                                  <li>3. 경품으로 지급되는 메가MGC커피 아메리카노 쿠폰은 2024년 6월 28일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                                  <li>4. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은 경품 지급 대상에서 제외됩니다.</li>
+                                  <li>5. 번호 변경, 유심 변경 시 경품 지급 대상에서 제외됩니다.</li>
+                                  <li>6. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                                  <li>7. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                                  <li>8. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다. </li>
+                                </ol>
+
+                                <p class="title">알닷 럭키 드로우 사은품 유의사항</p>
+                                <ol class="order-list">
+                                  <li>1. 본 이벤트는 참여 기간 내 알닷 홈페이지에서 회원가입을 완료하신 고객만 참여가 가능합니다.</li>
+                                  <li>2. 경품 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은 사은품 대상에서 제외됩니다.</li>
+                                  <li>3. 경품 당첨은 1인당 1개만 가능하며, 중복 당첨은 불가합니다.</li>
+                                  <li>4 경품 추첨 결과는 알닷 홈페이지에서 2024년 6월 28일 공지 될 예정입니다.</li>
+                                  <li>5. 이용 중인 휴대폰에 스팸 설정이 되어 있는 경우, 경품 대행사의 당첨 및  배송 안내 연락을 받지 못할 수 있습니다.</li>
+                                  <li>6. 기프티콘에 당첨되셨을 경우, 2024년 6월 28일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                                  <li>7. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                                  <li>8. 당첨자와 경품 수령자는 동일해야 하며 경품 양도는 불가합니다.</li>
+                                  <li>9. 이벤트/경품 관련 문의는 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                                  <li>10. 사은품 취급 및 배송 업무는 ㈜더브리즈에서 위탁 진행합니다.</li>
+                                  <li>11. 발송 대행업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                                  <li>12. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                                </ol>
+
+                                <p class="title">알닷 개통 혜택 사은품 유의사항</p>
+                                <ol class="order-list">
+                                  <li>1. 본 이벤트는 제공 기간 내 알닷에서 셀프 개통이 완료된 고객에 한해서 경품을 제공합니다.</li>
+                                  <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                                  <li>3. 경품으로 지급되는 베이컨 에그 맥머핀 쿠폰은 2024년 6월 28일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                                  <li>4. 모바일 쿠폰 발송 시점까지 알뜰폰 해지 또는 정지하신 고객은 경품 지급 대상에서 제외됩니다.</li>
+                                  <li>5. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 경품 지급 대상에서 제외됩니다.</li>
+                                  <li>6. 해당 이벤트는 리브엠, 토스모바일 개통 고객은 제외됩니다.</li>
+                                  <li>7. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                                  <li>8. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                                  <li>9. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                                </ol>
+
+                                <p class="title">알닷 원칩 지금배송 사은품 유의사항</p>
+                                <ol class="order-list">
+                                  <li>1. 본 이벤트는 제공 기간 내 알닷에서 원칩 지금배송을 신청하여 원칩을 구매한 고객에 한해서 경품을 제공합니다.</li>
+                                  <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                                  <li>3. 경품으로 지급되는 스타벅스 아이스아메리카노 쿠폰은 2024년 6월 28일  개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                                  <li>4. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은 사은품 대상에서 제외됩니다.</li>
+                                  <li>5. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 사은품 지급 대상에서 제외됩니다.</li>
+                                  <li>6. 해당 이벤트는 리브엠, 토스모바일 개통 고객은 제외됩니다.</li>
+                                  <li>7. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                                  <li>8. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                                  <li>9. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                                  <li>10. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                                </ol>
+
+                                <p class="title">알닷 친구 추천 이벤트 사은품 유의사항</p>
+                                <ol class="order-list">
+                                  <li>1. 이벤트 기간 내 알닷에서 개통이 완료된 고객에 한해서 친구 추천 이벤트에 참여가 가능합니다.</li>
+                                  <li>2. 추천한 고객에게는 추천 인원 수에 상관없이 1개의 경품만 지급되며, 중복 지급은 불가합니다.</li>
+                                  <li>3. 추천을 받은 고객 중 알닷에서 이벤트 기간 내 개통을 완료하신 모든 분들에게 경품이 지급됩니다.</li>
+                                  <li>4. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객과 가족/친구가 있을 경우, 경품 지급대상에서 제외됩니다.</li>
+                                  <li>5. 경품 당첨 결과는 알닷 홈페이지에서 2024년 6월 28일 공지 될 예정입니다.</li>
+                                  <li>6. 경품으로 지급되는 배스킨라빈스 싱글레귤러 쿠폰은 2024년 6월 28일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                                  <li>7. 이벤트/경품 관련 문의는 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                                  <li>8. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                                  <li>9. 발송 대행업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                                  <li>10. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                                </ol>
+
+                                <p class="title">알닷 후기 이벤트 사은품 유의사항</p>
+                                <ol class="order-list">
+                                  <li>1. 본 이벤트는 5월 알닷에서 후기를 작성한 고객에 경품을 제공합니다.</li>
+                                  <li>2. 고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                                  <li>3. 경품 당첨 결과는 알닷 홈페이지에서 2024년 6월 28일 공지 될 예정입니다.</li>
+                                  <li>4. 경품으로 지급되는 육개장 사발면 쿠폰은 2024년 6월 28일 개통하신 휴대전화로 모바일 쿠폰이 발송됩니다.</li>
+                                  <li>5. 모바일 쿠폰 발송 시점까지 회원탈퇴, 알뜰폰 해지 또는 정지하신 고객은  사은품 대상에서 제외됩니다.</li>
+                                  <li>6. 모바일 쿠폰 발송 시점까지 번호 변경, 유심 변경 시에도 경품 지급 대상에서 제외됩니다.</li>
+                                  <li>7. 모바일 쿠폰 발송은 대행사인 ㈜GS엠비즈에서 업무를 대행합니다.</li>
+                                  <li>8. 발송 대행 업무를 위해 가입 정보가 대행사에 제공됩니다.</li>
+                                  <li>9. 이벤트/경품 관련 문의는 개통하신 각 알닷 홈페이지 내 1대1 문의하기로 문의해주시기 바랍니다.</li>
+                                  <li>10. 경품은 경품 수급 사정에 따라 추후 변경될 수 있습니다.</li>
+                                </ol>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+                        setTimeout(() => {
+                          const grandSwiper = new Swiper(".grandopenSwiper", {
+                            spaceBetween: 32,
+                            navigation: {
+                              nextEl: ".swiper-button-next",
+                              prevEl: ".swiper-button-prev",
+                            },
+                            pagination: {
+                              el: ".swiper-pagination",
+                              clickable: true
+                            },
+                          });
+                        }, 200);
+                        
+                        function handleAnchor(num) {
+                          const header = document.querySelector('.header');
+                          const linkSection = document.querySelector(`.section-grandopen.section-${num + 1}`);
+                          
+                          if (linkSection) {
+                            const topOffset = linkSection.offsetTop - header.clientHeight;
+                            window.scrollTo({ top: topOffset, behavior: 'smooth' });
+                          }
+                        }
+
+                        function handleAccordion(event) {
+                          event.currentTarget.classList.toggle('on');
+                        }
+                      </script>
+                      <!-- // 어드민 등록이 되어야할 이벤트 컨텐츠 -->
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!---->
+          <!---->
+          <div class="aside_float">
+            <div class="inner">
+              <a href="/benefit/recommendation" class="btn_reco">
+                <span>친구 추천</span>
+              </a>
+              <a href="/purchase/delivery" rel="noopener noreferrer" target="_blank" class="btn_deli">
+                <span>
+                  <img src="/images/common/tit_direct_delivery.png" alt="지금배송">
+                </span>
+              </a>
+              <button type="button" class="btn_top">
+                <span>TOP</span>
+              </button>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="inner">
+              <div class="f_logo">
+                <a href="https://www.lguplus.com/" rel="noopener noreferrer" target="_blank">
+                  <span class="blind">LG U+</span>
+                </a>
+              </div>
+              <div class="f_buttom">
+                <a href="/footer/terms/usage" rel="noopener noreferrer" target="_blank">이용약관</a>
+                <a href="/footer/terms/privacyProcess" rel="noopener noreferrer" target="_blank" class="policy">개인정보처리방침</a>
+                <a href="/footer/terms/privacyUsage" rel="noopener noreferrer" target="_blank">개인정보이용내역</a>
+                <a href="https://msafer.or.kr/index.do" rel="noopener noreferrer" target="_blank" title="새 창 열림">명의도용방지서비스</a>
+                <a href="https://spam.kisa.or.kr/" rel="noopener noreferrer" target="_blank" title="새 창 열림">불법스팸대응센터</a>
+              </div>
+              <div class="f_info">
+                <p>(주)엘지유플러스</p>
+                <p>
+                  <span>대표이사 황현식</span>
+                  <span>사업자등록번호 220-81-39938</span>
+                </p>
+                <p>서울특별시 용산구 한강대로 32</p>
+                <p>통신판매신고 제 2015-서울용산-00481호</p>
+              </div>
+              <div class="f_copyright"> Copyright © LG Uplus Corp. All Rights Reserved. </div>
+              <div class="f_sns">
+                <a href="https://www.youtube.com/@uplusmvno_official" rel="noopener noreferrer" target="_blank" class="ico_youtube" title="새 창 열림">
+                  <span class="blind">youtube</span>
+                </a>
+                <a href="https://www.instagram.com/uplusalpha_official/" rel="noopener noreferrer" target="_blank" class="ico_instagram" title="새 창 열림">
+                  <span class="blind">instagram</span>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--]-->
+    </div>
+    <script>
+      document.querySelector('.btn_top').addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      AOS.init();
+    </script>
+  </body>
+</html>
