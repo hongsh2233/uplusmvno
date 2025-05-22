@@ -41,12 +41,12 @@
           <div class="btn-area">
             <NuxtLink
               role="button"
-              class="btn-rounded"
+              class="btn-rounded type-outline"
               :class="{ disabled: disabled }"
               :disabled="disabled"
               @click="emit('click')"
             >
-              이전
+              취소
             </NuxtLink>
 
             <button
@@ -83,8 +83,8 @@ const cardObject1 = ref([
       { name: "금액", value: "12,900원", description: "(부가세포함)" },
       { name: "방문 국가", value: "미국" },
       { name: "기준 시간", value: "한국 시간", class: "apply_before" },
-      { name: "사용 기간", value: "2025.04.29 20:10 ~ 2025.05.29 20:10", class: "apply_before" },
-      { name: "가입일", value: "2025.07.16" },
+      { name: "이용 기간", value: "2025.04.29 20:10 ~ 2025.05.29 20:10", class: "apply_before" },
+      { name: "신청일", value: "2025.07.16" },
     ],
   },
 ]);

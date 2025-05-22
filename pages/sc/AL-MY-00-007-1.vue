@@ -5,7 +5,7 @@
         <div class="certify_wrap">
           <!-- contents -->
           <div class="crp_r">
-            <h2 class="pc-title">{{ layout.title }}</h2>
+            <h2 class="pc-title" v-html="layout.title"></h2>
 
             <!-- 2025-03-17 [ui개선건] -->
             <div class="first-content-item confirm-area care-common pb-10">
@@ -13,17 +13,18 @@
                 <div class="content-inner common">
                   <div class="cont-head">
                     <h3 class="cont-title-main">
-                      <p class="point"><em>선택한 서비스</em>는</p>
-                      U<sup>+</sup>알뜰폰 사용 고객만 <br />이용이 가능해요
+                      홍*동님<br />
+                      <span class="point"><em>U&#8314;알뜰폰</em> 고객으로</span><br />
+                      확인되었어요
                     </h3>
                   </div>
 
                   <div class="is-certified">
                     <p class="description">
-                      해외여행을 가기 전, 후 또는<br />
-                      다양한 유형의 부가서비스가 있는<br />
-                      알닷의 로밍/부가 서비스를<br />
-                      이용하시겠어요?
+                      이제 알닷케어와 함께<br />
+                      해외로밍을 비롯한<br />
+                      다양한 모바일 부가 서비스를<br />
+                      이용해보세요
                     </p>
                     <div class="certified">
                       <div class="form-box">
@@ -89,7 +90,7 @@ const emit = defineEmits(["setLayout"]);
 const layout = reactive({
   header: "sub",
   footer: front.isMobile() ? "none" : "",
-  title: "U+알뜰폰 인증하기",
+  title: "U&#8314;알뜰폰 인증하기",
   floatMenu: "none",
 });
 

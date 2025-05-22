@@ -56,7 +56,9 @@
             <div class="content-item">
               <div class="content-inner">
                 <div class="nodata-area">
-                  <p class="txt-nodata">선택한 조회 기간에는 납부내역이 없어요</p>
+                  <!-- 2025-05-21 1747789555 (정C) 문구수정 -->
+                  <p class="txt-nodata">선택한 조회 기간에는 이용 내역이 없어요</p>
+                  <!-- //2025-05-21 1747789555 (정C) 문구수정 -->
                 </div>
               </div>
             </div>

@@ -35,7 +35,7 @@
           <div class="btn-area">
             <NuxtLink
               role="button"
-              class="btn-rounded"
+              class="btn-rounded type-outline"
               :class="{ disabled: disabled }"
               :disabled="disabled"
               @click="emit('click')"
@@ -74,11 +74,10 @@ const cardObject1 = ref([
     list: [
       { name: "신청 회선", value: "010-78**-88**" },
       { name: "요금제명", value: "로밍패스 3GB" },
-      { name: "이용 기간", value: "최대 30일" },
       { name: "금액", value: "12,900원", description: "(부가세포함)" },
       { name: "방문 국가", value: "미국" },
       { name: "기준 시간", value: "한국 시간" },
-      { name: "사용 기간", value: "2025.04.29 20:10 ~ 2025.05.29 20:10" },
+      { name: "이용 기간", value: "2025.04.29 20:10 ~ 2025.05.29 20:10" },
       { name: "신청일", value: "2025.07.16" },
     ],
   },

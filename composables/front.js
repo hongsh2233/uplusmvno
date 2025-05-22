@@ -95,17 +95,21 @@ const floatLayer = {
   },
 };
 
+/* 2025-05-20 1747732762 (정C) 하위 탭메뉴로 인한 스크립트 수정 */
 const htmlUI = {
   tagShoHideHandler(target, showHideTarget) {
     const self = target;
     if (!self) return false;
     const root = self.closest(".tag-contents-wrap");
-    const btns = root.querySelectorAll(".tag-header .item");
-    const showHideObjects = root.querySelectorAll(showHideTarget);
-    const clickedBtn = root.querySelector(".tag-header .item.on");
+    const tagHeader = root.querySelectorAll(".tag-header")[0];
+    const tagContens = root.querySelectorAll(".contents")[0];
+    const btns = tagHeader.querySelectorAll(".item");
+    const showHideObjects = tagContens.querySelectorAll(showHideTarget);
+    const clickedBtn = tagHeader.querySelector(".item.on");
     const clickedBtnIdx = Array.prototype.indexOf.call(btns, clickedBtn);
     const clickBtnIdx = Array.prototype.indexOf.call(btns, self);
     if (clickedBtnIdx === clickBtnIdx) return;
+    // debugger;
     clickedBtn.classList.remove("on");
     self.classList.add("on");
     showHideObjects[clickedBtnIdx].classList.remove("on");

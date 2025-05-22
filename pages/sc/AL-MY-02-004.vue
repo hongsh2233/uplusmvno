@@ -48,10 +48,12 @@
             <!-- //이용 중인 로밍 요금제에요 -->
 
             <!-- 실시간 데이터 사용량 -->
-            <div class="content-item">
+            <!-- 2025-05-21 1747733504 (정C) 사용기간 추가 및 차트 색상 분가 처리로 인한 인라인 스크립트 추가  -->
+            <div class="content-item has-chart">
               <div class="content-inner">
                 <div class="cont-head">
                   <h4 class="cont-title">실시간 데이터 사용량</h4>
+                  <p class="usage-period-info">2025.08.01 10:30~2025.08.02 10:30</p>
                 </div>
                 <Accodian :isExpanded="true" readonly>
                   <template #content>
@@ -67,7 +69,10 @@
                         <div class="bar-progress" v-if="String(item.percent) !== ''">
                           <span
                             class="progress data"
-                            :class="{ unlimited: item.data0 == '무제한' }"
+                            :class="{
+                              unlimited: item.data0 == '무제한',
+                              'roaming-type-bar-2': item.title === '테더링 데이터',
+                            }"
                             :style="{ width: `${item.percent}%` }"
                           ></span>
                         </div>
@@ -87,12 +92,14 @@
                       <!--// 24.12.02 제공량 없는 케이스 추가 -->
                     </ul>
                     <ul class="text-list bull">
+                      <li>데이터 소진 시, 제한된 속도로 이용 가능해요</li>
                       <li>마지막 사용일이 2025.07.01이에요</li>
                     </ul>
                   </template>
                 </Accodian>
               </div>
             </div>
+            <!-- //2025-05-21 1747733504 (정C) 사용기간 추가 및 차트 색상 분가 처리로 인한 인라인 스크립트 추가  -->
             <!-- //실시간 데이터 사용량 -->
 
             <!-- 현재까지 사용하신 로밍 요금은 -->
@@ -191,9 +198,21 @@ const layout = reactive<LayoutOptions>({
 /**
  * @description: "요금제 시작 대기 중"일 경우 > isReady : true
  */
+
+/* 2025-05-20 1747733504 (정C) 테더링 데이터 케이스 추가 */
 const mockupDatas1 = [
   {
     title: "기본 제공 데이터",
+    data0: "8GB",
+    data1: "4GB",
+    data2: "4GB",
+    percent: 90,
+    over: false,
+    noneProvided: false,
+    isReady: false,
+  },
+  {
+    title: "테더링 데이터",
     data0: "8GB",
     data1: "4GB",
     data2: "4GB",

@@ -56,7 +56,7 @@ const emit = defineEmits(["openAlert", "closeAlert", "nextStep"]);
 // 납부 방법 변경 목업 데이터
 const cardObject1 = ref([
   {
-    title: "가입 정보",
+    title: "신청 정보",
     sub: "",
     chip: "",
     list: [

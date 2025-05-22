@@ -5,7 +5,7 @@
         <div class="certify_wrap">
           <!-- contents -->
           <div class="crp_r">
-            <h2 class="pc-title">{{ layout.title }}</h2>
+            <h2 class="pc-title" v-html="layout.title"></h2>
 
             <!-- 2025-03-17 [ui개선건] -->
             <div class="first-content-item confirm-area care-common pb-10">
@@ -13,30 +13,23 @@
                 <div class="content-inner common">
                   <div class="cont-head">
                     <h3 class="cont-title-main">
-                      <p class="point"><em>선택한 서비스</em>는</p>
-                      U<sup>+</sup>알뜰폰 사용 고객만 <br />이용이 가능해요
+                      선택하신 서비스는<br />
+                      <span class="point"><em>U&#8314;알뜰폰 인증 고객</em>만</span><br />
+                      이용이 가능해요
                     </h3>
                   </div>
 
                   <div class="no-certified">
-                    <p class="description">
-                      해외여행을 가기 전, 후 또는<br />
-                      다양한 유형의 부가서비스가 있는<br />
-                      알닷의 로밍/부가 서비스를<br />
-                      이용하시겠어요?
-                    </p>
-
                     <div class="certified">
                       <p class="title">알뜰폰 고객 <strong>인증</strong>하기</p>
-                      <p class="description">
+                      <!-- <p class="description">
                         U+알뜰폰 고객인데 알닷케어가 보이지 않는다면 아래 인증을 통해<br class="pc_show" />
                         정회원으로 전환해 보세요.
-                      </p>
+                      </p> -->
                       <div class="check-txt check_st">
                         <input type="checkbox" id="checkbox01_02" name="" @click="handleTerms" />
                         <label for="checkbox01_02"
-                          >알닷케어를 위한 개인정보 제3자<br class="pc_hide" />
-                          제공동의 (필수)</label
+                          >알닷 부가서비스 가입 및 알닷케어를 위한 개인정보 제3자 제공동의 (필수)</label
                         >
                         <button type="button" class="btn-arrow" @click="handlePopup('terms', true)">
                           <span class="blind">약관 보기</span>
@@ -46,7 +39,7 @@
                       <div class="btn-area">
                         <button
                           type="button"
-                          class="btn-rounded btn c01"
+                          class="btn-rounded btn c08"
                           @click="selfCertification"
                           :disabled="btnCertified"
                         >
@@ -171,7 +164,7 @@ const emit = defineEmits(["setLayout"]);
 const layout = reactive({
   header: "sub",
   footer: front.isMobile() ? "none" : "",
-  title: "U+알뜰폰 인증하기",
+  title: "U&#8314;알뜰폰 인증하기",
   floatMenu: "none",
 });
 

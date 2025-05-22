@@ -5,6 +5,17 @@
   .gallery-title {
     font-size: rem(16);
   }
+  .map_gallery-wrap {
+    .info-box-list {
+      .info-box {
+        &.type-round {
+          box-shadow: none;
+          padding: rem(24) rem(20);
+        }
+      }
+    }
+  }
+
   .pc & {
     .map_gallery-wrap {
       .info-box-list {
@@ -17,6 +28,13 @@
             margin-top: 0;
           }
           width: calc(50% - rem(6));
+
+          .info-box {
+            &.type-round {
+              box-shadow: none;
+              padding: rem(24) rem(40);
+            }
+          }
         }
       }
     }

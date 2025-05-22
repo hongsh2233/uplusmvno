@@ -9,16 +9,6 @@
           </h3>
         </div>
 
-        <div class="con_rounded">
-          <CardGroup :card-object="cardObject1">
-            <template #default="{ item }">
-              <p :class="item.class">
-                {{ item.value }}
-              </p>
-            </template>
-          </CardGroup>
-        </div>
-
         <div class="form-box">
           <div class="title-area">
             <strong class="title">방문 국가</strong>
@@ -99,7 +89,7 @@
           <div class="btn-area">
             <NuxtLink
               role="button"
-              class="btn-rounded"
+              class="btn-rounded type-outline"
               :class="{ disabled: disabled }"
               :disabled="disabled"
               @click="emit('click')"

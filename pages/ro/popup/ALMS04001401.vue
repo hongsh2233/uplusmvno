@@ -22,7 +22,7 @@
 
         <div class="form-box">
           <div class="title-area">
-            <strong class="title">요금제 적용 기준 시간</strong>
+            <strong class="title">로밍/여행/출장 중인지 멘트를 설정 할 수 있어요</strong>
           </div>
 
           <div class="btn-flex">
@@ -53,7 +53,7 @@
           <div class="btn-area">
             <NuxtLink
               role="button"
-              class="btn-rounded"
+              class="btn-rounded type-outline"
               :class="{ disabled: disabled }"
               :disabled="disabled"
               @click="emit('click')"

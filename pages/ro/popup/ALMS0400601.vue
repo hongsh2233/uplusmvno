@@ -35,12 +35,12 @@
           <div class="btn-area">
             <NuxtLink
               role="button"
-              class="btn-rounded"
+              class="btn-rounded type-outline"
               :class="{ disabled: disabled }"
               :disabled="disabled"
               @click="emit('click')"
             >
-              이전
+              취소
             </NuxtLink>
 
             <button
@@ -59,8 +59,8 @@
 </template>
 
 <script setup>
-import CardGroup from "@/components/v2/common/CardGroup";
-import Accodian from "@/components/v2/common/Accodian";
+import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
+import Accodian from "@/components/v2/common/Accodian.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -74,11 +74,11 @@ const cardObject1 = ref([
     list: [
       { name: "신청 회선", value: "010-78**-88**" },
       { name: "요금제명", value: "로밍패스 3GB" },
-      { name: "금액", value: "29,000원", description: "(부가세포함)" },
+      { name: "금액", value: "29,000원", description: "(부가세포함)", class: { list: "has-description" } },
       { name: "방문 국가", value: "미국" },
       { name: "기준 시간", value: "한국 시간" },
       { name: "이용 시작 일시", value: "2025.05.01 20:00" },
-      { name: "가입일", value: "2025.06.20" },
+      { name: "신청일", value: "2025.06.20" },
     ],
   },
 ]);

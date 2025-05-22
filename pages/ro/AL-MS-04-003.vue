@@ -8,7 +8,7 @@
             <template #content1>
               <div class="inner-section">
                 <h3 class="title">인천공항 제1여객터미널</h3>
-                <p class="title-description">
+                <p class="title-description fw7">
                   임대 및 자동 해외 로밍 안내<br />
                   오전 6시~오후 10시 연중무휴
                 </p>
@@ -35,7 +35,7 @@
               </div>
               <div class="inner-section">
                 <h3 class="title">인천공항 제2여객터미널</h3>
-                <p class="title-description">임대 및 자동 해외 로밍 안내<br />오전 6시~오후 10시 연중무휴</p>
+                <p class="title-description fw7">임대 및 자동 해외 로밍 안내<br />오전 6시~오후 10시 연중무휴</p>
                 <div class="map_gallery-wrap">
                   <div class="info-box-list">
                     <div class="item">
@@ -61,7 +61,7 @@
             <template #content2>
               <div class="inner-section">
                 <h3 class="title">국제선 청사</h3>
-                <p class="title-description">
+                <p class="title-description fw7">
                   임대 및 자동 해외 로밍 안내<br />
                   오전 6시 30분 ~ 오후 10시 연중무휴
                 </p>
@@ -85,7 +85,7 @@
             <template #content3>
               <div class="inner-section">
                 <h3 class="title">국제선 청사</h3>
-                <p class="title-description">
+                <p class="title-description fw7">
                   임대 및 자동 해외 로밍 안내<br />
                   오전 6시 ~ 오후 10시 연중무휴
                 </p>
@@ -115,12 +115,24 @@
         </div>
         <div class="section">
           <div class="box-round type-outline has-pd has-title">
-            <h3 class="ro-sec-title">로밍 이용가이드 보러가기</h3>
-            <ul class="adbvice-list">
+            <h3 class="ro-sec-title">도움이 필요해요</h3>
+            <ul class="adbvice-list type-pc-hr">
+              <li class="item info-1">
+                <NuxtLink to="/" class="bg-vivid-yellow">
+                  <i class="icon"><img src="/images/roaming/icons/ico_mobile_talk.svg" alt="" /></i>
+                  <p class="text">
+                    <strong>카카오 로밍 상담</strong><br />
+                    24시간 열려있어요
+                  </p>
+                </NuxtLink>
+              </li>
               <li class="item info-1">
                 <NuxtLink to="/" class="bg-vivid-apricot">
-                  <i class="icon"><img src="/images/roaming/icons/ico_mappin.svg" alt="" /></i>
-                  <p class="text">로밍 이용방법을 알려드려요</p>
+                  <i class="icon"><img src="/images/roaming/icons/ico_earth_airline.svg" alt="" /></i>
+                  <p class="text">
+                    <strong>로밍센터 찾기</strong><br />
+                    로밍 센터 위치를 확인하세요
+                  </p>
                 </NuxtLink>
               </li>
             </ul>

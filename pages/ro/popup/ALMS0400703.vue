@@ -65,11 +65,11 @@ const cardObject1 = ref([
       { name: "신청 회선", value: "010-12**-26**" },
       { name: "요금제명", value: "로밍패스 3GB" },
       { name: "금액", value: "12,900원" },
-      { name: "가입일", value: "2025.07.16" },
+      { name: "해지일", value: "2025.07.16" },
     ],
   },
   {
-    title: "연관 부가서비스",
+    title: "자동 가입/해지 부가서비스",
     sub: "",
     chip: "",
     list: [{ name: "가입", value: "데이터로밍차단" }],

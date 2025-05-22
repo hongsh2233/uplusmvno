@@ -269,4 +269,59 @@
     background-color: #ebf3ff;
     color: #6485dd;
   }
+
+  .bag.clr.c10 {
+    background-color: #ffe4fd;
+    color: #c54bcc;
+  }
+}
+
+@mixin btn-colors {
+  .btn.c01 {
+    border-color: #fc6969;
+    background-color: #fc6969;
+    color: #fff;
+  }
+
+  .btn.c02 {
+    border-color: #fc6969;
+    background-color: #fff;
+    color: #fc6969;
+  }
+
+  .btn.c03 {
+    border-color: #73819b;
+    background-color: #73819b;
+    color: #fff;
+  }
+
+  .btn.c04 {
+    border-color: #73819b;
+    background-color: #fff;
+    color: #53617c;
+  }
+
+  .btn.c05 {
+    border-color: #f8f8f8;
+    background-color: #f8f8f8;
+    color: #717171;
+  }
+
+  .btn.c06 {
+    border-color: #bbbfc7;
+    background-color: #bbbfc7;
+    color: #fff;
+  }
+
+  .btn.c07 {
+    border-color: #bbb;
+    background-color: #fff;
+    color: #717171;
+  }
+
+  .btn.c08:not(:disabled) {
+    border-color: #000;
+    background-color: #000;
+    color: #fff;
+  }
 }

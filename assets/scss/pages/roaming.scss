@@ -60,8 +60,16 @@
     + .section {
       padding-top: rem(60);
     }
+    * {
+      + .inner-section {
+        margin-top: rem(60);
+      }
+    }
   }
   .mobile & {
+    .container {
+      background: none;
+    }
     .section {
       padding-left: rem(20);
       padding-right: rem(20);
@@ -147,8 +155,15 @@
   }
 
   .info-box-list {
-    .item {
-      + .item {
+    .mobile & {
+      .item {
+        + .item {
+          margin-top: rem(12);
+        }
+      }
+    }
+    .info-box-list-item {
+      + .info-box-list-item {
         margin-top: rem(12);
       }
     }
@@ -294,7 +309,7 @@
     margin-bottom: 0;
     > button {
       &::before {
-        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) -0.79%, #edf4fd 41.37%);
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) -0.79%, #f3f5f6 41.37%);
       }
       &::after {
         border: 1px solid #d3d3d3;
@@ -508,6 +523,15 @@
   }
 
   // S: 아코디언
+  // .tag-contents-wrap {
+  //   &.type-basic-tag {
+  //     .v-expansion-panels {
+  //       .info-wrap {
+  //         padding-top: rem(24);
+  //       }
+  //     }
+  //   }
+  // }
   .v-expansion-panels {
     background-color: transparent;
     &.acd_bottom_notice {
@@ -531,17 +555,18 @@
       .v-expansion-panel-title {
         padding: 0;
         min-height: auto;
-        font-size: rem(20);
         .mobile & {
-          @include mo-lo-title-h3($mt: 0px, $mb: 0px);
+          @include mo-lo-title-h3($fs: 20px, $mt: 0px, $mb: 0px);
+          line-height: rem(26);
         }
         .pc & {
-          @include pc-lo-title-h3($mt: 0px, $mb: 0px);
+          @include pc-lo-title-h3($fs: 20px, $mt: 0px, $mb: 0px);
+          line-height: rem(26);
         }
       }
       .v-expansion-panel-text__wrapper {
         .info-wrap {
-          padding-top: rem(24);
+          margin-top: rem(24);
           .info-title {
             padding-bottom: rem(12);
             ~ .info-title {
@@ -615,6 +640,7 @@
       padding: 0 rem(10);
       white-space: nowrap;
       letter-spacing: -0.055em;
+      display: inline-block !important;
       &.on {
         color: #000;
         border-color: #000;
@@ -626,14 +652,17 @@
       }
     }
     .pc & {
+      margin-bottom: rem(40);
+
       .item {
         font-size: rem(14);
       }
     }
   }
+
   .tag-contents-wrap {
     &.type-basic-tag {
-      .tag-header {
+      > .tag-header {
         .item {
           border-width: 1px;
           color: #000;
@@ -647,11 +676,12 @@
       }
       .contents {
         .info-wrap {
-          padding-top: 0;
+          // padding-top: 0;
+          margin-top: rem(24);
         }
       }
       .mobile & {
-        .tag-header {
+        > .tag-header {
           .item {
             height: rem(36);
             font-size: rem(13);
@@ -660,7 +690,7 @@
         }
       }
       .pc & {
-        .tag-header {
+        > .tag-header {
           .item {
             font-size: rem(18);
             height: rem(40);
@@ -669,12 +699,19 @@
         }
       }
     }
+    .contents {
+      .tag-header {
+        margin-bottom: rem(24);
+      }
+    }
   }
   .table-wrap {
     &.tag {
       .scroll-wrap {
         width: 100%;
-        overflow-x: auto;
+        &.auto {
+          overflow-x: auto;
+        }
       }
       .table {
         border-top-color: #000;
@@ -695,7 +732,22 @@
       }
     }
   }
+  .btn-flex {
+    .radio_item {
+      label {
+        text-align: center;
+      }
+    }
+  }
   .input_box {
+    + .form_group {
+      .mobile & {
+        margin-top: rem(8);
+      }
+      .pc & {
+        margin-top: rem(16);
+      }
+    }
     .complete-list-wrap {
       background-color: #fff;
       position: absolute;
@@ -706,8 +758,6 @@
       border: 1px solid #dce0e5;
       padding: 0 rem(16);
       font-size: rem(18);
-      // max-height: rem(276);
-      // overflow-y: auto;
       .item {
         .keyword {
           text-align-last: left;
@@ -720,9 +770,10 @@
           }
         }
       }
-      .mobile & {
-      }
-      .pc & {
+    }
+    &.search {
+      .btn_search {
+        filter: brightness(0);
       }
     }
   }
@@ -784,6 +835,17 @@
         border-top: 1px solid #dce0e5;
       }
     }
+    .pc & {
+      .content-item {
+        padding-bottom: rem(32);
+        &:last-child {
+          padding-bottom: 0;
+        }
+        + .content-item {
+          padding-top: rem(32);
+        }
+      }
+    }
   }
   .roaming-status-ready {
     display: flex;
@@ -838,6 +900,7 @@
         }
       }
       .v-expansion-panel-title {
+        padding: 0;
         .title-text-wrap {
           position: relative;
           padding-left: rem(18);
@@ -872,6 +935,7 @@
             padding: rem(24);
             .v-expansion-panel-text__wrapper {
               .info-wrap {
+                padding-top: rem(20);
                 padding-left: rem(22);
               }
             }
@@ -1028,12 +1092,32 @@
   }
 
   //S: 로밍 팝업 관련
+  .bottom_float {
+    .float_btn_wrap {
+      .btn-rounded {
+        &.type-outline {
+          color: #66707a;
+        }
+      }
+    }
+  }
+
+  //모바일, PC 팝업 공용
+  .mobile &,
+  .pc & {
+    .mobile-page-popup,
+    .pop_wrap {
+      .gray-notice-box {
+        margin-top: rem(24);
+      }
+    }
+  }
+
+  //모바일 팝업
   .mobile & {
     .mobile-page-popup {
       .content-item {
         .cont-head {
-          margin-bottom: 4rem;
-
           .cont-title-main {
             @include Hd_Sm_s22_lh28;
           }
@@ -1044,6 +1128,8 @@
             .name {
               @include Lb_Sm_s14_lh20;
               font-weight: 500;
+              min-width: auto;
+              white-space: nowrap;
             }
             .value {
               display: flex;
@@ -1092,6 +1178,8 @@
       }
     }
   }
+
+  //PC 팝업
   .pop_wrap {
     .pc & {
       .pop_content {
@@ -1105,7 +1193,7 @@
             margin: 0 auto;
 
             .cont-head {
-              margin-bottom: 5.6rem;
+              margin-bottom: rem(32);
 
               .cont-title-main {
                 @include Hd_xLg_s32_lh38;
@@ -1217,6 +1305,37 @@
     }
   }
   //E: 로밍 팝업 관련
+
+  .shortcut-menu {
+    .pc & {
+      margin-top: rem(56);
+    }
+  }
+  .content-item {
+    .content-inner {
+      > .btn-area {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .chart-list {
+    .bar-progress {
+      .progress.data {
+        &.roaming-type-bar-2 {
+          background-color: #9072e9;
+        }
+      }
+    }
+  }
+
+  .usage-period-info {
+    color: #66707a;
+    font-weight: 700;
+    margin-top: rem(8);
+  }
 }
 // E: 로밍 전체 공통
 
@@ -1393,9 +1512,13 @@
       }
     }
   }
-
-  @include badge;
 }
+
+//로밍 플래그 색상
+@include badge;
+
+//버튼 컬러 색상
+@include btn-colors;
 
 .mobile {
   .adbvice-list {
@@ -1543,26 +1666,39 @@
         background-color: #fff;
         padding: rem(12);
         @include Lb_Md_s16_lh22;
-        @include ellipsis;
+        // @include ellipsis;
         &.on {
-          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1) inset;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 1) inset;
         }
       }
     }
-  }
-}
-.mobile .content-tabs {
-  &.type-outline {
-    .tab-title-wrap {
-      margin-bottom: rem(24);
+    .tab-content {
+      .contents-area {
+        padding: 0 rem(20);
+      }
     }
   }
-}
-
-.pc .content-tabs {
-  &.type-outline {
-    .tab-title-wrap {
-      margin-bottom: rem(40);
+  .mobile & {
+    &.type-outline {
+      .tab-title-wrap {
+        overflow-y: hidden;
+        overflow-x: auto;
+        // scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        margin: 0 rem(-20) rem(24);
+        padding: 0 rem(20);
+        white-space: nowrap;
+        // .btn-tab-title {
+        //   scroll-snap-align: start;
+        // }
+      }
+    }
+  }
+  .pc & {
+    &.type-outline {
+      .tab-title-wrap {
+        margin-bottom: rem(40);
+      }
     }
   }
 }

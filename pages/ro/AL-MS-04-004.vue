@@ -159,16 +159,17 @@
                     </ul>
                     <div class="tag-contents-wrap">
                       <div class="tag-header">
+                        <!-- 2025-05-20 1747699475 (정C) 매개변수 값 수정 -->
                         <div class="scroll-wrap">
-                          <button class="item on" onclick="onTagShoHideHandler(this, '.contents .item')">
+                          <button class="item on" onclick="onTagShoHideHandler(this, '.item')">
                             아시아/오세아니아
                           </button>
-                          <!-- <button class="item on" @click="($event) => console.log(1324)">아시아/오세아니아</button> -->
-                          <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">미주</button>
-                          <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">유럽</button>
-                          <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">중동</button>
-                          <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">아프리카</button>
+                          <button class="item" onclick="onTagShoHideHandler(this, '.item')">미주</button>
+                          <button class="item" onclick="onTagShoHideHandler(this, '.item')">유럽</button>
+                          <button class="item" onclick="onTagShoHideHandler(this, '.item')">중동</button>
+                          <button class="item" onclick="onTagShoHideHandler(this, '.item')">아프리카</button>
                         </div>
+                        <!-- //2025-05-20 1747699475 (정C) 매개변수 값 수정 -->
                       </div>
                       <div class="contents">
                         <div class="table-wrap tag">
@@ -912,7 +913,8 @@
                               <div class="title-text-wrap">
                                 <p class="title-text">휴대폰 사용이 불가해서 상담사와 연결하여 개통하고 싶어요</p>
                                 <p class="bag-list-wrap">
-                                  <span class="bag clr c04">결합할인</span>
+                                  <!-- 2025-05-20 1747699475 (정C) 텍스트 및 클래스 수정 -->
+                                  <span class="bag clr c10">로밍</span>
                                   <span class="bag only-text">공통</span>
                                 </p>
                               </div>
@@ -946,7 +948,8 @@
                               <div class="title-text-wrap">
                                 <p class="title-text">휴대폰 사용이 불가해서 상담사와 연결하여 개통하고 싶어요</p>
                                 <p class="bag-list-wrap">
-                                  <span class="bag clr c01">가입 및 변경</span>
+                                  <!-- 2025-05-20 1747699475 (정C) 텍스트 및 클래스 수정 -->
+                                  <span class="bag clr c10">로밍</span>
                                   <span class="bag only-text">공통</span>
                                 </p>
                               </div>
@@ -980,7 +983,8 @@
                               <div class="title-text-wrap">
                                 <p class="title-text">휴대폰 사용이 불가해서 상담사와 연결하여 개통하고 싶어요</p>
                                 <p class="bag-list-wrap">
-                                  <span class="bag clr c05">결합할인</span>
+                                  <!-- 2025-05-20 1747699475 (정C) 텍스트 및 클래스 수정 -->
+                                  <span class="bag clr c10">로밍</span>
                                   <span class="bag only-text">공통</span>
                                 </p>
                               </div>

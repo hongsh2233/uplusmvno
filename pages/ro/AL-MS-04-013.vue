@@ -42,7 +42,6 @@
         </div>
         <div class="section">
           <v-expansion-panels class="acd_bottom_notice" v-model="firstOpenPannel" multiple>
-            <!-- 2025-05-19 1747637726 (정C) 첫 내용은 아코디언 기능 삭제 (로밍 요금제 상세, 로밍 부가서비스 상세) -->
             <v-expansion-panel class="acd_item" disabled>
               <div class="acd_title">
                 <v-expansion-panel-title hide-actions>서비스 내용</v-expansion-panel-title>
@@ -70,7 +69,6 @@
                 </v-expansion-panel-text>
               </div>
             </v-expansion-panel>
-            <!-- //2025-05-19 1747637726 (정C) 첫 내용은 아코디언 기능 삭제 (로밍 요금제 상세, 로밍 부가서비스 상세) -->
             <v-expansion-panel class="acd_item">
               <div class="acd_title">
                 <v-expansion-panel-title>이용안내</v-expansion-panel-title>

@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
 .AL-MY-02-006 {
   .receipt-email {
     background: linear-gradient(175deg, #f3f5f6 3.21%, #f8e7e8 45.11%, #f3f5f6 96.33%);
@@ -20,8 +23,8 @@
         }
 
         & + .consect-cardlist {
-          margin-top: 4.8rem;
-          padding-top: 3.2rem;
+          margin-top: rem(32);
+          padding-top: rem(32);
           border-top: 1px solid #dce0e5;
         }
 

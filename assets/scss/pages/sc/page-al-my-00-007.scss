@@ -1,17 +1,90 @@
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
 .AL-MY-00-007 {
   margin-top: 5.6rem;
-
+  .mobile & {
+    .container {
+      background: none;
+    }
+  }
   .certify_wrap {
     max-width: 640px;
     margin: 0 auto;
 
+    // .confirm-area {
+    //   .content-inner {
+    //     &.common {
+    //     }
+
+    //     .certified {
+    //       margin-top: 5rem;
+    //     }
+    //   }
+    // }
     .confirm-area {
       .content-inner {
-        &.common {
+        .cont-head {
+          margin-bottom: 0;
         }
-
         .certified {
-          margin-top: 5rem;
+          // margin-top: 0;
+        }
+      }
+    }
+    .mobile & {
+      .confirm-area {
+        &.care-common {
+          background: none;
+        }
+      }
+      .confirm-area {
+        .content-inner {
+          .no-certified {
+            margin-top: rem(-16);
+            display: inline-block;
+            background-position: right top;
+          }
+          .certified {
+            margin-top: rem(164);
+          }
+          .is-certified {
+            .certified {
+              margin-top: rem(106);
+            }
+          }
+        }
+        .care-c-notice-box {
+          .inner__box {
+            .order-list {
+              margin-top: 0;
+            }
+            > .title {
+              margin-bottom: rem(24);
+            }
+          }
+        }
+      }
+    }
+    .pc & {
+      .confirm-area {
+        .content-inner {
+          .certified {
+            margin-top: rem(190);
+          }
+          .is-certified {
+            .certified {
+              margin-top: rem(50);
+            }
+          }
+        }
+      }
+
+      .care-c-notice-box {
+        .inner__box {
+          padding: rem(48);
+          > .title {
+            margin-bottom: rem(24);
+          }
         }
       }
     }

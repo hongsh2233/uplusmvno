@@ -2,4 +2,13 @@
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
 .AL-MY-02-004 {
+  .text-list {
+    &.bull {
+      li {
+        + li {
+          margin-top: rem(8);
+        }
+      }
+    }
+  }
 }

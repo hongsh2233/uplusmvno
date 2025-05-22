@@ -33,6 +33,17 @@
     }
   }
   .pc & {
+    .content {
+      .box-round {
+        &.type-outline {
+          &.has-title {
+            &:nth-last-of-type(1) {
+              margin-top: rem(82);
+            }
+          }
+        }
+      }
+    }
     .banner-swiper-wrap {
       margin-top: rem(24);
     }

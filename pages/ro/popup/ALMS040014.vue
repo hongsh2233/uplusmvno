@@ -34,6 +34,15 @@
       <div class="inner">
         <div class="float_btn_wrap">
           <div class="btn-area">
+            <NuxtLink
+              role="button"
+              class="btn-rounded type-outline"
+              :class="{ disabled: disabled }"
+              :disabled="disabled"
+              @click="emit('click')"
+            >
+              취소
+            </NuxtLink>
             <button
               class="btn-rounded primary"
               :class="{ disabled: disabled }"

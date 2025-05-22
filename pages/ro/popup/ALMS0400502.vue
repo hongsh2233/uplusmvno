@@ -9,16 +9,6 @@
           </h3>
         </div>
 
-        <div class="con_rounded">
-          <CardGroup :card-object="cardObject1">
-            <template #default="{ item }">
-              <p :class="item.class">
-                {{ item.value }}
-              </p>
-            </template>
-          </CardGroup>
-        </div>
-
         <div class="form-box">
           <div class="title-area">
             <strong class="title">방문 국가</strong>
@@ -53,7 +43,7 @@
             :option="{ placeholder: '시작일을 선택해 주세요', readonly: true, action: 'datepicker' }"
             @click="handlePopup('datepicker', true)"
           />
-          <div class="form_group">
+          <div class="form_group picker-time">
             <div class="form_item">
               <div class="form-flex">
                 <InputForm
