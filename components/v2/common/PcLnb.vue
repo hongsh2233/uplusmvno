@@ -5,17 +5,16 @@
       <v-expansion-panels class="lnb" v-model="deps1">
         <!-- 25.05.16 자식 없음 옵션 추가 --start -->
         <template v-for="(item, index) in getChild(null)">
-          <v-expansion-panel 
-            v-if="!isLeaf(item.id)"
-            :key="index" 
-            class="lnb-item" 
-            >
+          <v-expansion-panel v-if="!isLeaf(item.id)" :key="index" class="lnb-item">
             <v-expansion-panel-title>{{ item.name }}</v-expansion-panel-title>
             <v-expansion-panel-text>
               <!-- 2depth -->
               <v-expansion-panels v-model="lnb1">
                 <v-expansion-panel v-for="(depth2, j) in getChild(item.id)" :key="j">
-                  <NuxtLink :to="`${depth2.link}`" :class="{ current: isCurrent(depth2.link), subin: depth2.link == '' }">
+                  <NuxtLink
+                    :to="`${depth2.link}`"
+                    :class="{ current: isCurrent(depth2.link), subin: depth2.link == '' }"
+                  >
                     {{ depth2.name }}
                   </NuxtLink>
 
@@ -38,7 +37,6 @@
           </div>
         </template>
         <!-- 25.05.16 자식 없음 옵션 추가 --end -->
-
       </v-expansion-panels>
     </div>
   </div>
@@ -68,8 +66,10 @@ const lnbData = ref([
   { id: "AL-MY-05", name: "가입정보 관리", parentId: null },
   // { id: "D-05-001", name: "가입 정보 조회/변경", link: "", parentId: "AL-MY-05" },
   { id: "AL-MY-05-001-1", name: "가입 정보", link: "/sc/AL-MY-05-001", parentId: "AL-MY-05" },
-  { id: "AL-MY-05-002", name: "가입 회선 관리", link: "/sc/AL-MY-05-002", parentId: "AL-MY-05" },
+  // { id: "AL-MY-05-002", name: "가입 회선 관리", link: "/sc/AL-MY-05-002", parentId: "AL-MY-05" },
   { id: "AL-MY-05-005", name: "휴대폰 정보 등록", link: "/sc/AL-MY-05-005", parentId: "AL-MY-05" },
+  { id: "AL-MY-05-500", name: "번호 변경", link: "/sc/AL-MY-05-500", parentId: "AL-MY-05" },
+
   // { id: "D-05-003", name: "유심/이심 변경 신청", link: "", parentId: "D-05-001" },
 
   { id: "AL-MY-03", name: "요금/납부", parentId: null },
@@ -129,7 +129,7 @@ const findDeps1 = (link) => {
 const deps1List = computed(() => lnbData.value.filter((item) => item.parentId === null));
 const deps1 = ref(findDeps1(props.currentLink));
 
-console.log(deps1List.value)
+console.log(deps1List.value);
 
 //lnb add class 'current'
 const isCurrent = (link) => {
@@ -141,6 +141,4 @@ const isCurrent = (link) => {
 const isLeaf = (id) => {
   return getChild(id).length === 0;
 };
-
-
 </script>
