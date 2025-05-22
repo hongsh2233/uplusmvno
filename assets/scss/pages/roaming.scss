@@ -65,9 +65,22 @@
         margin-top: rem(60);
       }
     }
+
+    .text-list {
+      &.circle-num {
+        &.type-vertical {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
   }
   .content-item {
     .content-inner {
+      .inner-section {
+        .acco-gray {
+          margin-top: 0;
+        }
+      }
       * {
         + .inner-section {
           margin-top: rem(40);
@@ -79,16 +92,29 @@
           }
         }
       }
+      .mobile & {
+        > .notice-txt {
+          &:nth-last-of-type(1) {
+            margin-top: rem(24);
+          }
+        }
+      }
       .pc & {
+        > .notice-txt {
+          &:nth-last-of-type(1) {
+            margin-top: rem(32);
+          }
+        }
+
         * {
           + .inner-section {
             margin-top: rem(56);
-            &.gap-mid {
-              margin-top: rem(24);
-            }
-            &.gap-sm {
-              margin-top: rem(16);
-            }
+            // &.gap-mid {
+            //   margin-top: rem(32);
+            // }
+            // &.gap-sm {
+            //   margin-top: rem(24);
+            // }
           }
         }
       }

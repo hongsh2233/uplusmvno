@@ -41,7 +41,7 @@
             <div class="name" :class="[item.class && item.class.title]">
               <slot name="name" :item="item">{{ item.name }}</slot>
             </div>
-            <div class="value">
+            <div class="value" :class="[item.class && item.class.value]">
               <slot :item="item">{{ item.value }}</slot>
               <p v-if="item.description" class="description">{{ item.description }}</p>
             </div>
