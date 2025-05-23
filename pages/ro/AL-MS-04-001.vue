@@ -224,11 +224,7 @@ const state = reactive({
         favorite: true,
         recommend: true,
       },
-      detailList: {
-        period: "최대 100분",
-        data: "3GB",
-        country: "83개국",
-      },
+      detailList: "음성 로밍을 차단해 주는 서비스",
       btns: {
         apply: true,
         change: false,

@@ -19,7 +19,7 @@
                 <NuxtLink :to="item.prdLink">{{ item.prdName }}</NuxtLink>
               </p>
             </div>
-            <div class="detail">
+            <div class="detail" v-if="typeof item.detailList !== 'string'">
               <span class="period" v-if="item.detailList.period">
                 <span class="info-title">이용기간</span>
                 <span class="info-val">{{ item.detailList.period }}</span>
@@ -32,6 +32,9 @@
                 <span class="info-title">지원국가</span>
                 <span class="info-val">{{ item.detailList.country }}</span>
               </span>
+            </div>
+            <div class="detail" v-else>
+              <span class="info-val">음성 로밍을 차단해 주는 서비스</span>
             </div>
           </div>
           <div class="info-group-2">
@@ -60,7 +63,7 @@ interface PrdItem {
   prdLink: string;
   prdPrice: string;
   flag: Flag;
-  detailList: DetailList;
+  detailList: DetailList | string;
   btns: Btns;
 }
 
