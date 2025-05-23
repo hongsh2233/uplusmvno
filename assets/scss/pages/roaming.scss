@@ -1450,375 +1450,386 @@
       }
     }
   }*/
-}
-// E: 로밍 전체 공통
+  .mgt16 {
+    margin-top: rem(16) !important;
+  }
+  .mgt32 {
+    margin-top: rem(32) !important;
+  }
+  .mgt40 {
+    margin-top: rem(40) !important;
+  }
 
-// S: 총 건수
-.list-count {
-  position: relative;
-  color: #66707a;
-  display: flex;
-  align-items: center;
-  padding-left: rem(3);
-  margin-bottom: rem(16);
-  .mobile & {
-    font-size: rem(13);
-  }
-  &::before {
-    display: inline-block;
-    content: "";
-    width: rem(3);
-    height: rem(3);
-    border-radius: 50%;
-    background-color: #66707a;
-    margin-right: rem(4);
-  }
-  .number {
-    margin-left: rem(4);
-    color: #e34140;
-  }
-}
-// E: 총 건수
-
-// S: 알닷 로밍 상품이에요 코너
-.adbvice-list {
-  .item {
-    a {
-      position: relative;
-      display: block;
-      border-radius: rem(8);
-      color: #66707a;
-      display: flex;
-      align-items: center;
-      strong {
-        font-weight: 500;
-        color: #000;
-      }
-      .icon {
-        width: rem(44);
-        height: rem(44);
-        min-width: rem(44);
-        max-width: 100%;
-      }
+  // S: 총 건수
+  .list-count {
+    position: relative;
+    color: #66707a;
+    display: flex;
+    align-items: center;
+    padding-left: rem(3);
+    margin-bottom: rem(16);
+    .mobile & {
+      font-size: rem(13);
+    }
+    &::before {
+      display: inline-block;
+      content: "";
+      width: rem(3);
+      height: rem(3);
+      border-radius: 50%;
+      background-color: #66707a;
+      margin-right: rem(4);
+    }
+    .number {
+      margin-left: rem(4);
+      color: #e34140;
     }
   }
-  .mobile & {
+  // E: 총 건수
+
+  // S: 알닷 로밍 상품이에요 코너
+  .adbvice-list {
     .item {
       a {
-        strong {
-          @include Lb_xLg_s20_lh26;
-        }
-      }
-    }
-  }
-  .pc & {
-    .item {
-      a {
-        strong {
-        }
-      }
-    }
-  }
-}
-.section {
-  .box-round {
-    &.type-outline {
-      &:first-child {
-        margin-top: 0 !important;
-        .ro-sec-title {
-          margin-top: 0 !important;
-        }
-      }
-    }
-  }
-}
-.pc {
-  .box-round {
-    &.type-outline {
-      border: 1px solid #dce0e5;
-      border-radius: rem(12);
-      margin-top: rem(60);
-      background-color: #fff;
-      + .type-outline {
-        margin-top: rem(16);
-      }
-      + box-round {
-        margin-top: rem(16);
-      }
-      &.has-pd {
-        padding: rem(48);
-      }
-      &.has-title {
-        .ro-sec-title {
-          @include pc-lo-title-h3 {
-            font-size: rem(20) !important;
-            margin-bottom: rem(32) !important;
-          }
-          &:first-child {
-            margin-top: 0;
-          }
-        }
-      }
-      .adbvice-list {
+        position: relative;
+        display: block;
+        border-radius: rem(8);
+        color: #66707a;
         display: flex;
-        gap: rem(8);
-        .item {
-          flex: 1;
-          display: flex;
-          a {
-            padding: rem(24) rem(32) rem(24) rem(20);
-            flex-direction: row-reverse;
-            align-items: flex-start;
-            width: 100%;
-            .text {
-              flex: 1 0;
-              padding-right: rem(16);
-              strong {
-                font-size: rem(18);
-                line-height: rem(24);
-                display: inline-block;
-                margin-bottom: rem(4);
-              }
+        align-items: center;
+        strong {
+          font-weight: 500;
+          color: #000;
+        }
+        .icon {
+          width: rem(44);
+          height: rem(44);
+          min-width: rem(44);
+          max-width: 100%;
+        }
+      }
+    }
+    .mobile & {
+      .item {
+        a {
+          strong {
+            @include Lb_xLg_s20_lh26;
+          }
+        }
+      }
+    }
+    .pc & {
+      .item {
+        a {
+          strong {
+          }
+        }
+      }
+    }
+  }
+  .section {
+    .box-round {
+      &.type-outline {
+        &:first-child {
+          margin-top: 0 !important;
+          .ro-sec-title {
+            margin-top: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  //로밍 플래그 색상
+  @include badge;
+
+  //버튼 컬러 색상
+  @include btn-colors;
+
+  // S: Swiper
+  .mobile & {
+    .banner-swiper-wrap {
+      margin: rem(20) rem(-20) 0;
+      padding: 0 rem(20);
+      overflow: hidden;
+    }
+    .swiper {
+      padding-bottom: rem(20);
+      &.type-indicator-1 {
+        overflow: visible;
+      }
+      .play_box {
+        button {
+          position: relative;
+          top: rem(-32);
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  // E: Swiper
+
+  /*common*/
+  // S: 리스트 dash 추가
+  .acd_bottom_notice {
+    .text-list {
+      &.bull {
+        li {
+          + li {
+            margin-top: rem(8);
+            .pc & {
+              margin-top: rem(12);
             }
           }
+        }
+      }
+      &.dash {
+        li {
+          position: relative;
+          padding-left: rem(12);
+          margin-top: rem(4);
+          &::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          .pc & {
+            margin-top: rem(6);
+          }
+          + li {
+            margin-top: rem(2);
+            .pc & {
+              margin-top: rem(4);
+            }
+          }
+        }
+      }
+    }
+  }
+  // E: 리스트 dash 추가
+
+  // S: 탭메뉴
+  .content-tabs {
+    &.type-outline {
+      .tab-title-wrap {
+        padding: 0;
+        gap: rem(8);
+        background: transparent;
+        .btn-tab-title {
+          border: 1px solid #eee;
+          display: inline-block;
+          height: rem(46);
+          color: #000;
+          background-color: #fff;
+          padding: rem(12);
+          @include Lb_Md_s16_lh22;
+          // @include ellipsis;
+          &.on {
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 1) inset;
+          }
+        }
+      }
+      .tab-content {
+        .contents-area {
+          padding: 0 rem(20);
+        }
+      }
+    }
+    .mobile & {
+      &.type-outline {
+        .tab-title-wrap {
+          overflow-y: hidden;
+          overflow-x: auto;
+          // scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          margin: 0 rem(-20) rem(24);
+          padding: 0 rem(20);
+          white-space: nowrap;
+          // .btn-tab-title {
+          //   scroll-snap-align: start;
+          // }
+        }
+      }
+    }
+    .pc & {
+      &.type-outline {
+        .tab-title-wrap {
+          margin-bottom: rem(40);
+        }
+      }
+    }
+  }
+  // E: 탭메뉴
+
+  // E: 알닷 로밍 상품이에요 코너
+  .mobile & {
+    .adbvice-list {
+      &.type-pc-hr {
+        padding: 0;
+        border-radius: 0;
+        background: none;
+        border: none;
+        .item {
           a {
-            &.bg-vivid-blue {
-              background-color: #fafdff;
-            }
-            &.bg-vivid-pink {
-              background-color: #fffcfc;
-            }
-            &.bg-vivid-green {
-              background-color: #f8fef8;
-            }
+            padding: 24px 20px;
+            border-radius: 12px;
             &.bg-vivid-yellow {
               background: #fffce0;
             }
             &.bg-vivid-apricot {
               background: #fffafa;
             }
+            &::after {
+              right: rem(20);
+            }
+          }
+          + .item {
+            margin-top: rem(12);
+            border: none;
           }
         }
-        &.type-corner-img {
-          align-items: stretch;
-          .item {
-            a {
-              padding: rem(24) rem(24) rem(142);
+      }
+      border-radius: rem(12);
+      background-color: #fff;
+      padding: rem(8) rem(20);
+      border: 1px solid #dce0e5;
+      .item {
+        + .item {
+          border-top: 1px solid #eee;
+        }
+        a {
+          padding: rem(16) 0;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: rem(24);
+            height: rem(24);
+            background: url("/images/v2/common/ico_arrow_right.svg") no-repeat 50% 50% / cover;
+          }
+          .text {
+            padding-left: rem(12);
+            padding-right: rem(22);
+            line-height: 1.425;
+            @include ellipsis;
+            strong {
+              @include Lb_Md_s16_lh22;
+              display: inline-block;
+              margin-bottom: rem(4);
             }
-            .icon {
-              position: absolute;
-              right: rem(24);
-              bottom: rem(24);
-              width: rem(100);
-              height: rem(100);
-              img {
-                max-width: none;
-                width: 100%;
+          }
+        }
+      }
+    }
+
+    .mobile-box-round {
+      border: 1px solid #000;
+    }
+  }
+  // E: 알닷 로밍 상품이에요 코너
+
+  .pc & {
+    .box-round {
+      &.type-outline {
+        border: 1px solid #dce0e5;
+        border-radius: rem(12);
+        margin-top: rem(60);
+        background-color: #fff;
+        + .type-outline {
+          margin-top: rem(16);
+        }
+        + box-round {
+          margin-top: rem(16);
+        }
+        &.has-pd {
+          padding: rem(48);
+        }
+        &.has-title {
+          .ro-sec-title {
+            @include pc-lo-title-h3 {
+              font-size: rem(20) !important;
+              margin-bottom: rem(32) !important;
+            }
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+        }
+        .adbvice-list {
+          display: flex;
+          gap: rem(8);
+          .item {
+            flex: 1;
+            display: flex;
+            a {
+              padding: rem(24) rem(32) rem(24) rem(20);
+              flex-direction: row-reverse;
+              align-items: flex-start;
+              width: 100%;
+              .text {
+                flex: 1 0;
+                padding-right: rem(16);
+                strong {
+                  font-size: rem(18);
+                  line-height: rem(24);
+                  display: inline-block;
+                  margin-bottom: rem(4);
+                }
+              }
+            }
+            a {
+              &.bg-vivid-blue {
+                background-color: #fafdff;
+              }
+              &.bg-vivid-pink {
+                background-color: #fffcfc;
+              }
+              &.bg-vivid-green {
+                background-color: #f8fef8;
+              }
+              &.bg-vivid-yellow {
+                background: #fffce0;
+              }
+              &.bg-vivid-apricot {
+                background: #fffafa;
               }
             }
           }
-        }
-        &.type-pc-hr {
-          .icon {
-            align-self: center;
+          &.type-corner-img {
+            align-items: stretch;
+            .item {
+              a {
+                padding: rem(24) rem(24) rem(142);
+              }
+              .icon {
+                position: absolute;
+                right: rem(24);
+                bottom: rem(24);
+                width: rem(100);
+                height: rem(100);
+                img {
+                  max-width: none;
+                  width: 100%;
+                }
+              }
+            }
+          }
+          &.type-pc-hr {
+            .icon {
+              align-self: center;
+            }
           }
         }
       }
     }
   }
 }
-
-//로밍 플래그 색상
-@include badge;
-
-//버튼 컬러 색상
-@include btn-colors;
-
-.mobile {
-  .adbvice-list {
-    &.type-pc-hr {
-      padding: 0;
-      border-radius: 0;
-      background: none;
-      border: none;
-      .item {
-        a {
-          padding: 24px 20px;
-          border-radius: 12px;
-          &.bg-vivid-yellow {
-            background: #fffce0;
-          }
-          &.bg-vivid-apricot {
-            background: #fffafa;
-          }
-          &::after {
-            right: rem(20);
-          }
-        }
-        + .item {
-          margin-top: rem(12);
-          border: none;
-        }
-      }
-    }
-    border-radius: rem(12);
-    background-color: #fff;
-    padding: rem(8) rem(20);
-    border: 1px solid #dce0e5;
-    .item {
-      + .item {
-        border-top: 1px solid #eee;
-      }
-      a {
-        padding: rem(16) 0;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
-          width: rem(24);
-          height: rem(24);
-          background: url("/images/v2/common/ico_arrow_right.svg") no-repeat 50% 50% / cover;
-        }
-        .text {
-          padding-left: rem(12);
-          padding-right: rem(22);
-          line-height: 1.425;
-          @include ellipsis;
-          strong {
-            @include Lb_Md_s16_lh22;
-            display: inline-block;
-            margin-bottom: rem(4);
-          }
-        }
-      }
-    }
-  }
-
-  .mobile-box-round {
-    border: 1px solid #000;
-  }
-}
-// E: 알닷 로밍 상품이에요 코너
-
-// S: Swiper
-.mobile {
-  .banner-swiper-wrap {
-    margin: rem(20) rem(-20) 0;
-    padding: 0 rem(20);
-    overflow: hidden;
-  }
-  .swiper {
-    padding-bottom: rem(20);
-    &.type-indicator-1 {
-      overflow: visible;
-    }
-    .play_box {
-      button {
-        position: relative;
-        top: rem(-32);
-        opacity: 0.7;
-      }
-    }
-  }
-}
-// E: Swiper
-
-/*common*/
-// S: 리스트 dash 추가
-.acd_bottom_notice {
-  .text-list {
-    &.bull {
-      li {
-        + li {
-          margin-top: rem(8);
-          .pc & {
-            margin-top: rem(12);
-          }
-        }
-      }
-    }
-    &.dash {
-      li {
-        position: relative;
-        padding-left: rem(12);
-        margin-top: rem(4);
-        &::before {
-          content: "-";
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-        .pc & {
-          margin-top: rem(6);
-        }
-        + li {
-          margin-top: rem(2);
-          .pc & {
-            margin-top: rem(4);
-          }
-        }
-      }
-    }
-  }
-}
-// E: 리스트 dash 추가
-
-// S: 탭메뉴
-.content-tabs {
-  &.type-outline {
-    .tab-title-wrap {
-      padding: 0;
-      gap: rem(8);
-      background: transparent;
-      .btn-tab-title {
-        border: 1px solid #eee;
-        display: inline-block;
-        height: rem(46);
-        color: #000;
-        background-color: #fff;
-        padding: rem(12);
-        @include Lb_Md_s16_lh22;
-        // @include ellipsis;
-        &.on {
-          box-shadow: 0 0 0 1px rgba(0, 0, 0, 1) inset;
-        }
-      }
-    }
-    .tab-content {
-      .contents-area {
-        padding: 0 rem(20);
-      }
-    }
-  }
-  .mobile & {
-    &.type-outline {
-      .tab-title-wrap {
-        overflow-y: hidden;
-        overflow-x: auto;
-        // scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        margin: 0 rem(-20) rem(24);
-        padding: 0 rem(20);
-        white-space: nowrap;
-        // .btn-tab-title {
-        //   scroll-snap-align: start;
-        // }
-      }
-    }
-  }
-  .pc & {
-    &.type-outline {
-      .tab-title-wrap {
-        margin-bottom: rem(40);
-      }
-    }
-  }
-}
-// E: 탭메뉴
+// E: 로밍 전체 공통
 
 /*common 유틸 용도*/
 .pc .pc_hide {
