@@ -168,6 +168,15 @@
       }
     }
 
+    .title-1 {
+      font-size: rem(16);
+      font-weight: 700;
+      margin-bottom: rem(8);
+    }
+    .info-text-1 {
+      color: #66707a;
+      font-size: rem(14);
+    }
     .mobile & {
       &.no-title {
         .pop_header {
@@ -183,6 +192,12 @@
     .pc & {
       .contents-wrap {
         padding: rem(48);
+      }
+      .title-1 {
+        font-size: rem(20);
+      }
+      .info-text-1 {
+        color: #66707a;
       }
     }
 

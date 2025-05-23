@@ -125,15 +125,58 @@
         </div>
         <!--// contents -->
       </div>
+      <!-- <Popup
+        title="해외 로밍 신청"
+        popType="full no-title"
+        confirmText="확인 버튼"
+        cancelText="취소 버튼"
+        showCancelButton
+        :isOpen="popState.pop0"
+        @update:isOpen="popState.pop0 = $event"
+        class="pcpopup"
+      > -->
       <Popup
+        title="휴대폰 번호 변경 내역"
+        popType="full no-title"
+        confirmText="확인"
+        :isOpen="false"
+        :isPopFooter="!isMobile"
+        @update:isOpen="popState.pop0 = $event"
+        class="pcpopup type-float-btn-1"
+      >
+        <!-- <Popup
         title="해외 로밍 신청"
         popType="full no-title"
         :isOpen="popState.pop0"
         @update:isOpen="popState.pop0 = $event"
         :isPopFooter="false"
         class="pcpopup"
+      > -->
+        <!-- <ALMY05500P01 /> -->
+        <ALMY05500P02 />
+      </Popup>
+
+      <Popup
+        title="온라인 변경 불가 휴대폰 모델"
+        popType="full no-title"
+        confirmText="확인"
+        :isOpen="false"
+        :isPopFooter="!isMobile"
+        @update:isOpen="popState.pop0 = $event"
+        class="pcpopup type-float-btn-1"
       >
-        <ALMY05500P01 />
+        <ALMY05500P02 />
+      </Popup>
+
+      <Popup
+        title="번호 변경 확인"
+        popType="full no-title"
+        confirmText="확인했어요"
+        :isOpen="popState.pop0"
+        @update:isOpen="popState.pop0 = $event"
+        class="pcpopup"
+      >
+        <ALMY05500P03 />
       </Popup>
       <!-- 청구서 재발행 / 완료 팝업 -->
       <!-- <Popup
@@ -188,6 +231,8 @@ import Popup from "@/components/v2/common/Popup.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
 import Accodian from "@/components/v2/common/Accodian.vue";
 import ALMY05500P01 from "@/components/popup/AL-MY-05-500-P01.vue";
+import ALMY05500P02 from "@/components/popup/AL-MY-05-500-P02.vue";
+import ALMY05500P03 from "@/components/popup/AL-MY-05-500-P03.vue";
 
 // import ALMY040021 from "@/components/v2/pages/paymentchange/ALMY040021";
 // import ALMY040022 from "@/components/v2/pages/paymentchange/ALMY040022";
@@ -302,6 +347,7 @@ const nextPage = () => {
 const toggle = ref<any>(false);
 
 const currentPage = ref(1);
+const isMobile = ref(front.isMobile());
 
 function onPanelChange(newIndex?: number) {
   newIndex === undefined ? (currentPage.value = 1) : (currentPage.value = cardObject2.value.length);
