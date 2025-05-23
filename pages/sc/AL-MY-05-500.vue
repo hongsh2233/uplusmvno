@@ -139,9 +139,9 @@
         title="휴대폰 번호 변경 내역"
         popType="full no-title"
         confirmText="확인"
-        :isOpen="false"
+        :isOpen="route.query.popup === '1' && popupOpen"
         :isPopFooter="false"
-        @update:isOpen="popState.pop0 = $event"
+        @update:isOpen="popupOpen = false"
         class="pcpopup type-float-btn-1"
       >
         <!-- <Popup
@@ -153,16 +153,16 @@
         class="pcpopup"
       > -->
         <!-- <ALMY05500P01 /> -->
-        <ALMY05500P02 />
+        <ALMY05500P01 />
       </Popup>
 
       <Popup
         title="온라인 변경 불가 휴대폰 모델"
         popType="full no-title"
         confirmText="확인"
-        :isOpen="false"
+        :isOpen="route.query.popup === '2' && popupOpen"
         :isPopFooter="false"
-        @update:isOpen="popState.pop0 = $event"
+        @update:isOpen="popupOpen = false"
         class="pcpopup type-float-btn-1"
       >
         <ALMY05500P02 />
@@ -172,8 +172,8 @@
         title="번호 변경 확인"
         popType="full no-title"
         confirmText="확인했어요"
-        :isOpen="false"
-        @update:isOpen="popState.pop0 = $event"
+        :isOpen="route.query.popup === '3' && popupOpen"
+        @update:isOpen="popupOpen = false"
         class="pcpopup"
       >
         <ALMY05500P03 />
@@ -182,9 +182,9 @@
       <Popup
         title="번호 선택"
         popType="full no-title"
-        :isOpen="popState.pop0"
+        :isOpen="route.query.popup === '4' && popupOpen"
         :isPopFooter="false"
-        @update:isOpen="popState.pop0 = $event"
+        @update:isOpen="popupOpen = false"
         class="pcpopup"
       >
         <ALMY05500P04 />
@@ -255,6 +255,8 @@ import { useRouter } from "vue-router";
 // 헤더 정보
 const emit = defineEmits(["setLayout"]);
 const router = useRouter();
+const popupOpen = ref(true);
+const route = useRoute();
 
 const layout = reactive<LayoutOptions>({
   header: "sub",

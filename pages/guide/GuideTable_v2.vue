@@ -89,8 +89,35 @@
             </template>
             <template v-if="Array.isArray(item[key]) && item[key].length > 0">
               <ul>
-                <li v-for="(obj, index) in item[key]" :key="index">
-                  {{ item[key][0].url }}
+                <li v-for="(obj, index) in item[key]" :key="obj.id">
+                  <p v-if="obj.id === '0'">
+                    메인
+                    <NuxtLink :to="obj.url" target="_blank">
+                      {{ item[key][0].url }}
+                    </NuxtLink>
+                  </p>
+                  <p v-else-if="obj.type === 2">
+                    <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
+                      <span>[PC]</span>
+                      {{ item[key][0].name }}
+                    </NuxtLink>
+
+                    <span class="bar">|</span>
+
+                    <!-- <NuxtLink
+                      :to="`${item[key][0].url}-${Number(obj.id) < 10 ? '0' + obj.id : obj.id}`"
+                      target="_blank"
+                    > -->
+                    <NuxtLink :to="obj.url" target="_blank">
+                      <span>[MOBILE]</span>
+                      {{ item[key][0].name }}
+                    </NuxtLink>
+                  </p>
+                  <p v-else>
+                    <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
+                      [PC/MOBILE] {{ item[key][0].name }}
+                    </NuxtLink>
+                  </p>
                 </li>
               </ul>
             </template>
@@ -154,8 +181,14 @@
 </template>
 
 <script setup lang="ts">
+interface Path {
+  id: string;
+  name: string;
+  url?: string;
+  type?: string | number;
+}
 interface Item {
-  [key: string]: string | number | null;
+  [key: string]: string | number | null | Path[];
 }
 // Props 타입 정의
 const props = defineProps<{
