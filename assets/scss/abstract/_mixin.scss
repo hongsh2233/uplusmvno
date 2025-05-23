@@ -325,3 +325,12 @@
     color: #fff;
   }
 }
+
+@mixin blind {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
