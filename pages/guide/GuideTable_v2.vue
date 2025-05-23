@@ -88,38 +88,42 @@
               </NuxtLink>
             </template>
             <template v-if="Array.isArray(item[key]) && item[key].length > 0">
-              <ul>
-                <li v-for="(obj, index) in item[key]" :key="obj.id">
-                  <p v-if="obj.id === '0'">
-                    메인
-                    <NuxtLink :to="obj.url" target="_blank">
-                      {{ item[key][0].url }}
-                    </NuxtLink>
-                  </p>
-                  <p v-else-if="obj.type === 2">
-                    <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
-                      <span>[PC]</span>
-                      {{ item[key][0].name }}
-                    </NuxtLink>
+              <div class="popup-list-wrap">
+                <ul>
+                  <li v-for="(obj, index) in item[key]" :key="obj.id">
+                    <p v-if="obj.id === '0'">
+                      <NuxtLink :to="obj.url" target="_blank">
+                        {{ item[key][0].url }}
+                      </NuxtLink>
+                    </p>
+                    <p v-else-if="obj.type === 2">
+                      <span class="popup-title">{{ obj.name }}</span>
+                      <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
+                        <span class="badge type-pc">PC</span>
+                      </NuxtLink>
 
-                    <span class="bar">|</span>
+                      <span class="bar">|</span>
 
-                    <!-- <NuxtLink
-                      :to="`${item[key][0].url}-${Number(obj.id) < 10 ? '0' + obj.id : obj.id}`"
-                      target="_blank"
-                    > -->
-                    <NuxtLink :to="obj.url" target="_blank">
-                      <span>[MOBILE]</span>
-                      {{ item[key][0].name }}
-                    </NuxtLink>
-                  </p>
-                  <p v-else>
-                    <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
-                      [PC/MOBILE] {{ item[key][0].name }}
-                    </NuxtLink>
-                  </p>
-                </li>
-              </ul>
+                      <!-- <NuxtLink
+                        :to="`${item[key][0].url}-${Number(obj.id) < 10 ? '0' + obj.id : obj.id}`"
+                        target="_blank"
+                      > -->
+                      <NuxtLink
+                        :to="obj.url ? obj.url : `${item[key][0].url}-${Number(obj.id) < 10 ? '0' + obj.id : obj.id}`"
+                        target="_blank"
+                      >
+                        <span class="badge type-mobile">MOBILE</span>
+                      </NuxtLink>
+                    </p>
+                    <p v-else>
+                      <span class="popup-title">{{ obj.name }}</span>
+                      <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
+                        <span class="badge type-pc-mobile">PC &#8226; MOBILE</span>
+                      </NuxtLink>
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </template>
             <!-- <template v-else-if="item[key] && item[key].length > 0">
               <ul>
