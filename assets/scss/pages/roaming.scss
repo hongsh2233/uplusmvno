@@ -147,6 +147,27 @@
       }
     }
 
+    .content-item__wrap {
+      &.type-inner-popup {
+        .mobile & {
+          .content-item {
+            padding: rem(24) 0;
+            .content-inner {
+              padding: 0 rem(20);
+            }
+          }
+        }
+        .pc & {
+          .content-item {
+            padding: rem(32) 0;
+            .content-inner {
+              padding: 0 rem(48);
+            }
+          }
+        }
+      }
+    }
+
     .mobile & {
       &.no-title {
         .pop_header {
@@ -163,6 +184,18 @@
       .contents-wrap {
         padding: rem(48);
       }
+    }
+
+    .outer-section {
+      + .outer-section {
+        margin-top: rem(24);
+      }
+
+      // .inner-section {
+      //   + .inner-section {
+
+      //   }
+      // }
     }
   }
   .mobile & {
@@ -1436,29 +1469,7 @@
     margin-top: rem(8);
   }
 
-  /*.fz-base {
-    .mobile & {
-      font-size: rem(14);
-      li {
-        font-size: inherit;
-      }
-    }
-    .pc & {
-      font-size: rem(16);
-      li {
-        font-size: inherit;
-      }
-    }
-  }*/
-  .mgt16 {
-    margin-top: rem(16) !important;
-  }
-  .mgt32 {
-    margin-top: rem(32) !important;
-  }
-  .mgt40 {
-    margin-top: rem(40) !important;
-  }
+  @include generate-mgt((8, 16, 32, 40, 56, 60, 64));
 
   // S: 총 건수
   .list-count {

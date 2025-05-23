@@ -334,3 +334,37 @@
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+@mixin generate-mgt($margins) {
+  @each $margin in $margins {
+    .mgt#{$margin} {
+      margin-top: rem($margin) !important;
+    }
+    .pc & {
+      .mgt#{$margin} {
+        &-pc {
+          margin-top: rem($margin) !important;
+        }
+      }
+    }
+    .mobile & {
+      .mgt#{$margin} {
+        &-mobile {
+          margin-top: rem($margin) !important;
+        }
+      }
+    }
+  }
+}
+
+// @mixin util-margin {
+//   .mgt16 {
+//     margin-top: rem(16) !important;
+//   }
+//   .mgt32 {
+//     margin-top: rem(32) !important;
+//   }
+//   .mgt40 {
+//     margin-top: rem(40) !important;
+//   }
+// }
