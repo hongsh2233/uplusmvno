@@ -1470,6 +1470,7 @@
   }
 
   @include generate-mgt((8, 16, 32, 40, 56, 60, 64));
+  @include generate-pdxy((8, 16, 32, 40, 56, 60, 64));
 
   // S: 총 건수
   .list-count {

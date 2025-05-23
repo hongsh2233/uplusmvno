@@ -357,14 +357,43 @@
   }
 }
 
-// @mixin util-margin {
-//   .mgt16 {
-//     margin-top: rem(16) !important;
-//   }
-//   .mgt32 {
-//     margin-top: rem(32) !important;
-//   }
-//   .mgt40 {
-//     margin-top: rem(40) !important;
-//   }
-// }
+@mixin generate-pdxy($paddings) {
+  @each $padding in $paddings {
+    .pdx#{$padding} {
+      padding-left: rem($padding) !important;
+      padding-right: rem($padding) !important;
+    }
+    .pdy#{$padding} {
+      padding-top: rem($padding) !important;
+      padding-bottom: rem($padding) !important;
+    }
+    .mobile & {
+      .pdx#{$padding} {
+        &-mobile {
+          padding-left: rem($padding) !important;
+          padding-right: rem($padding) !important;
+        }
+      }
+      .pdy#{$padding} {
+        &-mobile {
+          padding-top: rem($padding) !important;
+          padding-bottom: rem($padding) !important;
+        }
+      }
+    }
+    .pc & {
+      .pdx#{$padding} {
+        &-pc {
+          padding-left: rem($padding) !important;
+          padding-right: rem($padding) !important;
+        }
+      }
+      .pdy#{$padding} {
+        &-pc {
+          padding-top: rem($padding) !important;
+          padding-bottom: rem($padding) !important;
+        }
+      }
+    }
+  }
+}
