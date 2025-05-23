@@ -215,6 +215,7 @@ const state = reactive({
         change: false,
       },
     },
+    /* 2025-05-23 1747983161 (정C) 안내리스트 없이 문구만 들어가는 경우 추가 */
     {
       id: 4,
       prdName: "하루 데이터 로밍",
@@ -224,11 +225,7 @@ const state = reactive({
         favorite: true,
         recommend: true,
       },
-      detailList: {
-        period: "최대 100분",
-        data: "3GB",
-        country: "83개국",
-      },
+      detailList: "음성 로밍을 차단해 주는 서비스",
       btns: {
         apply: true,
         change: false,
