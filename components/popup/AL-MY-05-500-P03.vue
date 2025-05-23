@@ -1,6 +1,6 @@
 <template>
   <div class="contents-wrap AL-MY-05-500-P03">
-    <div class="cont-head title-main">
+    <div class="cont-head title-main has-bg-charactor">
       <h3 class="cont-title-main">
         <b class="txt-primary">번호를 바꾸기 전에</b><br />
         확인해 주세요
@@ -9,24 +9,21 @@
     <div class="outer-section">
       <div class="inner-section">
         <div class="cont-head"><div class="cont-title">번호 변경 안내</div></div>
-        <ol class="text-list circle-num type-vertical">
+        <ol class="text-list circle-num type-vertical text-normal">
           <li>
-            <p>희망번호 검색하기</p>
+            <p>변경하고자 하는 휴대폰 번호에 <strong>미납된 요금</strong>이 있으면 변경을 할 수 없어요</p>
           </li>
           <li>
-            <p>본인확인 인증</p>
-            <span>간단한 인증을 통해 본인확인을 해주세요.</span>
+            <p>변경하고자 하는 휴대폰 번호(유심)이 <strong>일시정지 상태</strong>면 변경을 할 수 없어요</p>
           </li>
           <li>
-            <p>번호 변경 완료</p>
-            <span>선택한 번호로 변경을 완료합니다.</span>
+            <p>1일 1회, <strong>90일 동안 총 2회</strong>까지만 변경이 가능해요</p>
           </li>
           <li>
-            <p>변경된 번호로 개통하기</p>
-            <span>
-              2G, 3G 휴대폰은 변경된 번호를 휴대폰에 입력하세요. <br />
-              LTE, 5G 휴대폰은 번호 변경 후 30분 이내에 변경된 번호로 휴대폰을 개통하세요.
-            </span>
+            <p><strong>카드사, 은행 등 금융 거래</strong>를 위한 번호 변경은 직접 하셔야 해요.</p>
+          </li>
+          <li>
+            <p>해외에서는 번호 변경 신청을 할 수 없어요</p>
           </li>
         </ol>
       </div>
@@ -36,4 +33,6 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped lang="scss">
+@use "@/assets/scss/popup/al-my-05-500-p03" as *;
+</style>

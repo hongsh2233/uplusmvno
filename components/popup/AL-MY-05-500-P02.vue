@@ -95,4 +95,6 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped lang="scss">
+@use "@/assets/scss/popup/al-my-05-500-p02" as *;
+</style>

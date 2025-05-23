@@ -140,7 +140,7 @@
         popType="full no-title"
         confirmText="확인"
         :isOpen="false"
-        :isPopFooter="!isMobile"
+        :isPopFooter="false"
         @update:isOpen="popState.pop0 = $event"
         class="pcpopup type-float-btn-1"
       >
@@ -161,7 +161,7 @@
         popType="full no-title"
         confirmText="확인"
         :isOpen="false"
-        :isPopFooter="!isMobile"
+        :isPopFooter="false"
         @update:isOpen="popState.pop0 = $event"
         class="pcpopup type-float-btn-1"
       >
@@ -172,11 +172,22 @@
         title="번호 변경 확인"
         popType="full no-title"
         confirmText="확인했어요"
-        :isOpen="popState.pop0"
+        :isOpen="false"
         @update:isOpen="popState.pop0 = $event"
         class="pcpopup"
       >
         <ALMY05500P03 />
+      </Popup>
+
+      <Popup
+        title="번호 선택"
+        popType="full no-title"
+        :isOpen="popState.pop0"
+        :isPopFooter="false"
+        @update:isOpen="popState.pop0 = $event"
+        class="pcpopup"
+      >
+        <ALMY05500P04 />
       </Popup>
       <!-- 청구서 재발행 / 완료 팝업 -->
       <!-- <Popup
@@ -233,6 +244,7 @@ import Accodian from "@/components/v2/common/Accodian.vue";
 import ALMY05500P01 from "@/components/popup/AL-MY-05-500-P01.vue";
 import ALMY05500P02 from "@/components/popup/AL-MY-05-500-P02.vue";
 import ALMY05500P03 from "@/components/popup/AL-MY-05-500-P03.vue";
+import ALMY05500P04 from "@/components/popup/AL-MY-05-500-P04.vue";
 
 // import ALMY040021 from "@/components/v2/pages/paymentchange/ALMY040021";
 // import ALMY040022 from "@/components/v2/pages/paymentchange/ALMY040022";

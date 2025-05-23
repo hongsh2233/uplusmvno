@@ -78,12 +78,32 @@
             'cell-status': key === '진행상태',
           }"
         >
-          <template
-            v-if="key === 'PATH' && item[key] && item['진행상태'] !== '진행전' && item['진행상태'] !== '진행중'"
-          >
-            <NuxtLink :to="(item[key] as string)" target="_blank">
+          <template v-if="key === 'PATH' && item[key] && item['진행상태'] !== '진행전'">
+            <!-- <NuxtLink :to="(item[key] as string)" target="_blank">
               <span>{{ item[key] }}</span>
-            </NuxtLink>
+            </NuxtLink> -->
+            <template v-if="!Array.isArray(item[key])">
+              <NuxtLink :to="(item[key] as string)" target="_blank">
+                <span>{{ item[key] }}</span>
+              </NuxtLink>
+            </template>
+            <template v-if="Array.isArray(item[key]) && item[key].length > 0">
+              <ul>
+                <li v-for="(obj, index) in item[key]" :key="index">
+                  {{ item[key][0].url }}
+                </li>
+              </ul>
+            </template>
+            <!-- <template v-else-if="item[key] && item[key].length > 0">
+              <ul>
+                <li>
+                  123
+                  <NuxtLink :to="(item[key] as string)" target="_blank">
+                    <span>{{ data.name }}</span>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </template> -->
           </template>
           <template
             v-else-if="

@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-500-P03 {
+  .title-main {
+    &.has-bg-charactor {
+      padding-bottom: rem(80);
+      border-bottom: 1px solid #dce0e5;
+      position: relative;
+      margin-bottom: rem(24);
+      &::after {
+        content: "";
+        position: absolute;
+        right: rem(-40);
+        bottom: 0;
+        width: rem(144);
+        height: rem(132);
+        background: url("/images/roaming/sc/img-change-number-title-bg.png") no-repeat 50% 50% / 100% auto;
+      }
+    }
+  }
+  .pc & {
+    .title-main {
+      &.has-bg-charactor {
+        margin-bottom: rem(56);
+        &::after {
+          width: rem(220);
+          height: rem(202);
+          right: rem(-48);
+        }
+      }
+    }
+  }
+}

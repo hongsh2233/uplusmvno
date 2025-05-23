@@ -51,4 +51,6 @@ const cardObject1 = ref([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+@use "@/assets/scss/popup/al-my-05-500-p01" as *;
+</style>
