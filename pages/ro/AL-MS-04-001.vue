@@ -215,6 +215,7 @@ const state = reactive({
         change: false,
       },
     },
+    /* 2025-05-23 1747983161 (정C) 안내리스트 없이 문구만 들어가는 경우 추가 */
     {
       id: 4,
       prdName: "하루 데이터 로밍",

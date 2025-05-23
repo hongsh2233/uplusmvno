@@ -19,6 +19,7 @@
                 <NuxtLink :to="item.prdLink">{{ item.prdName }}</NuxtLink>
               </p>
             </div>
+            <!-- 2025-05-23 1747983161 (정C) 안내리스트 없이 문구만 들어가는 경우 추가 -->
             <div class="detail" v-if="typeof item.detailList !== 'string'">
               <span class="period" v-if="item.detailList.period">
                 <span class="info-title">이용기간</span>
@@ -36,6 +37,7 @@
             <div class="detail" v-else>
               <span class="info-val">음성 로밍을 차단해 주는 서비스</span>
             </div>
+            <!-- //2025-05-23 1747983161 (정C) 안내리스트 없이 문구만 들어가는 경우 추가 -->
           </div>
           <div class="info-group-2">
             <div class="price">
