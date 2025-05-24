@@ -139,7 +139,7 @@
         title="휴대폰 번호 변경 내역"
         popType="full no-title"
         confirmText="확인"
-        :isOpen="route.query.popup === '1' && popupOpen"
+        :isOpen="popupQuery === '1' && popupOpen"
         :isPopFooter="false"
         @update:isOpen="popupOpen = false"
         class="pcpopup type-float-btn-1"
@@ -160,7 +160,7 @@
         title="온라인 변경 불가 휴대폰 모델"
         popType="full no-title"
         confirmText="확인"
-        :isOpen="route.query.popup === '2' && popupOpen"
+        :isOpen="popupQuery === '2' && popupOpen"
         :isPopFooter="false"
         @update:isOpen="popupOpen = false"
         class="pcpopup type-float-btn-1"
@@ -172,7 +172,7 @@
         title="번호 변경 확인"
         popType="full no-title"
         confirmText="확인했어요"
-        :isOpen="route.query.popup === '3' && popupOpen"
+        :isOpen="popupQuery === '3' && popupOpen"
         @update:isOpen="popupOpen = false"
         class="pcpopup"
       >
@@ -182,7 +182,7 @@
       <Popup
         title="번호 선택"
         popType="full no-title"
-        :isOpen="route.query.popup === '4' && popupOpen"
+        :isOpen="popupQuery === '4' && popupOpen"
         :isPopFooter="false"
         @update:isOpen="popupOpen = false"
         class="pcpopup"
@@ -257,6 +257,7 @@ const emit = defineEmits(["setLayout"]);
 const router = useRouter();
 const popupOpen = ref(true);
 const route = useRoute();
+const popupQuery = ref(route.query.popup);
 
 const layout = reactive<LayoutOptions>({
   header: "sub",
