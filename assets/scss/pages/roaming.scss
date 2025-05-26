@@ -205,6 +205,13 @@
         color: #66707a;
       }
     }
+    .pc & {
+      .contents-wrap {
+        &.ty02 {
+          padding: rem(32);
+        }
+      }
+    }
 
     .outer-section {
       + .outer-section {

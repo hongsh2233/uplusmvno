@@ -1,0 +1,66 @@
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-600 {
+  .content-item {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 0;
+      display: inline-block;
+      width: rem(220);
+      height: rem(202);
+      background: url("/images/v2/content/img_certificate_crt_pc.png") no-repeat 0 0;
+      background-size: contain;
+    }
+
+    .cont-head {
+      &.title-main {
+        padding-bottom: rem(80);
+        border-bottom: 1px solid #ddd;
+      }
+    }
+    .text-list {
+      &.circle-num {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.2rem 0;
+      }
+    }
+    .inner-section {
+      .text_info {
+        margin-top: rem(32);
+        padding-left: 2.2rem;
+        color: #66707a;
+
+        &::before {
+          top: -0.1rem;
+          left: 0;
+          width: 2rem;
+          height: 2rem;
+          background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
+        }
+      }
+    }
+  }
+
+  .mobile & {
+    .content-item {
+      &::after {
+        content: "";
+        top: 4px;
+        right: 0;
+        width: rem(144);
+        height: rem(156);
+        background: url("/images/v2/content/img_certificate_crt_m.png") no-repeat 0 0;
+      }
+
+      .cont-head {
+        &.title-main {
+          margin-bottom: rem(24);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-601 {
+  .textarea_box {
+    &.ty02 {
+      overflow: visible;
+      margin-bottom: rem(20);
+
+      .byte_check {
+        display: block;
+        width: 100%;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+        text-align: right;
+        padding: 0;
+      }
+    }
+  }
+
+  .pop_content {
+    .form-box {
+      padding-top: rem(16);
+      border-top: 1px solid #ddd;
+    }
+
+    .contents-wrap {
+      &.ty02 {
+        .tit {
+          @include Lb_Lg_s18_lh24;
+          margin-bottom: rem(16);
+        }
+        .policy-wrap {
+          li {
+            @include Pg_Md_s16_lh22;
+            margin-bottom: rem(8);
+
+            &:last-child {
+              margin-bottom: rem(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
