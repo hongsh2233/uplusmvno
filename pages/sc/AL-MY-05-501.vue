@@ -1,5 +1,5 @@
 <template>
-  <div class="AL-MY-05-500">
+  <div class="AL-MY-05-501">
     <div class="container">
       <div class="content" id="content">
         <h2 class="title_nav">{{ layout.title }}</h2>
@@ -26,30 +26,30 @@
                     <li>유심만 개통한 경우 휴대폰 등록(확정 기변) 후 번호 변경을 하실 수 있어요.</li>
                   </ul>
                 </div>
-                <CardGroup :card-object="cardObject1" />
-              </div>
-            </div>
 
-            <div class="content-item">
-              <div class="content-inner">
+                <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
+                  <template #content>
+                    <div class="mgt0">
+                      <CardGroup :card-object="cardObject2">
+                        <template #default="{ item }">
+                          <div class="fl-ac">
+                            <p v-html="item.value"></p>
+                            <NuxtLink to="AL-MY-05-005" v-if="item.value === '미등록'" class="btn-rounded chip"
+                              >휴대폰 등록</NuxtLink
+                            >
+                          </div>
+                        </template>
+                      </CardGroup>
+                    </div>
+                  </template>
+                </Accodian>
                 <div class="inner-section">
-                  <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
-                    <template #content>
-                      <div class="consent-container mgt0">
-                        <CardGroup :card-object="cardObject2">
-                          <template #default="{ item }">
-                            <div class="fl-ac">
-                              <p v-html="item.value"></p>
-                              <NuxtLink to="AL-MY-05-005" v-if="item.value === '미등록'" class="btn-rounded chip"
-                                >휴대폰 등록</NuxtLink
-                              >
-                            </div>
-                          </template>
-                        </CardGroup>
-                      </div>
-                    </template>
-                  </Accodian>
+                  <hr class="hr-line" />
                 </div>
+                <div class="inner-section">
+                  <CardGroup :card-object="cardObject1" />
+                </div>
+
                 <div class="inner-section">
                   <div class="cont-head">
                     <div class="cont-title">번호 변경 안내</div>
@@ -84,13 +84,7 @@
               </div>
             </div>
 
-            <div class="content-item">
-              <div class="content-inner">
-                <CardGroup :card-object="cardObject3" />
-                <p class="notice-txt">일시 정지 해제 후 번호 변경 해주세요.</p>
-              </div>
-            </div>
-            <BottomFixMenu :btnText="'번호 변경'" :disabled="false" />
+            <BottomFixMenu :btnText="'번호 변경 취소'" :disabled="false" />
             <!-- // bottom_button -->
 
             <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
@@ -129,53 +123,7 @@
           @update:isOpen="popupOpen = false"
           class="pcpopup type-float-btn-1"
         >
-          <ALMY05500P01 />
-        </Popup>
-
-        <Popup
-          title="온라인 변경 불가 휴대폰 모델"
-          popType="full no-title"
-          confirmText="확인"
-          :isOpen="popupQuery === '2' && popupOpen"
-          :isPopFooter="false"
-          @update:isOpen="popupOpen = false"
-          class="pcpopup type-float-btn-1"
-        >
-          <ALMY05500P02 />
-        </Popup>
-
-        <Popup
-          title="번호 변경 확인"
-          popType="full no-title"
-          confirmText="확인했어요"
-          :isOpen="popupQuery === '3' && popupOpen"
-          @update:isOpen="popupOpen = false"
-          class="pcpopup"
-        >
-          <ALMY05500P03 />
-        </Popup>
-
-        <Popup
-          title="번호 선택"
-          popType="full no-title"
-          :isOpen="popupQuery === '4' && popupOpen"
-          :isPopFooter="false"
-          @update:isOpen="popupOpen = false"
-          class="pcpopup"
-        >
-          <ALMY05500P04 />
-          <ALMY05505P05 />
-        </Popup>
-
-        <Popup
-          title="변경 완료"
-          popType="full no-title"
-          :isOpen="popupQuery === '5' && popupOpen"
-          :isPopFooter="false"
-          @update:isOpen="popupOpen = false"
-          class="pcpopup"
-        >
-          <ALMY05500P05 />
+          <ALMY05501P01 />
         </Popup>
       </div>
     </div>
@@ -190,11 +138,7 @@ import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
 import Popup from "@/components/v2/common/Popup.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
 import Accodian from "@/components/v2/common/Accodian.vue";
-import ALMY05500P01 from "@/components/popup/AL-MY-05-500-P01.vue";
-import ALMY05500P02 from "@/components/popup/AL-MY-05-500-P02.vue";
-import ALMY05500P03 from "@/components/popup/AL-MY-05-500-P03.vue";
-import ALMY05500P04 from "@/components/popup/AL-MY-05-500-P04.vue";
-import ALMY05500P05 from "@/components/popup/AL-MY-05-500-P05.vue";
+import ALMY05501P01 from "@/components/popup/AL-MY-05-501-P01.vue";
 
 const emit = defineEmits(["setLayout"]);
 
@@ -265,5 +209,5 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-@use "@/assets/scss/pages/sc/page-al-my-05-500.scss" as *;
+@use "@/assets/scss/pages/sc/page-al-my-05-501.scss" as *;
 </style>

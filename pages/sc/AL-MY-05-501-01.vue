@@ -1,16 +1,16 @@
 <template>
-  <div class="popup-al-my-05-500-02 mobile-page-popup">
+  <div class="popup-al-my-05-501-01 mobile-page-popup">
     <div class="container deps4">
       <div class="content" id="content">
         <h2 class="title_nav">{{ layout.title }}</h2>
-        <ALMY05500P05 />
+        <ALMY05501P01 />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import ALMY05500P05 from "@/components/popup/AL-MY-05-500-P05.vue";
+import ALMY05501P01 from "@/components/popup/AL-MY-05-501-P01.vue";
 
 const emit = defineEmits(["setLayout"]);
 
@@ -18,7 +18,7 @@ const layout = reactive<LayoutOptions>({
   header: "sub",
   footer: "none",
   floatMenu: "none",
-  title: "변경 완료",
+  title: "취소 완료",
   wrapClass: "selfcare roaming",
 });
 
@@ -28,5 +28,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "@/assets/scss/pages/ro/popup-al-my-05-500-02.scss" as *;
+@use "@/assets/scss/pages/ro/popup-al-my-05-501-01.scss" as *;
 </style>
