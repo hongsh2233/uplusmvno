@@ -183,6 +183,7 @@ $color-rework: #ffe5f2;
       border: 1px solid #ccc;
       line-height: 1;
       border-radius: rem(40);
+      white-space: nowrap;
       &.type-pc {
         background-color: #f5d4c4;
       }
