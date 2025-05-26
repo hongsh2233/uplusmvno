@@ -1,0 +1,72 @@
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-609 {
+  padding: 10rem 6rem 4rem;
+  max-width: rem(640);
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .print-head {
+    margin-bottom: rem(28);
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 48px;
+      height: 28px;
+      position: absolute;
+      top: rem(-40);
+      right: 0;
+      background: url("/images/v2/content/ico_logo_print.png") no-repeat 0 0;
+      background-size: contain;
+    }
+    .tit {
+      @include Hd_xLg_s32_lh38;
+    }
+  }
+
+  .print-content {
+    margin-bottom: rem(40);
+
+    table {
+      th {
+        @include Pg_Sm_s14_lh20;
+        color: #66707a;
+      }
+      td {
+        @include Pg_Sm_s14_lh20;
+      }
+    }
+  }
+
+  .print-footer {
+    .footer-top {
+      @include Lb_Md_s16_lh22;
+      color: #66707a;
+      text-align: center;
+      font-weight: 500;
+
+      .txt {
+        margin-top: rem(12);
+      }
+      .date {
+        margin-top: rem(4);
+        margin-bottom: rem(40);
+      }
+    }
+  }
+
+  .mobile & {
+    padding: 2.4rem 2rem 4rem;
+
+    .print-head {
+      .tit {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+        font-weight: var(--fontweight-bold);
+      }
+    }
+  }
+}

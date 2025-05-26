@@ -47,7 +47,7 @@
                   </ol>
 
                   <div class="text_info">
-                    고객님의 소중한 정보 보호를 위해<br v-if="front.isMobile()" />
+                    고객님의 소중한 정보 보호를 위해<br class="pc_hide" />
                     본인 인증 후 서류 발급 신청이 가능합니다.
                   </div>
                 </div>
@@ -57,7 +57,7 @@
             <!-- // contents -->
 
             <div class="reverse">
-              <BottomFixMenu :btnText="'인증하기'" @click="nextConfirm" />
+              <BottomFixMenu :btnText="'인증하기'" />
               <!-- // bottom_button -->
             </div>
           </div>
@@ -71,7 +71,7 @@
 import type { LayoutOptions } from "@/types/layout";
 import PcLnb from "@/components/v2/common/PcLnb.vue";
 import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
-import BottomFixMenu from "@/components/v2/common/BottomFixMenu";
+import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
 
 const emit = defineEmits<{
   (e: "setLayout", payload: LayoutOptions): void;

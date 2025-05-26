@@ -1,0 +1,134 @@
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-603 {
+  padding: 10rem 6rem 4rem;
+  max-width: rem(640);
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .print-head {
+    margin-bottom: rem(28);
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 48px;
+      height: 28px;
+      position: absolute;
+      top: rem(-40);
+      right: 0;
+      background: url("/images/v2/content/ico_logo_print.png") no-repeat 0 0;
+      background-size: contain;
+    }
+
+    .txt {
+      display: inline-block;
+      margin-bottom: rem(6);
+      @include Lb_xSm_s13_lh19;
+      color: #66707a;
+    }
+    .tit {
+      @include Hd_xLg_s32_lh38;
+    }
+  }
+
+  .print-content {
+    margin-bottom: rem(40);
+
+    .content-round-box {
+      border-radius: 12px;
+      background: #fcf2ed;
+      padding: rem(40);
+      li {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        gap: rem(24);
+        margin-bottom: rem(12);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .tit {
+          width: rem(168);
+          @include Lb_Sm_s14_lh20;
+          flex-shrink: 0;
+        }
+        .txt {
+          width: 100%;
+          @include Lb_Sm_s14_lh20;
+          font-weight: 500;
+          margin-left: auto;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .print-footer {
+    .footer-top {
+      @include Lb_Md_s16_lh22;
+      color: #66707a;
+      text-align: center;
+      font-weight: 500;
+
+      .txt {
+        margin-top: rem(12);
+      }
+      .date {
+        margin-top: rem(4);
+        margin-bottom: rem(40);
+      }
+    }
+    .footer-bottom {
+      padding-top: rem(25);
+      @include Lb_xxSm_s12_lh18;
+      color: var(--txt-gray_909090, #909090);
+      text-align: center;
+
+      .txt {
+        margin-bottom: rem(4);
+      }
+      .time-tel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(20);
+      }
+    }
+  }
+
+  .mobile & {
+    padding: 2.4rem 2rem 4rem;
+
+    .print-head {
+      .tit {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+        font-weight: var(--fontweight-bold);
+      }
+    }
+
+    .print-content {
+      .content-round-box {
+        li {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    .print-footer {
+      .footer-bottom {
+        .time-tel {
+          display: block;
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

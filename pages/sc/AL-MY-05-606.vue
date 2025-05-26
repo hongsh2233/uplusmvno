@@ -32,14 +32,14 @@
                       <ul class="text-list mgt16">
                         <li>
                           청구요금 확인용으로 개인정보가 포함된 타인의 정보는 마스킹 처리되어
-                          <br v-if="!front.isMobile()" />
+                          <br class="mobile_hide" />
                           식별할 수 없는 형태로 제공됩니다.
                         </li>
                       </ul>
                     </div>
 
                     <!-- 납부내역 확인서 - PC -->
-                    <div class="table-wrap tag" v-if="!front.isMobile()">
+                    <div class="table-wrap tag mobile_hide">
                       <div class="scroll-wrap">
                         <div class="item on">
                           <table class="table table-bordered">
@@ -109,7 +109,7 @@
                     <!-- // 납부내역 확인서 - PC -->
 
                     <!-- 납부내역 확인서 - M -->
-                    <div class="inner-section" v-if="front.isMobile()">
+                    <div class="inner-section pc_hide">
                       <CardGroup :card-object="cardObject1">
                         <template #default="{ item }">
                           <p :class="item.class">
@@ -133,7 +133,7 @@
             <!-- // section -->
 
             <div class="reverse">
-              <BottomFixMenu :btnText="'납부내역 확인서 발급'" @click="nextConfirm" />
+              <BottomFixMenu :btnText="'납부내역 확인서 발급'" />
               <!-- // bottom_button -->
             </div>
           </div>

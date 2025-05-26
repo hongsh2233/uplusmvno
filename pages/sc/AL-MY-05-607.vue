@@ -32,7 +32,7 @@
                       <ul class="text-list mgt16">
                         <li>
                           청구요금 확인용으로 개인정보가 포함된 타인의 정보는 마스킹 처리되어
-                          <br class="mobile-hide" />
+                          <br class="mobile_hide" />
                           식별할 수 없는 형태로 제공됩니다.
                         </li>
                       </ul>
