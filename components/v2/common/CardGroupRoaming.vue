@@ -40,6 +40,7 @@
           <li v-for="(item, j) in items.list" :key="j" :class="[item.class && item.class.list]">
             <div class="name" :class="[item.class && item.class.title]">
               <slot name="name" :item="item">{{ item.name }}</slot>
+              <p v-if="item.nameDesc" class="description-sub" v-html="item.nameDesc"></p>
             </div>
             <div class="value" :class="[item.class && item.class.value]">
               <slot :item="item">{{ item.value }}</slot>

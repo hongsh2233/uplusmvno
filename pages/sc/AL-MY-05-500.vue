@@ -95,7 +95,7 @@
               <p class="notice-txt">일시 정지 해제 후 번호 변경 해주세요.</p>
             </div>
           </div>
-          <BottomFixMenu :btnText="'번호 변경'" :disabled="false" @click="nextPage" />
+          <BottomFixMenu :btnText="'번호 변경'" :disabled="false" />
           <!-- // bottom_button -->
 
           <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
@@ -188,6 +188,18 @@
         class="pcpopup"
       >
         <ALMY05500P04 />
+        <ALMY05505P05 />
+      </Popup>
+
+      <Popup
+        title="변경 완료"
+        popType="full no-title"
+        :isOpen="popupQuery === '5' && popupOpen"
+        :isPopFooter="false"
+        @update:isOpen="popupOpen = false"
+        class="pcpopup"
+      >
+        <ALMY05500P05 />
       </Popup>
       <!-- 청구서 재발행 / 완료 팝업 -->
       <!-- <Popup
@@ -245,6 +257,7 @@ import ALMY05500P01 from "@/components/popup/AL-MY-05-500-P01.vue";
 import ALMY05500P02 from "@/components/popup/AL-MY-05-500-P02.vue";
 import ALMY05500P03 from "@/components/popup/AL-MY-05-500-P03.vue";
 import ALMY05500P04 from "@/components/popup/AL-MY-05-500-P04.vue";
+import ALMY05500P05 from "@/components/popup/AL-MY-05-500-P05.vue";
 
 // import ALMY040021 from "@/components/v2/pages/paymentchange/ALMY040021";
 // import ALMY040022 from "@/components/v2/pages/paymentchange/ALMY040022";
@@ -254,7 +267,7 @@ import { useRouter } from "vue-router";
 
 // 헤더 정보
 const emit = defineEmits(["setLayout"]);
-const router = useRouter();
+// const router = useRouter();
 const popupOpen = ref(true);
 const route = useRoute();
 const popupQuery = ref(route.query.popup);
@@ -332,15 +345,15 @@ const cardObject3 = ref([
 
 const isReissue = ref(false);
 // const pageStep = ref(1);
-const nextPage = () => {
-  // 화면 검수용 임시 라우터 처리
-  if (front.isMobile()) {
-    router.push("/sc/AL-MY-04-002-1");
-  } else {
-    // 납부 방법 변경 팝업
-    isReissue.value = true;
-  }
-};
+// const nextPage = () => {
+//   // 화면 검수용 임시 라우터 처리
+//   if (front.isMobile()) {
+//     router.push("/sc/AL-MY-04-002-1");
+//   } else {
+//     // 납부 방법 변경 팝업
+//     isReissue.value = true;
+//   }
+// };
 
 // const nextViewType = ref(null);
 // const nextView = (page) => {
@@ -359,19 +372,19 @@ const nextPage = () => {
 //tooltipOpen
 
 // accordion
-const toggle = ref<any>(false);
+// const toggle = ref<any>(false);
 
-const currentPage = ref(1);
+// const currentPage = ref(1);
 const isMobile = ref(front.isMobile());
 
-function onPanelChange(newIndex?: number) {
-  newIndex === undefined ? (currentPage.value = 1) : (currentPage.value = cardObject2.value.length);
-}
+// function onPanelChange(newIndex?: number) {
+//   newIndex === undefined ? (currentPage.value = 1) : (currentPage.value = cardObject2.value.length);
+// }
 
 // global state 임시
-const globalState = reactive({
-  isLoggedIn: true,
-});
+// const globalState = reactive({
+//   isLoggedIn: true,
+// });
 
 // const tooltipOpen = ref(false);
 

@@ -128,6 +128,17 @@
           }
         }
       }
+
+      .mobile &,
+      .pc & {
+        .btn-area {
+          + .notice-txt {
+            &:nth-last-of-type(1) {
+              margin-top: rem(16);
+            }
+          }
+        }
+      }
     }
   }
   .pop_layer {
@@ -197,9 +208,18 @@
     .pc & {
       .contents-wrap {
         padding: rem(48);
-
         &.ty02 {
           padding: rem(32);
+        }
+        > .first-content-item {
+          > .content-item {
+            &:first-of-type {
+              padding-top: 0;
+            }
+          }
+        }
+        .content-inner {
+          padding: 0;
         }
       }
       .title-1 {
@@ -895,6 +915,7 @@
       }
     }
   }
+
   .input_box {
     + .form_group {
       .mobile & {
@@ -938,6 +959,15 @@
     gap: rem(8);
   }
   .card-group {
+    .name {
+      &.has-desc {
+        .description-sub {
+          line-height: rem(18);
+          font-size: rem(12);
+          color: #909090;
+        }
+      }
+    }
     .total-value {
       border-top: 1px solid #dce0e5;
       .name {
@@ -968,7 +998,16 @@
         }
       }
     }
+
     .pc & {
+      .name {
+        &.has-desc {
+          .description-sub {
+            line-height: rem(20);
+            font-size: rem(14);
+          }
+        }
+      }
       .total-value {
         margin-top: rem(24);
         padding-top: rem(24);
