@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-001 {
+  .subscription-info-second {
+    &.mgt0 {
+      &:deep() {
+        .content-item {
+          &:first-child {
+            margin-top: rem(16);
+          }
+        }
+      }
+    }
+  }
+}

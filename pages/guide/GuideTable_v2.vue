@@ -175,7 +175,7 @@
           <template v-else-if="key === '수정일' && item[key]">
             <span v-html="getModifyInfoDate(String(item[key]))"></span>
           </template>
-          <template v-else>
+          <template v-else-if="!Array.isArray(item[key])">
             <span>{{ item[key] }}</span>
           </template>
         </td>

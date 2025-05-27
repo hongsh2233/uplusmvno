@@ -9,7 +9,17 @@
         }
       }
     }
-
+    .content-tabs {
+      .mobile & {
+        button {
+          &.btn-tab-title {
+            &:nth-of-type(2) {
+              max-width: rem(72);
+            }
+          }
+        }
+      }
+    }
     .content-item {
       + .content-item {
         border-top: 1px solid #dce0e5;

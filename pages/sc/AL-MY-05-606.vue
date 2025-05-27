@@ -19,7 +19,7 @@
             <!-- section -->
             <div class="content-item">
               <div class="content-inner">
-                <Tab :titles="['가입사실 확인서', '통화내역', '납부내역 확인서']">
+                <Tab :titles="['가입사실 확인', '통화내역', '납부내역 확인']">
                   <!-- 납부내역 확인서 -->
                   <template #content3>
                     <div class="cont-head title-main">
@@ -122,7 +122,13 @@
 
                     <!-- 내역이 없는 경우 -->
                     <div class="inner-section">
-                      <div class="gray-box-no-data">납부 내역이 없습니다</div>
+                      <!-- <div class="gray-box-no-data">납부 내역이 없습니다</div> -->
+                      <div class="result-message-box no-data">
+                        <p class="message-icon">
+                          <i class="img-payment"></i>
+                        </p>
+                        <p class="message-txt">납부 내역이 없습니다</p>
+                      </div>
                     </div>
                     <!-- // 내역이 없는 경우 -->
                   </template>

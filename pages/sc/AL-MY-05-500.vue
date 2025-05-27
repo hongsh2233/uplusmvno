@@ -22,34 +22,36 @@
                     간편하게 <b class="txt-primary">변경</b>하세요
                   </h3>
                   <ul class="text-list bull">
-                    <li>변경 예약 및 취소, 변경 완료를 모두 포함하여 1일 1회, 90일 동안 총 2회까지 변경이 가능해요.</li>
-                    <li>유심만 개통한 경우 휴대폰 등록(확정 기변) 후 번호 변경을 하실 수 있어요.</li>
+                    <li>
+                      변경 예약 및 취소, 변경 완료를 모두 포함하여 1일 1회, <strong>90일 동안 총 2회</strong>까지 변경이
+                      가능해요.
+                    </li>
+                    <li>유심만 개통한 경우 <strong>휴대폰 등록(확정 기변)</strong> 후 번호 변경을 하실 수 있어요.</li>
                   </ul>
                 </div>
-                <CardGroup :card-object="cardObject1" />
-              </div>
-            </div>
-
-            <div class="content-item">
-              <div class="content-inner">
+                <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
+                  <template #content>
+                    <div class="mgt0">
+                      <CardGroup :card-object="cardObject2">
+                        <template #default="{ item }">
+                          <div class="fl-ac">
+                            <p v-html="item.value"></p>
+                            <NuxtLink to="AL-MY-05-005" v-if="item.value === '미등록'" class="btn-rounded chip"
+                              >휴대폰 등록</NuxtLink
+                            >
+                          </div>
+                        </template>
+                      </CardGroup>
+                    </div>
+                  </template>
+                </Accodian>
                 <div class="inner-section">
-                  <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
-                    <template #content>
-                      <div class="consent-container mgt0">
-                        <CardGroup :card-object="cardObject2">
-                          <template #default="{ item }">
-                            <div class="fl-ac">
-                              <p v-html="item.value"></p>
-                              <NuxtLink to="AL-MY-05-005" v-if="item.value === '미등록'" class="btn-rounded chip"
-                                >휴대폰 등록</NuxtLink
-                              >
-                            </div>
-                          </template>
-                        </CardGroup>
-                      </div>
-                    </template>
-                  </Accodian>
+                  <hr class="hr-line" />
                 </div>
+                <div class="inner-section">
+                  <CardGroup :card-object="cardObject1" />
+                </div>
+
                 <div class="inner-section">
                   <div class="cont-head">
                     <div class="cont-title">번호 변경 안내</div>
@@ -90,6 +92,7 @@
                 <p class="notice-txt">일시 정지 해제 후 번호 변경 해주세요.</p>
               </div>
             </div>
+
             <BottomFixMenu :btnText="'번호 변경'" :disabled="false" />
             <!-- // bottom_button -->
 

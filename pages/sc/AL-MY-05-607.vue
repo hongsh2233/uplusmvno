@@ -19,7 +19,7 @@
             <!-- section -->
             <div class="content-item">
               <div class="content-inner">
-                <Tab :titles="['가입사실 확인서', '통화내역', '납부내역 확인서']">
+                <Tab :titles="['가입사실 확인', '통화내역', '납부내역 확인']">
                   <!-- 납부내역 확인서 -->
                   <template #content3>
                     <div class="cont-head title-main">

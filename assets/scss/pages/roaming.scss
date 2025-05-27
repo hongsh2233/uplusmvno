@@ -141,107 +141,7 @@
       }
     }
   }
-  .pop_layer {
-    &.type-float-btn-1 {
-      .pop_footer {
-        padding: 0;
-        .btn-rounded {
-          &.primary {
-            background: var(--txt-white);
-            height: 6.4rem;
-            color: var(--txt-black);
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: var(--fontweight-bold);
-            line-height: var(--line-height);
-            letter-spacing: var(--letter-spacing);
-            border: none;
-            border-top: 1px solid #eee;
-            border-radius: 0;
-          }
-        }
-      }
-    }
-
-    .content-item__wrap {
-      &.type-inner-popup {
-        .mobile & {
-          .content-item {
-            padding: rem(24) 0;
-            .content-inner {
-              padding: 0 rem(20);
-            }
-          }
-        }
-        .pc & {
-          .content-item {
-            padding: rem(32) 0;
-            .content-inner {
-              padding: 0 rem(48);
-            }
-          }
-        }
-      }
-    }
-
-    .title-1 {
-      font-size: rem(16);
-      font-weight: 700;
-      margin-bottom: rem(8);
-    }
-    .info-text-1 {
-      color: #66707a;
-      font-size: rem(14);
-    }
-    .mobile & {
-      &.no-title {
-        .pop_header {
-          h1,
-          h2,
-          h3 {
-            @include blind;
-          }
-          // @include blind;
-        }
-      }
-    }
-    .pc & {
-      .contents-wrap {
-        padding: rem(48);
-        &.ty02 {
-          padding: rem(32);
-        }
-        > .first-content-item {
-          > .content-item {
-            &:first-of-type {
-              padding-top: 0;
-            }
-          }
-        }
-        .content-inner {
-          padding: 0;
-        }
-      }
-      .title-1 {
-        font-size: rem(20);
-      }
-      .info-text-1 {
-        color: #66707a;
-      }
-    }
-
-    .outer-section {
-      + .outer-section {
-        margin-top: rem(24);
-      }
-
-      // .inner-section {
-      //   + .inner-section {
-
-      //   }
-      // }
-    }
-  }
+  @include pop-layer;
   .mobile & {
     .container {
       background: none;
@@ -881,33 +781,9 @@
       }
     }
   }
-  .table-wrap {
-    &.tag {
-      .scroll-wrap {
-        width: 100%;
-        &.auto {
-          overflow-x: auto;
-        }
-      }
-      .table {
-        border-top-color: #000;
-        th {
-          color: #66707a;
-          background-color: transparent;
-        }
-      }
-      .mobile & {
-        .table {
-          font-size: rem(14);
-        }
-      }
-      .pc & {
-        .table {
-          font-size: rem(16);
-        }
-      }
-    }
-  }
+
+  @include table-style-1;
+
   .btn-flex {
     .radio_item {
       label {
@@ -1907,6 +1783,7 @@
     border: none;
     border-top: 1px solid #dce0e5;
   }
+  @include result-message;
 }
 // E: 로밍 전체 공통
 
@@ -1916,4 +1793,52 @@
 }
 .mobile .mobile_hide {
   display: none !important;
+}
+
+.selfcare {
+  &.ver-3 {
+    @include main-line-checkbox;
+
+    @include generate-mgt((8, 16, 24, 32, 40, 56, 60, 64));
+    @include generate-pdxy((0, 8, 16, 32, 40, 56, 60, 64));
+
+    @include result-message;
+    @include table-style-1;
+    @include pop-layer;
+
+    .cont-head {
+      position: relative;
+      .cont-title {
+        flex: 1;
+        .sub {
+          font-size: rem(14);
+          color: #66707a;
+          margin-left: rem(2);
+          font-weight: 500;
+        }
+        .link-txt-1 {
+          &::after {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    .link-txt-1 {
+      display: flex;
+      align-items: center;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        width: rem(24);
+        height: rem(24);
+        background: url("/images/roaming/icons/ico_tag_list_arrow.svg") no-repeat 50% 50% / 100% auto;
+        transform: translateY(-1px) rotate(-90deg);
+      }
+    }
+  }
 }

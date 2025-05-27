@@ -4,6 +4,16 @@
       <div class="content" id="content">
         <h2 class="title_nav">해외로밍 ALERT 리스트</h2>
         <div class="section">
+          <h2 class="ro-sec-title mgt0">Alert Guide</h2>
+          <div>
+            <div class="btn-area">
+              <NuxtLink to="https://uplusmvno-gules.vercel.app/guide/ListGuideRo" target="_blank" class="btn-rounded"
+                >Alert 가이드 바로가기</NuxtLink
+              >
+            </div>
+          </div>
+        </div>
+        <div class="section">
           <h2 class="ro-sec-title mgt0">해외로밍 인증</h2>
           <ul class="alert-list">
             <li v-for="(item, index) in buttonName02" :key="index">

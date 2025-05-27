@@ -2,11 +2,11 @@
   <div class="content_info_wrap">
     <div class="content-info-menu">
       <!-- 24.11.22 우측 버튼 case 수정 : 단일 옵션이 아닐 때, active-dropdown 클래스를 붙여주세요 -->
-      <button 
-        ref="partnerName" 
-        class="info-menu--list" 
-        @click="handlePartners" 
-        :class="{'active-dropdown': dataSelectList.lenght !== 0, 'on': isOpen}"
+      <button
+        ref="partnerName"
+        class="info-menu--list"
+        @click="handlePartners"
+        :class="{ 'active-dropdown': dataSelectList.lenght !== 0, 'on': isOpen }"
       >
         <span class="badge">대표</span>
         <span class="phone">{{ dataSelectList[0].phone }}</span>
@@ -45,6 +45,12 @@
           </button>
         </li>
       </ul>
+      <div class="gray-box main-line-checkbox">
+        <div class="check-txt check_st">
+          <input type="checkbox" id="checkbox01_01" name="radio01" />
+          <label for="checkbox01_01">선택한 회선을 대표 회선으로 지정할게요.</label>
+        </div>
+      </div>
     </Popup>
     <!-- // 가입 회선 팝업 -->
   </div>
