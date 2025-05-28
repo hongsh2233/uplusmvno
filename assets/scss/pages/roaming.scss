@@ -1784,6 +1784,7 @@
     border-top: 1px solid #dce0e5;
   }
   @include result-message;
+  @include tabmenu;
 }
 // E: 로밍 전체 공통
 
@@ -1797,6 +1798,7 @@
 
 .selfcare {
   &.ver-3 {
+    @include tabmenu;
     @include main-line-checkbox;
 
     @include generate-mgt((8, 16, 24, 32, 40, 56, 60, 64));
