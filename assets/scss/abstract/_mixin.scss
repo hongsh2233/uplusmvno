@@ -224,6 +224,13 @@
   line-height: 40px;
 }
 
+@mixin btnBgColor {
+  .light-red {
+    background: #fc6969;
+    color: #fff;
+  }
+}
+
 @mixin badge {
   .bag.clr.c01 {
     background-color: #fff4f6;
@@ -585,6 +592,52 @@
       }
       .pc & {
         margin-top: rem(32);
+      }
+    }
+  }
+}
+
+@mixin tabmenu {
+  .tab_list {
+    &.tab-scrollable {
+      &.type-03 {
+        > ul {
+          &::before {
+            background-color: #dce0e5;
+          }
+          > li {
+            button,
+            a {
+              color: #000;
+              line-height: 1;
+              padding-bottom: rem(24);
+              &::before {
+                background-color: #e34140;
+              }
+            }
+            &.on {
+              button,
+              a {
+                color: #e34140;
+              }
+            }
+          }
+        }
+        .mobile & {
+          > ul {
+            position: relative;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            user-select: none;
+            > li {
+              button,
+              a {
+                min-width: 200px;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
       }
     }
   }

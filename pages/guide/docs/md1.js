@@ -1,3 +1,83 @@
+export const result_tabmenu_1 = `
+  <br><br>
+  <h3 class="title-h3">1. 탭메뉴 </h3>
+
+  \`\`\`html
+  <script setup lang="ts">
+  import Tab from "@/components/Tab.vue";
+  import RectTab from "@/components/v2/common/Tab.vue";
+  window.onTagShoHideHandler = htmlUI.tagShoHideHandler;
+  </script>
+
+  <template>
+
+    <div class="section ty02">
+      <Tab
+        :data="{
+          option: { type: 3 },
+          data: [
+            { selected: true, controls: 'tab_panel_01_01', title: '탭메뉴1' },
+            { selected: false, controls: 'tab_panel_01_02', title: '탭메뉴2' },
+            { selected: false, controls: 'tab_panel_01_03', title: '탭메뉴3' },
+            { selected: false, controls: 'tab_panel_01_04', title: '탭메뉴4' },
+          ],
+        }"
+      >
+        <template v-slot:tab_panel_01_01>
+          <h3 class="blind">탭메뉴1</h3>
+          <div class="panel_cnt">
+            <!-- 안쪽 탭메뉴 -->
+            <RectTab :titles="['tab1', 'tab2']">
+              <template #content1> 
+                <!-- content1 -->
+                <div class="tag-contents-wrap">
+                  <div class="tag-header">
+                    <div class="scroll-wrap">
+                      <button class="item on" onclick="onTagShoHideHandler(this, '.contents .item')">
+                        IOS
+                      </button>
+                      <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">
+                        안드로이드
+                      </button>
+                    </div>
+                  </div>
+                  <div class="contents">
+                    <div class="table-wrap tag">
+                      <div class="scroll-wrap">
+                        <!-- item-1 -->
+                        <div class="item on">안에 내용은 AL-MS-04-002.vue 참고 바랍니다.</div>
+                        <!-- //item-1 -->
+                        <div class="item">안드로이드 내용</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //content1 -->
+              </template>
+              <template #content2> content2 </template>
+            </RectTab>
+            <!-- //안쪽 탭메뉴 -->
+          </div>
+        </template>
+        <template v-slot:tab_panel_01_02>
+          <h3 class="blind">탭메뉴2</h3>
+          <div class="panel_cnt">내용2</div>
+        </template>
+        <template v-slot:tab_panel_01_03>
+          <h3 class="blind">탭메뉴3</h3>
+          <div class="panel_cnt">내용3</div>
+        </template>
+        <template v-slot:tab_panel_01_04>
+          <h3 class="blind">탭메뉴4</h3>
+          <div class="panel_cnt">내용4</div>
+        </template>
+      </Tab>
+    </div>
+
+  </template>
+  \`\`\`
+`;
+
 export const result_message_1 = `
   <br><br>
   <h3 class="title-h3">1. 납부 내역이 없습니다 </h3>
