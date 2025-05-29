@@ -107,7 +107,7 @@
 
         * {
           + .inner-section {
-            margin-top: rem(56);
+            margin-top: rem(60);
             // &.gap-mid {
             //   margin-top: rem(32);
             // }
@@ -148,6 +148,11 @@
       font-size: rem(20);
       padding-top: rem(20);
       margin-bottom: rem(24);
+    }
+    .section {
+      .ro-sec-title {
+        margin-top: 0;
+      }
     }
     .ro-sec-title {
       @include mo-lo-title-h3;
@@ -1378,6 +1383,7 @@
 
   @include generate-mgt((8, 16, 32, 40, 56, 60, 64));
   @include generate-pdxy((0, 8, 16, 32, 40, 56, 60, 64));
+  @include generate-mgxy((0, 8, 16, 32, 40, 56, 60, 64));
 
   // S: 총 건수
   .list-count {
@@ -1650,6 +1656,13 @@
   // E: 알닷 로밍 상품이에요 코너
 
   .pc & {
+    .section {
+      .notice-roaming-guide-wrap {
+        .ro-sec-title {
+          margin-top: 0;
+        }
+      }
+    }
     .notice-roaming-guide-wrap {
       .ro-sec-title {
         @include pc-lo-title-h3 {

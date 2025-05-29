@@ -364,6 +364,47 @@
   }
 }
 
+@mixin generate-mgxy($margins) {
+  @each $margin in $margins {
+    .mgx#{$margin} {
+      margin-left: rem($margin) !important;
+      margin-right: rem($margin) !important;
+    }
+    .mgy#{$margin} {
+      margin-top: rem($margin) !important;
+      margin-bottom: rem($margin) !important;
+    }
+    .mobile & {
+      .mgx#{$margin} {
+        &-mobile {
+          margin-left: rem($margin) !important;
+          margin-right: rem($margin) !important;
+        }
+      }
+      .mgy#{$margin} {
+        &-mobile {
+          margin-top: rem($margin) !important;
+          margin-bottom: rem($margin) !important;
+        }
+      }
+    }
+    .pc & {
+      .mgx#{$margin} {
+        &-pc {
+          margin-left: rem($margin) !important;
+          margin-right: rem($margin) !important;
+        }
+      }
+      .mgy#{$margin} {
+        &-pc {
+          margin-top: rem($margin) !important;
+          margin-bottom: rem($margin) !important;
+        }
+      }
+    }
+  }
+}
+
 @mixin generate-pdxy($paddings) {
   @each $padding in $paddings {
     .pdx#{$padding} {
