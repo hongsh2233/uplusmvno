@@ -5,6 +5,110 @@
   .content {
     min-height: 100vh;
   }
+  .roaming-login-wrap {
+    border: 1px solid #dce0e5;
+    border-radius: rem(12);
+    padding: rem(17) rem(20);
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .login-btn {
+      font-weight: 700;
+    }
+    .pc & {
+      .login-btn {
+        display: flex;
+        width: rem(160);
+        height: rem(48);
+        padding: rem(14) rem(16);
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .mobile & {
+      .login-btn {
+        display: flex;
+        height: rem(36);
+        padding: 0 rem(12);
+        justify-content: center;
+        align-items: center;
+      }
+      margin-bottom: rem(32);
+    }
+  }
+  * {
+    + .roaming-special-benefit-accordion {
+      margin-top: rem(20);
+      .pc & {
+        margin-top: rem(24);
+      }
+    }
+  }
+  .roaming-special-benefit-accordion {
+    padding: rem(20) 0 rem(24);
+    &:deep() {
+      .v-expansion-panel-title {
+        .cont-head {
+          .cont-title-main {
+            font-size: rem(20);
+            line-height: rem(26);
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              right: rem(4);
+              top: 0;
+              width: rem(107);
+              height: rem(67);
+              background: url("/images/roaming/img_login_airflight.png") no-repeat 50% 50% / cover;
+            }
+          }
+          .title-exp {
+            margin-top: rem(16);
+          }
+        }
+      }
+      .acco-panel {
+        .v-expansion-panel-text__wrapper {
+          padding-top: rem(24);
+          margin-top: rem(24);
+          border-top: 1px solid #dce0e5;
+        }
+      }
+      .mobile & {
+        .v-expansion-panel-title {
+          .v-icon {
+            transform: translateY(rem(16));
+          }
+        }
+      }
+      .pc & {
+        padding: rem(32) 0;
+        .v-expansion-panel-title {
+          align-items: center;
+        }
+        .v-expansion-panel-title {
+          .cont-head {
+            .cont-title-main {
+              font-size: rem(22);
+              line-height: rem(28);
+              &::after {
+                right: rem(6);
+                top: 0;
+                width: rem(132);
+                height: rem(82);
+              }
+            }
+            .title-exp {
+              font-size: rem(16);
+              margin-top: rem(12);
+            }
+          }
+        }
+      }
+    }
+  }
   .mobile & {
     .ro-nav-title {
       display: none;

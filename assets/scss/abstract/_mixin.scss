@@ -224,6 +224,13 @@
   line-height: 40px;
 }
 
+@mixin btnBgColor {
+  .light-red {
+    background: #fc6969;
+    color: #fff;
+  }
+}
+
 @mixin badge {
   .bag.clr.c01 {
     background-color: #fff4f6;

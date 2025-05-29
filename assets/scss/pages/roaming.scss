@@ -55,6 +55,11 @@
 // S: 로밍 전체 공통
 .roaming {
   // 모바일 로밍
+  word-break: keep-all;
+  word-wrap: break-word;
+  .break-all {
+    word-break: break-all;
+  }
   *,
   .section {
     + .section {
@@ -1685,6 +1690,83 @@
   // E: 알닷 로밍 상품이에요 코너
 
   .pc & {
+    .notice-roaming-guide-wrap {
+      .ro-sec-title {
+        @include pc-lo-title-h3 {
+          font-size: rem(20) !important;
+          margin-bottom: rem(32) !important;
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .adbvice-list {
+        display: flex;
+        gap: rem(16);
+        .item {
+          flex: 1;
+          display: flex;
+          a {
+            padding: rem(24) rem(32) rem(24) rem(20);
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            width: 100%;
+            .text {
+              flex: 1 0;
+              padding-right: rem(16);
+              strong {
+                font-size: rem(18);
+                line-height: rem(24);
+                display: inline-block;
+                margin-bottom: rem(4);
+              }
+            }
+          }
+          a {
+            &.bg-vivid-blue {
+              background-color: #fafdff;
+            }
+            &.bg-vivid-pink {
+              background-color: #fffcfc;
+            }
+            &.bg-vivid-green {
+              background-color: #f8fef8;
+            }
+            &.bg-vivid-yellow {
+              background: #fffce0;
+            }
+            &.bg-vivid-apricot {
+              background: #fffafa;
+            }
+          }
+        }
+        &.type-corner-img {
+          align-items: stretch;
+          .item {
+            a {
+              padding: rem(24) rem(24) rem(142);
+            }
+            .icon {
+              position: absolute;
+              right: rem(24);
+              bottom: rem(24);
+              width: rem(100);
+              height: rem(100);
+              img {
+                max-width: none;
+                width: 100%;
+              }
+            }
+          }
+        }
+        &.type-pc-hr {
+          .icon {
+            align-self: center;
+          }
+        }
+      }
+    }
     .box-round {
       &.type-outline {
         border: 1px solid #dce0e5;
@@ -1700,82 +1782,162 @@
         &.has-pd {
           padding: rem(48);
         }
-        &.has-title {
-          .ro-sec-title {
-            @include pc-lo-title-h3 {
-              font-size: rem(20) !important;
-              margin-bottom: rem(32) !important;
-            }
-            &:first-child {
-              margin-top: 0;
-            }
-          }
-        }
-        .adbvice-list {
-          display: flex;
-          gap: rem(8);
-          .item {
-            flex: 1;
-            display: flex;
-            a {
-              padding: rem(24) rem(32) rem(24) rem(20);
-              flex-direction: row-reverse;
-              align-items: flex-start;
-              width: 100%;
-              .text {
-                flex: 1 0;
-                padding-right: rem(16);
-                strong {
-                  font-size: rem(18);
-                  line-height: rem(24);
-                  display: inline-block;
-                  margin-bottom: rem(4);
-                }
-              }
-            }
-            a {
-              &.bg-vivid-blue {
-                background-color: #fafdff;
-              }
-              &.bg-vivid-pink {
-                background-color: #fffcfc;
-              }
-              &.bg-vivid-green {
-                background-color: #f8fef8;
-              }
-              &.bg-vivid-yellow {
-                background: #fffce0;
-              }
-              &.bg-vivid-apricot {
-                background: #fffafa;
-              }
-            }
-          }
-          &.type-corner-img {
-            align-items: stretch;
-            .item {
-              a {
-                padding: rem(24) rem(24) rem(142);
-              }
-              .icon {
-                position: absolute;
-                right: rem(24);
-                bottom: rem(24);
-                width: rem(100);
-                height: rem(100);
-                img {
-                  max-width: none;
-                  width: 100%;
-                }
-              }
-            }
-          }
-          &.type-pc-hr {
-            .icon {
-              align-self: center;
-            }
-          }
-        }
+        // S: 최근 변경
+        // .notice-roaming-guide-wrap {
+        //   .ro-sec-title {
+        //     @include pc-lo-title-h3 {
+        //       font-size: rem(20) !important;
+        //       margin-bottom: rem(32) !important;
+        //     }
+        //     &:first-child {
+        //       margin-top: 0;
+        //     }
+        //   }
+
+        //   .adbvice-list {
+        //     display: flex;
+        //     gap: rem(8);
+        //     .item {
+        //       flex: 1;
+        //       display: flex;
+        //       a {
+        //         padding: rem(24) rem(32) rem(24) rem(20);
+        //         flex-direction: row-reverse;
+        //         align-items: flex-start;
+        //         width: 100%;
+        //         .text {
+        //           flex: 1 0;
+        //           padding-right: rem(16);
+        //           strong {
+        //             font-size: rem(18);
+        //             line-height: rem(24);
+        //             display: inline-block;
+        //             margin-bottom: rem(4);
+        //           }
+        //         }
+        //       }
+        //       a {
+        //         &.bg-vivid-blue {
+        //           background-color: #fafdff;
+        //         }
+        //         &.bg-vivid-pink {
+        //           background-color: #fffcfc;
+        //         }
+        //         &.bg-vivid-green {
+        //           background-color: #f8fef8;
+        //         }
+        //         &.bg-vivid-yellow {
+        //           background: #fffce0;
+        //         }
+        //         &.bg-vivid-apricot {
+        //           background: #fffafa;
+        //         }
+        //       }
+        //     }
+        //     &.type-corner-img {
+        //       align-items: stretch;
+        //       .item {
+        //         a {
+        //           padding: rem(24) rem(24) rem(142);
+        //         }
+        //         .icon {
+        //           position: absolute;
+        //           right: rem(24);
+        //           bottom: rem(24);
+        //           width: rem(100);
+        //           height: rem(100);
+        //           img {
+        //             max-width: none;
+        //             width: 100%;
+        //           }
+        //         }
+        //       }
+        //     }
+        //     &.type-pc-hr {
+        //       .icon {
+        //         align-self: center;
+        //       }
+        //     }
+        //   }
+        // }
+        // E: 최근 변경
+
+        // &.has-title {
+        //   .ro-sec-title {
+        //     @include pc-lo-title-h3 {
+        //       font-size: rem(20) !important;
+        //       margin-bottom: rem(32) !important;
+        //     }
+        //     &:first-child {
+        //       margin-top: 0;
+        //     }
+        //   }
+        // }
+        // .adbvice-list {
+        //   display: flex;
+        //   gap: rem(8);
+        //   .item {
+        //     flex: 1;
+        //     display: flex;
+        //     a {
+        //       padding: rem(24) rem(32) rem(24) rem(20);
+        //       flex-direction: row-reverse;
+        //       align-items: flex-start;
+        //       width: 100%;
+        //       .text {
+        //         flex: 1 0;
+        //         padding-right: rem(16);
+        //         strong {
+        //           font-size: rem(18);
+        //           line-height: rem(24);
+        //           display: inline-block;
+        //           margin-bottom: rem(4);
+        //         }
+        //       }
+        //     }
+        //     a {
+        //       &.bg-vivid-blue {
+        //         background-color: #fafdff;
+        //       }
+        //       &.bg-vivid-pink {
+        //         background-color: #fffcfc;
+        //       }
+        //       &.bg-vivid-green {
+        //         background-color: #f8fef8;
+        //       }
+        //       &.bg-vivid-yellow {
+        //         background: #fffce0;
+        //       }
+        //       &.bg-vivid-apricot {
+        //         background: #fffafa;
+        //       }
+        //     }
+        //   }
+        //   &.type-corner-img {
+        //     align-items: stretch;
+        //     .item {
+        //       a {
+        //         padding: rem(24) rem(24) rem(142);
+        //       }
+        //       .icon {
+        //         position: absolute;
+        //         right: rem(24);
+        //         bottom: rem(24);
+        //         width: rem(100);
+        //         height: rem(100);
+        //         img {
+        //           max-width: none;
+        //           width: 100%;
+        //         }
+        //       }
+        //     }
+        //   }
+        //   &.type-pc-hr {
+        //     .icon {
+        //       align-self: center;
+        //     }
+        //   }
+        // }
       }
     }
   }
@@ -1785,6 +1947,11 @@
   }
   @include result-message;
   @include tabmenu;
+  @include btnBgColor;
+
+  .ta-l {
+    text-align: left !important;
+  }
 }
 // E: 로밍 전체 공통
 
@@ -1798,6 +1965,7 @@
 
 .selfcare {
   &.ver-3 {
+    @include btnBgColor;
     @include tabmenu;
     @include main-line-checkbox;
 
