@@ -4,52 +4,36 @@
 @mixin product-detail {
   display: flex;
   align-items: center;
-  gap: rem(24);
+  gap: rem(65);
 
   .detail-item {
     display: flex;
     align-items: center;
-    &.period,
-    &.data,
-    &.country,
-    &.voice {
+  }
+
+  > .detail-item {
+    &:not(:last-child) {
+      position: relative;
       &::before {
         content: "";
-        display: block;
-        width: rem(20);
-        height: rem(20);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: cover;
-        margin-right: rem(2);
+        position: absolute;
+        width: rem(1);
+        height: rem(16);
+        top: rem(4);
+        right: rem(-33);
+        background: #d9d9d9;
       }
     }
   }
-  .period {
-    &::before {
-      background-image: url("/images/roaming/icons/ico_clendar.svg");
-    }
-  }
-  .data {
-    &::before {
-      background-image: url("/images/roaming/icons/ico_data.svg");
-    }
-  }
-  .country {
-    &::before {
-      background-image: url("/images/roaming/icons/ico_earth.svg");
-    }
-  }
-  .voice {
-    &::before {
-      background-image: url("/images/roaming/icons/ico_voice.svg");
-    }
-  }
-
   .info-title {
+    display: none;
     color: #66707a;
     font-size: rem(13);
     margin-right: rem(10);
+  }
+  .info-val {
+    @include Pg_Lg_s18_lh24;
+    font-weight: 700;
   }
 }
 // S: 로밍 전체 공통
@@ -154,9 +138,6 @@
     .section {
       padding-left: rem(20);
       padding-right: rem(20);
-      // + .section {
-      //   padding-top: rem(60);
-      // }
 
       .content-info-menu {
         padding-left: 0;
@@ -276,6 +257,11 @@
           }
         }
       }
+      .info-group-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .type-round {
         .title-description {
           color: #66707a;
@@ -305,17 +291,14 @@
             line-height: rem(20);
             text-align: center;
           }
-          .info-group-2 {
-            display: none;
-          }
           .info-group-3 {
             margin-top: rem(24);
-            border-radius: rem(12);
-            background-color: #f2f4f6;
-            padding: rem(12) rem(16);
+            padding-top: rem(24);
+            border-top: 1px solid #eeeeee;
             .detail {
               display: table;
               width: 100%;
+              margin: rem(-4) 0;
               &-item {
                 display: table-row;
                 .info-title,
@@ -326,6 +309,7 @@
                 .info-title {
                   width: rem(117);
                   @include Lb_Sm_s14_lh20;
+                  font-weight: 500;
                   color: #66707a;
                 }
                 .info-val {
@@ -337,10 +321,6 @@
           }
         }
         .pc & {
-          .info-group-wrap {
-            display: flex;
-            justify-content: space-between;
-          }
           .title {
             @include pc-lo-title-h2($fs: rem(34)) {
               padding-top: 0;
@@ -351,19 +331,21 @@
             margin-top: rem(8);
             line-height: rem(22);
           }
-          .price {
-            padding-top: rem(30);
-            .info-1 {
-              display: flex;
-              align-items: center;
-              @include pc-lo-title-h3($mt: 0, $mb: 0);
-              .price-number {
-                @include pc-lo-title-h3($fs: 32px, $mt: 0, $mb: 0);
-              }
-            }
-          }
+          // .price {
+          //   padding-top: rem(30);
+          //   .info-1 {
+          //     display: flex;
+          //     align-items: center;
+          //     @include pc-lo-title-h3($mt: 0, $mb: 0);
+          //     .price-number {
+          //       @include pc-lo-title-h3($fs: 32px, $mt: 0, $mb: 0);
+          //     }
+          //   }
+          // }
           .info-group-3 {
             margin-top: rem(32);
+            display: flex;
+            justify-content: center;
             .detail {
               @include product-detail;
             }
@@ -374,7 +356,7 @@
     .pc & {
       .info-box {
         &.type-round {
-          padding: rem(48) rem(50) rem(48) rem(40);
+          padding: rem(50) rem(60);
         }
       }
     }
@@ -1281,10 +1263,6 @@
               border: 1px solid #dce0e5;
 
               .card-group {
-                // .name {
-                //   @include Lb_Sm_s14_lh20;
-                //   font-weight: 500;
-                // }
                 .value {
                   display: flex;
                   align-items: center;
@@ -1332,21 +1310,6 @@
           }
         }
 
-        .card-group {
-          // .name {
-          //   @include Lb_Sm_s14_lh20;
-          // }
-          // .value {
-          //   @include Lb_Sm_s14_lh20;
-          //   display: flex;
-          //   align-items: center;
-
-          //   .description {
-          //     margin-left: 0.2rem;
-          //     font-size: var(--font-size-sm);
-          //   }
-          // }
-        }
         .form-box {
           &.mt_24 {
             margin-top: 2.4rem;
@@ -1603,9 +1566,6 @@
           margin: 0 rem(-20) rem(24);
           padding: 0 rem(20);
           white-space: nowrap;
-          // .btn-tab-title {
-          //   scroll-snap-align: start;
-          // }
         }
       }
     }

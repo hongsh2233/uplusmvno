@@ -21,12 +21,14 @@
                     데이터 소진 시 최대 400kbps 속도로 이용 가능)
                   </div>
                 </div>
-                <div class="info-group-2">
+                <!-- 2025-05-29 1748504083 (정C) 수정내용43 -->
+                <!-- //2025-05-29 1748504083 (정C) 수정내용43 -->
+                <!-- <div class="info-group-2">
                   <div class="price">
                     <p class="info-1"><span class="price-number">24,580</span>원</p>
                     <p class="info-2">부가세포함</p>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="info-group-3">
                 <div class="detail">
