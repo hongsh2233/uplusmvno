@@ -270,7 +270,11 @@
                     <!--  -->
                     <div class="howtouse-wrap mgt40">
                       <p class="s-tit">이용 방법</p>
-                      <p class="tit">데이터 로밍 차단 부가서비스에 가입했다면, 해지 후 이용할 수 있어요.</p>
+                      <p class="tit">
+                        데이터 로밍 차단 부가서비스에<br v-if="isMobile" />
+                        가입했다면, <br v-if="isMobile" />
+                        해지 후 이용할 수 있어요.
+                      </p>
                       <button class="howbtn">데이터 로밍 차단 해지하기</button>
                     </div>
                     <!-- // -->
