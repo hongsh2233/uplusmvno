@@ -197,6 +197,17 @@
             </div>
           </div>
           <hr />
+          <div class="acc section" :class="[!accBtn4 && 'close']">
+            <h2 class="title-h2">
+              <button class="acc-bnt" ref="accBtn" @click="accBtn4 = !accBtn4">
+                <span>4. Foundation : Color</span>
+              </button>
+            </h2>
+            <div class="contents-box">
+              <MDC :value="foundation_color_1" class="pub-md-wrap" />
+            </div>
+          </div>
+          <hr />
           <!--// 타이틀, 설명, 텍스트상자 컨펌창 -->
 
           <!-- <br /><br />
@@ -220,12 +231,13 @@ import RectTab from "@/components/v2/common/Tab.vue";
 import SwiperBnr from "@/components/SwiperBnr.vue";
 import type { LayoutOptions } from "@/types/layout";
 import AlertV2 from "@/components/v2/common/AlertV2.vue";
-import { result_tabmenu_1, result_message_1, alert1_1, md1_1, md1_2 } from "~/pages/guide/docs/md1";
+import { foundation_color_1, result_tabmenu_1, result_message_1, alert1_1, md1_1, md1_2 } from "~/pages/guide/docs/md1";
 import MessageResult from "@/components/MessageResult.vue";
 window.onTagShoHideHandler = htmlUI.tagShoHideHandler;
 const accBtn1 = ref(false);
 const accBtn2 = ref(false);
 const accBtn3 = ref(false);
+const accBtn4 = ref(false);
 
 const alert1 = ref(false);
 const alert2 = ref(false);
