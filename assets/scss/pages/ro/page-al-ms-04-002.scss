@@ -684,6 +684,8 @@
   .tab_con04 {
     .input_box {
       &.search {
+        border-radius: rem(8);
+
         &.bgF3F5F6 {
           background-color: #f3f5f6;
         }
