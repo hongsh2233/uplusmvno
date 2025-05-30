@@ -1,3 +1,29 @@
+export const foundation_color_1 = `
+  <br><br>
+  <h3 class="title-h3">1. Color </h3>
+
+  \`\`\`css
+    :root {
+    /* Grayscale */
+    --gray-0: #000000;
+    --gray-100: #333333;
+    --gray-200: #66707a;
+    --gray-300: #909090;
+    --gray-400: #b3b3b3;
+    --gray-500: #cccccc;
+    --gray-600: #dbdbdb;
+    --gray-700: #dce0e5;
+    --gray-800: #eeeeee;
+    --white: #ffffff;
+
+    /* Colors */
+    --color-background: #f3f5f6;
+    --color-primary-light: #fc9696;
+    --color-primary: #e34140;
+  }
+  \`\`\`
+`;
+
 export const result_tabmenu_1 = `
   <br><br>
   <h3 class="title-h3">1. 탭메뉴 </h3>
