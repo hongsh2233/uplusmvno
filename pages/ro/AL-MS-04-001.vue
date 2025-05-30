@@ -23,15 +23,15 @@
                         <b class="txt-primary">김*닷님</b>의<br class="pc_hide" />
                         특별한 혜택
                       </h3>
-                      <span class="title-exp ta-l">
-                        로밍 요금제 가입하고 편하게 해외여행 하세요 <br />
-                        청년 로밍요금제 출시했어요
-                      </span>
                     </div>
                   </div>
                 </template>
                 <template #content>
-                  <div>
+                  <div class="special-benefit-acc-content">
+                    <span class="title-exp ta-l">
+                      로밍 요금제 가입하고 편하게 해외여행 하세요 <br />
+                      청년 로밍요금제 출시했어요
+                    </span>
                     <Card :card-type="'special-benefit'" :items="state.roamingSpecialBenefitData" />
                   </div>
                 </template>

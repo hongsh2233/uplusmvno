@@ -4,6 +4,7 @@
    수정 내용 
    -  스페셜 혜택(cardType: special-benefit) 유형 추가, 그에 따른 분기 처리
    -  상세 리스트에 (데이터, 음성) PC, 모바일 데이터 다르게 삽입되도록 (Tag 및 Script Type)수정
+   -  더 볼래요 버튼 간격 수정으로 mgt32 클래스 추가
   -->
   <div class="products_roaming_list_wrap" :class="[cardType]">
     <p class="list-count" v-if="Array.isArray(items) && cardType != 'special-benefit'">
@@ -86,7 +87,7 @@
         </div>
       </li>
     </ul>
-    <div class="btn_wrap center" v-if="cardType != 'special-benefit'">
+    <div class="btn_wrap center mgt32" v-if="cardType != 'special-benefit'">
       <button type="button" class="btn round more_d">더 볼래요</button>
     </div>
   </div>
