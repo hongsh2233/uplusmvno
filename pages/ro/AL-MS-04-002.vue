@@ -32,10 +32,7 @@
                     <!-- 상단 배너 -->
                     <div class="info-box-list ty04">
                       <div class="info-box-list-item">
-                        <div
-                          class="info-box type-round"
-                          style="background: linear-gradient(95deg, #e0fcff 0.9%, #d3e8ff 107.62%)"
-                        >
+                        <div class="info-box type-round">
                           <div class="info-box-contensts">
                             <div class="left-side">
                               <div class="text_info_wrap keep-all">
@@ -181,10 +178,7 @@
                     <!-- 상단 배너 -->
                     <div class="info-box-list ty04">
                       <div class="info-box-list-item">
-                        <div
-                          class="info-box type-round"
-                          style="background: linear-gradient(139deg, #ffefef 4.18%, #ffe9f5 97.01%)"
-                        >
+                        <div class="info-box type-round">
                           <div class="info-box-contensts">
                             <div class="left-side">
                               <div class="text_info_wrap keep-all">

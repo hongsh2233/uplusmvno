@@ -118,6 +118,18 @@
 
   // start - 해외 로밍이란?
   .tab_con01 {
+    .info-box-list {
+      &.ty04 {
+        .info-box-list-item {
+          .info-box {
+            &.type-round {
+              background: linear-gradient(95deg, #e0fcff 0.9%, #d3e8ff 107.62%);
+            }
+          }
+        }
+      }
+    }
+
     .ro-sec-title {
       margin: 0;
       @include Hd_Sm_s22_lh28;
@@ -351,6 +363,18 @@
 
   // start - 해외 데이터 안심옵션
   .tab_con02 {
+    .info-box-list {
+      &.ty04 {
+        .info-box-list-item {
+          .info-box {
+            &.type-round {
+              background: linear-gradient(139deg, #ffefef 4.18%, #ffe9f5 97.01%);
+            }
+          }
+        }
+      }
+    }
+
     .txt_wrap {
       display: flex;
       padding-top: rem(16);
