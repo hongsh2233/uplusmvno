@@ -83,14 +83,18 @@ export const result_message_1 = `
   <h3 class="title-h3">1. 납부 내역이 없습니다 </h3>
 
   \`\`\`html
+  <script setup lang="ts">
+  import MessageResult from "@/components/MessageResult.vue";
+  </script>
   <template>
-
-    <div class="result-message-box no-data">
-      <p class="message-icon">
-        <i class="img-payment"></i>
-      </p>
-      <p class="message-txt">납부 내역이 없습니다</p>
-    </div>
+    <!-- 
+     1. description 생략시 기본: "등록된 데이터가 없습니다"
+     2. icon-url 생략시 기본: "/images/roaming/icons/icon_result_no_data_1.svg"
+    -->
+    <MessageResult
+      :description="'납부 내역이 없습니다'"
+      :icon-url="'/images/roaming/icons/icon_result_no_data_1.svg'" 
+    />
 
   </template>
   \`\`\`

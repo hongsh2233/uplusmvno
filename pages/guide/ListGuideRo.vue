@@ -118,12 +118,7 @@
               <button class="acc-bnt" ref="accBtn" @click="accBtn2 = !accBtn2"><span>2. Result Message</span></button>
             </h2>
             <div class="contents-box">
-              <div class="result-message-box no-data">
-                <p class="message-icon">
-                  <i class="img-payment"></i>
-                </p>
-                <p class="message-txt">납부 내역이 없습니다</p>
-              </div>
+              <MessageResult :description="'납부 내역이 없습니다'" />
               <MDC :value="result_message_1" class="pub-md-wrap" />
             </div>
           </div>
@@ -226,6 +221,7 @@ import SwiperBnr from "@/components/SwiperBnr.vue";
 import type { LayoutOptions } from "@/types/layout";
 import AlertV2 from "@/components/v2/common/AlertV2.vue";
 import { result_tabmenu_1, result_message_1, alert1_1, md1_1, md1_2 } from "~/pages/guide/docs/md1";
+import MessageResult from "@/components/MessageResult.vue";
 window.onTagShoHideHandler = htmlUI.tagShoHideHandler;
 const accBtn1 = ref(false);
 const accBtn2 = ref(false);
