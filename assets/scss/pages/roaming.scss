@@ -474,6 +474,9 @@
     &.round {
       &.more_d {
         color: #000;
+        .mobile & {
+          font-size: rem(16);
+        }
       }
     }
   }
@@ -1713,7 +1716,7 @@
     .notice-roaming-guide-wrap {
       .ro-sec-title {
         @include pc-lo-title-h3 {
-          font-size: rem(20) !important;
+          // font-size: rem(20) !important;
           margin-bottom: rem(32) !important;
         }
         &:first-child {
@@ -1728,7 +1731,7 @@
           flex: 1;
           display: flex;
           a {
-            padding: rem(24) rem(32) rem(24) rem(20);
+            padding: rem(30) rem(32);
             flex-direction: row-reverse;
             align-items: flex-start;
             width: 100%;
@@ -1745,19 +1748,19 @@
           }
           a {
             &.bg-vivid-blue {
-              background-color: #fafdff;
+              background-color: #f0fbff;
             }
             &.bg-vivid-pink {
-              background-color: #fffcfc;
+              background-color: #fff3f3;
             }
             &.bg-vivid-green {
-              background-color: #f8fef8;
+              background-color: #efffed;
             }
             &.bg-vivid-yellow {
               background: #fffce0;
             }
             &.bg-vivid-apricot {
-              background: #fffafa;
+              background: #fbf3ff;
             }
           }
         }
@@ -1765,7 +1768,7 @@
           align-items: stretch;
           .item {
             a {
-              padding: rem(24) rem(24) rem(142);
+              padding: rem(30) rem(30) rem(142);
             }
             .icon {
               position: absolute;
