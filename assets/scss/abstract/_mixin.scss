@@ -552,7 +552,10 @@
           width: rem(60);
           height: rem(50);
           &.img-payment {
-            background: url("/images/roaming/icons/icon_result_no_data_1.svg") no-repeat 50% 50% / cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-image: var(--icon-url);
           }
         }
       }
