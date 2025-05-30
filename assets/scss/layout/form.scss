@@ -2395,29 +2395,3 @@ tr:nth-child(4) .th_ico::before {
 .tabpanel_wrap .panel_cnt .form_wrap {
   margin-bottom: 3.2rem;
 }
-
-.tab_list {
-  &.tab-scrollable {
-    &.type-03 {
-      .mobile & {
-        > ul {
-          position: relative;
-          overflow-x: auto;
-          scroll-behavior: smooth;
-          user-select: none;
-          cursor: grab;
-          &:active {
-            cursor: grabbing;
-          }
-          > li {
-            button,
-            a {
-              min-width: 200px;
-              white-space: nowrap;
-            }
-          }
-        }
-      }
-    }
-  }
-}

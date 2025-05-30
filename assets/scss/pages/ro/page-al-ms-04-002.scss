@@ -2,82 +2,794 @@
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
 .AL-MS-04-002 {
-  .info-box-list {
-    &.use_roaming {
-      .info-box-contensts {
-        display: flex;
-        justify-content: space-between;
-      }
-      .right-side {
-        min-width: rem(66);
-        .gallery-wrap {
-          position: relative;
-          display: block;
-          width: rem(112);
-          height: rem(80);
-          background-color: pink;
-          img {
-            position: absolute;
-            left: 0;
-            height: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-      }
-      .info-box-contensts {
-        position: relative;
-      }
-      .mobile & {
-        .info-box-contensts {
-          padding-bottom: rem(44 + 24);
-        }
-        .left-side {
-          flex: 1;
-          .text_info_wrap {
-            font-size: rem(16);
-            padding-right: rem(16);
-          }
-        }
-        .btn-area {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          .btn-rounded {
-            height: rem(44);
-            font-size: rem(16);
-          }
-        }
-      }
-      .pc & {
-        .left-side {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          .text_info_wrap {
-            font-size: rem(30);
-            padding-right: rem(12);
-            line-height: rem(36);
-          }
-          .btn-rounded {
-            &.type-fs16 {
-              margin-top: rem(24);
-            }
-          }
-        }
-        .right-side {
-          min-width: rem(200);
+  .tabpanel_wrap {
+    .panel_cnt {
+      padding-top: rem(40);
 
-          .gallery-wrap {
-            display: block;
-            width: rem(200);
-            height: rem(144);
-            background-color: pink;
+      .ro-sec-title {
+        @include Hd_Sm_s22_lh28;
+      }
+
+      .info-box-list {
+        &.ty04 {
+          .info-box-list-item {
+            .info-box {
+              &.type-round {
+                padding: 0;
+                padding-left: rem(40);
+                border: none;
+                position: relative;
+                min-height: 10rem;
+                border-radius: 1.2rem;
+                box-shadow: none;
+
+                .info-box-contensts {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  position: relative;
+                }
+
+                .left-side {
+                  display: flex;
+                  flex-direction: column;
+                  .text_info_wrap {
+                    @include Hd_Lg_s30_lh36;
+
+                    .txt {
+                      margin-top: rem(8);
+                      @include Pg_Md_s16_lh22;
+                      color: #66707a;
+                    }
+                  }
+                }
+
+                .right-side {
+                  .gallery-wrap {
+                    position: relative;
+                    display: block;
+                    width: rem(320);
+                    height: rem(240);
+                    img {
+                      position: absolute;
+                      left: 0;
+                      height: 0;
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   }
+  .mobile & {
+    .tabpanel_wrap {
+      .panel_cnt {
+        padding-top: rem(32);
+
+        .ro-sec-title {
+          @include Pg_Md_s16_lh22;
+          font-weight: 700;
+        }
+
+        .info-box-list {
+          &.ty04 {
+            .info-box-list-item {
+              .info-box {
+                &.type-round {
+                  padding: 0;
+                  padding-bottom: rem(24);
+
+                  .info-box-contensts {
+                    display: block;
+                  }
+                  .left-side {
+                    padding: 3.2rem 3.2rem 2rem;
+                    .text_info_wrap {
+                      @include Hd_Sm_s22_lh28;
+                      text-align: center;
+                      word-break: keep-all;
+
+                      .txt {
+                        @include Pg_Sm_s14_lh20;
+                      }
+                    }
+                  }
+
+                  .right-side {
+                    .gallery-wrap {
+                      width: 100%;
+                      max-height: rem(160);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // start - 해외 로밍이란?
+  .tab_con01 {
+    .ro-sec-title {
+      margin: 0;
+      @include Hd_Sm_s22_lh28;
+      text-align: center;
+
+      &.bottom-arrow {
+        &::after {
+          content: "";
+          display: block;
+          width: rem(24);
+          height: rem(8);
+          margin: 1.6rem auto 0;
+          background: url("/images/roaming/icons/ico_bottom_arrow.svg") no-repeat 0 0;
+          background-size: contain;
+        }
+      }
+    }
+
+    .comparison_wrap {
+      .comparison_list {
+        margin-top: rem(16);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(8);
+
+        li {
+          display: flex;
+          align-items: center;
+          border-radius: rem(12);
+          padding-left: rem(32);
+          position: relative;
+          height: rem(92);
+
+          .tit {
+            @include Pg_Md_s16_lh22;
+          }
+          img {
+            margin-left: auto;
+            position: absolute;
+            top: 0;
+            right: rem(-5);
+            bottom: 0;
+          }
+
+          &:nth-child(1) {
+            background-color: #fffce8;
+
+            .tit {
+              color: #e34140;
+            }
+          }
+          &:nth-child(2) {
+            background-color: #ebfaff;
+
+            &::before {
+              content: "VS";
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: rem(-22);
+              width: rem(36);
+              height: rem(36);
+              color: #fc6969;
+              text-align: center;
+              font-size: rem(16);
+              font-weight: 800;
+              line-height: rem(18);
+              border-radius: 900px;
+              border: 1px solid #ffcdcd;
+              background: #fff;
+              box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+            }
+          }
+          &:nth-child(3) {
+            background-color: #ffeefc;
+
+            &::before {
+              content: "VS";
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: rem(-22);
+              width: rem(36);
+              height: rem(36);
+              color: #fc6969;
+              text-align: center;
+              font-size: rem(16);
+              font-weight: 800;
+              line-height: rem(18);
+              border-radius: 900px;
+              border: 1px solid #ffcdcd;
+              background: #fff;
+              box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+      }
+    }
+
+    .use_wrap {
+      margin-top: rem(16);
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(8);
+
+        li {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: rem(9);
+          padding: 3rem 0;
+          text-align: center;
+          border-radius: rem(12);
+          background: #f9fafc;
+
+          .tit {
+            @include Pg_Md_s16_lh22;
+          }
+          .thumb {
+            width: rem(60);
+            height: rem(60);
+          }
+          .txt {
+            @include Pg_Sm_s14_lh20;
+            color: #66707a;
+            word-break: keep-all;
+          }
+
+          &:nth-child(1) {
+            background: #fffced;
+            .tit {
+              color: #e34140;
+            }
+          }
+        }
+      }
+    }
+
+    .mobile & {
+      .ro-sec-title {
+        @include Pg_Md_s16_lh22;
+
+        &.bottom-arrow {
+          &::after {
+            margin-top: rem(12);
+          }
+        }
+      }
+
+      .comparison_list {
+        li {
+          display: block;
+          padding: 2rem 0 1.2rem;
+          height: auto;
+          text-align: center;
+
+          .tit {
+            @include Pg_Sm_s14_lh20;
+            word-break: keep-all;
+          }
+          img {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            right: auto;
+          }
+
+          &:nth-child(1) {
+            .tit {
+              padding-bottom: rem(24);
+            }
+          }
+          &:nth-child(2) {
+            .tit {
+              padding-bottom: rem(24);
+            }
+            .tit {
+            }
+          }
+          &:nth-child(3) {
+            .tit {
+              padding-bottom: rem(8);
+            }
+            .tit {
+            }
+          }
+        }
+      }
+
+      .use_wrap {
+        ul {
+          grid-template-columns: repeat(1, 1fr);
+          border: none;
+          gap: rem(4);
+
+          li {
+            position: relative;
+            align-items: flex-start;
+            text-align: left;
+            padding: 2rem 2rem 2rem 7.6rem;
+            gap: rem(4);
+
+            .tit {
+            }
+            .thumb {
+              position: absolute;
+              width: rem(44);
+              height: rem(44);
+              left: rem(20);
+            }
+            .txt {
+              @include Lb_Sm_s14_lh20;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  // end - 해외 로밍이란?
+
+  // start - 해외 데이터 안심옵션
+  .tab_con02 {
+    .txt_wrap {
+      display: flex;
+      padding-top: rem(16);
+      padding-bottom: rem(16);
+      flex-direction: column;
+      align-items: center;
+      gap: rem(12);
+      text-align: center;
+
+      .tit01 {
+        @include Pg_Lg_s18_lh24;
+      }
+      .tit {
+        @include Hd_Md_s26_lh32;
+
+        strong {
+          color: #e34140;
+        }
+      }
+      .txt {
+        @include Pg_Md_s16_lh22;
+        color: #66707a;
+      }
+    }
+
+    .banner_wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(16);
+
+      .banner_list {
+        display: flex;
+        padding: 3rem 2rem 3rem 4rem;
+        align-items: center;
+        gap: rem(27);
+        border-radius: rem(12);
+        background: #f9fafc;
+
+        .tit {
+          @include Hd_Sm_s22_lh28;
+        }
+        .thumb {
+          margin-left: auto;
+          width: rem(160);
+          height: rem(120);
+        }
+      }
+    }
+
+    .howtouse-wrap {
+      position: relative;
+      padding: rem(40);
+      padding-bottom: rem(256);
+      border-radius: 12px;
+      background: url("/images/roaming/img_banner_wrap_bg.png") no-repeat 0 bottom,
+        linear-gradient(180deg, #fff6f2 0%, #fffcf8 107.7%);
+      background-size: contain;
+      overflow: hidden;
+      text-align: center;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: rem(176);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, rgba(255, 251, 251, 0) 0%, #fffbfb 100%);
+      }
+
+      .s-tit {
+        @include Pg_Md_s16_lh22;
+        color: #743f3f;
+      }
+      .tit {
+        margin-top: rem(16);
+        @include Hd_Md_s26_lh32;
+      }
+      .howbtn {
+        display: inline-flex;
+        margin-top: rem(45);
+        padding: 17px 32px;
+        justify-content: center;
+        align-items: center;
+        gap: rem(10);
+        border-radius: 900px;
+        background: #e34140;
+        @include Lb_Lg_s18_lh24;
+        color: #fff;
+      }
+    }
+
+    .mobile & {
+      .txt_wrap {
+        padding: 0;
+
+        .tit01 {
+          @include Pg_Md_s16_lh22;
+        }
+        .tit {
+          @include Pg_xLg_s20_lh26;
+          font-weight: 700;
+        }
+        .txt {
+          @include Pg_Sm_s14_lh20;
+        }
+      }
+
+      .banner_wrap {
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(40);
+
+        .banner_list {
+          display: block;
+          padding: 3.2rem 0;
+          text-align: center;
+
+          .thumb {
+            margin: 0 auto;
+            margin-top: rem(16);
+          }
+        }
+      }
+
+      .howtouse-wrap {
+        padding-bottom: rem(262);
+        padding: 4rem 2.4rem 26.2rem;
+        background: url("/images/roaming/img_banner_wrap_bg_m.png") no-repeat center bottom,
+          linear-gradient(180deg, #fff6f2 0%, #fffcf8 104.17%), linear-gradient(180deg, #faf6ff 0%, #fcfaff 82.08%);
+
+        &::after {
+          height: rem(182);
+          background: linear-gradient(180deg, rgba(255, 252, 248, 0) 0%, #fffcf8 129.14%);
+        }
+        .s-tit {
+          @include Pg_Md_s16_lh22;
+        }
+        .tit {
+          margin-top: rem(12);
+          @include Pg_Lg_s18_lh24;
+          font-weight: 700;
+        }
+        .howbtn {
+          margin-top: rem(24);
+          padding: 1.4rem 2.4rem;
+          @include Lb_Md_s16_lh22;
+        }
+      }
+    }
+  }
+  // end - 해외 데이터 안심옵션
+
+  // start - 이용방법
+  .tab_con03 {
+    .info-box-list {
+      &.ty02 {
+        .info-box-list-item {
+          & + .info-box-list-item {
+            margin-top: rem(16);
+          }
+
+          &:nth-child(1) {
+            .info-box {
+              &.type-round {
+                background-color: #fff3fa;
+
+                .left-side {
+                  .text_info_wrap {
+                    p {
+                      display: block;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            .info-box {
+              &.type-round {
+                background-color: #fff4e6;
+
+                .left-side {
+                  .text_info_wrap {
+                    p {
+                      display: inline;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .info-box {
+            &.type-round {
+              border: none;
+              position: relative;
+              min-height: 10rem;
+              border-radius: 1.2rem;
+              box-shadow: none;
+
+              .info-box-contensts {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+
+                .left-side {
+                  display: flex;
+                  flex-direction: column;
+                  .text_info_wrap {
+                    @include Hd_Lg_s30_lh36;
+                    font-weight: 400;
+
+                    p {
+                      display: inline;
+                    }
+                  }
+                  .btn-rounded {
+                    &.type-fs16 {
+                      margin-top: rem(24);
+                      @include Lb_Md_s16_lh22;
+                      border: none;
+                    }
+                  }
+                }
+
+                .right-side {
+                  .gallery-wrap {
+                    position: relative;
+                    display: block;
+                    width: rem(224);
+                    height: rem(160);
+                    img {
+                      position: absolute;
+                      left: 0;
+                      height: 0;
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mobile & {
+      .info-box-list {
+        &.ty02 {
+          .info-box-list-item {
+            .info-box {
+              &.type-round {
+                .info-box-contensts {
+                  display: block;
+
+                  .left-side {
+                    height: rem(66);
+                    padding: 0.7rem 0;
+                    margin-bottom: rem(24);
+                    display: block;
+
+                    .text_info_wrap {
+                      @include Lb_Md_s16_lh22;
+
+                      p {
+                        display: block;
+                        @include Lb_Sm_s14_lh20;
+                        font-weight: 500;
+                      }
+                    }
+                  }
+
+                  .right-side {
+                    position: absolute;
+                    top: 0;
+                    right: rem(-4);
+                    .gallery-wrap {
+                      width: rem(112);
+                      height: rem(80);
+                    }
+                  }
+
+                  .btn-area {
+                    .btn-rounded {
+                      @include Lb_Sm_s14_lh20;
+                      height: rem(44);
+                      font-size: rem(16);
+                      border: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // end - 이용방법
+
+  // start - 자주하는 질문
+  .tab_con04 {
+    .input_box {
+      &.search {
+        &.bgF3F5F6 {
+          background-color: #f3f5f6;
+        }
+      }
+    }
+
+    .v-expansion-panels {
+      &.ty02 {
+        &.type-accordion-faq {
+          padding-top: rem(40) !important;
+
+          .v-expansion-panel {
+            &:not(:first-child)::after {
+              display: none;
+            }
+
+            &:last-child {
+              .inner-panner-wrap {
+                border-bottom: none;
+              }
+            }
+
+            .inner-panner-wrap {
+              border-radius: 0;
+              border: none;
+              border-bottom: 1px solid #dce0e5;
+              background: #fff;
+              padding: rem(0);
+              padding-bottom: rem(32);
+
+              .v-expansion-panel-text__wrapper {
+                .info-wrap {
+                  padding-top: rem(20);
+                  padding-left: rem(22);
+                  padding-bottom: rem(8);
+                  @include Pg_Md_s16_lh22;
+
+                  .a-blank {
+                    display: inline-block;
+                    text-decoration-line: underline;
+                  }
+                }
+              }
+            }
+            + .v-expansion-panel {
+              margin-top: rem(32);
+            }
+            .v-expansion-panel-title__icon {
+              align-self: flex-start;
+            }
+          }
+
+          .v-expansion-panel-title {
+            padding: 0;
+            font-size: rem(16);
+
+            .title-text-wrap {
+              position: relative;
+              padding-left: rem(22);
+
+              &::before {
+                content: "Q";
+                position: absolute;
+                font-weight: 700;
+                left: 0;
+                top: rem(1);
+                font-size: rem(18);
+              }
+              .title-text {
+                @include Pg_Md_s16_lh22;
+              }
+            }
+          }
+
+          .bag-list-wrap {
+            display: flex;
+            align-items: center;
+            gap: rem(8);
+            margin-top: rem(8);
+            .bag {
+              font-size: rem(14);
+              font-weight: 700;
+              &.only-text {
+                color: #66707a;
+              }
+              &.clr {
+                padding: 3px 6px;
+                line-height: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mobile & {
+      .v-expansion-panels {
+        &.ty02 {
+          &.type-accordion-faq {
+            padding-top: rem(32) !important;
+            .v-expansion-panel {
+              .inner-panner-wrap {
+                padding-bottom: rem(24);
+                .v-expansion-panel-text__wrapper {
+                  .info-wrap {
+                    padding-top: rem(20);
+                    padding-left: rem(19);
+                    padding-bottom: rem(8);
+                    @include Pg_Sm_s14_lh20;
+                  }
+                }
+              }
+              + .v-expansion-panel {
+                margin-top: rem(24);
+              }
+            }
+            .v-expansion-panel-title {
+              .title-text-wrap {
+                &::before {
+                  top: rem(2);
+                }
+                .title-text {
+                  @include Pg_Sm_s14_lh20;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // end - 자주하는 질문
 }
