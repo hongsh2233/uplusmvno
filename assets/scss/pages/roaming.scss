@@ -1,6 +1,25 @@
 @charset "UTF-8";
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
+:root {
+  /* Grayscale */
+  --gray-0: #000000;
+  --gray-100: #333333;
+  --gray-200: #66707a;
+  --gray-300: #909090;
+  --gray-400: #b3b3b3;
+  --gray-500: #cccccc;
+  --gray-600: #dbdbdb;
+  --gray-700: #dce0e5;
+  --gray-800: #eeeeee;
+  --gray-900: #ffffff;
+
+  /* Colors */
+  --color-background: #f3f5f6;
+  --color-primary-light: #fc9696;
+  --color-primary: #e34140;
+}
+
 @mixin product-detail {
   display: flex;
   align-items: center;
