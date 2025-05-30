@@ -47,6 +47,15 @@
   }
   .roaming-special-benefit-accordion {
     padding: rem(20) 0 rem(24);
+    .special-benefit-acc-content {
+      .title-exp {
+        display: block;
+        color: var(--gray-200);
+        padding-bottom: rem(24);
+        margin-bottom: rem(24);
+        border-bottom: 1px solid #dce0e5;
+      }
+    }
     &:deep() {
       .v-expansion-panel-title {
         .cont-head {
@@ -61,19 +70,18 @@
               top: 0;
               width: rem(107);
               height: rem(67);
-              background: url("/images/roaming/img_login_airflight.png") no-repeat 50% 50% / cover;
+              background: url("/images/roaming/img_login_airflight.png") no-repeat 50% 50% / contain;
             }
           }
           .title-exp {
             margin-top: rem(16);
+            color: var(--gray-200);
           }
         }
       }
       .acco-panel {
         .v-expansion-panel-text__wrapper {
-          padding-top: rem(24);
-          margin-top: rem(24);
-          border-top: 1px solid #dce0e5;
+          padding-top: rem(10);
         }
       }
       .mobile & {
@@ -87,22 +95,39 @@
         padding: rem(32) 0;
         .v-expansion-panel-title {
           align-items: center;
-        }
-        .v-expansion-panel-title {
           .cont-head {
             .cont-title-main {
               font-size: rem(22);
               line-height: rem(28);
               &::after {
                 right: rem(6);
-                top: 0;
+                top: rem(-20);
                 width: rem(132);
                 height: rem(82);
+                transition: top 0.1s ease-in-out;
               }
             }
+
             .title-exp {
               font-size: rem(16);
               margin-top: rem(12);
+            }
+          }
+          .v-expansion-panel-title__icon {
+            transform: translateY(0);
+            transition: transform 0.1s ease-in-out;
+          }
+          &.v-expansion-panel-title--active {
+            .v-expansion-panel-title__icon {
+              transform: translateY(16px);
+            }
+            .cont-head {
+              .cont-title-main {
+                &::after {
+                  content: "";
+                  top: rem(-4);
+                }
+              }
             }
           }
         }

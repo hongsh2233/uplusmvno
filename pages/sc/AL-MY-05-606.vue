@@ -122,13 +122,7 @@
 
                     <!-- 내역이 없는 경우 -->
                     <div class="inner-section">
-                      <!-- <div class="gray-box-no-data">납부 내역이 없습니다</div> -->
-                      <div class="result-message-box no-data">
-                        <p class="message-icon">
-                          <i class="img-payment"></i>
-                        </p>
-                        <p class="message-txt">납부 내역이 없습니다</p>
-                      </div>
+                      <MessageResult :description="'납부 내역이 없습니다'" />
                     </div>
                     <!-- // 내역이 없는 경우 -->
                   </template>
@@ -154,7 +148,7 @@
 import type { LayoutOptions } from "@/types/layout";
 import PcLnb from "@/components/v2/common/PcLnb.vue";
 import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
-
+import MessageResult from "@/components/MessageResult.vue";
 import Tab from "@/components/v2/common/Tab.vue";
 import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
