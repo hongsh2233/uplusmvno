@@ -2,6 +2,13 @@
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
 .AL-MY-02-004 {
+  .roaming-status-ready {
+    color: var(--color-primary);
+    &::before {
+      filter: brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(5566%) hue-rotate(342deg) brightness(94%)
+        contrast(85%);
+    }
+  }
   .text-list {
     &.bull {
       li {

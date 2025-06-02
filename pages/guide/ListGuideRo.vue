@@ -235,12 +235,12 @@
             </button>
             <div class="contents-box">
               <div class="inner-contents-box">
-                <h2 class="title-h2"><span>5-1. 완료 페이지</span></h2>
+                <h2 class="title-h2"><span>5-1. 서브 페이지</span></h2>
 
-                <br />
+                <h2 class="title-h2"><span>5-2. 완료 페이지</span></h2>
 
                 <h3 class="title-h3">
-                  <span>&#8226; 모바일 완료 페이지 미리보고</span>
+                  <span>&#8226; 모바일 완료 페이지 미리보기 (※ 개발자 도구 모바일 버전에서 확인 가능)</span>
                 </h3>
 
                 <Iframe :src-url="'/guide/sample/guide-complete'" />

@@ -1,5 +1,4 @@
 export const page_popup_mobile = `
-<br><br>
 
 <h3 class="title-h3">
   <span>&#8226; 모바일 완료 페이지</span>
@@ -8,12 +7,17 @@ export const page_popup_mobile = `
 - 모바일은 페이지로 제작됨.
 - PC는 팝업으로 띄우도록 제작됨.
 
-<div class="guide-code-btn-wrap mgy16">
+<h3 class="title-h3 mgb0">
+  <span>&#8226; 모바일 완료 페이지 CODE</span>
+</h3>
+
+
+<div class="guide-code-btn-wrap">
     <button  type="button" class="btn-rounded btn-line"><span class="blind">CODE 닫힘</span></button>
     <button  type="button" class="btn-rounded primary"><span class="blind">CODE 펼침</span></button>
 </div>
 
-<div class="code-wrap">
+<div class="code-wrap mgt16">
 
 \`\`\`html
 <template>
@@ -75,36 +79,52 @@ const cardObject1 = ref([
 \`\`\`
 
 </div>
-`;
 
-export const page_popup_pc = `
-  <br><br>
-  <h3 class="title-h3">1. 납부 내역이 없습니다 </h3>
+<br>
+<h3 class="title-h3">
+  <span>&#8226; PC 완료 페이지 CODE</span>
+</h3>
+
+<div class="guide-code-btn-wrap">
+    <button  type="button" class="btn-rounded btn-line"><span class="blind">CODE 닫힘</span></button>
+    <button  type="button" class="btn-rounded primary"><span class="blind">CODE 펼침</span></button>
+</div>
+
+<div class="code-wrap mgt16">
 
 \`\`\`html
 <script setup lang="ts">
-import Popup from "@/components/v2/common/Popup.vue";
-import 컴포넌트이름 from "@/components/popup/파일이름.vue";
+  import Popup from "@/components/v2/common/Popup.vue";
+  import ALMY05500P01 from "@/components/popup/AL-MY-05-500-P01.vue";
 
-const route = useRoute();
-const popupQuery = ref(route.query.popup);
+  const route = useRoute();
+  const popupQuery = ref(route.query.popup);
+  const popupOpen = ref(true);
 </script>
 
 <template>
+  <div class="페이지화면ID">
+    <div class="container">
+      <div class="content" id="content">
+        ~ 생략 ~
 
-  <Popup
-  title="XXX 완료"
-  popType="full no-title"
-  confirmText="확인했어요"
-  :isOpen="popupQuery === '1' && popupOpen"
-  @update:isOpen="popupOpen = false"
-  class="pcpopup"
-  >
-    <컴포넌트이름 />
-  </Popup>
-
+        <Popup
+        title="번호 변경 확인"
+        popType="full no-title"
+        confirmText="확인했어요"
+        :isOpen="popupQuery === '1' && popupOpen"
+        @update:isOpen="popupOpen = false"
+        class="pcpopup"
+        >
+          <ALMY05500P01 />
+        </Popup>
+      </div>
+    </div>
+  </div>
 </template>
 \`\`\`
+
+</div>
 `;
 
 export const foundation_color_1 = `
@@ -134,7 +154,14 @@ export const foundation_color_1 = `
 
 export const result_tabmenu_1 = `
   <br><br>
-  <h3 class="title-h3">1. 탭메뉴 </h3>
+  <h3 class="title-h3">&#8226; 탭메뉴 </h3>
+
+<div class="guide-code-btn-wrap">
+    <button  type="button" class="btn-rounded btn-line"><span class="blind">CODE 닫힘</span></button>
+    <button  type="button" class="btn-rounded primary"><span class="blind">CODE 펼침</span></button>
+</div>
+
+<div class="code-wrap mgt16">
 
 \`\`\`html
   <script setup lang="ts">
@@ -210,6 +237,9 @@ export const result_tabmenu_1 = `
 
   </template>
 \`\`\`
+
+</div>
+
 `;
 
 export const result_message_1 = `

@@ -38,7 +38,7 @@
                     로밍 요금제에요
                   </h3>
                 </div>
-                <div class="gray-box-no-data">이용 중인 로밍 요금제가 없어요</div>
+                <MessageResult :description="'이용 중인 로밍 요금제가 없어요'" />
                 <div class="btn-area join-btn-wrap">
                   <button type="button" class="btn-rounded btn-line">로밍 부가서비스 가입하기</button>
                 </div>
@@ -142,7 +142,8 @@
                 <div class="cont-head title-main">
                   <h3 class="cont-title-main">이용 중인 부가서비스</h3>
                 </div>
-                <div class="gray-box-no-data">이용 중인 로밍 요금제가 없어요</div>
+                <MessageResult :description="'이용 중인 로밍 부가서비스가 없어요'" />
+
                 <div class="btn-area join-btn-wrap">
                   <button type="button" class="btn-rounded btn-line">로밍 부가서비스 가입하기</button>
                 </div>
