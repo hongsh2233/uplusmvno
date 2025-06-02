@@ -1,5 +1,6 @@
 <template>
-  <div class="AL-MS-04-005">
+  <!-- 2025-06-02 1748594633 (정C)  mobile-page-popup 클래스 추가 -->
+  <div class="AL-MS-04-005 mobile-page-popup">
     <div class="container deps4">
       <div class="content" id="content">
         <h2 class="title_nav">{{ layout.title }}</h2>

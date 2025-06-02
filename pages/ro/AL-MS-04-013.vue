@@ -21,19 +21,20 @@
                     와이파이 연결 시에만 인터넷을 사용할 수 있는 서비스
                   </div>
                 </div>
-                <div class="info-group-2">
+                <!-- 2025-05-29 1748594633 (정C) 가격 삭제됨 -->
+                <!-- <div class="info-group-2">
                   <div class="price">
-                    <!-- <p class="info-1"><span class="price-number">24,580</span>원</p> -->
+                    <p class="info-1"><span class="price-number">24,580</span>원</p>
                     <p class="info-1"><span class="price-number">무료</span></p>
-                    <!-- <p class="info-2">부가세포함</p> -->
+                    <p class="info-2">부가세포함</p>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="info-group-3">
                 <div class="detail">
                   <span class="detail-item data">
                     <span class="info-title">데이터</span>
-                    <span class="info-val">차단</span>
+                    <span class="info-val"><span class="mobile_hide">데이터</span> 차단</span>
                   </span>
                 </div>
               </div>
