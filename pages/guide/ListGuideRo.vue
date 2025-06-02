@@ -10,201 +10,242 @@
             </li>
           </ul>
           <hr />
-          <div class="acc section" :class="[!accBtn1 && 'close']">
-            <h2 class="title-h2">
-              <button class="acc-bnt" ref="accBtn" @click="accBtn1 = !accBtn1"><span>1. Alert</span></button>
-            </h2>
+          <div class="tabmenu-open-close-btns mgt32">
+            <button type="button" class="btn-rounded btn-line" @click="guideTaMenuAllClose('close')">전체 닫힘</button>
+            <button type="button" class="btn-rounded primary" @click="guideTaMenuAllClose('open')">전체 펼침</button>
+          </div>
+          <div class="acc section pdy0 mgt20" :class="[!accBtn1 && 'close']">
+            <button class="acc-bnt" ref="accBtn" @click="accBtn1 = !accBtn1">
+              <h2 class="title-h2">
+                <span>1. Alert</span>
+              </h2>
+            </button>
             <div class="contents-box">
-              <p>
-                <button class="btn xsm" @click="alert1 = true">
-                  1. 타이틀, 설명 <strong class="point">확인창</strong>
-                </button>
-              </p>
-              <p>
-                <button class="btn xsm" @click="alert2 = true">
-                  2. 타이틀, 설명 <strong class="point">컨펌창</strong>
-                </button>
-              </p>
-              <p>
-                <button class="btn xsm" @click="alert3 = true">
-                  3. 타이틀, 설명, 텍스트상자 <strong class="point">확인창</strong>
-                </button>
-              </p>
-              <p>
-                <button class="btn xsm" @click="alert4 = true">
-                  4. 타이틀, 설명, 텍스트상자 <strong class="point">컨펌창</strong>
-                </button>
-              </p>
+              <div class="inner-contents-box">
+                <p>
+                  <button class="btn xsm" @click="alert1 = true">
+                    1. 타이틀, 설명 <strong class="point">확인창</strong>
+                  </button>
+                </p>
+                <p>
+                  <button class="btn xsm" @click="alert2 = true">
+                    2. 타이틀, 설명 <strong class="point">컨펌창</strong>
+                  </button>
+                </p>
+                <p>
+                  <button class="btn xsm" @click="alert3 = true">
+                    3. 타이틀, 설명, 텍스트상자 <strong class="point">확인창</strong>
+                  </button>
+                </p>
+                <p>
+                  <button class="btn xsm" @click="alert4 = true">
+                    4. 타이틀, 설명, 텍스트상자 <strong class="point">컨펌창</strong>
+                  </button>
+                </p>
 
-              <!-- 타이틀, 설명 확인창  -->
-              <AlertV2
-                v-model="alert1"
-                :textData="{
-                  title: '타이틀',
-                  description: '설명',
-                }"
-                :confirm="false"
-                @close="handleClose"
-                @proceed="handleProceed"
-              />
-              <!--// 타이틀, 설명 확인창 -->
+                <!-- 타이틀, 설명 확인창  -->
+                <AlertV2
+                  v-model="alert1"
+                  :textData="{
+                    title: '타이틀',
+                    description: '설명',
+                  }"
+                  :confirm="false"
+                  @close="handleClose"
+                  @proceed="handleProceed"
+                />
+                <!--// 타이틀, 설명 확인창 -->
 
-              <!-- 타이틀, 설명 컨펌창  -->
-              <AlertV2
-                v-model="alert2"
-                :textData="{
-                  title: '타이틀',
-                  description: '설명',
-                }"
-                :confirm="true"
-                :buttonText="{ cancel: '취소', confirm: '버튼명' }"
-                @close="handleClose"
-                @proceed="handleProceed"
-              />
-              <!--// 타이틀, 설명 컨펌창 -->
+                <!-- 타이틀, 설명 컨펌창  -->
+                <AlertV2
+                  v-model="alert2"
+                  :textData="{
+                    title: '타이틀',
+                    description: '설명',
+                  }"
+                  :confirm="true"
+                  :buttonText="{ cancel: '취소', confirm: '버튼명' }"
+                  @close="handleClose"
+                  @proceed="handleProceed"
+                />
+                <!--// 타이틀, 설명 컨펌창 -->
 
-              <!-- 타이틀, 설명, 텍스트상자 확인창  -->
-              <AlertV2
-                v-model="alert3"
-                :textData="{
-                  title: '타이틀',
-                  description: '설명',
-                }"
-                :confirm="false"
-                @close="handleClose"
-                @proceed="handleProceed"
-              >
-                <dl class="brand-phone">
-                  <div>
-                    <dt>서브타이틀</dt>
-                    <dd>
-                      02-000-0000<br />
-                      02-000-0000(유료)
-                    </dd>
-                  </div>
-                </dl>
-              </AlertV2>
-              <!--//타이틀, 설명, 텍스트상자 확인창 -->
+                <!-- 타이틀, 설명, 텍스트상자 확인창  -->
+                <AlertV2
+                  v-model="alert3"
+                  :textData="{
+                    title: '타이틀',
+                    description: '설명',
+                  }"
+                  :confirm="false"
+                  @close="handleClose"
+                  @proceed="handleProceed"
+                >
+                  <dl class="brand-phone">
+                    <div>
+                      <dt>서브타이틀</dt>
+                      <dd>
+                        02-000-0000<br />
+                        02-000-0000(유료)
+                      </dd>
+                    </div>
+                  </dl>
+                </AlertV2>
+                <!--//타이틀, 설명, 텍스트상자 확인창 -->
 
-              <!-- 타이틀, 설명, 텍스트상자 컨펌창  -->
-              <AlertV2
-                v-model="alert4"
-                :textData="{
-                  title: '타이틀',
-                  description: '설명',
-                }"
-                :confirm="true"
-                :buttonText="{ cancel: '취소', confirm: '버튼명' }"
-                @close="handleClose"
-                @proceed="handleProceed"
-              >
-                <dl class="brand-phone">
-                  <div>
-                    <dt>서브타이틀</dt>
-                    <dd>
-                      02-000-0000<br />
-                      02-000-0000(유료)
-                    </dd>
-                  </div>
-                </dl>
-              </AlertV2>
+                <!-- 타이틀, 설명, 텍스트상자 컨펌창  -->
+                <AlertV2
+                  v-model="alert4"
+                  :textData="{
+                    title: '타이틀',
+                    description: '설명',
+                  }"
+                  :confirm="true"
+                  :buttonText="{ cancel: '취소', confirm: '버튼명' }"
+                  @close="handleClose"
+                  @proceed="handleProceed"
+                >
+                  <dl class="brand-phone">
+                    <div>
+                      <dt>서브타이틀</dt>
+                      <dd>
+                        02-000-0000<br />
+                        02-000-0000(유료)
+                      </dd>
+                    </div>
+                  </dl>
+                </AlertV2>
 
-              <MDC :value="alert1_1" class="pub-md-wrap" />
+                <MDC :value="alert1_1" class="pub-md-wrap" />
+              </div>
             </div>
           </div>
           <hr />
           <div class="acc section" :class="[!accBtn2 && 'close']">
-            <h2 class="title-h2">
-              <button class="acc-bnt" ref="accBtn" @click="accBtn2 = !accBtn2"><span>2. Result Message</span></button>
-            </h2>
+            <button class="acc-bnt" ref="accBtn" @click="accBtn2 = !accBtn2">
+              <h2 class="title-h2">
+                <span>2. Result Message</span>
+              </h2>
+            </button>
             <div class="contents-box">
-              <MessageResult :description="'납부 내역이 없습니다'" />
-              <MDC :value="result_message_1" class="pub-md-wrap" />
+              <div class="inner-contents-box">
+                <MessageResult :description="'납부 내역이 없습니다'" />
+                <MDC :value="result_message_1" class="pub-md-wrap" />
+              </div>
             </div>
           </div>
           <hr />
           <div class="acc section" :class="[!accBtn3 && 'close']">
-            <h2 class="title-h2">
-              <button class="acc-bnt" ref="accBtn" @click="accBtn3 = !accBtn3"><span>3. Tabmenu</span></button>
-            </h2>
+            <button class="acc-bnt" ref="accBtn" @click="accBtn3 = !accBtn3">
+              <h2 class="title-h2">
+                <span>3. Tabmenu</span>
+              </h2>
+            </button>
             <div class="contents-box">
-              <!-- 탭메뉴1 영역 -->
-              <div class="section ty02">
-                <Tab
-                  :data="{
-                    option: { type: 3 },
-                    data: [
-                      { selected: true, controls: 'tab_panel_01_01', title: '탭메뉴1' },
-                      { selected: false, controls: 'tab_panel_01_02', title: '탭메뉴2' },
-                      { selected: false, controls: 'tab_panel_01_03', title: '탭메뉴3' },
-                      { selected: false, controls: 'tab_panel_01_04', title: '탭메뉴4' },
-                    ],
-                  }"
-                >
-                  <template v-slot:tab_panel_01_01>
-                    <h3 class="blind">탭메뉴1</h3>
-                    <div class="panel_cnt">
-                      <!-- 안쪽 탭메뉴 -->
-                      <RectTab :titles="['tab1', 'tab2']">
-                        <template #content1>
-                          <!-- 탭메뉴내용1 -->
-                          <div class="tag-contents-wrap">
-                            <div class="tag-header">
-                              <div class="scroll-wrap">
-                                <button class="item on" onclick="onTagShoHideHandler(this, '.contents .item')">
-                                  IOS
-                                </button>
-                                <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">
-                                  안드로이드
-                                </button>
-                              </div>
-                            </div>
-                            <div class="contents">
-                              <div class="table-wrap tag">
+              <div class="inner-contents-box">
+                <!-- 탭메뉴1 영역 -->
+                <div class="section ty02">
+                  <Tab
+                    :data="{
+                      option: { type: 3 },
+                      data: [
+                        { selected: true, controls: 'tab_panel_01_01', title: '탭메뉴1' },
+                        { selected: false, controls: 'tab_panel_01_02', title: '탭메뉴2' },
+                        { selected: false, controls: 'tab_panel_01_03', title: '탭메뉴3' },
+                        { selected: false, controls: 'tab_panel_01_04', title: '탭메뉴4' },
+                      ],
+                    }"
+                  >
+                    <template v-slot:tab_panel_01_01>
+                      <h3 class="blind">탭메뉴1</h3>
+                      <div class="panel_cnt">
+                        <!-- 안쪽 탭메뉴 -->
+                        <RectTab :titles="['tab1', 'tab2']">
+                          <template #content1>
+                            <!-- 탭메뉴내용1 -->
+                            <div class="tag-contents-wrap">
+                              <div class="tag-header">
                                 <div class="scroll-wrap">
-                                  <!-- item-1 -->
-                                  <div class="item on">안에 내용은 AL-MS-04-002.vue 참고 바랍니다.</div>
-                                  <!-- //item-1 -->
-                                  <div class="item">안드로이드 내용</div>
+                                  <button class="item on" onclick="onTagShoHideHandler(this, '.contents .item')">
+                                    IOS
+                                  </button>
+                                  <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">
+                                    안드로이드
+                                  </button>
+                                </div>
+                              </div>
+                              <div class="contents">
+                                <div class="table-wrap tag">
+                                  <div class="scroll-wrap">
+                                    <!-- item-1 -->
+                                    <div class="item on">안에 내용은 AL-MS-04-002.vue 참고 바랍니다.</div>
+                                    <!-- //item-1 -->
+                                    <div class="item">안드로이드 내용</div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <!-- //탭메뉴내용1 -->
-                        </template>
-                        <template #content2> content2 </template>
-                      </RectTab>
-                      <!-- //안쪽 탭메뉴 -->
-                    </div>
-                  </template>
-                  <template v-slot:tab_panel_01_02>
-                    <h3 class="blind">탭메뉴2</h3>
-                    <div class="panel_cnt">내용2</div>
-                  </template>
-                  <template v-slot:tab_panel_01_03>
-                    <h3 class="blind">탭메뉴3</h3>
-                    <div class="panel_cnt">내용3</div>
-                  </template>
-                  <template v-slot:tab_panel_01_04>
-                    <h3 class="blind">탭메뉴4</h3>
-                    <div class="panel_cnt">내용4</div>
-                  </template>
-                </Tab>
-              </div>
+                            <!-- //탭메뉴내용1 -->
+                          </template>
+                          <template #content2> content2 </template>
+                        </RectTab>
+                        <!-- //안쪽 탭메뉴 -->
+                      </div>
+                    </template>
+                    <template v-slot:tab_panel_01_02>
+                      <h3 class="blind">탭메뉴2</h3>
+                      <div class="panel_cnt">내용2</div>
+                    </template>
+                    <template v-slot:tab_panel_01_03>
+                      <h3 class="blind">탭메뉴3</h3>
+                      <div class="panel_cnt">내용3</div>
+                    </template>
+                    <template v-slot:tab_panel_01_04>
+                      <h3 class="blind">탭메뉴4</h3>
+                      <div class="panel_cnt">내용4</div>
+                    </template>
+                  </Tab>
+                </div>
 
-              <!-- //탭메뉴1 영역 -->
-              <MDC :value="result_tabmenu_1" class="pub-md-wrap" />
+                <!-- //탭메뉴1 영역 -->
+                <MDC :value="result_tabmenu_1" class="pub-md-wrap" />
+              </div>
             </div>
           </div>
           <hr />
           <div class="acc section" :class="[!accBtn4 && 'close']">
-            <h2 class="title-h2">
-              <button class="acc-bnt" ref="accBtn" @click="accBtn4 = !accBtn4">
+            <button class="acc-bnt" ref="accBtn" @click="accBtn4 = !accBtn4">
+              <h2 class="title-h2">
                 <span>4. Foundation : Color</span>
-              </button>
-            </h2>
+              </h2>
+            </button>
             <div class="contents-box">
-              <MDC :value="foundation_color_1" class="pub-md-wrap" />
+              <div class="inner-contents-box">
+                <MDC :value="foundation_color_1" class="pub-md-wrap" />
+              </div>
+            </div>
+          </div>
+          <hr />
+
+          <div class="acc section" :class="[!accBtn5 && 'close']">
+            <button class="acc-bnt" ref="accBtn" @click="accBtn5 = !accBtn5">
+              <h2 class="title-h2">
+                <span>5. Pages</span>
+              </h2>
+            </button>
+            <div class="contents-box">
+              <div class="inner-contents-box">
+                <h2 class="title-h2"><span>5-1. 완료 페이지</span></h2>
+
+                <br />
+
+                <h3 class="title-h3">
+                  <span>&#8226; 모바일 완료 페이지 미리보고</span>
+                </h3>
+
+                <Iframe :src-url="'/guide/sample/guide-complete'" />
+                <MDC :value="page_popup_mobile" class="pub-md-wrap" />
+              </div>
             </div>
           </div>
           <hr />
@@ -230,14 +271,25 @@ import Tab from "@/components/Tab.vue";
 import RectTab from "@/components/v2/common/Tab.vue";
 import SwiperBnr from "@/components/SwiperBnr.vue";
 import type { LayoutOptions } from "@/types/layout";
+import Iframe from "@/pages/guide/sample/components/Iframe.vue";
 import AlertV2 from "@/components/v2/common/AlertV2.vue";
-import { foundation_color_1, result_tabmenu_1, result_message_1, alert1_1, md1_1, md1_2 } from "~/pages/guide/docs/md1";
+import {
+  page_popup_mobile,
+  foundation_color_1,
+  result_tabmenu_1,
+  result_message_1,
+  alert1_1,
+  md1_1,
+  md1_2,
+} from "~/pages/guide/docs/md1";
 import MessageResult from "@/components/MessageResult.vue";
 window.onTagShoHideHandler = htmlUI.tagShoHideHandler;
 const accBtn1 = ref(false);
 const accBtn2 = ref(false);
 const accBtn3 = ref(false);
 const accBtn4 = ref(false);
+const accBtn5 = ref(false);
+const btns = [accBtn1, accBtn2, accBtn3, accBtn4, accBtn5];
 
 const alert1 = ref(false);
 const alert2 = ref(false);
@@ -319,7 +371,28 @@ const handleProceed = () => {
 
 onMounted(() => {
   emit("setLayout", layout);
+  document.addEventListener("click", (e) => {
+    const tg = e.target as HTMLElement;
+    const closestEl = tg.closest(".guide-code-btn-wrap");
+    if (!closestEl) return;
+
+    if (tg.classList.contains("primary")) {
+      closestEl.classList.add("open");
+    } else {
+      closestEl.classList.remove("open");
+    }
+  });
 });
+
+const guideTaMenuAllClose = (status: string) => {
+  btns.forEach((btn) => {
+    if (status === "close") {
+      btn.value = false;
+    } else {
+      btn.value = true;
+    }
+  });
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,8 +1,116 @@
-export const foundation_color_1 = `
+export const page_popup_mobile = `
+<br><br>
+
+<h3 class="title-h3">
+  <span>&#8226; 모바일 완료 페이지</span>
+</h3>
+
+- 모바일은 페이지로 제작됨.
+- PC는 팝업으로 띄우도록 제작됨.
+
+<div class="guide-code-btn-wrap mgy16">
+    <button  type="button" class="btn-rounded btn-line"><span class="blind">CODE 닫힘</span></button>
+    <button  type="button" class="btn-rounded primary"><span class="blind">CODE 펼침</span></button>
+</div>
+
+<div class="code-wrap">
+
+\`\`\`html
+<template>
+
+  <div class="AL-MY-05-500-P05">
+    <div class="first-content-item confirm-area phone-regist">
+      <div class="content-inner">
+        <div class="cont-head">
+          <h3 class="cont-title-main">번호 변경이<br /><b class="txt-primary">완료</b>되었어요</h3>
+        </div>
+      </div>
+
+      <p class="icon">
+        <img src="/images/roaming/sc/Img-changenumber-complete.png" alt="" />
+      </p>
+
+      <div class="content-item">
+        <div class="content-inner">
+          <CardGroup :card-object="cardObject1" />
+
+          <div class="gray-notice-box">
+            <ul class="text-list bull">
+              <li>신청 후 영업일 기준 5일 이내 등록하신 이메일로 발송됩니다.</li>
+            </ul>
+          </div>
+
+          <div class="form-box mgt24">
+            <div class="btn-area"><button type="button" class="btn-rounded btn-line">버튼명</button></div>
+          </div>
+        </div>
+      </div>
+      <!-- bottom_button -->
+      <BottomFixMenu class="pd-0" :btnText="'확인'" :disabled="false" />
+      <!-- // bottom_button -->
+    </div>
+  </div>
+
+</template>
+
+<script setup lang="ts">
+import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
+import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
+
+const cardObject1 = ref([
+  {
+    title: "",
+    sub: "",
+    chip: "",
+    list: [
+      { name: "타이틀", value: "값" },
+      { name: "기존번호", nameDesc: "(설명)", value: "값", class: { value: "txt-orange", title: "has-desc" } },
+    ],
+  },
+]);
+</script>
+<style scoped lang="scss">
+@use "@/assets/scss/popup/al-my-05-500-p05" as *;
+</style>
+\`\`\`
+
+</div>
+`;
+
+export const page_popup_pc = `
   <br><br>
+  <h3 class="title-h3">1. 납부 내역이 없습니다 </h3>
+
+\`\`\`html
+<script setup lang="ts">
+import Popup from "@/components/v2/common/Popup.vue";
+import 컴포넌트이름 from "@/components/popup/파일이름.vue";
+
+const route = useRoute();
+const popupQuery = ref(route.query.popup);
+</script>
+
+<template>
+
+  <Popup
+  title="XXX 완료"
+  popType="full no-title"
+  confirmText="확인했어요"
+  :isOpen="popupQuery === '1' && popupOpen"
+  @update:isOpen="popupOpen = false"
+  class="pcpopup"
+  >
+    <컴포넌트이름 />
+  </Popup>
+
+</template>
+\`\`\`
+`;
+
+export const foundation_color_1 = `
   <h3 class="title-h3">1. Color </h3>
 
-  \`\`\`css
+\`\`\`css
     :root {
     /* Grayscale */
     --gray-0: #000000;
@@ -21,14 +129,14 @@ export const foundation_color_1 = `
     --color-primary-light: #fc9696;
     --color-primary: #e34140;
   }
-  \`\`\`
+\`\`\`
 `;
 
 export const result_tabmenu_1 = `
   <br><br>
   <h3 class="title-h3">1. 탭메뉴 </h3>
 
-  \`\`\`html
+\`\`\`html
   <script setup lang="ts">
   import Tab from "@/components/Tab.vue";
   import RectTab from "@/components/v2/common/Tab.vue";
@@ -101,14 +209,14 @@ export const result_tabmenu_1 = `
     </div>
 
   </template>
-  \`\`\`
+\`\`\`
 `;
 
 export const result_message_1 = `
   <br><br>
   <h3 class="title-h3">1. 납부 내역이 없습니다 </h3>
 
-  \`\`\`html
+\`\`\`html
   <script setup lang="ts">
   import MessageResult from "@/components/MessageResult.vue";
   </script>
@@ -123,14 +231,14 @@ export const result_message_1 = `
     />
 
   </template>
-  \`\`\`
+\`\`\`
 `;
 
 export const alert1_1 = `
   <br><br>
   <h3 class="title-h3">1. 타이틀, 설명 확인창 </h3>
 
-  \`\`\`html
+\`\`\`html
   <script setup lang="ts">
     import type { LayoutOptions } from "@/types/layout";
     const alert1 = ref(false);
@@ -160,12 +268,12 @@ export const alert1_1 = `
     <!--// 타이틀, 설명 확인창 -->
 
   </template>
-  \`\`\`
+\`\`\`
   <br>
   
   <h3 class="title-h3">2. 타이틀, 설명 컨펌창</h3>
 
-  \`\`\`html
+\`\`\`html
   <script setup lang="ts">
     ~ 생략 ~
   </script>
@@ -187,12 +295,12 @@ export const alert1_1 = `
     <!--// 타이틀, 설명 컨펌창 -->
 
   </template>
-  \`\`\`
+\`\`\`
   <br>
 
   <h3 class="title-h3">3. 타이틀, 설명, 텍스트상자 확인창</h3>
   
-  \`\`\`html
+\`\`\`html
   <script setup lang="ts">
     ~ 생략 ~
   </script>
@@ -223,13 +331,13 @@ export const alert1_1 = `
     <!--//타이틀, 설명, 텍스트상자 확인창 -->
 
   </template>
-  \`\`\`
+\`\`\`
   <br>
 
   <h3 class="title-h4">4. 타이틀, 설명, 텍스트상자 컨펌창</h3>
 
   
-  \`\`\`html
+\`\`\`html
   <script setup lang="ts">
     ~ 생략 ~
   </script>
@@ -261,7 +369,7 @@ export const alert1_1 = `
     <!--// 타이틀, 설명, 텍스트상자 컨펌창 -->
 
   </template>
-  \`\`\`
+\`\`\`
   <br>
 `;
 
@@ -296,7 +404,6 @@ with language prop.
 <div class="pub-code-wrap">
 
 <p class="code-title">script code:</p>
-
 \`\`\` typescript [index.js] {1, 3 - 5} additional meta data
 import {parseMarkdown} from '@nuxtjs/mdc/runtime'
 
@@ -304,31 +411,26 @@ async function main(mdc: string) {
   const ast = await parseMarkdown(mdc)
 
   return ast
-}
-\`\`\`
+}\`\`\`
 
 </div>
 
 <div class="pub-code-wrap">
 
 <p class="code-title">template code:</p>
-
 \`\`\` html
 <body>
   <h1>테스트</h1>
-</body>
-\`\`\`
+</body>\`\`\`
 
 </div>
 
 <div class="pub-code-wrap">
 
 <p class="code-title">scss code:</p>
-
 \`\`\` scss
 @charset "UTF-8";
-@use "@/assets/scss/abstract/_mixin.scss" as *;
-\`\`\`
+@use "@/assets/scss/abstract/_mixin.scss" as *;\`\`\`
 
 </div>
 
@@ -361,7 +463,6 @@ with language prop.
 <div class="pub-code-wrap">
 
 <p class="code-title">script code:</p>
-
 \`\`\` typescript [index.js] {1, 3 - 5} additional meta data
 import {parseMarkdown} from '@nuxtjs/mdc/runtime'
 
@@ -369,31 +470,26 @@ async function main(mdc: string) {
   const ast = await parseMarkdown(mdc)
 
   return ast
-}
-\`\`\`
+}\`\`\`
 
 </div>
 
 <div class="pub-code-wrap">
 
 <p class="code-title">template code:</p>
-
 \`\`\` html
 <body>
   <h1>테스트</h1>
-</body>
-\`\`\`
+</body>\`\`\`
 
 </div>
 
 <div class="pub-code-wrap">
 
 <p class="code-title">scss code:</p>
-
 \`\`\` scss
 @charset "UTF-8";
-@use "@/assets/scss/abstract/_mixin.scss" as *;
-\`\`\`
+@use "@/assets/scss/abstract/_mixin.scss" as *;\`\`\`
 
 </div>
 
