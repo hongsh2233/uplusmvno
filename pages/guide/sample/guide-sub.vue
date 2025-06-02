@@ -25,10 +25,10 @@
               </div>
 
               <div class="inner-section">
-                <CardGroup :card-object="[cardObject[0]]" :dataSelectList="dataSelectList">
+                <CardGroup :card-object="cardObject_1" @onClickChip="onClickHandler">
                   <template #default="{ item }">
                     <div class="fl-ac">
-                      <p v-html="item.value"></p>
+                      <p v-html="item!.value"></p>
                     </div>
                   </template>
                 </CardGroup>
@@ -37,28 +37,51 @@
           </div>
 
           <!-- 정보 -->
-          <CardGroup
-            :card-object="cardObject.slice(1)"
-            :dataSelectList="dataSelectList"
-            class="subscription-info-second mgt0"
-          />
+          <CardGroup :card-object="cardObject_2" class="subscription-info-second mgt0" @onClickChip="onClickHandler" />
           <!-- // 정보 -->
-
-          <!-- 이동 링크 목록 -->
-          <ShortcutMenu :links="linksArray" />
-          <!--// 이동 링크 목록 -->
         </div>
         <!-- // contents -->
+
+        <!-- 팝업이 있을 경우 -->
+        <Popup
+          title="결합 정보"
+          popType="full no-title"
+          confirmText="확인"
+          :isOpen="popupQuery === '1' && popupOpen"
+          :isPopFooter="false"
+          @update:isOpen="popupOpen = false"
+          class="pcpopup type-float-btn-1"
+        >
+          <ALMY05001P01 />
+        </Popup>
+        <!-- //팝업이 있을 경우 -->
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import PcLnb from "@/components/v2/common/PcLnb";
-import MyInfoMenu from "@/components/v2/common/MyInfoMenu";
-import CardGroup from "@/components/v2/common/CardGroupRoaming";
-import ShortcutMenu from "@/components/v2/common/ShortcutMenu.vue";
+<script setup lang="ts">
+import PcLnb from "@/components/v2/common/PcLnb.vue";
+import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
+import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
+import Popup from "@/components/v2/common/Popup.vue";
+import ALMY05001P01 from "@/components/popup/AL-MY-05-001-P01.vue";
+
+interface CardItem {
+  name: string;
+  value: string;
+  description?: string;
+  nameDesc?: string;
+  class?: {
+    list?: string;
+    title?: string;
+    value?: string;
+  };
+}
+
+const route = useRoute();
+const popupQuery = ref(route.query.popup);
+const popupOpen = ref(true);
 
 // 헤더 정보
 const layout = ref({
@@ -95,22 +118,36 @@ const tabData = ref([
   },
 ]);
 
-// 가입 정보 목업 데이터
-const cardObject = ref([
+// 목업 데이터
+const cardObject_1 = ref([
   {
-    title: "요금제 정보",
+    title: "부가서비스 정보",
+    sub: "(유료 1개, 무료 2개)",
+    chip: "변경",
+    url: "",
+    list: [
+      { name: "요금제", value: "[빽다방 100잔] 평생 할인…." },
+      { name: "할부 기기", value: "iPhone15 Pro Max_1TB", description: "(ULK-A3106-1TB)" },
+      { name: "파트너사", value: `<a href="/" class="link-txt-1">에스원안심모바일</a>` },
+    ],
+  },
+]);
+
+// 가입 정보 목업 데이터
+const cardObject_2 = ref([
+  {
+    title: "단말 정보",
+    sub: "",
+    chip: "휴대폰 등록",
+    url: "https://www.naver.com",
+    list: [{ name: "고객명", value: "김*닷" }],
+  },
+  {
+    title: `<a href="/" class="link-txt-1">결합 정보</a>`,
     sub: "",
     chip: "",
     url: "",
-    list: [
-      { name: "요금제", value: "[빽다방 100잔] 평생 할인… " },
-      { name: "가입일", value: "2023. 11. 29" },
-      { name: "제공 데이터", value: "500GB" },
-      { name: "추가 제공 데이터", value: "10GB" },
-      { name: "제공 음성", value: "기본 제공" },
-      { name: "제공 문자", value: "기본 제공" },
-      { name: "파트너사", value: `<a href="/" class="link-txt-1">에스원안심모바일</a>` },
-    ],
+    list: [{ name: "가입 서비스명", value: "인터넷/IPTV/모바일" }],
   },
 ]);
 
@@ -123,7 +160,9 @@ const dataSelectList = ref([
 
 const current = ref("current");
 
-const linksArray = [{ title: "선불 요금제 잔액 충전", link: "/" }];
+const onClickHandler = (val?: string | number) => {
+  console.log(val);
+};
 
 onMounted(() => {
   emit("setLayout", layout);

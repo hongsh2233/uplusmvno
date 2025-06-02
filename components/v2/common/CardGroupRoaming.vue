@@ -55,10 +55,50 @@
         </ul>
       </div>
     </div>
+    <!-- 청구/납부 변경 팝업 -->
+    <Popup
+      v-if="dataSelectList"
+      title="청구/납부정보 변경"
+      :isOpen="isOpen"
+      @update:isOpen="isOpen = $event"
+      :isPopFooter="isPopFooter"
+    >
+      <template v-if="!isPopCustom">
+        <ul class="select-list" role="listbox">
+          <li role="none" :class="{ on: data.selected }" v-for="(data, i) in dataSelectList" :key="i">
+            <NuxtLink v-if="data.url" role="option" :to="data.url">
+              {{ data.name }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </template>
+      <template v-else>
+        <slot></slot>
+      </template>
+    </Popup>
+    <!-- // 청구/납부 변경 팝업 -->
   </div>
 </template>
 
 <script setup lang="ts">
+interface CardItem {
+  name: string;
+  value: string;
+  description?: string;
+  nameDesc?: string;
+  class?: {
+    list?: string;
+    title?: string;
+    value?: string;
+  };
+}
+
+// 슬롯 타입 선언
+const slots = defineSlots<{
+  default(props: { item?: CardItem }): any;
+  name?(props: { item: CardItem }): any;
+}>();
+
 /**
  * Props Options
  *
