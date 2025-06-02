@@ -316,19 +316,24 @@
             text-align: center;
           }
           .info-group-3 {
-            margin-top: rem(24);
+            margin-top: rem(40);
             padding-top: rem(24);
             border-top: 1px solid var(--gray-800);
             .detail {
               display: table;
               width: 100%;
-              margin: rem(-4) 0;
               &-item {
                 display: table-row;
                 .info-title,
                 .info-val {
                   display: table-cell;
-                  padding: rem(8) 0;
+                }
+
+                &:not(:first-child) {
+                  .info-title,
+                  .info-val {
+                    padding-top: rem(8);
+                  }
                 }
                 .info-title {
                   width: rem(117);
@@ -1109,22 +1114,28 @@
       gap: 0 rem(17);
       flex-wrap: wrap;
       min-height: rem(48);
-      .detail-item {
+      > .detail-item {
         position: relative;
-        &::before {
-          margin-right: rem(4);
-        }
         &:not(:last-child) {
-          &::after {
-            content: "";
-            right: rem(-10);
+          &::before {
             top: rem(6);
-            position: absolute;
-            width: rem(1);
+            right: rem(-9);
             height: rem(12);
-            background-color: #d9d9d9;
           }
         }
+        // &:not(:last-child) {
+        //   &::after {
+        //     content: "";
+        //     right: rem(-10);
+        //     top: rem(6);
+        //     position: absolute;
+        //     width: rem(1);
+        //     height: rem(12);
+        //     background-color: #d9d9d9;
+        //   }
+        // }
+        // &::before {
+        // }
       }
       .info-val {
         font-size: rem(14);
@@ -1225,6 +1236,9 @@
           }
         }
         .form-box {
+          &.mt_24 {
+            margin-top: rem(24);
+          }
           .text_info {
             padding-left: 2.2rem;
             color: var(--gray-200);
@@ -1268,8 +1282,6 @@
   .pop_wrap {
     .pc & {
       .pop_content {
-        padding: 0;
-
         .first-content-item {
           margin: 0;
 
@@ -1403,7 +1415,7 @@
     margin-top: rem(8);
   }
 
-  @include generate-mgt((8, 16, 32, 40, 56, 60, 64));
+  @include generate-mgt((8, 16, 24, 32, 40, 56, 60, 64));
   @include generate-pdxy((0, 8, 16, 32, 40, 56, 60, 64));
   @include generate-mgxy((0, 8, 16, 32, 40, 56, 60, 64));
 
