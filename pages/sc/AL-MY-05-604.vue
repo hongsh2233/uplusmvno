@@ -19,7 +19,7 @@
             <!-- section -->
             <div class="content-item">
               <div class="content-inner">
-                <Tab :titles="['가입사실 확인', '통화내역', '납부내역 확인']">
+                <Tab :titles="['가입사실 확인', '통화내역', '납부내역 확인']" :active-tab-index="1">
                   <!-- 통화내역 -->
                   <template #content2>
                     <div class="cont-head title-main">
@@ -173,6 +173,7 @@
                       :isOpen="popupQuery === '1' && popupOpen"
                       @update:isOpen="popupOpen = false"
                       :popType="'alert-gray'"
+                      class="pcpopup"
                     >
                       <div class="contents-wrap ty02">
                         <p class="tit">증명서 발급을 위한 개인정보 수집/이용 동의</p>
@@ -282,6 +283,7 @@ const radioData2 = ref([
 ]);
 
 const radioIdx = ref();
+const radioIdx2 = ref();
 const validationMocup = ref(false);
 
 //팝업 목업
@@ -290,8 +292,11 @@ const popState = ref({
   datepickerend: false,
 });
 
-const handlePopup = (popName, val) => {
-  popState.value[popName] = val;
+const handlePopup = (popName: string, val: boolean) => {
+  popState.value = {
+    ...popState.value,
+    [popName]: val,
+  };
 };
 
 const popupOpen = ref(true);

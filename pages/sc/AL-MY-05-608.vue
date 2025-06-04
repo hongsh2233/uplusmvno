@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import ALMY05608P01 from "@/components/popup/AL-MY-05-608-P01";
+import ALMY05608P01 from "@/components/popup/AL-MY-05-608-P01.vue";
 
 import { useRouter } from "vue-router";
 

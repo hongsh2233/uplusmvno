@@ -14,6 +14,7 @@
 import ALMY05602P01 from "@/components/popup/AL-MY-05-602-P01.vue";
 
 import { useRouter } from "vue-router";
+const router = useRouter();
 
 const emit = defineEmits<{
   (e: "setLayout", payload: LayoutOptions): void;
