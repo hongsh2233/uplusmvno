@@ -20,22 +20,25 @@
 </template>
 
 <script setup>
+/* 2025-06-04 1749019178 (정C) 선택된 탭버튼 기능으로 props activeTabIndex 추가 */
+const props = defineProps({
+  activeTabIndex: {
+    type: Number,
+    default: 0,
+  },
+  titles: {
+    type: Array,
+    required: true,
+  },
+  tabType: {
+    type: String,
+    default: "normal",
+  },
+});
 
-  const props = defineProps({
-    titles: {
-      type: Array,
-      required: true,
-    },
-    tabType: {
-      type: String,
-      default: 'normal'
-    },
-  });
+const activeTab = ref(props.activeTabIndex);
 
-  const activeTab = ref(0);
-
-  const setActiveTab = (idx) => {
-    activeTab.value = idx;
-  };
+const setActiveTab = (idx) => {
+  activeTab.value = idx;
+};
 </script>
-

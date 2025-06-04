@@ -32,11 +32,12 @@
                 <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
                   <template #content>
                     <div class="mgt0">
+                      <!-- 2025-06-04 1749019178 (정C)  item -> item? 변경  -->
                       <CardGroup :card-object="cardObject2">
                         <template #default="{ item }">
                           <div class="fl-ac">
-                            <p v-html="item.value"></p>
-                            <NuxtLink to="AL-MY-05-005" v-if="item.value === '미등록'" class="btn-rounded chip"
+                            <p v-html="item?.value"></p>
+                            <NuxtLink to="AL-MY-05-005" v-if="item?.value === '미등록'" class="btn-rounded chip"
                               >휴대폰 등록</NuxtLink
                             >
                           </div>

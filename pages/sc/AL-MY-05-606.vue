@@ -19,7 +19,7 @@
             <!-- section -->
             <div class="content-item">
               <div class="content-inner">
-                <Tab :titles="['가입사실 확인', '통화내역', '납부내역 확인']">
+                <Tab :titles="['가입사실 확인', '통화내역', '납부내역 확인']" :active-tab-index="2">
                   <!-- 납부내역 확인서 -->
                   <template #content3>
                     <div class="cont-head title-main">
@@ -112,8 +112,8 @@
                     <div class="inner-section pc_hide">
                       <CardGroup :card-object="cardObject1">
                         <template #default="{ item }">
-                          <p :class="item.class">
-                            {{ item.value }}
+                          <p :class="item?.class">
+                            {{ item?.value }}
                           </p>
                         </template>
                       </CardGroup>

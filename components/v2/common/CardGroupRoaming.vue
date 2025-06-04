@@ -81,6 +81,7 @@
 </template>
 
 <script setup lang="ts">
+//카드 슬롯 타입 선언
 interface CardItem {
   name: string;
   value: string;
@@ -93,10 +94,9 @@ interface CardItem {
   };
 }
 
-// 슬롯 타입 선언
 const slots = defineSlots<{
   default(props: { item?: CardItem }): any;
-  name?(props: { item: CardItem }): any;
+  name(props: { item: CardItem }): any;
 }>();
 
 /**

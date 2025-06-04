@@ -39,11 +39,12 @@
                     </div>
 
                     <!-- 납부내역 확인서 - M -->
+                    <!-- 2025-06-04 1749019178 (정C)  item -> item? 변경  -->
                     <div class="inner-section">
                       <CardGroup :card-object="cardObject1">
                         <template #default="{ item }">
-                          <p :class="item.class">
-                            {{ item.value }}
+                          <p :class="item?.class">
+                            {{ item?.value }}
                           </p>
                         </template>
                       </CardGroup>
@@ -212,7 +213,7 @@ const emit = defineEmits<{
 
 const layout = reactive<LayoutOptions>({
   header: "sub",
-  footer: front.isMobile() ? "none" : "",
+  footer: front.isMobile() ? "non e" : "",
   floatMenu: "none",
   title: "증명서 발급 신청",
   wrapClass: "selfcare roaming",
@@ -252,8 +253,11 @@ const popState = ref({
   datepickerend: false,
 });
 
-const handlePopup = (popName, val) => {
-  popState.value[popName] = val;
+const handlePopup = (popName: string, val: boolean) => {
+  popState.value = {
+    ...popState.value,
+    [popName]: val,
+  };
 };
 const clickConfirm = () => {
   console.log("확인");

@@ -26,7 +26,8 @@
                   </h3>
                   <div class="roaming-status-ready">해외 로밍 시작 전이에요</div>
                 </div>
-                <CardGroup :card-object="cardObject1" :dataSelectList="dataSelectList" @onClickChip="onClickHandler" />
+                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
+                <CardGroup :card-object="cardObject1" @onClickChip="onClickHandler" />
               </div>
             </div>
             <!-- 이용 중인 로밍 요금이 없을 경우 -->
@@ -115,7 +116,8 @@
                 <div class="cont-head">
                   <h3 class="cont-title">상세 내역</h3>
                 </div>
-                <CardGroup :card-object="cardObject2" :dataSelectList="dataSelectList" @onClickChip="onClickHandler" />
+                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
+                <CardGroup :card-object="cardObject2" @onClickChip="onClickHandler" />
               </div>
             </div>
             <!-- //현재까지 사용하신 로밍 요금은 -->
@@ -127,12 +129,8 @@
                   <h3 class="cont-title-main">이용 중인 부가서비스</h3>
                 </div>
                 <!-- 청구 정보-->
-                <CardGroup
-                  class="card-group-type-line"
-                  :card-object="cardObject3"
-                  :dataSelectList="dataSelectList"
-                  @onClickChip="onClickHandler"
-                />
+                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
+                <CardGroup class="card-group-type-line" :card-object="cardObject3" @onClickChip="onClickHandler" />
               </div>
             </div>
 
@@ -227,11 +225,11 @@ const mockupDatas1 = [
 const linksArray = [{ title: "과거 로밍 이용 내역 보러 가기", link: "/" }];
 
 // 청구/납부변경 정보 목업 데이터
-const dataSelectList = ref([
-  { value: 0, name: "납부 방법 변경", url: "/sc/AL-MY-04-002" },
-  { value: 1, name: "결제일 변경", url: "/sc/AL-MY-04-003" },
-  { value: 2, name: "청구서 받는 방법 변경", url: "/sc/AL-MY-03-004" },
-]);
+// const dataSelectList = ref([
+//   { value: 0, name: "납부 방법 변경", url: "/sc/AL-MY-04-002" },
+//   { value: 1, name: "결제일 변경", url: "/sc/AL-MY-04-003" },
+//   { value: 2, name: "청구서 받는 방법 변경", url: "/sc/AL-MY-03-004" },
+// ]);
 
 // 청구 정보 목업 데이터
 const cardObject = ref([

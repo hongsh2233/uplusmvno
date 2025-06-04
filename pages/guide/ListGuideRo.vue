@@ -237,6 +237,8 @@
               <div class="inner-contents-box">
                 <h2 class="title-h2"><span>5-1. 서브 페이지</span></h2>
 
+                <MDC :value="page_sub_basic_1" class="pub-md-wrap" />
+
                 <h2 class="title-h2"><span>5-2. 완료 페이지</span></h2>
 
                 <h3 class="title-h3">
@@ -274,6 +276,7 @@ import type { LayoutOptions } from "@/types/layout";
 import Iframe from "@/pages/guide/sample/components/Iframe.vue";
 import AlertV2 from "@/components/v2/common/AlertV2.vue";
 import {
+  page_sub_basic_1,
   page_popup_mobile,
   foundation_color_1,
   result_tabmenu_1,
