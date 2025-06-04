@@ -199,25 +199,51 @@
                       }
                       
                       .section-monthlyaldot.visual .btn1 {
+                        top: 46.99%;
+                        left: 19.24%;
+                        width: 22.86%;
+                        height: 2.98%;
+                      }
+                      .section-monthlyaldot.visual .btn2 {
+                        top: 43.79%;
+                        left: 65.63%;
+                        width: 22.86%;
+                        height: 2.84%;
+                      }
+                      .section-monthlyaldot.visual .btn3 {
+                        top: 62.67%;
+                        left: 65.63%;
+                        width: 22.53%;
+                        height: 2.77%;
+                      }
+
+                      .section-monthlyaldot.visual .btn4 {
+                        top: 88.93%;
+                        left: 36.51%;
+                        width: 26.64%;
+                        height: 3.19%;
+                      }
+                      
+                      .pc .section-monthlyaldot.visual .btn1 {
                         top: 47.99%;
                         left: 22.86%;
                         width: 18.75%;
                         height: 2.61%;
                       }
-                      .section-monthlyaldot.visual .btn2 {
+                      .pc .section-monthlyaldot.visual .btn2 {
                         top: 43.91%;
                         left: 67.43%;
                         width: 18.75%;
                         height: 2.70%;
                       }
-                      .section-monthlyaldot.visual .btn3 {
+                      .pc .section-monthlyaldot.visual .btn3 {
                         top: 61.99%;
                         left: 67.11%;
                         width: 19.08%;
                         height: 2.61%;
                       }
 
-                      .section-monthlyaldot.visual .btn4 {
+                      .pc .section-monthlyaldot.visual .btn4 {
                         top: 88.33%;
                         left: 37.83%;
                         width: 24.01%;
@@ -447,7 +473,7 @@
                     <div class="event-cont-monthlyaldot">
                       <div class="section-monthlyaldot visual">
                         <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/5/29/monthlyevent_june2025_visual.jpg" alt="" class="pc_show">
-                        <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/5/29/monthlyevent_june2025_visual.jpg" alt="" class="pc_hide">
+                        <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/5/29/monthlyevent_june2025_visual_m.jpg" alt="" class="pc_hide">
                         <button class="btn1" onclick="handleAnchor('section-1')"  data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭1 알닷 only 이벤트 보러가기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭1 알닷 only 이벤트 보러가기" ></button>
                         <button class="btn2" onclick="handleAnchor('section-8')"  data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭2  친구 추천 이벤트 보러가기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭2 친구추천 이벤트 보러가기" ></button>
                         <button class="btn3" onclick="handleAnchor('section-7')"  data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 탭3 인터넷 결합 이벤트 보러가기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="탭3 인터넷결합 이벤트 보러가기" ></button>
@@ -468,7 +494,7 @@
                         <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/5/29/monthlyevent_june2025_content3.jpg" alt="" class="pc_show">
                         <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/5/29/monthlyevent_june2025_content3_m.jpg" alt="" class="pc_hide">
                         <button class="btn1" onclick="handleAnchor('section-6')" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 :이용약관 선택동의 설정 방법 확인하기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="이용약관 선택동의 설정 방법 확인하기" ></button>
-                        <button class="btn2" onclick="handleAnchor('section-2')" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 단기 할인 요금제 더보기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="단기 할인 요금제 더보기" ></button>
+                        <button class="btn2" onclick="handleAnchor('notice')" data-gtm-event-name="button_click" data-gtm-event-category="클릭" data-gtm-event-action="이벤트 상세 - 버튼 클릭" data-gtm-event-label="컨텐츠 : 단기 할인 요금제 더보기" data-gtm-click-location="이벤트 상세" data-gtm-click-text="단기 할인 요금제 더보기" ></button>
                       </div>
                       <div class="section-monthlyaldot section-4">
                         <img src="https://api.uplusmvno.com/umah/fo/s3/getImage?filename=2025/5/29/monthlyevent_june2025_content4.jpg" alt="" class="pc_show">
@@ -614,10 +640,11 @@
 
                         if (linkSection) {
                           let topOffset = 0;
+
+                          const absoluteTop = linkSection.getBoundingClientRect().top + window.scrollY
                           num === "notice"
-                            ? (topOffset =
-                              linkSection.offsetTop - header.clientHeight + lastHeight)
-                            : (topOffset = linkSection.offsetTop - header.clientHeight);
+                            ? (topOffset = absoluteTop - header.clientHeight + lastHeight)
+                            : (topOffset = absoluteTop - header.clientHeight);
                           window.scrollTo({ top: topOffset, behavior: "smooth" });
                         }
                       }
