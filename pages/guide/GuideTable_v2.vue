@@ -92,9 +92,14 @@
                 <ul>
                   <li v-for="(obj, index) in item[key]" :key="obj.id">
                     <p v-if="obj.id === '0'">
-                      <NuxtLink :to="obj.url" target="_blank">
+                      <template v-if="item[key][0] && item[key][0].noLink">
                         {{ item[key][0].url }}
-                      </NuxtLink>
+                      </template>
+                      <template v-else>
+                        <NuxtLink :to="obj.url" target="_blank">
+                          {{ item[key][0].url }}
+                        </NuxtLink>
+                      </template>
                     </p>
                     <p v-else-if="obj.type === 2">
                       <span class="popup-title">{{ obj.name }}</span>
@@ -190,6 +195,7 @@ interface Path {
   name: string;
   url?: string;
   type?: string | number;
+  noLink?: boolean;
 }
 interface Item {
   [key: string]: string | number | null | Path[];
