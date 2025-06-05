@@ -176,6 +176,24 @@
               </div>
               <!-- //T03C04P002 : 이메일 -->
 
+              <!-- T11C04P006 : 셀렉트박스 -->
+              <div class="form-box">
+                <div class="title-area">
+                  <strong class="title">셀렉트박스제목</strong>
+                </div>
+                <InputForm
+                  class="combobox-bottom"
+                  :option="{
+                    placeholder: '선택해 주세요',
+                    // value: '리스트1',
+                    readonly: true,
+                    action: 'dropdown',
+                  }"
+                  @click="handleNumberSel"
+                />
+              </div>
+              <!-- T11C04P006 : 셀렉트박스 -->
+
               <!-- T04P003 : 개인정보 수집 · 이용 동의 -->
               <div class="inner-section">
                 <div class="check-txt check_st">
@@ -298,6 +316,17 @@
           <ALMY05001P01 />
         </Popup>
         <!-- //P005 : 기본 팝업 -->
+
+        <!-- P006 : 셀렉트박스 popup -->
+        <Popup
+          title="휴대폰 번호 선택"
+          :isOpen="selectBoxOpen1"
+          @update:isOpen="selectBoxOpen1 = $event"
+          @confirm="clickSelectBoxConfirm"
+        >
+          <PopupListItem v-model="selectedTab" :ListItemData="selectList" @select="clickSelectListItem" />
+        </Popup>
+        <!-- //P006 : 셀렉트박스 popup -->
       </div>
     </div>
   </div>
@@ -483,6 +512,25 @@ const clickConfirm2 = () => {
   console.log("개인정보 확인");
 };
 // E: JS-T04 : 개인정보 수집/이용동의
+
+// S: JS-T11 : 셀렉트박스
+const selectedTab = ref(0);
+const selectList = ref([
+  { selected: true, value: 0, name: "리스트1" },
+  { selected: false, value: 1, name: "리스트2" },
+  { selected: false, value: 2, name: "리스트3" },
+  { selected: false, value: 3, name: "리스트4" },
+]);
+
+const selectBoxOpen1 = ref(false);
+const handleNumberSel = () => {
+  selectBoxOpen1.value = true;
+};
+
+const clickSelectBoxConfirm = () => {
+  console.log("셀렉트박스 확인");
+};
+// S: JS-T11 : 셀렉트박스
 
 onMounted(() => {
   // JS-T03 (1-2) : 이메일 선택자 중 selected될 요소에 [index]를 반환 합니다.
