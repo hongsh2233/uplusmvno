@@ -342,6 +342,29 @@
   overflow: hidden !important;
 }
 
+@mixin generate-fs($fzs) {
+  @each $fz in $fzs {
+    .fz#{$fz} {
+      font-size: rem($fz) !important;
+    }
+
+    .pc & {
+      .fz#{$fz} {
+        &-pc {
+          font-size: rem($fz) !important;
+        }
+      }
+    }
+    .mobile & {
+      .fz#{$fz} {
+        &-mobile {
+          font-size: rem($fz) !important;
+        }
+      }
+    }
+  }
+}
+
 @mixin generate-mgt($margins) {
   @each $margin in $margins {
     .mgt#{$margin} {
@@ -708,5 +731,19 @@
         }
       }
     }
+  }
+}
+
+@mixin util_sass {
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
+  .ta-l {
+    text-align: left !important;
+  }
+
+  .hr-line {
+    border: none;
+    border-top: 1px solid var(--gray-700);
   }
 }

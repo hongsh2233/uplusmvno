@@ -1416,6 +1416,8 @@
     margin-top: rem(8);
   }
 
+  @include generate-fs((10, 14, 16, 18, 20, 22, 24));
+
   @include generate-mgt((8, 16, 24, 32, 40, 56, 60, 64));
   @include generate-pdxy((0, 8, 16, 32, 40, 56, 60, 64));
   @include generate-mgxy((0, 8, 16, 32, 40, 56, 60, 64));
@@ -1949,17 +1951,11 @@
       }
     }
   }
-  .hr-line {
-    border: none;
-    border-top: 1px solid var(--gray-700);
-  }
+
   @include result-message;
   @include tabmenu;
   @include btnBgColor;
-
-  .ta-l {
-    text-align: left !important;
-  }
+  @include util_sass;
 }
 // E: 로밍 전체 공통
 

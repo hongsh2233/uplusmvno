@@ -8,7 +8,7 @@
       </div>
 
       <p class="icon">
-        <img src="/images/roaming/sc/Img-changenumber-complete.png" alt="" />
+        <img src="/images/roaming/sc/img-changenumber-complete.png" alt="" />
       </p>
 
       <div class="content-item">
