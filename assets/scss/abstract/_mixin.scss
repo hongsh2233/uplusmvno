@@ -733,3 +733,17 @@
     }
   }
 }
+
+@mixin util_sass {
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
+  .ta-l {
+    text-align: left !important;
+  }
+
+  .hr-line {
+    border: none;
+    border-top: 1px solid var(--gray-700);
+  }
+}

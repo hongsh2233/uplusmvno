@@ -124,6 +124,7 @@
                     </div>
 
                     <!-- 청구 정보-->
+                    <!-- 2025-06-05 1749095426 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                     <CardGroup :card-object="cardObject2" @onClickChip="handleClickChip" />
 
                     <div class="btn-area" v-if="front.isMobile()">

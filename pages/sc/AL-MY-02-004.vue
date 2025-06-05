@@ -28,6 +28,7 @@
                 </div>
                 <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                 <CardGroup :card-object="cardObject1" @onClickChip="onClickHandler" />
+                <!-- 2025-06-05 1749095426 (정C) 과거 로밍 이용 내역 보기 버튼추가 -->
                 <div class="btn-area btn-space mgb0">
                   <button type="button" class="btn-rounded" :class="[!isMobile && 'btn-sm']">
                     과거 로밍 이용 내역 보기
@@ -44,8 +45,13 @@
                     로밍 요금제에요
                   </h3>
                 </div>
+                <!-- 2025-06-05 1749095426 (정C) 
+                 1. 이용 중인 로밍 요금제가 없어요 변경
+                 2. 과거 로밍 이용 내역 보기 버튼추가
+                 3. 속성 클래스(btn-space mgb0 flex-reverse, :class="[!isMobile && 'btn-sm']") 추가
+                 -->
                 <MessageResult :description="'이용 중인 로밍 요금제가 없어요'" />
-                <div class="btn-area join-btn-wrap">
+                <div class="btn-area btn-space mgb0 join-btn-wr flex-reverse">
                   <button type="button" class="btn-rounded btn-line" :class="[!isMobile && 'btn-sm']">
                     로밍 부가서비스 가입하기
                   </button>
@@ -133,10 +139,15 @@
             <!-- //현재까지 사용하신 로밍 요금은 -->
 
             <!-- 이용 중인 부가서비스 -->
+            <!-- 2025-06-05 1749095426 (정C) 
+             1. 문구 변경 및 줄바꿈 태그 추가 -->
             <div class="content-item">
               <div class="content-inner">
                 <div class="cont-head title-main">
-                  <h3 class="cont-title-main">이용 중인 부가서비스</h3>
+                  <h3 class="cont-title-main">
+                    이용 중인<br />
+                    로밍 부가서비스에요
+                  </h3>
                 </div>
                 <!-- 청구 정보-->
                 <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
@@ -150,10 +161,15 @@
                 <div class="cont-head title-main">
                   <h3 class="cont-title-main">이용 중인 부가서비스</h3>
                 </div>
+                <!-- 2025-06-05 1749095426 (정C) 
+                 1. 이용 중인 로밍 부가서비스가 없어요 변경
+                 2. 속성 클래스(:class="[!isMobile && 'btn-sm']") 추가
+                 -->
                 <MessageResult :description="'이용 중인 로밍 부가서비스가 없어요'" />
-
                 <div class="btn-area join-btn-wrap">
-                  <button type="button" class="btn-rounded btn-line">로밍 부가서비스 가입하기</button>
+                  <button type="button" class="btn-rounded btn-line" :class="[!isMobile && 'btn-sm']">
+                    로밍 부가서비스 가입하기
+                  </button>
                 </div>
               </div>
             </div>

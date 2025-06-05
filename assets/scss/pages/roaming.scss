@@ -1951,17 +1951,11 @@
       }
     }
   }
-  .hr-line {
-    border: none;
-    border-top: 1px solid var(--gray-700);
-  }
+
   @include result-message;
   @include tabmenu;
   @include btnBgColor;
-
-  .ta-l {
-    text-align: left !important;
-  }
+  @include util_sass;
 }
 // E: 로밍 전체 공통
 
