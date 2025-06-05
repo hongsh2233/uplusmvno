@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-05-301 {
+  .gray-notice-box {
+    padding: rem(24);
+    .txt {
+      margin-top: rem(20);
+      margin-bottom: rem(20);
+      @include Pg_Sm_s14_lh20;
+      color: #66707a;
+
+      span {
+        color: #e34140;
+      }
+    }
+  }
+
+  .mobile & {
+    .gray-notice-box {
+      padding: rem(16);
+      .txt {
+        margin-top: rem(12);
+        margin-bottom: rem(16);
+      }
+    }
+  }
+}

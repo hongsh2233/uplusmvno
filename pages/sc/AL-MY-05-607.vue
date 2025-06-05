@@ -214,7 +214,7 @@ const emit = defineEmits<{
 
 const layout = reactive<LayoutOptions>({
   header: "sub",
-  footer: front.isMobile() ? "non e" : "",
+  footer: front.isMobile() ? "none" : "",
   floatMenu: "none",
   title: "증명서 발급 신청",
   wrapClass: "selfcare roaming",
