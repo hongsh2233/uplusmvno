@@ -124,11 +124,7 @@
                     </div>
 
                     <!-- 청구 정보-->
-                    <CardGroup
-                      :card-object="cardObject2"
-                      :dataSelectList="dataSelectList"
-                      @onClickChip="handleClickChip"
-                    />
+                    <CardGroup :card-object="cardObject2" @onClickChip="handleClickChip" />
 
                     <div class="btn-area" v-if="front.isMobile()">
                       <button type="button" class="btn-rounded">

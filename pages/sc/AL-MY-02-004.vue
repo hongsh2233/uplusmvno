@@ -21,13 +21,18 @@
               <div class="content-inner">
                 <div class="cont-head title-main">
                   <h3 class="cont-title-main">
-                    <b class="txt-primary">이용</b> 중인<br class="mobile_hide" />
+                    <b class="txt-primary">이용</b> 중인<br />
                     로밍 요금제에요
                   </h3>
                   <div class="roaming-status-ready">해외 로밍 시작 전이에요</div>
                 </div>
                 <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                 <CardGroup :card-object="cardObject1" @onClickChip="onClickHandler" />
+                <div class="btn-area btn-space mgb0">
+                  <button type="button" class="btn-rounded" :class="[!isMobile && 'btn-sm']">
+                    과거 로밍 이용 내역 보기
+                  </button>
+                </div>
               </div>
             </div>
             <!-- 이용 중인 로밍 요금이 없을 경우 -->
@@ -35,13 +40,18 @@
               <div class="content-inner">
                 <div class="cont-head title-main">
                   <h3 class="cont-title-main">
-                    <b class="txt-primary">이용</b> 중인<br class="mobile_hide" />
+                    <b class="txt-primary">이용</b> 중인<br />
                     로밍 요금제에요
                   </h3>
                 </div>
                 <MessageResult :description="'이용 중인 로밍 요금제가 없어요'" />
                 <div class="btn-area join-btn-wrap">
-                  <button type="button" class="btn-rounded btn-line">로밍 부가서비스 가입하기</button>
+                  <button type="button" class="btn-rounded btn-line" :class="[!isMobile && 'btn-sm']">
+                    로밍 부가서비스 가입하기
+                  </button>
+                  <button type="button" class="btn-rounded" :class="[!isMobile && 'btn-sm']">
+                    과거 로밍 이용 내역 보기
+                  </button>
                 </div>
               </div>
             </div>
@@ -150,9 +160,7 @@
             <!-- // 이용 중인 부가서비스가 없을 경우 -->
             <!-- //이용 중인 부가서비스 -->
 
-            <!-- 이동 링크 목록 -->
-            <ShortcutMenu :links="linksArray" />
-            <!--// 이동 링크 목록 -->
+            <!-- 2025-06-05 1749095426 (정C) 과거 로밍 이용 내역 보러 가기 삭제 -->
 
             <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
               <template #content>
@@ -178,9 +186,10 @@
 import type { LayoutOptions } from "@/types/layout";
 import PcLnb from "@/components/v2/common/PcLnb.vue";
 import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
-import ShortcutMenu from "@/components/v2/common/ShortcutMenu.vue";
 import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
 import Accodian from "@/components/v2/common/Accodian.vue";
+
+const isMobile = ref(front.isMobile());
 
 const emit = defineEmits<{
   (e: "setLayout", payload: LayoutOptions): void;
@@ -222,16 +231,7 @@ const mockupDatas1 = [
   },
 ];
 
-const linksArray = [{ title: "과거 로밍 이용 내역 보러 가기", link: "/" }];
-
-// 청구/납부변경 정보 목업 데이터
-// const dataSelectList = ref([
-//   { value: 0, name: "납부 방법 변경", url: "/sc/AL-MY-04-002" },
-//   { value: 1, name: "결제일 변경", url: "/sc/AL-MY-04-003" },
-//   { value: 2, name: "청구서 받는 방법 변경", url: "/sc/AL-MY-03-004" },
-// ]);
-
-// 청구 정보 목업 데이터
+// 목업 데이터
 const cardObject = ref([
   {
     title: "로밍패스 8GB",

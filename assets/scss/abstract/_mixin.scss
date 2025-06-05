@@ -342,6 +342,29 @@
   overflow: hidden !important;
 }
 
+@mixin generate-fs($fzs) {
+  @each $fz in $fzs {
+    .fz#{$fz} {
+      font-size: rem($fz) !important;
+    }
+
+    .pc & {
+      .fz#{$fz} {
+        &-pc {
+          font-size: rem($fz) !important;
+        }
+      }
+    }
+    .mobile & {
+      .fz#{$fz} {
+        &-mobile {
+          font-size: rem($fz) !important;
+        }
+      }
+    }
+  }
+}
+
 @mixin generate-mgt($margins) {
   @each $margin in $margins {
     .mgt#{$margin} {
