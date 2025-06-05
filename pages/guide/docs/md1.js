@@ -195,7 +195,7 @@ export const page_sub_basic_1 = `
               </div>
               <!-- //T03C04P002 : 이메일 -->
 
-              <!-- T11C04P006 : 셀렉트박스 -->
+                   <!-- T11C04P006 : 셀렉트박스 -->
               <div class="form-box">
                 <div class="title-area">
                   <strong class="title">셀렉트박스제목</strong>
@@ -208,7 +208,7 @@ export const page_sub_basic_1 = `
                     readonly: true,
                     action: 'dropdown',
                   }"
-                  @click="handleNumberSel"
+                  @click="handleNumberSel_1"
                 />
               </div>
               <!-- T11C04P006 : 셀렉트박스 -->
@@ -338,12 +338,12 @@ export const page_sub_basic_1 = `
 
         <!-- P006 : 셀렉트박스 popup -->
         <Popup
-          title="휴대폰 번호 선택"
+          title="팝업제목"
           :isOpen="selectBoxOpen1"
           @update:isOpen="selectBoxOpen1 = $event"
-          @confirm="clickSelectBoxConfirm"
+          @confirm="clickSelectBoxConfirm_1"
         >
-          <PopupListItem v-model="selectedTab" :ListItemData="selectList" @select="clickSelectListItem" />
+          <PopupListItem v-model="selectedTab" :ListItemData="selectList" @select="clickSelectListItem_1" />
         </Popup>
         <!-- //P006 : 셀렉트박스 popup -->
       </div>
@@ -559,12 +559,16 @@ const selectList = ref([
 ]);
 
 const selectBoxOpen1 = ref(false);
-const handleNumberSel = () => {
+const handleNumberSel_1 = () => {
   selectBoxOpen1.value = true;
 };
 
-const clickSelectBoxConfirm = () => {
+const clickSelectBoxConfirm_1 = () => {
   console.log("셀렉트박스 확인");
+};
+
+const clickSelectListItem_1 = (targetData: any) => {
+  console.log(targetData);
 };
 // S: JS-T11 : 셀렉트박스
 
