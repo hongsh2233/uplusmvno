@@ -569,7 +569,7 @@ export const page_popup_mobile = `
       </div>
 
       <p class="icon">
-        <img src="/images/roaming/sc/Img-changenumber-complete.png" alt="" />
+        <img src="/images/roaming/sc/img-changenumber_reset.png" alt="" />
       </p>
 
       <div class="content-item">
