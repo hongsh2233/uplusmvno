@@ -25,7 +25,6 @@
               </div>
 
               <div class="inner-section">
-                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                 <CardGroup :card-object="[cardObject[0]]">
                   <template #default="{ item }">
                     <div class="fl-ac">
@@ -38,7 +37,6 @@
           </div>
 
           <!-- 정보 -->
-          <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
           <CardGroup :card-object="cardObject.slice(1)" class="subscription-info-second mgt0" />
           <!-- // 정보 -->
         </div>

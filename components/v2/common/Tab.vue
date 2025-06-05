@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-/* 2025-06-04 1749019178 (정C) 선택된 탭버튼 기능으로 props activeTabIndex 추가 */
+/* 2025-06-05 1749095426 (정C) 선택된 탭버튼 기능으로 props activeTabIndex 추가 */
 const props = defineProps({
   activeTabIndex: {
     type: Number,

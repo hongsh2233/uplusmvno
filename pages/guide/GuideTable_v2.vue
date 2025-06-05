@@ -181,7 +181,7 @@
             <span v-html="getModifyInfoDate(String(item[key]))"></span>
           </template>
           <template v-else-if="!Array.isArray(item[key])">
-            <span>{{ item[key] }}</span>
+            <span v-html="item[key]"></span>
           </template>
         </td>
       </tr>
