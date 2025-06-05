@@ -41,11 +41,14 @@
             <div class="content-inner">
               <Tab :titles="['유심으로 변경', 'eSIM으로 변경']" :active-tab-index="1">
                 <!-- 유심으로 변경 -->
-                <template #content1></template>
+                <template #content1>
+                  {{ detectTab(0) }}
+                </template>
                 <!-- // 유심으로 변경 -->
 
                 <!-- eSIM으로 변경 -->
                 <template #content2>
+                  {{ detectTab(1) }}
                   <div class="cont-head title-main">
                     <h3 class="cont-title-main">
                       변경할 <b class="txt-primary">eSIM</b> 정보를<br />
@@ -290,7 +293,7 @@
           <!-- // content-item02 -->
 
           <!-- content-item03 -->
-          <div class="content-item" v-if="radioIdx1 === 0">
+          <div class="content-item" v-if="activeTab === 1 && radioIdx1 === 0">
             <div class="content-inner">
               <Tab :titles="['캡쳐 이미지 등록', '직접 입력']">
                 <template #content1>
@@ -435,6 +438,8 @@ import Popup from "@/components/v2/common/Popup.vue";
 import Accodian from "@/components/v2/common/Accodian.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
 
+import { ref, computed, nextTick } from "vue";
+
 // S: 레이아웃 설정 (1-1)
 const layout = ref({
   header: "sub",
@@ -505,10 +510,24 @@ const radioData3 = ref([
 ]);
 // content-item02
 
+const activeTab = ref();
 const radioIdx1 = ref();
 const radioIdx2 = ref();
 const radioIdx3 = ref();
-const validationMocup = ref(false);
+
+// 탭 감지 함수 (템플릿에서 호출되어 현재 활성 탭 감지)
+const detectTab = (tabIndex: number) => {
+  nextTick(() => {
+    if (activeTab.value !== tabIndex) {
+      console.log("탭 변경 감지:", tabIndex);
+      activeTab.value = tabIndex;
+      if (tabIndex !== 1) {
+        radioIdx1.value = -1;
+      }
+    }
+  });
+  return "";
+};
 
 onMounted(() => {
   // 레이아웃 설정 (1-2)
