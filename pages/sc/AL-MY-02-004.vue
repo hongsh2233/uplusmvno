@@ -26,7 +26,7 @@
                   </h3>
                   <div class="roaming-status-ready">해외 로밍 시작 전이에요</div>
                 </div>
-                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
+                <!-- 2025-06-05 1749095426 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                 <CardGroup :card-object="cardObject1" @onClickChip="onClickHandler" />
                 <!-- 2025-06-05 1749095426 (정C) 과거 로밍 이용 내역 보기 버튼추가 -->
                 <div class="btn-area btn-space mgb0">
@@ -132,7 +132,7 @@
                 <div class="cont-head">
                   <h3 class="cont-title">상세 내역</h3>
                 </div>
-                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
+                <!-- 2025-06-05 1749095426 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                 <CardGroup :card-object="cardObject2" @onClickChip="onClickHandler" />
               </div>
             </div>
@@ -150,7 +150,7 @@
                   </h3>
                 </div>
                 <!-- 청구 정보-->
-                <!-- 2025-06-04 1749019178 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
+                <!-- 2025-06-05 1749095426 (정C)  :dataSelectList="dataSelectList" 속성 삭제 -->
                 <CardGroup class="card-group-type-line" :card-object="cardObject3" @onClickChip="onClickHandler" />
               </div>
             </div>

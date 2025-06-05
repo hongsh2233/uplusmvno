@@ -39,7 +39,6 @@
                     </div>
 
                     <!-- 납부내역 확인서 - M -->
-                    <!-- 2025-06-04 1749019178 (정C)  item -> item? 변경  -->
                     <div class="inner-section">
                       <CardGroup :card-object="cardObject1">
                         <template #default="{ item }">
