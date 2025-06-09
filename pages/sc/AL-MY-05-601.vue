@@ -23,11 +23,16 @@
                   <!-- 가입사실 확인서 -->
                   <template #content1>
                     <div class="cont-head title-main">
-                      <h3 class="cont-title-main">
+                      <h3 class="cont-title-main" v-if="!isMobile">
                         유플러스 알뜰폰 <br class="pc_hide" />
                         <b class="txt-primary">가입내역 제출</b>이 <br class="mobile_hide" />
                         필요한 경우<br class="pc_hide" />
                         사실 확인서 발급하세요
+                      </h3>
+
+                      <h3 class="cont-title-main" v-else>
+                        가입 내역을 제출해야 하는 경우,<br />
+                        <b class="txt-primary">가입 사실 확인서</b> 발급해 주세요
                       </h3>
                     </div>
 
@@ -202,6 +207,8 @@ import ALMY05602P01 from "@/components/popup/AL-MY-05-602-P01.vue";
 const emit = defineEmits<{
   (e: "setLayout", payload: LayoutOptions): void;
 }>();
+
+const isMobile = front.isMobile();
 
 const layout = reactive<LayoutOptions>({
   header: "sub",
