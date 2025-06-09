@@ -640,7 +640,7 @@ export const page_popup_mobile = `
           </div>
 
           <div class="form-box mgt24">
-            <div class="btn-area"><button type="button" class="btn-rounded btn-line">버튼명</button></div>
+            <div class="btn-area"><button type="button" class="btn-rounded btn-line btn-sm">버튼명</button></div>
           </div>
         </div>
       </div>
