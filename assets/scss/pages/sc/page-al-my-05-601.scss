@@ -27,12 +27,13 @@
     .contents-wrap {
       &.ty02 {
         .tit {
-          @include Lb_Lg_s18_lh24;
+          @include Pg_Sm_s14_lh20;
+          font-weight: 700;
           margin-bottom: rem(8);
         }
         .policy-wrap {
           li {
-            @include Pg_Md_s16_lh22;
+            @include Pg_Sm_s14_lh20;
             margin-bottom: rem(8);
 
             &:last-child {
