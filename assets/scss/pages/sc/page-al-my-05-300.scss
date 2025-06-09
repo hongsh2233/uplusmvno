@@ -1,7 +1,14 @@
 @charset "UTF-8";
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
-.AL-MY-05-301 {
+.AL-MY-05-300 {
+  .usim-change-img-wrap {
+    text-align: center;
+    img {
+      max-width: rem(300);
+    }
+  }
+
   .gray-notice-box {
     padding: rem(24);
     .txt {

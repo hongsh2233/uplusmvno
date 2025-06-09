@@ -1,6 +1,6 @@
 <template>
   <!-- container -->
-  <div class="container AL-MY-05-301">
+  <div class="container AL-MY-05-300">
     <div class="content" id="content">
       <h2 class="title_nav">{{ layout.title }}</h2>
 
@@ -536,5 +536,5 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@use "@/assets/scss/pages/sc/page-al-my-05-301.scss" as *;
+@use "@/assets/scss/pages/sc/page-al-my-05-300.scss" as *;
 </style>
