@@ -78,7 +78,9 @@
             (key === '화면ID' || key === '시작일' || key === '완료일' || key === '진행상태' || key === '담당자') &&
               'ta-c',
             key === '진행상태' && 'cell-status',
-            key === '화면ID' && 'cell-new',
+            key === '화면ID' && item['구분'] === '신규' && 'cell-new',
+            key === '화면ID' && item['구분'] === '개선' && 'cell-renew',
+            key === '구분' && 'cell-gubun',
           ]"
         >
           <template v-if="key === 'PATH' && item[key] && item['진행상태'] !== '진행전'">

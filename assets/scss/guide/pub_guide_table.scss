@@ -139,6 +139,10 @@ $color-rework: #ffe5f2;
       &.th-path {
         width: 220px;
       }
+      &.th-new {
+        white-space: nowrap;
+        // display: none;
+      }
       &.th-etc {
         width: 220px;
       }
@@ -160,6 +164,23 @@ $color-rework: #ffe5f2;
           margin-top: rem(4);
         }
       }
+    }
+  }
+  td {
+    &.cell-new {
+      span {
+        color: #000000;
+        font-weight: 600;
+      }
+    }
+    &.cell-renew {
+      span {
+        color: #865bb6;
+        font-weight: 600;
+      }
+    }
+    &.cell-gubun {
+      font-size: rem(10);
     }
   }
   td,
