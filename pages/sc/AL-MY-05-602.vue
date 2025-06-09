@@ -24,7 +24,7 @@ const layout = reactive<LayoutOptions>({
   header: "sub",
   footer: front.isMobile() ? "none" : "",
   floatMenu: "none",
-  title: "증명서 발급 신청",
+  title: "신청 완료",
   wrapClass: "selfcare roaming",
 });
 

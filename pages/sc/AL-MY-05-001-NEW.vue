@@ -147,12 +147,9 @@ const cardObject = ref([
   {
     title: "단말 정보",
     sub: "",
-    chip: "휴대폰 등록",
+    chip: "휴대폰 재등록",
     url: "https://www.naver.com",
     list: [
-      { name: "고객명", value: "김*닷" },
-      { name: "가입일", value: "2004.06.30" },
-      { name: "가입 대리점", value: "온라인 직영점" },
       { name: "등록 기기명", value: "LGU-OMPHONE2" },
       { name: "상태", value: "정상" },
     ],

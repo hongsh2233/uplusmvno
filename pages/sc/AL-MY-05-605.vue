@@ -13,9 +13,6 @@
 <script setup lang="ts">
 import ALMY05605P01 from "@/components/popup/AL-MY-05-605-P01.vue";
 
-import { useRouter } from "vue-router";
-const router = useRouter();
-
 const emit = defineEmits<{
   (e: "setLayout", payload: LayoutOptions): void;
 }>();
@@ -24,15 +21,11 @@ const layout = reactive<LayoutOptions>({
   header: "sub",
   footer: front.isMobile() ? "none" : "",
   floatMenu: "none",
-  title: "증명서 발급 신청",
+  title: "신청 완료",
   wrapClass: "selfcare roaming",
 });
 
 onMounted(() => {
-  if (front.isMobile()) {
-    emit("setLayout", layout);
-  } else {
-    router.push("/sc/AL-MY-05-605");
-  }
+  emit("setLayout", layout);
 });
 </script>

@@ -129,6 +129,7 @@
       .pc & {
         .content-item__wrap {
           + .notice-txt {
+            font-size: rem(14);
             margin-top: rem(32);
           }
         }
@@ -532,9 +533,9 @@
   }
 
   .bottom_float {
-    > .inner {
-      z-index: 12;
-    }
+    // > .inner {
+    //   z-index: 12;
+    // }
     .join_info {
       .info-1 {
         .price-number {
@@ -1578,6 +1579,13 @@
 
   // S: 탭메뉴
   .content-tabs {
+    // &.normal {
+    //   .pc & {
+    //     .tab-title-wrap {
+    //       margin-bottom: rem(32);
+    //     }
+    //   }
+    // }
     &.type-outline {
       .tab-title-wrap {
         padding: 0;

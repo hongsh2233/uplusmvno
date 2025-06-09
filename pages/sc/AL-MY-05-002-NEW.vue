@@ -25,7 +25,7 @@
               </div>
 
               <div class="inner-section">
-                <CardGroup :card-object="[cardObject[0]]" :dataSelectList="dataSelectList">
+                <CardGroup :card-object="[cardObject[0]]">
                   <template #default="{ item }">
                     <div class="fl-ac">
                       <p v-html="item.value"></p>
@@ -37,11 +37,7 @@
           </div>
 
           <!-- 정보 -->
-          <CardGroup
-            :card-object="cardObject.slice(1)"
-            :dataSelectList="dataSelectList"
-            class="subscription-info-second mgt0"
-          />
+          <CardGroup :card-object="cardObject.slice(1)" class="subscription-info-second mgt0" />
           <!-- // 정보 -->
 
           <!-- 이동 링크 목록 -->
@@ -103,12 +99,11 @@ const cardObject = ref([
     chip: "",
     url: "",
     list: [
-      { name: "요금제", value: "[빽다방 100잔] 평생 할인… " },
+      { name: "요금제", value: "[모빙 선불 LTE 300M... " },
       { name: "가입일", value: "2023. 11. 29" },
-      { name: "제공 데이터", value: "500GB" },
-      { name: "추가 제공 데이터", value: "10GB" },
-      { name: "제공 음성", value: "기본 제공" },
-      { name: "제공 문자", value: "기본 제공" },
+      { name: "이용 기간", value: "2023. 11. 29 ~ 2023. 12. 29" },
+      { name: "상태", value: "정상" },
+      { name: "충전 잔액", value: "28,000원" },
       { name: "파트너사", value: `<a href="/" class="link-txt-1">에스원안심모바일</a>` },
     ],
   },

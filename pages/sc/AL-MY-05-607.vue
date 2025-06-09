@@ -27,7 +27,7 @@
                         <b class="txt-primary">납부 내역</b> 열람을 위해<br />
                         아래의 신청서를 작성해 주세요
                       </h3>
-                      <span class="title-exp">(최근 1년간)</span>
+                      <span class="title-exp mgt4">(최근 2년간)</span>
 
                       <ul class="text-list mgt16">
                         <li>

@@ -35,7 +35,7 @@
 
           <div class="form-box mt_24">
             <div class="btn-area">
-              <button type="button" class="btn-rounded btn-line">번호 변경 안내 부가서비스 바로가기</button>
+              <button type="button" class="btn-rounded btn-line btn-sm">번호 변경 안내 부가서비스 바로가기</button>
             </div>
           </div>
         </div>

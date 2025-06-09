@@ -26,7 +26,8 @@
 
         <div class="form-box mt_24">
           <div class="btn-area">
-            <button type="button" class="btn-rounded btn-line">미리보기 · 인쇄하기</button>
+            <button type="button" class="btn-rounded btn-line btn-sm" v-if="isMobile">납부 내역 확인서 다운로드</button>
+            <button type="button" class="btn-rounded btn-line btn-sm" v-else>미리보기 · 인쇄하기</button>
           </div>
         </div>
       </div>
@@ -43,13 +44,14 @@ import BottomFixMenu from "@/components/v2/common/BottomFixMenu";
 
 import { ref, defineEmits } from "vue";
 
+const isMobile = ref(front.isMobile());
+
 // HOOK
 const emit = defineEmits(["openAlert", "closeAlert", "nextStep"]);
 
 // 납부 방법 변경 목업 데이터
 const cardObject1 = ref([
   {
-    title: "신청 정보",
     sub: "",
     chip: "",
     list: [
