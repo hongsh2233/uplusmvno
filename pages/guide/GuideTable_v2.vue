@@ -48,6 +48,7 @@
             'th-publisher': key === '담당자',
             'th-status': key === '진행상태',
             'th-path': key === 'PATH',
+            'th-new': key === '구분',
             'th-etc': key === '비고',
           }"
         >
@@ -73,10 +74,14 @@
         <td
           v-for="key in Object.keys(item)"
           :key="key"
-          :class="{
-            'ta-c': key === '화면ID' || key === '시작일' || key === '완료일' || key === '진행상태' || key === '담당자',
-            'cell-status': key === '진행상태',
-          }"
+          :class="[
+            (key === '화면ID' || key === '시작일' || key === '완료일' || key === '진행상태' || key === '담당자') &&
+              'ta-c',
+            key === '진행상태' && 'cell-status',
+            key === '화면ID' && item['구분'] === '신규' && 'cell-new',
+            key === '화면ID' && item['구분'] === '개선' && 'cell-renew',
+            key === '구분' && 'cell-gubun',
+          ]"
         >
           <template v-if="key === 'PATH' && item[key] && item['진행상태'] !== '진행전'">
             <!-- <NuxtLink :to="(item[key] as string)" target="_blank">
