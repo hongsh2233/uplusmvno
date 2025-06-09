@@ -21,7 +21,7 @@
               <strong class="title">희망 번호</strong>
             </div>
             <div class="form_group">
-              <div class="form_item val_chk">
+              <div class="form_item">
                 <InputForm class="combobox-bottom" :option="{ placeholder: `희망 번호 뒤 4자리 입력` }" />
               </div>
             </div>
@@ -40,7 +40,7 @@
           <div class="inner-section">
             <div class="check-txt check_st">
               <input type="checkbox" id="checkbox01_02" name="" />
-              <label for="checkbox01_02">개인정보 수집 · 이용 동의(필수)</label>
+              <label for="checkbox01_02">어떤 번호든 좋습니다.</label>
             </div>
           </div>
         </div>

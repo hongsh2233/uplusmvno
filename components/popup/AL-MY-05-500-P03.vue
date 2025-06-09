@@ -6,7 +6,7 @@
         확인해 주세요
       </h3>
     </div>
-    <div class="outer-section">
+    <div class="list-item-section">
       <div class="inner-section">
         <div class="cont-head"><div class="cont-title">번호 변경 안내</div></div>
         <ol class="text-list circle-num type-vertical text-normal">

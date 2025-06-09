@@ -249,7 +249,12 @@
           <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
             <template #content>
               <ul class="text-list bull">
-                <li>방문한 국가가 확인되지 않으면 고객센터(1234-1234)로 연락해 주세요</li>
+                <li>
+                  방문한 국가가 확인되지 않으면 고객센터(1234-1234)로 연락해 주세요
+                  <p>
+                    <NuxtLink :to="'#'" class="txt-link orange">화살표링크텍스트</NuxtLink>
+                  </p>
+                </li>
               </ul>
             </template>
           </Accodian>

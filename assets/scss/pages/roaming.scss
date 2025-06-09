@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "@/assets/scss/abstract/variable.scss" as *;
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
 :root {
@@ -68,11 +69,11 @@
     + .section {
       padding-top: rem(60);
     }
-    * {
-      + .inner-section {
-        margin-top: rem(60);
-      }
-    }
+    // * {
+    //   + .inner-section {
+    //     margin-top: rem(60);
+    //   }
+    // }
 
     .text-list {
       &.circle-num {
@@ -87,6 +88,14 @@
       }
     }
   }
+  .cont-head {
+    .cont-title-main {
+      + .title-exp {
+        margin-top: rem(16);
+        color: #66707a;
+      }
+    }
+  }
   .content-item {
     .content-inner {
       .inner-section {
@@ -96,7 +105,7 @@
       }
       * {
         + .inner-section {
-          margin-top: rem(40);
+          margin-top: rem($base-inner-section-mgt-mo);
           > * {
             &:first-child {
               margin-top: 0 !important;
@@ -111,28 +120,22 @@
         }
       }
       .mobile & {
-        > .notice-txt {
-          &:nth-last-of-type(1) {
+        .content-item__wrap {
+          + .notice-txt {
             margin-top: rem(24);
           }
         }
       }
       .pc & {
-        > .notice-txt {
-          &:nth-last-of-type(1) {
+        .content-item__wrap {
+          + .notice-txt {
             margin-top: rem(32);
           }
         }
 
         * {
           + .inner-section {
-            margin-top: rem(60);
-            // &.gap-mid {
-            //   margin-top: rem(32);
-            // }
-            // &.gap-sm {
-            //   margin-top: rem(24);
-            // }
+            margin-top: rem($base-inner-section-mgt-pc);
           }
         }
       }
@@ -223,17 +226,17 @@
       margin-bottom: rem(24);
     }
     .mobile & {
-      + .inner-section {
-        margin-top: rem(40);
-      }
+      // + .inner-section {
+      //   margin-top: rem(40);
+      // }
       .title {
         @include mo-lo-title-h3($fs: 16px, $mt: 0, $mb: 12px);
       }
     }
     .pc & {
-      + .inner-section {
-        margin-top: rem(60);
-      }
+      // + .inner-section {
+      //   margin-top: rem(56);
+      // }
       .title {
         @include pc-lo-title-h3($mt: 0, $mb: 24px);
       }
@@ -461,6 +464,7 @@
   .content_info_wrap {
     margin-bottom: 0;
   }
+  @include more-btn;
   .btn {
     &.round {
       &.more_d {
@@ -1952,6 +1956,7 @@
     }
   }
 
+  @include form-ver3;
   @include result-message;
   @include tabmenu;
   @include btnBgColor;
@@ -1969,6 +1974,7 @@
 
 .selfcare {
   &.ver-3 {
+    @include form-ver3;
     @include btnBgColor;
     @include tabmenu;
     @include main-line-checkbox;

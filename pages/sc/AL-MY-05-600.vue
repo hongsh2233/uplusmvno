@@ -46,10 +46,13 @@
                     </li>
                   </ol>
 
-                  <div class="text_info">
+                  <!-- <div class="text_info">
                     고객님의 소중한 정보 보호를 위해<br class="pc_hide" />
                     본인 인증 후 서류 발급 신청이 가능합니다.
-                  </div>
+                  </div> -->
+                  <ul class="text_list bull dark-dot-1">
+                    <li>고객님의 소중한 정보 보호를 위해 본인 인증 후 서류 발급 신청이 가능합니다.</li>
+                  </ul>
                 </div>
               </div>
               <!-- // section -->

@@ -491,8 +491,22 @@
         }
       }
     }
-
+    .contents-wrap {
+      * {
+        + .inner-section {
+          margin-top: rem($base-inner-section-mgt-mo);
+        }
+      }
+      .pc & {
+        * {
+          + .inner-section {
+            margin-top: rem($base-inner-section-mgt-pc);
+          }
+        }
+      }
+    }
     .content-item__wrap {
+      // margin-top: rem(40);
       &.type-inner-popup {
         .mobile & {
           .content-item {
@@ -503,6 +517,7 @@
           }
         }
         .pc & {
+          // margin-top: rem(56);
           .content-item {
             padding: rem(32) 0;
             .content-inner {
@@ -559,8 +574,8 @@
       }
     }
 
-    .outer-section {
-      + .outer-section {
+    .list-item-section {
+      + .list-item-section {
         margin-top: rem(24);
       }
 
@@ -745,5 +760,55 @@
   .hr-line {
     border: none;
     border-top: 1px solid var(--gray-700);
+  }
+}
+
+@mixin form-ver3 {
+  .textarea_box {
+    &.type-count-1 {
+      overflow: visible;
+      padding-bottom: rem(14);
+      .textarea {
+        min-height: rem(80 - 14);
+        padding: rem(14) rem(34) 0 rem(16);
+      }
+      .byte_check {
+        position: absolute;
+        padding: 0;
+        width: auto;
+        left: auto;
+        right: rem(1);
+        bottom: rem(-20);
+        font-size: rem(14);
+      }
+      .btn_del {
+        position: absolute;
+        right: rem(8);
+        top: rem(14);
+        /*display:none;*/
+        width: 2.4rem;
+        height: 2.4rem;
+        background: url(/images/common/ico_del.png) no-repeat center / 2.4rem auto;
+        // transform: translateY(-50%);
+        z-index: 2;
+      }
+    }
+  }
+  .form_group {
+    .mark_div {
+      color: #66707a;
+      font-size: rem(16);
+      .pc & {
+        font-size: rem(18);
+      }
+    }
+  }
+}
+
+@mixin more-btn {
+  .btn_wrap {
+    &.more-btn-1 {
+      margin-top: rem(32);
+    }
   }
 }

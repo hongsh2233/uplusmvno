@@ -9,8 +9,10 @@
         >최근 변경 예약 및 취소, 변경 완료를 모두 포함하여 휴대폰 변경 내역 모두 조회할 수 있어요</span
       >
     </div>
-    <CardGroup :card-object="cardObject1" class="type-inner-popup" />
-    <div class="btn_wrap center">
+    <div class="inner-section">
+      <CardGroup :card-object="cardObject1" class="type-inner-popup" />
+    </div>
+    <div class="btn_wrap center more-btn-1">
       <button type="button" class="btn round more_d">더 볼래요</button>
     </div>
   </div>

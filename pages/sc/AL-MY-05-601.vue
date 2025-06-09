@@ -32,7 +32,7 @@
                     </div>
 
                     <!-- 가입 정보 확인 -->
-                    <div class="inner-section">
+                    <div class="inner-section mgt0">
                       <CardGroup :card-object="cardObject1">
                         <template #default="{ item }">
                           <p :class="item?.class">

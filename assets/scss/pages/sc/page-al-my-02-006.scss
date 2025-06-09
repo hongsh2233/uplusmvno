@@ -48,6 +48,11 @@
         background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
       }
     }
+    .btn-rounded {
+      .pc & {
+        font-size: rem(16);
+      }
+    }
   }
 
   .tab-content {

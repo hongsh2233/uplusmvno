@@ -29,17 +29,32 @@
       }
     }
     .inner-section {
-      .text_info {
-        margin-top: rem(32);
-        padding-left: 2.2rem;
-        color: #66707a;
+      // .text_info {
+      //   margin-top: rem(32);
+      //   // padding-left: 2.2rem;
+      //   // color: #66707a;
 
-        &::before {
-          top: -0.1rem;
-          left: 0;
-          width: 2rem;
-          height: 2rem;
-          background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
+      //   // &::before {
+      //   //   top: -0.1rem;
+      //   //   left: 0;
+      //   //   width: 2rem;
+      //   //   height: 2rem;
+      //   //   background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
+      //   // }
+      // }
+      .text_list {
+        &.dark-dot-1 {
+          margin-top: rem(16);
+          li {
+            font-size: rem(14);
+            &::before {
+              top: rem(9);
+              background: #66707a;
+            }
+          }
+          .mobile & {
+            margin-top: rem(16);
+          }
         }
       }
     }

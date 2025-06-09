@@ -29,7 +29,7 @@
                     <li>유심만 개통한 경우 <strong>휴대폰 등록(확정 기변)</strong> 후 번호 변경을 하실 수 있어요.</li>
                   </ul>
                 </div>
-                <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
+                <Accodian title="번호 변경 정보" :is-expanded="true">
                   <template #content>
                     <div class="mgt0">
                       <CardGroup :card-object="cardObject2">
