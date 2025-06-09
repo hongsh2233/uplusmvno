@@ -64,16 +64,19 @@
   .break-all {
     word-break: break-all;
   }
-  *,
+  div[class*="AL-MS-04"] {
+    .section {
+      * {
+        + .inner-section {
+          margin-top: rem(60);
+        }
+      }
+    }
+  }
   .section {
     + .section {
       padding-top: rem(60);
     }
-    // * {
-    //   + .inner-section {
-    //     margin-top: rem(60);
-    //   }
-    // }
 
     .text-list {
       &.circle-num {
