@@ -30,7 +30,7 @@
                   </ul>
                 </div>
 
-                <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
+                <Accodian title="번호 변경 정보" :is-expanded="true">
                   <template #content>
                     <div class="mgt0">
                       <CardGroup :card-object="cardObject2">
