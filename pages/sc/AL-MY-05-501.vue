@@ -30,7 +30,7 @@
                   </ul>
                 </div>
 
-                <Accodian title="번호 변경 정보" styleClass="acco-gray" :is-expanded="true">
+                <Accodian title="번호 변경 정보" :is-expanded="true">
                   <template #content>
                     <div class="mgt0">
                       <CardGroup :card-object="cardObject2">
@@ -81,7 +81,7 @@
                 </div>
                 <div class="inner-section">
                   <div class="btn-area">
-                    <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line btn-sm"
+                    <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line fz16-pc"
                       >번호 변경 이력 보기</NuxtLink
                     >
                   </div>

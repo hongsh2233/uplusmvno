@@ -32,12 +32,7 @@
               </dl>
 
               <div class="btn-area btn-space">
-                <button
-                  type="button"
-                  class="btn-rounded btn-line"
-                  :disabled="false"
-                  @click="nextPage"
-                >
+                <button type="button" class="btn-rounded btn-line" :disabled="false" @click="nextPage">
                   휴대폰 정보 재등록하기
                 </button>
               </div>
@@ -46,8 +41,8 @@
                 <p class="icon-txt bell">이런 고객님들께 필요한 서비스예요</p>
                 <ul class="text-list bull">
                   <li>
-                    자급제 휴대폰으로 분실/파손보험 가입이 필요한 고객님(휴대폰 정보가 등록된 단말만
-                    분실 접수가 가능해요)
+                    자급제 휴대폰으로 분실/파손보험 가입이 필요한 고객님(휴대폰 정보가 등록된 단말만 분실 접수가
+                    가능해요)
                   </li>
                   <li>번호를 변경하고 싶으신 고객님</li>
                   <li>유심만 개통 후 일부 서비스 이용이 안되시는 고객님</li>
@@ -152,6 +147,15 @@ const nextView = (page, alertView) => {
   pageStep.value = page;
   viewNextPage.value = !alertView;
 };
+
+// S: 쿼리값으로 팝업 열기
+const route = useRoute();
+const popupQuery = ref(route.query.popup);
+if (popupQuery.value == 3) {
+  viewNextPage.value = true;
+  pageStep.value = 3;
+}
+// E: 쿼리값으로 팝업 열기
 
 onMounted(() => {
   emit("setLayout", layout);
