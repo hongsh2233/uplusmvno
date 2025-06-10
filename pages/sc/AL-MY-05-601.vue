@@ -72,36 +72,39 @@
                           readonly: true,
                           action: 'dropdown',
                         }"
+                        @click="handleIssuedPurposeSel"
+                      />
+                    </div>
+
+                    <div class="form-box mgt16" v-if="issuedPurposeSelectedTab === '직접 입력'">
+                      <TextareaBox
+                        :data="{
+                          type: 'ty03',
+                          placeholder: '발급 용도 사유를 입력해 주세요',
+                          rows: 1,
+                          maxlength: 30,
+                          byteCheck: true,
+                        }"
+                        @textareaValue="console.log($event)"
+                        @textareaSubmit="console.log($event)"
+                        class="type-count-1"
                       />
                     </div>
 
                     <!-- 기간 팝업 -->
                     <Popup
                       title="발급 용도 및 제출처"
-                      :isOpen="popupQuery === '1' && popupOpen"
-                      @update:isOpen="popupOpen = false"
+                      :isOpen="issuedPurposeSelectBoxOpen"
+                      @update:isOpen="issuedPurposeSelectBoxOpen = $event"
                       class="pcpopup"
                     >
                       <div class="contents-wrap ty02">
                         <PopupListItem
-                          v-model="selectState.select1"
+                          v-model="issuedPurposeSelectedTab"
                           :ListItemData="dataSelectList"
                           :option="{ multiple: false }"
-                          @select="console.log(selectState.select1)"
+                          @select="console.log(issuedPurposeSelectedTab)"
                         />
-                        <div class="form-box mgt0" v-if="selectState.select1 === 4">
-                          <TextareaBox
-                            :data="{
-                              type: 'ty02',
-                              placeholder: '유심 변경 사유를 입력해 주세요 ',
-                              rows: 1,
-                              maxlength: 30,
-                              byteCheck: true,
-                            }"
-                            @textareaValue="console.log($event)"
-                            @textareaSubmit="console.log($event)"
-                          />
-                        </div>
                       </div>
                     </Popup>
                     <!-- // 기간 팝업 -->
@@ -124,11 +127,29 @@
                           <InputForm
                             class="combobox-bottom"
                             :option="{ placeholder: '이메일 선택', readonly: false, action: 'dropdown' }"
+                            @btnClick="handleEmailSel"
                           />
                         </div>
                         <div class="error">이메일 형식을 확인해주세요</div>
                       </div>
                     </div>
+
+                    <!-- 이메일 팝업 -->
+                    <Popup
+                      title="이메일 선택"
+                      :isOpen="emailOpen"
+                      @update:isOpen="emailOpen = $event"
+                      @confirm="clickConfirmEmail"
+                    >
+                      <!-- 2024.10.10 이메일 선택 수정 -->
+                      <PopupListItem
+                        v-model="emailSelected"
+                        :ListItemData="emailList"
+                        :option="{ name: 'email-select' }"
+                        @select="clickSelectListItemEmail"
+                      />
+                    </Popup>
+                    <!-- // 이메일 팝업 -->
                     <!-- // 이메일 -->
 
                     <!-- 개인정보 수집/이용동의 -->
@@ -142,7 +163,7 @@
                     <!-- 개인정보 수집/이용동의 팝업 -->
                     <Popup
                       title="약관 상세"
-                      :isOpen="popupQuery === '2' && popupOpen"
+                      :isOpen="popupQuery === '1' && popupOpen"
                       @update:isOpen="popupOpen = false"
                       :popType="'alert-gray'"
                       class="pcpopup"
@@ -179,7 +200,7 @@
   <!-- 신청완료 -->
   <Popup
     title="신청 완료"
-    :isOpen="popupQuery === '3' && popupOpen"
+    :isOpen="popupQuery === '2' && popupOpen"
     @update:isOpen="popupOpen = false"
     :isPopFooter="false"
     class="pcpopup"
@@ -193,9 +214,7 @@
 import type { LayoutOptions } from "@/types/layout";
 import PcLnb from "@/components/v2/common/PcLnb.vue";
 import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
-
 import Tab from "@/components/v2/common/Tab.vue";
-
 import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
 import InputForm from "@/components/v2/common/InputForm.vue";
 import Popup from "@/components/v2/common/Popup.vue";
@@ -247,23 +266,51 @@ const cardObject2 = ref([
   },
 ]);
 
+//S: 이메일
+const emailOpen = ref(false);
+const emailSelected = ref<string>("직접입력");
+const emailList = ref([
+  { selected: true, value: "직접입력", name: "직접입력" },
+  { selected: false, value: "naver.com", name: "naver.com" },
+  { selected: false, value: "daum.net", name: "daum.net" },
+  { selected: false, value: "hanmail.net", name: "hanmail.net" },
+  { selected: false, value: "nate.com", name: "nate.com" },
+  { selected: false, value: "gmail.com", name: "gmail.com" },
+  { selected: false, value: "dreamwiz.com", name: "dreamwiz.com" },
+  { selected: false, value: "lycos.co.kr", name: "lycos.co.kr" },
+  { selected: false, value: "chol.com", name: "chol.com" },
+]);
+const handleEmailSel = () => {
+  emailOpen.value = true;
+};
+
+const clickSelectListItemEmail = (targetData: any) => {
+  console.log(targetData);
+};
+const clickConfirmEmail = () => {
+  console.log("이메일 확인");
+};
+//E: 이메일
+
 const popupOpen = ref(true);
 const route = useRoute();
 const popupQuery = ref(route.query.popup);
 
-/*셀렉트 상태 관리 */
-const selectState = ref({
-  select1: 0,
-});
-
-// 가입회선 정보 목업
+// S: 발급 용도 및 제출처
+const issuedPurposeSelectedTab = ref("A/S센터 제출용");
 const dataSelectList = ref([
-  { value: 0, name: "A/S센터 제출용" },
-  { value: 1, name: "보험회사" },
-  { value: 2, name: "수사기관" },
-  { value: 3, name: "기타 증빙" },
-  { value: 4, name: "직접 설정" },
+  { value: "A/S센터 제출용", name: "A/S센터 제출용" },
+  { value: "보험회사", name: "보험회사" },
+  { value: "수사기관", name: "수사기관" },
+  { value: "기타 증빙", name: "기타 증빙" },
+  { value: "직접 입력", name: "직접 입력" },
 ]);
+
+const issuedPurposeSelectBoxOpen = ref(false);
+const handleIssuedPurposeSel = () => {
+  issuedPurposeSelectBoxOpen.value = true;
+};
+// E: 발급 용도 및 제출처
 
 onMounted(() => {
   emit("setLayout", layout);
