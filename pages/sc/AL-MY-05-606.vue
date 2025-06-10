@@ -1,5 +1,5 @@
 <template>
-  <div class="AL-MY-05-606">
+  <div class="AL-MY-05-601">
     <div class="container">
       <div class="content" id="content">
         <h2 class="title_nav">{{ layout.title }}</h2>
@@ -27,7 +27,7 @@
                         <b class="txt-primary">납부 내역</b> 열람을 위해<br />
                         아래의 신청서를 작성해 주세요
                       </h3>
-                      <span class="title-exp">(최근 2년간)</span>
+                      <span class="title-exp mgt4">(최근 2년간)</span>
 
                       <ul class="text-list mgt16">
                         <li>
@@ -100,7 +100,7 @@
                         </div>
                       </div>
 
-                      <div class="btn-area cnt mgt40">
+                      <div class="btn-area cnt mgt32">
                         <button type="button" class="btn-circle more">더 볼래요</button>
 
                         <button type="button" class="btn-circle fold">접을래요</button>
@@ -226,6 +226,6 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
-@use "@/assets/scss/pages/sc/page-al-my-05-606.scss" as *;
+<style lang="scss" scoped>
+@use "@/assets/scss/pages/sc/page-al-my-05-601.scss" as *;
 </style>

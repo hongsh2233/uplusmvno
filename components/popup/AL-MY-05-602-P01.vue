@@ -26,7 +26,7 @@
 
         <div class="form-box mt_24">
           <div class="btn-area">
-            <button type="button" class="btn-rounded btn-line btn-sm" v-if="isMobile">가입 사실 확인서 다운로드</button>
+            <button type="button" class="btn-rounded btn-line" v-if="isMobile">가입 사실 확인서 다운로드</button>
             <button type="button" class="btn-rounded btn-line btn-sm" v-else>미리보기 · 인쇄하기</button>
           </div>
         </div>

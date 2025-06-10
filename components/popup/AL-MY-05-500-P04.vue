@@ -28,11 +28,11 @@
           </div>
           <div class="inner-section">
             <div class="btn-area join-btn-wrap">
-              <button type="button" class="btn-rounded btn-line">번호 찾기</button>
+              <button type="button" class="btn-rounded btn-line fz16-pc">번호 찾기</button>
             </div>
           </div>
 
-          <p class="notice-txt">
+          <p class="notice-txt fz-sm">
             번호 찾기를 하실 경우, 기존에 신청하셨던<br class="pc_hide" />
             희망번호와 달라질 수 있습니다.
           </p>

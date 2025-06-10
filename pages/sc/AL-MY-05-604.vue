@@ -1,5 +1,5 @@
 <template>
-  <div class="AL-MY-05-604">
+  <div class="AL-MY-05-601">
     <div class="container">
       <div class="content" id="content">
         <h2 class="title_nav">{{ layout.title }}</h2>
@@ -152,11 +152,29 @@
                           <InputForm
                             class="combobox-bottom"
                             :option="{ placeholder: '이메일 선택', readonly: false, action: 'dropdown' }"
+                            @btnClick="handleEmailSel"
                           />
                         </div>
                         <div class="error">이메일 형식을 확인해주세요</div>
                       </div>
                     </div>
+
+                    <!-- 이메일 팝업 -->
+                    <Popup
+                      title="이메일 선택"
+                      :isOpen="emailOpen"
+                      @update:isOpen="emailOpen = $event"
+                      @confirm="clickConfirmEmail"
+                    >
+                      <!-- 2024.10.10 이메일 선택 수정 -->
+                      <PopupListItem
+                        v-model="emailSelected"
+                        :ListItemData="emailList"
+                        :option="{ name: 'email-select' }"
+                        @select="clickSelectListItemEmail"
+                      />
+                    </Popup>
+                    <!-- // 이메일 팝업 -->
                     <!-- // 이메일 -->
 
                     <!-- 개인정보 수집/이용동의 -->
@@ -247,11 +265,11 @@
 import type { LayoutOptions } from "@/types/layout";
 import PcLnb from "@/components/v2/common/PcLnb.vue";
 import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
-
 import Tab from "@/components/v2/common/Tab.vue";
 import InputForm from "@/components/v2/common/InputForm.vue";
 import Datepicker from "@/components/v2/common/Datepicker.vue";
 import Popup from "@/components/v2/common/Popup.vue";
+import PopupListItem from "@/components/v2/common/PopupListItem.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
 import Accodian from "@/components/v2/common/Accodian.vue";
 import ALMY05605P01 from "@/components/popup/AL-MY-05-605-P01.vue";
@@ -303,11 +321,37 @@ const popupOpen = ref(true);
 const route = useRoute();
 const popupQuery = ref(route.query.popup);
 
+//S: 이메일
+const emailOpen = ref(false);
+const emailSelected = ref<string>("직접입력");
+const emailList = ref([
+  { selected: true, value: "직접입력", name: "직접입력" },
+  { selected: false, value: "naver.com", name: "naver.com" },
+  { selected: false, value: "daum.net", name: "daum.net" },
+  { selected: false, value: "hanmail.net", name: "hanmail.net" },
+  { selected: false, value: "nate.com", name: "nate.com" },
+  { selected: false, value: "gmail.com", name: "gmail.com" },
+  { selected: false, value: "dreamwiz.com", name: "dreamwiz.com" },
+  { selected: false, value: "lycos.co.kr", name: "lycos.co.kr" },
+  { selected: false, value: "chol.com", name: "chol.com" },
+]);
+const handleEmailSel = () => {
+  emailOpen.value = true;
+};
+
+const clickSelectListItemEmail = (targetData: any) => {
+  console.log(targetData);
+};
+const clickConfirmEmail = () => {
+  console.log("이메일 확인");
+};
+//E: 이메일
+
 onMounted(() => {
   emit("setLayout", layout);
 });
 </script>
 
-<style lang="scss">
-@use "@/assets/scss/pages/sc/page-al-my-05-604.scss" as *;
+<style lang="scss" scoped>
+@use "@/assets/scss/pages/sc/page-al-my-05-601.scss" as *;
 </style>
