@@ -98,6 +98,9 @@
       }
     }
   }
+  .notice-txt.fz-sm {
+    font-size: rem(14);
+  }
   .content-item {
     .content-inner {
       .inner-section {
@@ -132,7 +135,7 @@
         .content-item__wrap {
           + .notice-txt {
             font-size: rem(14);
-            margin-top: rem(32);
+            margin-top: rem(16);
           }
         }
 
@@ -1402,6 +1405,22 @@
       > .btn-area {
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+    }
+    .acco-wrap {
+      .acco-item {
+        .acco-title {
+          .v-expansion-panel-title {
+            font-weight: 700;
+          }
+        }
+      }
+      .mobile & {
+        .acco-panel {
+          .v-expansion-panel-text__wrapper {
+            padding-top: rem(16);
+          }
         }
       }
     }

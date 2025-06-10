@@ -1,6 +1,19 @@
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
 .AL-MY-05-601 {
+  //공통
+  .content-tabs {
+    &.normal {
+      &:deep() {
+        .tab-title-wrap {
+          .btn-tab-title {
+            font-size: rem(16);
+          }
+        }
+      }
+    }
+  }
+  //.AL-MY-05-601
   .textarea_box {
     &.ty02 {
       overflow: visible;
@@ -18,6 +31,7 @@
     }
   }
 
+  ////.AL-MY-05-601, .AL-MY-05-604
   .pop_content {
     .form-box {
       padding-top: rem(16);
@@ -41,6 +55,49 @@
             }
           }
         }
+      }
+    }
+  }
+  //.AL-MY-05-604
+  .form-box {
+    .title-area {
+      + .title-area-bottom-txt {
+        padding-top: rem(14);
+        padding-bottom: rem(14);
+        font-size: var(--font-size-ml);
+        font-weight: var(--fontweight-normal);
+      }
+    }
+  }
+
+  //.AL-MY-05-606
+  .content-item {
+    .table-wrap {
+      &.tag {
+        .table {
+          font-size: rem(14);
+        }
+      }
+    }
+    .content-tabs {
+      &:deep() {
+        .mobile & {
+          button {
+            &.btn-tab-title {
+              &:nth-of-type(2) {
+                max-width: rem(72);
+              }
+            }
+          }
+        }
+      }
+    }
+    .content-item {
+      + .content-item {
+        border-top: 1px solid #dce0e5;
+        padding-top: rem(32);
+        border-radius: 0;
+        margin-top: rem(12);
       }
     }
   }

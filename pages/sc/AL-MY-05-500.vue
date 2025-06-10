@@ -80,7 +80,9 @@
                 </div>
                 <div class="inner-section">
                   <div class="btn-area">
-                    <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line">번호 변경 이력 보기</NuxtLink>
+                    <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line btn-sm"
+                      >번호 변경 이력 보기</NuxtLink
+                    >
                   </div>
                 </div>
               </div>

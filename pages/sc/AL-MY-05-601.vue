@@ -317,6 +317,6 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@/assets/scss/pages/sc/page-al-my-05-601.scss" as *;
 </style>
