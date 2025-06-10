@@ -92,12 +92,16 @@
         }
       }
     }
-    .content-item {
-      + .content-item {
-        border-top: 1px solid #dce0e5;
-        padding-top: rem(32);
-        border-radius: 0;
-        margin-top: rem(12);
+    .content-item__wrap {
+      &:deep() {
+        .content-item {
+          + .content-item {
+            border-top: 1px solid #dce0e5;
+            padding-top: rem(32);
+            border-radius: 0;
+            margin-top: rem(12);
+          }
+        }
       }
     }
   }

@@ -100,6 +100,7 @@
   }
   .notice-txt.fz-sm {
     font-size: rem(14);
+    margin-top: rem(16);
   }
   .content-item {
     .content-inner {
@@ -127,7 +128,7 @@
       .mobile & {
         .content-item__wrap {
           + .notice-txt {
-            margin-top: rem(24);
+            margin-top: rem(16);
           }
         }
       }
@@ -135,7 +136,7 @@
         .content-item__wrap {
           + .notice-txt {
             font-size: rem(14);
-            margin-top: rem(16);
+            margin-top: rem(32);
           }
         }
 
