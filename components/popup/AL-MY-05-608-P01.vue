@@ -10,7 +10,7 @@
     </div>
 
     <p class="icon">
-      <img src="/images/v2/content/Img_certificatepayment.png" alt="이미지" />
+      <img src="/images/v2/content/img_certificatepayment.png" alt="" />
     </p>
 
     <div class="content-item">
