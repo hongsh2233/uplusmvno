@@ -48,6 +48,24 @@
             </div>
           </li>
         </ul>
+        <div
+          class="btn-area card-group-bottom-botton"
+          v-if="Array.isArray(items.bottomButtons) && items.bottomButtons.length > 0"
+        >
+          <template v-for="btn in items.bottomButtons" :key="btn.id">
+            <button
+              type="button"
+              :class="[
+                btn.type === 'outline-gray' && 'btn-rounded btn-h-sm fz16',
+                btn.type === 'outline-red' && 'btn-rounded btn-line btn-h-sm fc00 fz16',
+              ]"
+              @click="btn.bottomButtonClickHandler(btn)"
+            >
+              {{ btn.name }}
+            </button>
+          </template>
+          <!-- <button type="button" class="btn-rounded btn-line btn-h-sm fc00 fz16">해지하기</button> -->
+        </div>
         <ul v-if="items.notice" class="text-list bull">
           <li v-for="(notice, noticeIndex) in items.notice" :key="noticeIndex">
             {{ notice }}
