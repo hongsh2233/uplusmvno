@@ -99,31 +99,41 @@
           <!-- //T07C10 꼭 알아두세요 -->
         </div>
         <!-- // contents -->
+        <Popup
+          title="부가서비스 해지"
+          popType="full no-title"
+          :isOpen="popupQuery === '1' && popupOpen"
+          :isPopFooter="false"
+          @update:isOpen="popupOpen = false"
+          class="pcpopup type-float-btn-1"
+        >
+          <ALMY05400P01 />
+        </Popup>
+
+        <Popup
+          title="해지 완료"
+          popType="full no-title"
+          :isOpen="popupQuery === '2' && popupOpen"
+          :isPopFooter="false"
+          @update:isOpen="popupOpen = false"
+          class="pcpopup type-float-btn-1"
+        >
+          <ALMY05400P02 />
+        </Popup>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-/**
- * C01. PcLnb : 왼쪽 사이드 메뉴 컴포넌트
- * C02. MyInfoMenu : 가입회선 정보 컴포넌트
- * C03. CardGroup : 카드 그룹 컴포넌트
- * C04. InputForm : 입력 요소 컴포넌트
- * C05. Datepicker : 달력 컴포넌트
- * C06. Popup : 팝업 컴포넌트
- * C07. ShortcutMenu : 하단에 관련 링크 리스트 컴포넌트
- * C08. PopupListItem : 팝업에 선택 리스트 컴포넌트
- * C09. Tems : 팝업에 약관 컴포넌트
- * C10. Accodian : 아코디언 컴포넌트
- * C11. BottomFixMenu : pc에선 버튼이고, mobile에서는 하단 고정 버튼 컴포넌트
- * C12. Tab : 탭메뉴 컴포넌트
- */
 import PcLnb from "@/components/v2/common/PcLnb.vue";
 import MyInfoMenu from "@/components/v2/common/MyInfoMenu.vue";
 import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
 import ShortcutMenu from "@/components/v2/common/ShortcutMenu.vue";
 import Accodian from "@/components/v2/common/Accodian.vue";
+import Popup from "@/components/v2/common/Popup.vue";
+import ALMY05400P01 from "@/components/popup/AL-MY-05-400-P01.vue";
+import ALMY05400P02 from "@/components/popup/AL-MY-05-400-P02.vue";
 
 // S: 레이아웃 설정 (1-1)
 const layout = ref({
@@ -137,6 +147,10 @@ const layout = ref({
 const emit = defineEmits(["setLayout"]);
 // E: 레이아웃 설정 (1-1)
 
+const route = useRoute();
+const popupQuery = ref(route.query.popup);
+const popupOpen = ref(true);
+
 // S: JS-T09 - 상단 텍스트 & 정보 리스트
 const cardObject_1 = ref([
   {
@@ -147,8 +161,6 @@ const cardObject_1 = ref([
     list: [
       { name: "유료 부가서비스", value: "1개" },
       { name: "무료 부가서비스", value: "10개" },
-      // { name: "할부 기기", value: "iPhone15 Pro Max_1TB", description: "(ULK-A3106-1TB)" },
-      // { name: "파트너사", value: `<a href="/" class="link-txt-1">에스원안심모바일</a>` },
     ],
   },
 ]);
