@@ -26,7 +26,7 @@
 
           <div class="form-box mt_24">
             <div class="btn-area">
-              <button type="button" class="btn-rounded btn-line">신청/해지 내역 바로가기</button>
+              <button type="button" class="btn-rounded btn-line fz16-pc">신청/해지 내역 바로가기</button>
             </div>
           </div>
         </div>
