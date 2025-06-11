@@ -2080,3 +2080,19 @@
     }
   }
 }
+
+.selfcare-alert {
+  &.confirm {
+    .pop-footer {
+      .btn-group {
+        .button {
+          &.disabled,
+          &:disabled {
+            color: #b3b3b3 !important;
+            background-color: #dbdbdb !important;
+          }
+        }
+      }
+    }
+  }
+}

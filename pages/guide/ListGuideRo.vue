@@ -1,5 +1,5 @@
 <template>
-  <div class="container roaming">
+  <div class="container selfcare roaming">
     <div class="publishing-guide-v3">
       <div class="content" id="content">
         <div class="section">
@@ -40,6 +40,11 @@
                 <p>
                   <button class="btn xsm" @click="alert4 = true">
                     4. 타이틀, 설명, 텍스트상자 <strong class="point">컨펌창</strong>
+                  </button>
+                </p>
+                <p>
+                  <button class="btn xsm" @click="alert5 = true">
+                    5. 타이틀, 체크 동의 설명 버튼 <strong class="point">컨펌창</strong>
                   </button>
                 </p>
 
@@ -116,6 +121,27 @@
                   </dl>
                 </AlertV2>
 
+                <!-- 타이틀, 체크 동의 설명 컨펌창  -->
+                <AlertV3
+                  v-model="alert5"
+                  :textData="{
+                    title: '타이틀',
+                    // description: '설명',
+                  }"
+                  :confirm="true"
+                  :confirm-disabled="!isChecked"
+                  :buttonText="{ cancel: '취소', confirm: '버튼명' }"
+                  @close="handleClose"
+                  @proceed="handleProceed"
+                >
+                  <div class="inner-section">
+                    <div class="check-txt check_st">
+                      <input type="checkbox" id="checkbox01_02" v-model="isChecked" name="" />
+                      <label for="checkbox01_02">정기 결제도 차단 해제하시겠어요?</label>
+                    </div>
+                  </div>
+                </AlertV3>
+                <!--// 타이틀, 체크 동의 설명 컨펌창 -->
                 <MDC :value="alert1_1" class="pub-md-wrap" />
               </div>
             </div>
@@ -275,6 +301,7 @@ import SwiperBnr from "@/components/SwiperBnr.vue";
 import type { LayoutOptions } from "@/types/layout";
 import Iframe from "@/pages/guide/sample/components/Iframe.vue";
 import AlertV2 from "@/components/v2/common/AlertV2.vue";
+import AlertV3 from "@/components/v2/common/AlertV3.vue";
 import {
   page_sub_basic_1,
   page_popup_mobile,
@@ -298,6 +325,9 @@ const alert1 = ref(false);
 const alert2 = ref(false);
 const alert3 = ref(false);
 const alert4 = ref(false);
+const alert5 = ref(false);
+
+const isChecked = ref(false);
 
 const accBtn = ref(null);
 
@@ -362,6 +392,7 @@ const layout = reactive<LayoutOptions>({
   footer: "",
   floatMenu: "",
   title: "파트너사 소개",
+  wrapClass: "selfcare roaming",
 });
 
 const handleClose = () => {
