@@ -213,6 +213,10 @@ $color-rework: #ffe5f2;
       }
       &.type-pc-mobile {
         background-color: #e3c4f5;
+        &-page {
+          background-color: #5e5e5e;
+          color: #fff;
+        }
       }
     }
     .bar {

@@ -15,20 +15,12 @@
 
           <div class="content-item">
             <div class="content-inner">
-              <p class="notice-txt">
-                이번달 청구요금은 <span class="txt-orange">발행 전</span> 이예요
-              </p>
+              <p class="notice-txt">이번달 청구요금은 <span class="txt-orange">발행 전</span> 이예요</p>
               <div class="cont-head">
-                <h3 class="cont-title-main">
-                  2024년 7월 요금은 <br /><b class="txt-primary">10,100원</b>이예요
-                </h3>
+                <h3 class="cont-title-main">2024년 7월 요금은 <br /><b class="txt-primary">10,100원</b>이예요</h3>
                 <span class="title-exp">2024.07.01 ~ 2024.07.30</span>
                 <!-- 24.12.12 버튼 클래스 변경-->
-                <button
-                  type="button"
-                  class="btn-rounded chip btn-fix"
-                  @click="popupOpen('isOpen1')"
-                >
+                <button type="button" class="btn-rounded chip btn-fix" @click="popupOpen('isOpen1')">
                   청구월 변경
                 </button>
               </div>
@@ -47,29 +39,14 @@
               </div>
               <div class="btn-area pc-w-auto">
                 <button type="button" class="btn-rounded btn-sm" disabled>요금 바로 납부</button>
-                <button type="button" class="btn-rounded btn-sm w-auto">
-                  청구서 받는 방법 변경
-                </button>
+                <button type="button" class="btn-rounded btn-sm w-auto">청구서 받는 방법 변경</button>
                 <!-- 24.12.18 버튼 추가 -->
                 <NuxtLink class="btn-rounded btn-sm w-auto">청구서 재발행</NuxtLink>
               </div>
               <p class="notice-txt">요금 바로 납부하기는 서비스 예정입니다</p>
             </div>
           </div>
-          <div class="content-item">
-            <div class="content-inner">
-              <Accodian :isExpanded="false">
-                <template #title>
-                  <div class="cont-head">
-                    <h3 class="cont-title">청구/납부정보</h3>
-                  </div>
-                </template>
-                <template #content>
-                  <CardGroup :card-object="cardObject" />
-                </template>
-              </Accodian>
-            </div>
-          </div>
+          <!-- 2025-06-11 1749616255 (정C) 청구/납부정보 이전으로 위치 변경 -->
           <div class="content-item">
             <div class="content-inner">
               <div class="cont-head">
@@ -106,6 +83,30 @@
                     </template>
                   </Accodian>
                 </li>
+                <!-- 2025-06-11 1749616255 (정C) 알닷 2차 고도화 추가-->
+                <li>
+                  <Accodian styleClass="acco-details">
+                    <template #title>
+                      <div class="name acco-arrow">단말기 할부금할부금</div>
+                      <div class="value">
+                        <b>88,000원</b>
+                      </div>
+                    </template>
+                    <template #content>
+                      <ul class="card-sub-contents">
+                        <li>
+                          <div class="name">월 할부 원금</div>
+                          <div class="sub-value">87,000원</div>
+                        </li>
+                        <li>
+                          <div class="name">할부 수수료</div>
+                          <div class="sub-value">1,000원</div>
+                        </li>
+                      </ul>
+                    </template>
+                  </Accodian>
+                </li>
+                <!-- //2025-06-11 1749616255 (정C) 닷 2차 고도화 추가 -->
                 <li>
                   <Accodian styleClass="acco-details">
                     <template #title>
@@ -124,13 +125,27 @@
                 </li>
                 <li>
                   <div class="name">
-                    <button type="button" class="btn-tooltip" @click="popupOpen('isOpen2')">
-                      미납 요금
-                    </button>
+                    <button type="button" class="btn-tooltip" @click="popupOpen('isOpen2')">미납 요금</button>
                   </div>
                   <div class="value">85,530원</div>
                 </li>
               </ul>
+            </div>
+          </div>
+          <!-- //2025-06-11 1749616255 (정C) 청구/납부정보 이전으로 위치 변경 -->
+
+          <div class="content-item">
+            <div class="content-inner">
+              <Accodian :isExpanded="false">
+                <template #title>
+                  <div class="cont-head">
+                    <h3 class="cont-title">청구/납부정보</h3>
+                  </div>
+                </template>
+                <template #content>
+                  <CardGroup :card-object="cardObject" />
+                </template>
+              </Accodian>
             </div>
           </div>
 
@@ -143,19 +158,14 @@
               <ul class="text-list bull">
                 <li>원단위 절사 등의 사유로 실 청구 금액과 다를 수 있습니다.</li>
                 <li>
-                  청구서 작성일 이후에 내신 요금은 당월 청구서에 적용되지 않았으며, 현재 미납상태는
-                  청구요금 및 납부내역조회에서 확인 가능합니다.
+                  청구서 작성일 이후에 내신 요금은 당월 청구서에 적용되지 않았으며, 현재 미납상태는 청구요금 및
+                  납부내역조회에서 확인 가능합니다.
                 </li>
-                <li>
-                  제휴카드 할인 내역은 표기되지 않으며, 카드사 이용요금 명세서에서 확인하시기
-                  바랍니다.
-                </li>
+                <li>제휴카드 할인 내역은 표기되지 않으며, 카드사 이용요금 명세서에서 확인하시기 바랍니다.</li>
                 <li>
                   제휴카드 신청 고객은 해당 카드로 납부 방법을 변경하셔야 할인이 적용됩니다.
                   <p>
-                    <NuxtLink :to="'sc/AL-MY-04-002'" class="txt-link orange"
-                      >납부 방법 변경하기</NuxtLink
-                    >
+                    <NuxtLink :to="'sc/AL-MY-04-002'" class="txt-link orange">납부 방법 변경하기</NuxtLink>
                   </p>
                 </li>
                 <!-- <li>앱마켓에서 ‘설리번’ 앱 설치 후, 설리번 앱을 실행하여 카메라로 청구서 화면을 촬영하시면 음성으로 안내 받을 수 있습니다</li> -->
@@ -186,14 +196,8 @@
       >
         <ul class="text-list bull">
           <li>고객님의 계좌에서 원하시는 경우 즉시 출금이 가능한 납부 방법입니다.</li>
-          <li>
-            은행/신용카드 자동이체 고객의 경우 이중납이 발생하지 않도록 출금 일정을 확인 후
-            신청하시기 바랍니다.
-          </li>
-          <li>
-            신용카드 납부 시 대상요금의 부분납 처리 가능하며, 5만원 미만 금액에 대해서는 할부처리가
-            불가합니다.
-          </li>
+          <li>은행/신용카드 자동이체 고객의 경우 이중납이 발생하지 않도록 출금 일정을 확인 후 신청하시기 바랍니다.</li>
+          <li>신용카드 납부 시 대상요금의 부분납 처리 가능하며, 5만원 미만 금액에 대해서는 할부처리가 불가합니다.</li>
         </ul>
       </Popup>
       <!-- // 미납 요금 납부 순서 팝업 -->
@@ -213,7 +217,8 @@ import Popup from "@/components/v2/common/Popup";
 import MonthPicker from "@/components/v2/common/MonthPicker";
 
 const emit = defineEmits(["setLayout"]);
-const layout = reactive({ header: "sub", footer: "", title: "요금 상세내역", floatMenu: "none" });
+/* 2025-06-11 1749616255 알닷(정C) 알닷 고도화 2차: title 텍스트 변경 */
+const layout = reactive({ header: "sub", footer: "", title: "청구요금 보기", floatMenu: "none" });
 
 //24.12.18 결제일 변경하기 버튼 추가
 const linksArray = [

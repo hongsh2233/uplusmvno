@@ -126,10 +126,18 @@
                       </NuxtLink>
                     </p>
                     <p v-else>
-                      <span class="popup-title">{{ obj.name }}</span>
-                      <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
-                        <span class="badge type-pc-mobile">PC &#8226; MOBILE</span>
-                      </NuxtLink>
+                      <template v-if="!obj.url?.includes('?')">
+                        <span class="popup-title">{{ obj.name }}</span>
+                        <NuxtLink :to="`${item[key][0].url}?popup=${obj.id}`" target="_blank">
+                          <span class="badge type-pc-mobile">PC &#8226; MOBILE</span>
+                        </NuxtLink>
+                      </template>
+                      <template v-else>
+                        <span class="popup-title">CASE{{ obj.id }}: </span>
+                        <NuxtLink :to="obj.url" target="_blank">
+                          <span class="badge type-pc-mobile-page">{{ obj.name }}</span>
+                        </NuxtLink>
+                      </template>
                     </p>
                   </li>
                 </ul>
