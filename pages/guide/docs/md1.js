@@ -921,6 +921,7 @@ export const alert1_1 = `
 
 \`\`\`html
   <script setup lang="ts">
+    import AlertV2 from "@/components/v2/common/AlertV2.vue";
     import type { LayoutOptions } from "@/types/layout";
     const alert1 = ref(false);
 
@@ -1027,7 +1028,7 @@ export const alert1_1 = `
 
     <!-- 타이틀, 설명, 텍스트상자 컨펌창  -->
     <AlertV2
-      v-model="alert5"
+      v-model="alert4"
       :textData="{
         title: '타이틀',
         description: '설명',
@@ -1048,6 +1049,53 @@ export const alert1_1 = `
       </dl>
     </AlertV2>
     <!--// 타이틀, 설명, 텍스트상자 컨펌창 -->
+
+  </template>
+\`\`\`
+  <br>
+
+
+   <h3 class="title-h4">5. 타이틀, 체크 동의 설명 버튼 컨펌창</h3>
+
+  
+\`\`\`html
+  <script setup lang="ts">
+    import AlertV3 from "@/components/v2/common/AlertV3.vue";
+    import type { LayoutOptions } from "@/types/layout";
+    const alert5 = ref(false);
+
+    const handleClose = () => {
+      console.log("닫기 버튼 클릭");
+    };
+
+    const handleProceed = () => {
+      console.log("확인 버튼 클릭");
+    };
+  </script>
+
+  <template>
+
+  <!-- 타이틀, 체크 동의 설명 컨펌창  -->
+  <AlertV3
+    v-model="alert5"
+    :textData="{
+      title: '타이틀',
+      // description: '설명',
+    }"
+    :confirm="true"
+    :confirm-disabled="!isChecked"
+    :buttonText="{ cancel: '취소', confirm: '버튼명' }"
+    @close="handleClose"
+    @proceed="handleProceed"
+  >
+    <div class="inner-section">
+      <div class="check-txt check_st">
+        <input type="checkbox" id="checkbox01_02" v-model="isChecked" name="" />
+        <label for="checkbox01_02">정기 결제도 차단 해제하시겠어요?</label>
+      </div>
+    </div>
+  </AlertV3>
+  <!--// 타이틀, 체크 동의 설명 컨펌창 -->
 
   </template>
 \`\`\`
