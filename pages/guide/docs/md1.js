@@ -58,6 +58,26 @@ export const page_sub_basic_1 = `
           </div>
           <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
 
+          <!-- T12C10C03 : 아코디언 정보 리스트  -->
+          <div class="content-item">
+            <div class="content-inner">
+              <Accodian :isExpanded="true">
+                <template #title>
+                  <div class="cont-head">
+                    <h4 class="cont-title">음성</h4>
+                  </div>
+                </template>
+                <template #content>
+                  <CardGroup :card-object="cardObject_3" class="cotent-item-hr-line" @onClickChip="onClickHandler" />
+                  <div class="btn_wrap center more-btn-1">
+                    <button type="button" class="btn-circle more">더 볼래요</button>
+                  </div>
+                </template>
+              </Accodian>
+            </div>
+          </div>
+          <!-- //T12C10C03 : 아코디언 정보 리스트  -->
+
           <!-- T08C03 : 정보 리스트 -->
           <CardGroup :card-object="cardObject_2" class="subscription-info-second mgt0" @onClickChip="onClickHandler" />
           <!-- //T08C03 : 정보 리스트 -->
@@ -514,6 +534,42 @@ const cardObject_2 = ref([
   },
 ]);
 // E: JS-T08 : 정보 리스트
+
+
+// S: JS-T12 : 아코디언 정보 리스트
+const bottomButtonClickHandler = ({ id, name }: { id: number; name: string }) => {
+  console.log(id);
+  console.log(name);
+};
+
+const cardObject_3 = ref([
+  {
+    title: \`<a href="/" class="link-txt-2">결합 정보</a>\`,
+    sub: "",
+    chip: "",
+    url: "",
+    list: [
+      { name: "신청일", value: "2025. 04. 28" },
+      { name: "금액", value: "44,000원", description: "(부가세 포함)", class: { list: "has-description" } },
+    ],
+    bottomButtons: [
+      { id: 1, name: "변경하기", type: "outline-gray", bottomButtonClickHandler },
+      { id: 2, name: "해지하기", type: "outline-red", bottomButtonClickHandler },
+    ],
+  },
+  {
+    title: \`<a href="/" class="link-txt-2">결합 정보2</a>\`,
+    sub: "",
+    chip: "",
+    url: "",
+    list: [
+      { name: "신청일", value: "2025. 04. 28" },
+      { name: "금액", value: "44,000원", description: "(부가세 포함)", class: { list: "has-description" } },
+    ],
+    bottomButtons: [{ id: 3, name: "해지하기", type: "outline-red", bottomButtonClickHandler }],
+  },
+]);
+// E: JS-T12 : 아코디언 정보 리스트
 
 // S: JS-P004 : 청구/납부 변경 팝업
 const isOpen1 = ref(false);
