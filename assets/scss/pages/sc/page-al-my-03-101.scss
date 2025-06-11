@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-03-101 {
+  .text_info {
+    padding-left: 2.2rem;
+    color: var(--gray-200);
+
+    &::before {
+      top: -0.1rem;
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
+    }
+
+    &.type02 {
+      padding-left: rem(0);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .btn-flex {
+    &.grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &:deep() {
+    .input_box {
+      .clkbtn {
+        padding: 0.4rem 0.8rem;
+        width: auto;
+        height: auto;
+        border-radius: 6px;
+        border: 1px solid #dce0e5;
+        background: #f3f5f6;
+
+        span {
+          @include Lb_Sm_s14_lh20;
+        }
+      }
+
+      .timer {
+        right: rem(74);
+
+        span {
+          @include Lb_Sm_s14_lh20;
+          color: #fc6969;
+        }
+      }
+    }
+  }
+
+  .mobile & {
+    .text_info {
+      padding-left: 2.2rem;
+      color: var(--gray-200);
+
+      &::before {
+        top: -0.1rem;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        background: url("/images/v2/common/ico_text_info.svg") 0 0 / auto no-repeat;
+      }
+
+      &.type02 {
+        padding-left: rem(0);
+      }
+    }
+  }
+}

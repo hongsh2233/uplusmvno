@@ -7,9 +7,11 @@
         find_num: option.findNum,
         auth_num: option.authNum,
       },
-      option.action)
+      option.action || option.actionBtn)
     "
   >
+    <!--  || option.actionBtn 추가 -->
+
     <slot name="before"></slot>
     <div class="num_mark" v-if="option.findNum">010-<span>****</span>-</div>
 
@@ -50,6 +52,18 @@
     >
       <span class="blind">선택</span>
     </button>
+
+    <!-- 20250611 버튼명 추가 옵션-->
+    <button
+      type="button"
+      class="btn-action clkbtn"
+      v-if="option.actionBtn"
+      :class="option.actionBtn"
+      @click="!option.disabled ? btnClick() : ''"
+    >
+      <span>{{ option.buttonText }}</span>
+    </button>
+    <!-- // 20250611 버튼명 추가 옵션-->
 
     <div class="timer" v-if="option.authNum">
       <span>0:01</span>

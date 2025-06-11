@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-03-200 {
+  .con {
+    .inner-section {
+      & + .inner-section {
+        border-top: 1px solid #dce0e5;
+        padding-top: rem(56);
+      }
+
+      .consect-cardlist {
+        & + .consect-cardlist {
+          margin-top: rem(32);
+          padding-top: rem(32);
+          border-top: 1px solid #dce0e5;
+        }
+
+        &:last-child {
+          margin-bottom: rem(32) !important;
+        }
+      }
+
+      .check-toggle {
+        gap: rem(8);
+      }
+    }
+  }
+  .mobile & {
+    .check-toggle {
+      gap: rem(6);
+
+      .toggle-slider {
+        margin-left: rem(0);
+      }
+    }
+
+    .con {
+      .inner-section {
+        & + .inner-section {
+          padding-top: rem(40);
+        }
+      }
+    }
+
+    .btn-flex {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .radio_item {
+        label {
+          padding: 0;
+        }
+      }
+    }
+    .btn-area {
+      &.btn-space {
+        margin-top: rem(40);
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

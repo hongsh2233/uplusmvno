@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@use "@/assets/scss/abstract/_mixin.scss" as *;
+
+.AL-MY-04-004 {
+  .card-group {
+    .value {
+      .btn-copy {
+        padding-right: rem(26);
+        background: url("/images/v2/common/ico_btn_copy.svg") no-repeat right center;
+        background-size: rem(25);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mobile & {
+  }
+}
