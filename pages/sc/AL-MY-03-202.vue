@@ -29,10 +29,6 @@ const layout = reactive<LayoutOptions>({
 });
 
 onMounted(() => {
-  if (front.isMobile()) {
-    emit("setLayout", layout);
-  } else {
-    router.push("/sc/AL-MY-03-200");
-  }
+  emit("setLayout", layout);
 });
 </script>
