@@ -2097,6 +2097,24 @@
         }
       }
     }
+    .addition-service {
+      .mobile & {
+        .acco-panel {
+          .v-expansion-panel-text__wrapper {
+            padding-top: rem(24);
+          }
+        }
+      }
+      .pc & {
+        .content-item__wrap {
+          &.cotent-item-hr-line {
+            .cont-head {
+              margin-bottom: rem(24);
+            }
+          }
+        }
+      }
+    }
   }
 }
 

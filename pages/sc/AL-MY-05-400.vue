@@ -26,21 +26,19 @@
                 </h3>
               </div>
 
-              <div class="inner-section">
-                <CardGroup :card-object="cardObject_1" @onClickChip="onClickHandler">
-                  <template #default="{ item }">
-                    <div class="fl-ac">
-                      <p v-html="item?.value"></p>
-                    </div>
-                  </template>
-                </CardGroup>
-              </div>
+              <CardGroup :card-object="cardObject_1" @onClickChip="onClickHandler">
+                <template #default="{ item }">
+                  <div class="fl-ac">
+                    <p v-html="item?.value"></p>
+                  </div>
+                </template>
+              </CardGroup>
             </div>
           </div>
           <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
 
           <!-- T12C10C03 : 아코디언 정보 리스트 - 유료  -->
-          <div class="content-item">
+          <div class="content-item addition-service paid">
             <div class="content-inner">
               <Accodian :isExpanded="true">
                 <template #title>
@@ -60,7 +58,7 @@
           <!-- //T12C10C03 : 아코디언 정보 리스트 - 유료  -->
 
           <!-- T12C10C03 : 아코디언 정보 리스트 - 무료 -->
-          <div class="content-item">
+          <div class="content-item addition-service free">
             <div class="content-inner">
               <Accodian :isExpanded="true">
                 <template #title>

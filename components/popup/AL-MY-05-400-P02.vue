@@ -20,7 +20,7 @@
 
           <div class="gray-notice-box">
             <ul class="text-list bull">
-              <li>부가서비스 월중 신청/해지 시 해당울 기본요금 및 무료제공 혜택은 각각 일할 적용됩니다.</li>
+              <li>부가서비스 월중 신청/해지 시 해당 월 기본요금 및 무료제공 혜택은 각각 일할 적용됩니다.</li>
             </ul>
           </div>
 
