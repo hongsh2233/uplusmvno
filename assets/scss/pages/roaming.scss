@@ -1293,6 +1293,16 @@
   //PC 팝업
   .pop_wrap {
     .pc & {
+      .title-main {
+        &.has-bg-charactor {
+          margin-bottom: rem(56);
+          &::after {
+            width: rem(220);
+            height: rem(202);
+            right: rem(-48);
+          }
+        }
+      }
       .pop_content {
         .first-content-item {
           margin: 0;
@@ -1390,6 +1400,23 @@
           // br {
           //   display: block;
           // }
+        }
+      }
+    }
+    .title-main {
+      &.has-bg-charactor {
+        padding-bottom: rem(80);
+        border-bottom: 1px solid #dce0e5;
+        position: relative;
+        margin-bottom: rem(24);
+        &::after {
+          content: "";
+          position: absolute;
+          right: rem(-40);
+          bottom: 0;
+          width: rem(144);
+          height: rem(132);
+          background: url("/images/roaming/sc/img-change-number-title-bg.png") no-repeat 50% 50% / 100% auto;
         }
       }
     }

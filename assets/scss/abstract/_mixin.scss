@@ -658,6 +658,15 @@
           }
         }
       }
+
+      + .btn-area {
+        .pc & {
+          margin-top: rem(32);
+        }
+        .mobile & {
+          margin-top: rem(34);
+        }
+      }
     }
   }
 }

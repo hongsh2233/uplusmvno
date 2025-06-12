@@ -16,17 +16,17 @@
           <MyInfoMenu />
           <!-- // 내 정보 메뉴 -->
 
-          <!-- T09C03 : 상단 텍스트 & 정보 리스트  -->
-          <div class="content-item">
-            <div class="content-inner">
-              <div class="cont-head title-main">
-                <h3 class="cont-title-main">
-                  유심 / eSIM 변경은<br />
-                  <b class="txt-primary">셀프로 간편 신청</b>하세요
-                </h3>
-              </div>
+          <template v-if="registrationQuery !== 'none'">
+            <!-- T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <div class="content-item">
+              <div class="content-inner">
+                <div class="cont-head title-main">
+                  <h3 class="cont-title-main">
+                    유심 / eSIM 변경은<br />
+                    <b class="txt-primary">셀프로 간편 신청</b>하세요
+                  </h3>
+                </div>
 
-              <div class="inner-section">
                 <CardGroup :card-object="cardObject_1">
                   <template #default="{ item }">
                     <div class="fl-ac">
@@ -36,124 +36,134 @@
                 </CardGroup>
               </div>
             </div>
-          </div>
-          <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
 
-          <div class="content-item">
-            <div class="content-inner">
-              <Tab :titles="['유심으로 변경', 'eSIM으로 변경']" :active-tab-index="0">
-                <template #content1>
-                  <div class="cont-head title-main">
-                    <h3 class="cont-title-main">
-                      변경할 <b class="txt-primary">유심</b> 정보를<br />
-                      등록해 주세요
-                    </h3>
-                  </div>
-                  <p class="usim-change-img-wrap">
-                    <img src="/images/roaming/sc/img_usim_info.png" alt="" />
-                  </p>
-
-                  <!-- T11C04P006 : 유심 모델 -->
-                  <div class="form-box">
-                    <div class="title-area">
-                      <strong class="title">유심 모델</strong>
+            <div class="content-item">
+              <div class="content-inner">
+                <Tab :titles="['유심으로 변경', 'eSIM으로 변경']" :active-tab-index="0">
+                  <template #content1>
+                    <div class="cont-head title-main">
+                      <h3 class="cont-title-main">
+                        변경할 <b class="txt-primary">유심</b> 정보를<br />
+                        등록해 주세요
+                      </h3>
                     </div>
-                    <InputForm
-                      class="combobox-bottom"
-                      :option="{
-                        placeholder: '선택해 주세요',
-                        readonly: true,
-                        action: 'dropdown',
-                      }"
-                      @click="handleUsimModelSel"
-                    />
-                  </div>
-                  <!-- T11C04P006 : 유심 모델 -->
+                    <p class="usim-change-img-wrap">
+                      <img src="/images/roaming/sc/img_usim_info.png" alt="" />
+                    </p>
 
-                  <div class="form-box">
-                    <div class="title-area">
-                      <strong class="title">유심 일련번호</strong>
+                    <!-- T11C04P006 : 유심 모델 -->
+                    <div class="form-box">
+                      <div class="title-area">
+                        <strong class="title">유심 모델</strong>
+                      </div>
+                      <InputForm
+                        class="combobox-bottom"
+                        :option="{
+                          placeholder: '선택해 주세요',
+                          readonly: true,
+                          action: 'dropdown',
+                        }"
+                        @click="handleUsimModelSel"
+                      />
                     </div>
-                    <div class="form_group">
-                      <div class="form_item">
-                        <InputForm class="combobox-bottom" :option="{ placeholder: `일련번호를 입력해 주세요` }" />
+                    <!-- T11C04P006 : 유심 모델 -->
+
+                    <div class="form-box">
+                      <div class="title-area">
+                        <strong class="title">유심 일련번호</strong>
+                      </div>
+                      <div class="form_group">
+                        <div class="form_item">
+                          <InputForm class="combobox-bottom" :option="{ placeholder: `일련번호를 입력해 주세요` }" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </template>
+                  </template>
 
-                <template #content2>
-                  <!-- eSIM으로 변경 탭 내용 -->
-                  eSIM으로 변경 탭 내용
-                  <!-- //eSIM으로 변경 탭 내용 -->
-                </template>
-              </Tab>
-            </div>
-          </div>
-          <div class="content-item">
-            <div class="content-inner">
-              <!-- T11C04P007 : 변경 사유 -->
-              <div class="form-box">
-                <div class="title-area">
-                  <strong class="title">변경 사유</strong>
-                </div>
-                <InputForm
-                  class="combobox-bottom"
-                  :option="{
-                    placeholder: '선택해 주세요',
-                    readonly: true,
-                    action: 'dropdown',
-                  }"
-                  @click="handleChangeResonSel"
-                />
-              </div>
-
-              <div class="form-box mgt16" v-if="selectedTab2 === '직접 입력'">
-                <!-- <TextareaBox
-                  :data="{
-                    placeholder: '유심 변경 사유를 입력해 주세요',
-                    rows: 1,
-                    maxlength: 30,
-                    byteCheck: true,
-                  }"
-                  @textareaValue="console.log($event)"
-                  @textareaSubmit="console.log($event)"
-                  class="type-count-1"
-                /> -->
-                <TextareaBox
-                  :data="{
-                    type: 'ty03',
-                    placeholder: '유심 변경 사유를 입력해 주세요',
-                    rows: 1,
-                    maxlength: 60,
-                    byteCheck: true,
-                  }"
-                  @textareaValue="console.log($event)"
-                  @textareaSubmit="console.log($event)"
-                  class="type-count-1"
-                />
-              </div>
-              <!-- T11C04P007 : 변경 사유 -->
-
-              <div class="form-box">
-                <div class="title-area">
-                  <strong class="title">연락받을 전화번호</strong>
-
-                  <div class="check-txt check_st mgt0">
-                    <input type="checkbox" id="checkbox01_01" name="" @click="handleMemberPhone" />
-                    <label for="checkbox01_01">신청 회선과 동일</label>
-                  </div>
-                </div>
-                <div class="form_group">
-                  <div class="form_item">
-                    <InputForm class="combobox-bottom" :option="{ placeholder: `숫자만 입력해 주세요` }" />
-                  </div>
-                </div>
-                <p class="notice-txt">처리 결과를 SMS로 안내해 드려요</p>
+                  <template #content2>
+                    <!-- eSIM으로 변경 탭 내용 -->
+                    eSIM으로 변경 탭 내용
+                    <!-- //eSIM으로 변경 탭 내용 -->
+                  </template>
+                </Tab>
               </div>
             </div>
-          </div>
+            <div class="content-item">
+              <div class="content-inner">
+                <!-- T11C04P007 : 변경 사유 -->
+                <div class="form-box">
+                  <div class="title-area">
+                    <strong class="title">변경 사유</strong>
+                  </div>
+                  <InputForm
+                    class="combobox-bottom"
+                    :option="{
+                      placeholder: '선택해 주세요',
+                      readonly: true,
+                      action: 'dropdown',
+                    }"
+                    @click="handleChangeResonSel"
+                  />
+                </div>
 
+                <div class="form-box mgt16" v-if="selectedTab2 === '직접 입력'">
+                  <TextareaBox
+                    :data="{
+                      type: 'ty03',
+                      placeholder: '유심 변경 사유를 입력해 주세요',
+                      rows: 1,
+                      maxlength: 60,
+                      byteCheck: true,
+                    }"
+                    @textareaValue="console.log($event)"
+                    @textareaSubmit="console.log($event)"
+                    class="type-count-1"
+                  />
+                </div>
+                <!-- T11C04P007 : 변경 사유 -->
+
+                <div class="form-box">
+                  <div class="title-area">
+                    <strong class="title">연락받을 전화번호</strong>
+
+                    <div class="check-txt check_st mgt0">
+                      <input type="checkbox" id="checkbox01_01" name="" @click="handleMemberPhone" />
+                      <label for="checkbox01_01">신청 회선과 동일</label>
+                    </div>
+                  </div>
+                  <div class="form_group">
+                    <div class="form_item">
+                      <InputForm class="combobox-bottom" :option="{ placeholder: `숫자만 입력해 주세요` }" />
+                    </div>
+                  </div>
+                  <p class="notice-txt">처리 결과를 SMS로 안내해 드려요</p>
+                </div>
+              </div>
+            </div>
+          </template>
+          <template v-else-if="registrationQuery === 'none'">
+            <!-- T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <div class="content-item">
+              <div class="content-inner">
+                <div class="cont-head title-main">
+                  <h3 class="cont-title-main">
+                    유심 / eSIM 변경은<br />
+                    <b class="txt-primary">셀프로 간편 신청</b>하세요
+                  </h3>
+                </div>
+
+                <MessageResult
+                  :description="`등록된 휴대폰 정보가 없어요 <br />알닷케어 > 휴대폰 정보 등록을 통해 <br
+                class='pc_hide'> 정보를 입력해 주세요`"
+                />
+                <div class="btn-area">
+                  <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line fz16-pc">번호 변경 이력 보기</NuxtLink>
+                </div>
+              </div>
+            </div>
+            <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
+          </template>
           <!-- T06C11 bottom_button -->
           <BottomFixMenu :btnText="'인증하기'" :disabled="true" />
           <!-- //T06C11 bottom_button -->
@@ -209,6 +219,18 @@
           <PopupListItem v-model="selectedTab2" :ListItemData="selectList2" @select="clickSelectListChangeResonItem" />
         </Popup>
         <!-- //P007 : 유심 변경 사유 선택 popup -->
+
+        <!-- eSIM 변경 확인 사항 팝업  -->
+        <Popup
+          title="유심 변경 확인 사항"
+          :isOpen="popupQuery === '2' && popupOpen"
+          @update:isOpen="popupOpen = false"
+          popType="full no-title"
+          :confirmText="'확인했어요'"
+        >
+          <ALMY05300P01 />
+        </Popup>
+        <!-- // eSIM 변경 확인 사항 팝업 -->
       </div>
     </div>
   </div>
@@ -225,14 +247,15 @@ import Accodian from "@/components/v2/common/Accodian.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
 import Tab from "@/components/v2/common/Tab.vue";
 import TextareaBox from "@/components/TextareaBox.vue";
+import ALMY05300P01 from "@/components/popup/AL-MY-05-300-P01.vue";
 
 // S: 레이아웃 설정 (1-1)
 const layout = ref({
   header: "sub",
   footer: "",
   floatMenu: "none",
-  title: "가입정보",
-  wrapClass: "selfcare ver-3",
+  title: "유심/이심 변경",
+  wrapClass: "roaming ver-3",
 });
 
 const emit = defineEmits(["setLayout"]);
@@ -241,6 +264,7 @@ const emit = defineEmits(["setLayout"]);
 // S: JS-P005 : 기본 팝업 쿼리값으로 열고, 닫기
 const route = useRoute();
 const popupQuery = ref(route.query.popup);
+const registrationQuery = ref(route.query.registration);
 const popupOpen = ref(true);
 // E: JS-P005 : 기본 팝업 쿼리값으로 열고, 닫기
 
@@ -254,7 +278,7 @@ const cardObject_1 = ref([
     list: [
       { name: "심 구분", value: "유심" },
       { name: "심 모델", value: "K3620" },
-      { name: "휴대폰 기기명", value: "-" },
+      { name: "휴대폰 기기명", value: "iPhone 16" },
     ],
   },
 ]);
