@@ -16,8 +16,9 @@
           <MyInfoMenu />
           <!-- // 내 정보 메뉴 -->
 
+          <!-- CASE1: 유심 등록된 휴대폰이 있을 경우 -->
           <template v-if="registrationQuery !== 'none'">
-            <!-- T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <!-- 상단 텍스트 & 정보 리스트  -->
             <div class="content-item">
               <div class="content-inner">
                 <div class="cont-head title-main">
@@ -36,7 +37,7 @@
                 </CardGroup>
               </div>
             </div>
-            <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <!-- //상단 텍스트 & 정보 리스트  -->
 
             <div class="content-item">
               <div class="content-inner">
@@ -142,8 +143,9 @@
               </div>
             </div>
           </template>
+          <!-- CASE2: 유심 등록된 휴대폰이 없을 경우 -->
           <template v-else-if="registrationQuery === 'none'">
-            <!-- T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <!-- 상단 텍스트 & 정보 리스트  -->
             <div class="content-item">
               <div class="content-inner">
                 <div class="cont-head title-main">
@@ -162,13 +164,13 @@
                 </div>
               </div>
             </div>
-            <!-- //T09C03 : 상단 텍스트 & 정보 리스트  -->
+            <!-- //상단 텍스트 & 정보 리스트  -->
           </template>
-          <!-- T06C11 bottom_button -->
+          <!--  bottom_button -->
           <BottomFixMenu :btnText="'인증하기'" :disabled="true" />
-          <!-- //T06C11 bottom_button -->
+          <!-- // bottom_button -->
 
-          <!-- T07C10 꼭 알아두세요 -->
+          <!-- 꼭 알아두세요 -->
           <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
             <template #content>
               <ul class="text-list bull">
@@ -194,7 +196,7 @@
               </ul>
             </template>
           </Accodian>
-          <!-- //T07C10 꼭 알아두세요 -->
+          <!-- //꼭 알아두세요 -->
         </div>
         <!-- // contents -->
 
@@ -271,7 +273,7 @@ const popupOpen = ref(true);
 // S: JS-T09 - 상단 텍스트 & 정보 리스트
 const cardObject_1 = ref([
   {
-    title: "등록 정보",
+    title: "현재 등록 정보",
     sub: "",
     chip: "",
     url: "",
