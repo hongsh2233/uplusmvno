@@ -3,7 +3,7 @@
     <div class="container deps4">
       <div class="content" id="content">
         <h2 class="title_nav">{{ layout.title }}</h2>
-        <ALMY05301P03 />
+        <ALMY05301P04 />
       </div>
     </div>
     <!-- // container  -->
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import ALMY05301P03 from "@/components/popup/AL-MY-05-301-P03.vue";
+import ALMY05301P04 from "@/components/popup/AL-MY-05-301-P04.vue";
 
 import { useRouter } from "vue-router";
 const router = useRouter();
