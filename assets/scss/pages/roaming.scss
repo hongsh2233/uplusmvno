@@ -87,6 +87,10 @@
     &.text-normal {
       p {
         font-weight: 500;
+        + span {
+          display: block;
+          margin-top: rem(2);
+        }
       }
     }
   }
@@ -1423,11 +1427,11 @@
   }
   //E: 로밍 팝업 관련
 
-  .shortcut-menu {
-    .pc & {
-      margin-top: rem(56);
-    }
-  }
+  // .shortcut-menu {
+  //   .pc & {
+  //     margin-top: rem(56);
+  //   }
+  // }
   .content-item {
     .content-inner {
       > .btn-area {
@@ -1473,6 +1477,7 @@
   @include generate-fs((10, 14, 16, 18, 20, 22, 24));
 
   @include generate-mgt((8, 16, 24, 32, 40, 56, 60, 64));
+  @include generate-mgb((8, 16, 24, 32, 40, 56, 60, 64));
   @include generate-pdxy((0, 8, 16, 32, 40, 56, 60, 64));
   @include generate-mgxy((0, 8, 16, 32, 40, 56, 60, 64));
 
@@ -1635,6 +1640,15 @@
     //     }
     //   }
     // }
+    &.normal {
+      .pc & {
+        .tab-title-wrap {
+          .btn-tab-title {
+            font-size: rem(16);
+          }
+        }
+      }
+    }
     &.type-outline {
       .tab-title-wrap {
         padding: 0;

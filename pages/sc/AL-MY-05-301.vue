@@ -308,11 +308,11 @@
                     </p>
 
                     <div class="btn-area">
-                      <button type="button" class="btn-rounded btn">이미지 올리기</button>
+                      <button type="button" class="btn-rounded btn fz16-pc">이미지 올리기</button>
                     </div>
 
                     <div class="btn-area">
-                      <button type="button" class="btn-rounded btn">이미지 다시 올리기</button>
+                      <button type="button" class="btn-rounded btn fz16-pc">이미지 다시 올리기</button>
                     </div>
                   </div>
 
@@ -445,7 +445,7 @@
                     <InputForm class="combobox-bottom" :option="{ placeholder: `숫자만 입력해 주세요` }" />
                   </div>
                 </div>
-                <p class="notice-txt">처리 결과를 SMS로 안내해 드려요</p>
+                <p class="notice-txt fz-sm">처리 결과를 SMS로 안내해 드려요</p>
               </div>
             </div>
           </div>
@@ -681,9 +681,8 @@ const popupQuery = ref(route.query.popup);
 const selectedTab2 = ref("휴대폰 변경");
 const selectList2 = ref([
   { selected: true, value: "휴대폰 변경", name: "휴대폰 변경" },
-  { selected: false, value: "휴대폰 분실", name: "휴대폰 분실" },
-  { selected: false, value: "유심 불량/파손", name: "유심 불량/파손" },
-  { selected: false, value: "유심 분실", name: "유심 분실" },
+  { selected: false, value: "보안", name: "보안" },
+  { selected: false, value: "듀얼 번호 사용", name: "듀얼 번호 사용" },
   { selected: false, value: "직접 입력", name: "직접 입력" },
 ]);
 

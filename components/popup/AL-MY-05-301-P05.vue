@@ -12,11 +12,11 @@
         <div class="cont-head"><div class="cont-title">단말기 기종에 따라 아래 방법으로 진행해 주세요</div></div>
         <ol class="text-list circle-num type-vertical text-normal">
           <li>
-            <p>안드로이드</p>
-            단말기에서 설정 > 연결 > SIM 카드 관리자 > 모바일 요금제 추가
+            <p><strong>안드로이드</strong></p>
+            <span>단말기에서 설정 > 연결 > SIM 카드 관리자 > 모바일 요금제 추가</span>
           </li>
           <li>
-            <p>아이폰</p>
+            <p><strong>아이폰</strong></p>
             알림 Push 메시지 탭 > 'eSIM 활성화' 탭 > '계속' 탭
           </li>
         </ol>

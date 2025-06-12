@@ -43,7 +43,7 @@
               <div class="content-inner">
                 <Tab :titles="['유심으로 변경', 'eSIM으로 변경']" :active-tab-index="0">
                   <template #content1>
-                    <div class="cont-head title-main">
+                    <div class="cont-head title-main mgb16-mobile">
                       <h3 class="cont-title-main">
                         변경할 <b class="txt-primary">유심</b> 정보를<br />
                         등록해 주세요
@@ -138,7 +138,7 @@
                       <InputForm class="combobox-bottom" :option="{ placeholder: `숫자만 입력해 주세요` }" />
                     </div>
                   </div>
-                  <p class="notice-txt">처리 결과를 SMS로 안내해 드려요</p>
+                  <p class="notice-txt fz-sm">처리 결과를 SMS로 안내해 드려요</p>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@
                 class='pc_hide'> 정보를 입력해 주세요`"
                 />
                 <div class="btn-area">
-                  <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line fz16-pc">번호 변경 이력 보기</NuxtLink>
+                  <NuxtLink :to="'/sc/AL-MY-06-002'" class="btn-rounded btn-line fz16-pc">휴대폰 정보 등록</NuxtLink>
                 </div>
               </div>
             </div>
