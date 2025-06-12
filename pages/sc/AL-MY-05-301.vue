@@ -385,6 +385,72 @@
           <div v-else></div>
           <!-- // content-item03 -->
 
+          <!-- 변경사항 -->
+          <div class="content-item">
+            <div class="content-inner">
+              <!-- T11C04P007 : 변경 사유 -->
+              <div class="form-box">
+                <div class="title-area">
+                  <strong class="title">변경 사유</strong>
+                </div>
+                <InputForm
+                  class="combobox-bottom"
+                  :option="{
+                    placeholder: '선택해 주세요',
+                    readonly: true,
+                    action: 'dropdown',
+                  }"
+                  @click="handleChangeResonSel"
+                />
+              </div>
+
+              <div class="form-box mgt16" v-if="selectedTab2 === '직접 입력'">
+                <!-- <TextareaBox
+                  :data="{
+                    placeholder: '유심 변경 사유를 입력해 주세요',
+                    rows: 1,
+                    maxlength: 30,
+                    byteCheck: true,
+                  }"
+                  @textareaValue="console.log($event)"
+                  @textareaSubmit="console.log($event)"
+                  class="type-count-1"
+                /> -->
+                <TextareaBox
+                  :data="{
+                    type: 'ty03',
+                    placeholder: '유심 변경 사유를 입력해 주세요',
+                    rows: 1,
+                    maxlength: 60,
+                    byteCheck: true,
+                  }"
+                  @textareaValue="console.log($event)"
+                  @textareaSubmit="console.log($event)"
+                  class="type-count-1"
+                />
+              </div>
+              <!-- T11C04P007 : 변경 사유 -->
+
+              <div class="form-box">
+                <div class="title-area">
+                  <strong class="title">연락받을 전화번호</strong>
+
+                  <div class="check-txt check_st mgt0">
+                    <input type="checkbox" id="checkbox01_01" name="" @click="handleMemberPhone" />
+                    <label for="checkbox01_01">신청 회선과 동일</label>
+                  </div>
+                </div>
+                <div class="form_group">
+                  <div class="form_item">
+                    <InputForm class="combobox-bottom" :option="{ placeholder: `숫자만 입력해 주세요` }" />
+                  </div>
+                </div>
+                <p class="notice-txt">처리 결과를 SMS로 안내해 드려요</p>
+              </div>
+            </div>
+          </div>
+          <!-- // 변경사항 -->
+
           <!-- button -->
           <div class="reverse">
             <BottomFixMenu :btnText="'인증하기'" :disabled="true" />
@@ -425,6 +491,76 @@
     <!-- // contents -->
   </div>
   <!-- // container -->
+
+  <!-- P007 : eSIM 변경 사유 선택 popup -->
+  <Popup
+    title="eSIM 변경 사유 선택"
+    :isOpen="selectBoxOpen2"
+    @update:isOpen="selectBoxOpen2 = $event"
+    @confirm="clickSelectBoxChangeResonConfirm"
+  >
+    <PopupListItem v-model="selectedTab2" :ListItemData="selectList2" @select="clickSelectListChangeResonItem" />
+  </Popup>
+  <!-- //P007 : eSIM 변경 사유 선택 popup -->
+
+  <!-- eSIM 변경 확인 사항 팝업  -->
+  <Popup
+    title="eSIM 변경 확인 사항"
+    :isOpen="popupQuery === '1' && popupOpen"
+    @update:isOpen="popupOpen = false"
+    popType="full no-title"
+    :confirmText="'확인했어요'"
+  >
+    <ALMY05301P01 />
+  </Popup>
+  <!-- // eSIM 변경 확인 사항 팝업 -->
+
+  <!-- 유심에서 eSIM 변경 확인 사항 팝업  -->
+  <Popup
+    title="유심에서 eSIM 변경 확인 사항"
+    :isOpen="popupQuery === '2' && popupOpen"
+    @update:isOpen="popupOpen = false"
+    popType="full no-title"
+    :confirmText="'확인했어요'"
+  >
+    <ALMY05301P02 />
+  </Popup>
+  <!-- // 유심에서 eSIM 변경 확인 사항 팝업 -->
+
+  <!-- 변경 완료01 팝업 -->
+  <Popup
+    title="변경 완료"
+    :isOpen="popupQuery === '3' && popupOpen"
+    @update:isOpen="popupOpen = false"
+    class="pcpopup"
+    :isPopFooter="false"
+  >
+    <ALMY05301P03 />
+  </Popup>
+  <!-- // 변경 완료01 팝업 -->
+
+  <!-- 변경 완료02 팝업 -->
+  <Popup
+    title="변경 완료"
+    :isOpen="popupQuery === '4' && popupOpen"
+    @update:isOpen="popupOpen = false"
+    class="pcpopup"
+    :isPopFooter="false"
+  >
+    <ALMY05301P04 />
+  </Popup>
+  <!-- // 변경 완료02 팝업 -->
+
+  <!-- eSIM 활성화 가이드 팝업  -->
+  <Popup
+    title="eSIM 활성화 가이드"
+    :isOpen="popupQuery === '5' && popupOpen"
+    @update:isOpen="popupOpen = false"
+    popType="full no-title"
+  >
+    <ALMY05301P05 />
+  </Popup>
+  <!-- // eSIM 활성화 가이드 팝업 -->
 </template>
 
 <script setup lang="ts">
@@ -433,7 +569,14 @@ import CardGroup from "@/components/v2/common/CardGroupRoaming.vue";
 
 import Tab from "@/components/v2/common/Tab.vue";
 import InputForm from "@/components/v2/common/InputForm.vue";
+import TextareaBox from "@/components/TextareaBox.vue";
+import PopupListItem from "@/components/v2/common/PopupListItem.vue";
 import Popup from "@/components/v2/common/Popup.vue";
+import ALMY05301P01 from "@/components/popup/AL-MY-05-301-P01.vue";
+import ALMY05301P02 from "@/components/popup/AL-MY-05-301-P02.vue";
+import ALMY05301P03 from "@/components/popup/AL-MY-05-301-P03.vue";
+import ALMY05301P04 from "@/components/popup/AL-MY-05-301-P04.vue";
+import ALMY05301P05 from "@/components/popup/AL-MY-05-301-P05.vue";
 
 import Accodian from "@/components/v2/common/Accodian.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
@@ -527,6 +670,38 @@ const detectTab = (tabIndex: number) => {
     }
   });
   return "";
+};
+
+const popupOpen = ref(true);
+const route = useRoute();
+const popupQuery = ref(route.query.popup);
+
+// S: JS-T11 : 변경 사유
+const selectedTab2 = ref("휴대폰 변경");
+const selectList2 = ref([
+  { selected: true, value: "휴대폰 변경", name: "휴대폰 변경" },
+  { selected: false, value: "휴대폰 분실", name: "휴대폰 분실" },
+  { selected: false, value: "유심 불량/파손", name: "유심 불량/파손" },
+  { selected: false, value: "유심 분실", name: "유심 분실" },
+  { selected: false, value: "직접 입력", name: "직접 입력" },
+]);
+
+const selectBoxOpen2 = ref(false);
+const handleChangeResonSel = () => {
+  selectBoxOpen2.value = true;
+};
+
+const clickSelectBoxChangeResonConfirm = () => {
+  console.log("셀렉트박스 확인");
+};
+
+const clickSelectListChangeResonItem = (targetData: any) => {
+  console.log(targetData);
+};
+// E: JS-T11 : 변경 사유
+
+const handleMemberPhone = (e: Event) => {
+  console.log(e);
 };
 
 onMounted(() => {
