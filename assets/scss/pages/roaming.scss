@@ -1307,6 +1307,13 @@
           }
         }
       }
+      .first-content-item {
+        > .content-item {
+          &:first-child {
+            padding-bottom: rem(56);
+          }
+        }
+      }
       .pop_content {
         .first-content-item {
           margin: 0;

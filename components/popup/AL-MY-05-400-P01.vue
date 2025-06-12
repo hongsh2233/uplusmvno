@@ -9,13 +9,13 @@
               <b class="txt-primary">해지</b>하시겠어요?
             </h3>
           </div>
-
-          <div class="con_rounded">
-            <CardGroup :card-object="cardObject1" />
+          <div class="inner-section">
+            <div class="con_rounded">
+              <CardGroup :card-object="cardObject1" />
+            </div>
           </div>
         </div>
       </div>
-
       <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
         <template #content>
           <ul class="text-list bull">
