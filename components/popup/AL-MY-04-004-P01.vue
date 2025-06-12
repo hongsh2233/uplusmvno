@@ -23,12 +23,6 @@
             </p>
           </template>
         </CardGroup>
-
-        <div class="form-box mt_24">
-          <div class="btn-area">
-            <button type="button" class="btn-rounded btn-line btn-sm">요금 바로 납부</button>
-          </div>
-        </div>
       </div>
     </div>
 

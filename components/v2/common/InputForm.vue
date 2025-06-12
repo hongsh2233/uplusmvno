@@ -53,18 +53,6 @@
       <span class="blind">선택</span>
     </button>
 
-    <!-- 20250611 버튼명 추가 옵션-->
-    <button
-      type="button"
-      class="btn-action clkbtn"
-      v-if="option.actionBtn"
-      :class="option.actionBtn"
-      @click="!option.disabled ? btnClick() : ''"
-    >
-      <span>{{ option.buttonText }}</span>
-    </button>
-    <!-- // 20250611 버튼명 추가 옵션-->
-
     <div class="timer" v-if="option.authNum">
       <span>0:01</span>
       <!-- <button type="button" v-bind:disabled="option.authNumDisabled">시간연장하기</button> -->

@@ -59,6 +59,10 @@
         button {
           width: 100%;
         }
+
+        &.flex-reverse {
+          flex-direction: column-reverse;
+        }
       }
     }
   }

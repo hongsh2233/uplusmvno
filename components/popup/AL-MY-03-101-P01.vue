@@ -1,16 +1,16 @@
 <template>
-  <div class="first-content-item confirm-area usimsafe">
+  <div class="first-content-item confirm-area care-empty02">
     <div class="content-inner">
       <div class="cont-head">
         <h3 class="cont-title-main">
-          선불요금제가<br />
-          <strong class="txt-primary">충전 완료</strong>되었어요
+          요금 납부가<br />
+          <strong class="txt-primary">완료</strong>되었어요
         </h3>
       </div>
     </div>
 
     <p class="icon">
-      <img src="/images/v2/content/img_charging.png" alt="이미지" />
+      <img src="/images/v2/content/img_Paybill.png" alt="이미지" />
     </p>
 
     <div class="content-item">
@@ -24,13 +24,10 @@
           </template>
         </CardGroup>
 
-        <div class="gray-notice-box">
-          <ul class="text-list bull">
-            <li>
-              이용기간 이후 잔액은 이용한 금액에 상관없이 0원이 되며 이용기간 이후 10일 이내 재충전시 기존 잔액과 새로
-              충전한 금액 합산됩니다.
-            </li>
-          </ul>
+        <div class="form-box mt_24">
+          <div class="btn-area">
+            <button type="button" class="btn-rounded btn-line" :class="[!isMobile && 'btn-sm']">납부 내역 조회</button>
+          </div>
         </div>
       </div>
     </div>
@@ -58,11 +55,10 @@ const cardObject1 = ref([
     sub: "",
     chip: "",
     list: [
-      { name: "휴대폰 번호", value: "010-****-1234" },
-      { name: "요금제명", value: "선불 LTE 절약" },
-      { name: "충전 신청일", value: "2025. 07. 18" },
-      { name: "이용 기간 만료일", value: "2025. 07. 18" },
-      { name: "충전 금액", value: "38,300원", class: "txt-orange" },
+      { name: "납부 금액", value: "89,300원", class: "txt-orange" },
+      { name: "납부 후 미납 잔액", value: "0원" },
+      { name: "납부 방법", value: "국민카드/신용카드" },
+      { name: "할부 기간", value: "일시불" },
     ],
   },
 ]);

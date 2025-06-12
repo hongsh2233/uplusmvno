@@ -188,7 +188,11 @@
             <!-- section -->
             <div class="content-item">
               <div class="content-inner">
-                <div class="cont-head fl-sb">
+                <div class="cont-head title-main" v-if="isMobile">
+                  <h3 class="cont-title-main">요금 바로 납부</h3>
+                </div>
+
+                <div class="cont-head fl-sb" v-else>
                   <h3 class="cont-title">
                     <span>요금 바로 납부</span>
                   </h3>
@@ -196,7 +200,7 @@
 
                 <div class="form-box mgt40">
                   <div class="title-area">
-                    <strong class="title">발급 용도 및 제출처</strong>
+                    <strong class="title">납부 방식</strong>
                   </div>
 
                   <div class="btn-flex">
@@ -296,6 +300,8 @@ const layout = reactive<LayoutOptions>({
   wrapClass: "selfcare roaming",
 });
 
+const isMobile = ref(front.isMobile());
+
 const isOpen = ref(false);
 
 const openAlart = () => {
@@ -316,7 +322,3 @@ onMounted(() => {
   emit("setLayout", layout);
 });
 </script>
-
-<style lang="scss" scoped>
-@use "@/assets/scss/pages/sc/page-al-my-03-200.scss" as *;
-</style>

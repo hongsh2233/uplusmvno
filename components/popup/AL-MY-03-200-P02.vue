@@ -10,7 +10,7 @@
     </div>
 
     <p class="icon">
-      <img src="/images/v2/content/img_PhoneRegistration.png" alt="이미지" />
+      <img src="/images/v2/content/img_period.png" alt="이미지" />
     </p>
 
     <div class="content-item">

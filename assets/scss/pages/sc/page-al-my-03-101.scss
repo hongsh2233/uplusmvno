@@ -31,26 +31,48 @@
   }
 
   &:deep() {
-    .input_box {
-      .clkbtn {
-        padding: 0.4rem 0.8rem;
-        width: auto;
-        height: auto;
-        border-radius: 6px;
-        border: 1px solid #dce0e5;
-        background: #f3f5f6;
+    .form_item {
+      &.certified {
+        .combobox-bottom {
+          & + .btn {
+            &.chip {
+              display: flex;
+              align-items: center;
+              padding: 0.4rem 0.8rem;
+              width: auto;
+              height: rem(28);
+              border-radius: 6px;
+              border: 1px solid #dce0e5;
+              background: #f3f5f6;
+              @include Lb_Sm_s14_lh20;
+            }
+          }
 
-        span {
-          @include Lb_Sm_s14_lh20;
+          &.input_box {
+            &.auth_num {
+              .timer {
+                span {
+                  @include Lb_Sm_s14_lh20;
+                  color: #fc6969;
+                }
+              }
+            }
+          }
         }
       }
+    }
 
-      .timer {
-        right: rem(74);
-
-        span {
-          @include Lb_Sm_s14_lh20;
-          color: #fc6969;
+    .mobile & {
+      .form_item {
+        &.certified {
+          .combobox-bottom {
+            & + .btn {
+              &.chip {
+                height: rem(24);
+                @include Lb_xxSm_s12_lh18;
+              }
+            }
+          }
         }
       }
     }
@@ -60,6 +82,8 @@
     .text_info {
       padding-left: 2.2rem;
       color: var(--gray-200);
+      @include Lb_Sm_s14_lh20;
+      font-weight: 500;
 
       &::before {
         top: -0.1rem;

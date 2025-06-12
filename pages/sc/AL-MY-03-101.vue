@@ -12,9 +12,6 @@
           <!-- crp_r -->
           <div class="crp_r">
             <h2 class="pc-title">{{ layout.title }}</h2>
-            <!-- 내 정보 메뉴 -->
-            <MyInfoMenu />
-            <!-- // 내 정보 메뉴 -->
 
             <!-- section -->
             <div class="content-item">
@@ -73,10 +70,10 @@
                 <!-- // 02 -->
 
                 <!-- 03 -->
-                <!-- 고객 유형 -->
+                <!-- 카드 번호 -->
                 <div class="form-box">
                   <div class="title-area">
-                    <strong class="title">고객 유형</strong>
+                    <strong class="title">카드 번호</strong>
                   </div>
 
                   <div class="form_group">
@@ -85,7 +82,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- // 고객 유형 -->
+                <!-- // 카드 번호 -->
 
                 <!-- 카드사 -->
                 <div class="form-box">
@@ -95,7 +92,10 @@
 
                   <div class="form_group">
                     <div class="form_item">
-                      <InputForm class="combobox-bottom" :option="{ placeholder: `카드번호 입력 시 자동 조회` }" />
+                      <InputForm
+                        class="combobox-bottom text view"
+                        :option="{ placeholder: `카드번호 입력 시 자동 조회`, value: '신한카드', readonly: true }"
+                      />
                     </div>
                   </div>
                 </div>
@@ -204,6 +204,28 @@
                     </div>
                     <!-- // 카드 명의자 구분 -->
 
+                    <!-- 고객 성별 -->
+                    <div class="form-box">
+                      <div class="title-area">
+                        <strong class="title">고객 성별</strong>
+                      </div>
+
+                      <div class="btn-flex">
+                        <div v-for="(item, idx) in radioData4" :key="item.id" class="radio_item ty05">
+                          <input
+                            type="radio"
+                            :id="item.id"
+                            name="radio04"
+                            :value="item.value"
+                            :checked="item.checked"
+                            @change="radioIdx4 = idx"
+                          />
+                          <label :for="item.id">{{ item.text }}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // 고객 성별 -->
+
                     <!-- 통신사 -->
                     <div class="form-box">
                       <div class="title-area">
@@ -233,37 +255,39 @@
                       </div>
 
                       <div class="form_group">
-                        <div class="form_item">
+                        <div class="form_item certified val_chk">
                           <InputForm
                             class="combobox-bottom"
                             :option="{
                               placeholder: `숫자만 입력해 주세요.`,
-                              actionBtn: true,
-                              disabled: false,
-                              buttonText: '인증번호 받기',
                             }"
                           />
+                          <button type="button" class="btn chip">인증번호 받기</button>
                         </div>
                       </div>
 
                       <div class="form_group">
-                        <div class="form_item">
+                        <div class="form_item certified val_chk">
                           <InputForm
                             class="combobox-bottom auth_num"
                             :option="{
                               placeholder: `인증번호 입력해 주세요`,
-                              actionBtn: true,
                               authNum: true,
-                              disabled: false,
-                              buttonText: '시간 연장',
                             }"
                           />
+                          <button type="button" class="btn chip">시간 연장</button>
                         </div>
                       </div>
 
                       <div class="text_info type02">
                         휴대폰 인증 시 수집된 개인정보(성명, 생년월일, 성별, 휴대폰번호)는 개인정보 수집 이용 정책과
                         같이 활용됨을 동의함
+                      </div>
+
+                      <div class="btn-area btn-space mgb0">
+                        <button type="button" class="btn-rounded btn-line" :class="[!isMobile && 'btn-sm']">
+                          인증하기
+                        </button>
                       </div>
                     </div>
                     <!-- // 휴대폰 번호 -->
@@ -337,6 +361,28 @@
                     </div>
                     <!-- // 카드 명의자 구분 -->
 
+                    <!-- 고객 성별 -->
+                    <div class="form-box">
+                      <div class="title-area">
+                        <strong class="title">고객 성별</strong>
+                      </div>
+
+                      <div class="btn-flex">
+                        <div v-for="(item, idx) in radioData4" :key="item.id" class="radio_item ty05">
+                          <input
+                            type="radio"
+                            :id="item.id"
+                            name="radio04"
+                            :value="item.value"
+                            :checked="item.checked"
+                            @change="radioIdx4 = idx"
+                          />
+                          <label :for="item.id">{{ item.text }}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- // 고객 성별 -->
+
                     <!-- 통신사 -->
                     <div class="form-box">
                       <div class="title-area">
@@ -366,37 +412,39 @@
                       </div>
 
                       <div class="form_group">
-                        <div class="form_item">
+                        <div class="form_item certified val_chk">
                           <InputForm
                             class="combobox-bottom"
                             :option="{
                               placeholder: `숫자만 입력해 주세요.`,
-                              actionBtn: true,
-                              disabled: false,
-                              buttonText: '인증번호 받기',
                             }"
                           />
+                          <button type="button" class="btn chip">인증번호 받기</button>
                         </div>
                       </div>
 
                       <div class="form_group">
-                        <div class="form_item">
+                        <div class="form_item certified val_chk">
                           <InputForm
                             class="combobox-bottom auth_num"
                             :option="{
                               placeholder: `인증번호 입력해 주세요`,
-                              actionBtn: true,
                               authNum: true,
-                              disabled: false,
-                              buttonText: '시간 연장',
                             }"
                           />
+                          <button type="button" class="btn chip">시간 연장</button>
                         </div>
                       </div>
 
                       <div class="text_info type02">
                         휴대폰 인증 시 수집된 개인정보(성명, 생년월일, 성별, 휴대폰번호)는 개인정보 수집 이용 정책과
                         같이 활용됨을 동의함
+                      </div>
+
+                      <div class="btn-area btn-space mgb0">
+                        <button type="button" class="btn-rounded btn-line" :class="[!isMobile && 'btn-sm']">
+                          인증하기
+                        </button>
                       </div>
                     </div>
                     <!-- // 휴대폰 번호 -->
@@ -552,32 +600,6 @@
               <BottomFixMenu :btnText="'결제하기'" />
               <!-- // bottom_button -->
             </div>
-
-            <Accodian title="꼭 알아두세요!" styleClass="acco-notice" :isExpanded="true">
-              <template #content>
-                <ul class="text-list bull">
-                  <li>
-                    당월 충전 금액은 개통 취소를 제외한 다른 사유로는 환불 불가하며 당월을 제외한 충전 금액은 사용
-                    전까지 환불 및 취소 가능합니다.
-                  </li>
-                  <li>
-                    추가 충전 금액은 이용 기간 만료 후에도 이월되며 추가 충전한 시점부터 1년간 사용 가능합니다.(단, 해지
-                    시 환불 불가)
-                  </li>
-                  <li>해지 취소는 당일만 가능합니다.</li>
-                  <li>
-                    개통 당월의 경우는 사용 일수에 따라 계산하여 적용되며 해지, 일시정지, 직권 정지되는 경우 당월 해지
-                    취소, 정지 해제 시에만 기존 제공량이 제공되며 당월 이후에는 소멸되며 충전 후 정상 서비스 사용이
-                    가능합니다.
-                  </li>
-                  <li>개통 후 7일 이내 충전이 안 된 경우 개통 취소 또는 직권해지 될 수 있습니다.</li>
-                  <li>
-                    요금제 내 별도의 명시가 없는 경우 기본 제공 음성, 문자메시지, 데이터 통화 등은 국내에 한해
-                    제공됩니다.
-                  </li>
-                </ul>
-              </template>
-            </Accodian>
           </div>
           <!-- // crp_r -->
         </div>
@@ -587,6 +609,18 @@
     </div>
     <!-- // container -->
   </div>
+
+  <!-- 결제완료 팝업 -->
+  <Popup
+    title="결제완료"
+    :isOpen="popupQuery === '1' && popupOpen"
+    @update:isOpen="popupOpen = false"
+    class="pcpopup"
+    :isPopFooter="false"
+  >
+    <ALMY03101P01 />
+  </Popup>
+  <!-- // 결제완료 팝업 -->
 </template>
 
 <script setup lang="ts">
@@ -599,7 +633,8 @@ import Popup from "@/components/v2/common/Popup.vue";
 import PopupListItem from "@/components/v2/common/PopupListItem.vue";
 import Tems from "@/components/v2/pages/ratepInqry/Tems.vue";
 import BottomFixMenu from "@/components/v2/common/BottomFixMenu.vue";
-import Accodian from "@/components/v2/common/Accodian.vue";
+
+import ALMY03101P01 from "@/components/popup/AL-MY-03-101-P01.vue";
 
 const emit = defineEmits<{
   (e: "setLayout", payload: LayoutOptions): void;
@@ -612,6 +647,8 @@ const layout = reactive<LayoutOptions>({
   title: "납부 정보 입력",
   wrapClass: "selfcare roaming",
 });
+
+const isMobile = ref(front.isMobile());
 
 const radioData1 = ref([
   { id: "radio01_01", value: "본인 신용카드", text: "본인 신용카드", checked: true },
@@ -682,6 +719,10 @@ const clickConfirm2 = () => {
   console.log("개인정보 확인");
 };
 // E: JS-T04 : 개인정보 수집/이용동의
+
+const popupOpen = ref(true);
+const route = useRoute();
+const popupQuery = ref(route.query.popup);
 
 onMounted(() => {
   emit("setLayout", layout);

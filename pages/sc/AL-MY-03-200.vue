@@ -63,7 +63,7 @@
                           </ul>
                         </div>
 
-                        <div class="btn-area btn-space mgb0 join-btn-wr">
+                        <div class="btn-area btn-space mgb0 join-btn-wr" :class="[isMobile && 'flex-reverse']">
                           <button type="button" class="btn-rounded" :class="[!isMobile && 'btn-sm']">
                             실시간 사용량 보기
                           </button>
@@ -117,7 +117,7 @@
                           </ul>
                         </div>
 
-                        <div class="btn-area btn-space mgb0 join-btn-wr">
+                        <div class="btn-area btn-space mgb0 join-btn-wr" :class="[isMobile && 'flex-reverse']">
                           <button type="button" class="btn-rounded" :class="[!isMobile && 'btn-sm']">
                             실시간 사용량 보기
                           </button>
