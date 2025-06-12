@@ -83,9 +83,14 @@
             key === '구분' && 'cell-gubun',
           ]"
         >
-          <template v-if="key === 'PATH' && item[key] && item['진행상태'] !== '진행전'">
-            <!-- <NuxtLink :to="(item[key] as string)" target="_blank">
-              <span>{{ item[key] }}</span>
+          <template
+            v-if="
+              (key === 'PATH' && item[key] && item['진행상태'] !== '진행전') ||
+              (key === 'PATH' && item[key] && pub === 1)
+            "
+          >
+            <!-- <NuxtLink :to="(item[key] as string)" target="_blank"> && pub !==||
+              (key === '구분' && 'cell-gubu && <=pan>{{ item[key] }}</=pan>)
             </NuxtLink> -->
             <template v-if="!Array.isArray(item[key])">
               <NuxtLink :to="(item[key] as string)" target="_blank">
@@ -156,11 +161,12 @@
           </template>
           <template
             v-else-if="
-              key === 'PATH' &&
-              !item[key] &&
-              item['화면ID'] &&
-              item['진행상태'] !== '진행전' &&
-              item['진행상태'] !== '진행중'
+              (key === 'PATH' &&
+                !item[key] &&
+                item['화면ID'] &&
+                item['진행상태'] !== '진행전' &&
+                item['진행상태'] !== '진행중') ||
+              (key === 'PATH' && !item[key] && item['화면ID'] && pub === 1)
             "
           >
             <NuxtLink :to="`/ro/${(item['화면ID'] as string)}`" target="_blank">
@@ -194,7 +200,12 @@
             <span v-html="getModifyInfoDate(String(item[key]))"></span>
           </template>
           <template v-else-if="!Array.isArray(item[key])">
-            <span v-html="item[key]"></span>
+            <template v-if="pub !== 1 && key === 'PATH' && item['진행상태'] === '진행전'">
+              <span></span>
+            </template>
+            <template v-else>
+              <span v-html="item[key]"></span>
+            </template>
           </template>
         </td>
       </tr>
@@ -213,6 +224,10 @@ interface Path {
 interface Item {
   [key: string]: string | number | null | Path[];
 }
+
+const route = useRoute();
+const pub = ref(Number(route.query.pub));
+
 // Props 타입 정의
 const props = defineProps<{
   data: Item[];
