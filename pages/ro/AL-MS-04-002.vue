@@ -205,7 +205,7 @@
                     <!-- // 상단 배너 -->
 
                     <!-- txt_wrap -->
-                    <div class="mgt40">
+                    <div class="inner-section">
                       <div class="txt_wrap">
                         <p class="tit01">해외에서 요금 폭탄 걱정 없이<br v-if="isMobile" />데이터를 이용하세요!</p>
                         <p class="tit">
@@ -220,7 +220,7 @@
                     <!-- // txt_wrap -->
 
                     <!--  -->
-                    <div class="mgt40">
+                    <div class="inner-section">
                       <ul class="banner_wrap">
                         <li>
                           <div class="banner_list">
@@ -267,8 +267,8 @@
                     </div>
                     <!-- //  -->
 
-                    <!--  -->
-                    <div class="howtouse-wrap mgt40">
+                    <!-- 이용 방법 -->
+                    <div class="inner-section howtouse-wrap">
                       <p class="s-tit">이용 방법</p>
                       <p class="tit">
                         데이터 로밍 차단 부가서비스에<br v-if="isMobile" />
@@ -277,7 +277,122 @@
                       </p>
                       <button class="howbtn">데이터 로밍 차단 해지하기</button>
                     </div>
-                    <!-- // -->
+                    <!-- // 이용 방법 -->
+
+                    <!-- 20250613 -->
+                    <!-- 자주하는 질문 -->
+                    <div class="inner-section">
+                      <div class="txt_wrap">
+                        <p class="tit">자주하는 질문</p>
+                      </div>
+
+                      <v-expansion-panels class="type-accordion-faq ty02 no-ico" multiple>
+                        <v-expansion-panel class="acd_item">
+                          <div class="inner-panner-wrap">
+                            <div class="acd_title">
+                              <v-expansion-panel-title>
+                                <div class="title-text-wrap">
+                                  <p class="title-text">해외 데이터 안심 옵션을 이용하려면 어떻게 해야 하나요?</p>
+                                </div>
+                              </v-expansion-panel-title>
+                            </div>
+                            <div class="acd_panel">
+                              <v-expansion-panel-text>
+                                <div class="info-wrap">
+                                  U+ 모바일을 이용하고 있다면 따로 신청하거나, U+ 해외 로밍 요금제에 가입하지 않아도
+                                  해외에 도착하면 자동으로 적용돼요.
+                                  <br />단, ‘데이터 로밍 차단‘ 부가 서비스에 가입되어 있다면, 해지 후 이용할 수 있어요.
+                                </div>
+                              </v-expansion-panel-text>
+                            </div>
+                          </div>
+                        </v-expansion-panel>
+
+                        <v-expansion-panel class="acd_item">
+                          <div class="inner-panner-wrap">
+                            <div class="acd_title">
+                              <v-expansion-panel-title>
+                                <div class="title-text-wrap">
+                                  <p class="title-text">어떤 경우에 사용하면 되나요?</p>
+                                </div>
+                              </v-expansion-panel-title>
+                            </div>
+                            <div class="acd_panel">
+                              <v-expansion-panel-text>
+                                <div class="info-wrap">
+                                  해외에서 음성통화를 사용하지 않고, 데이터로 카카오톡만 주로 이용할 경우에 추천드려요.
+                                </div>
+                              </v-expansion-panel-text>
+                            </div>
+                          </div>
+                        </v-expansion-panel>
+
+                        <v-expansion-panel class="acd_item">
+                          <div class="inner-panner-wrap">
+                            <div class="acd_title">
+                              <v-expansion-panel-title>
+                                <div class="title-text-wrap">
+                                  <p class="title-text">요금은 얼마인가요?</p>
+                                </div>
+                              </v-expansion-panel-title>
+                            </div>
+                            <div class="acd_panel">
+                              <v-expansion-panel-text>
+                                <div class="info-wrap">
+                                  현지 수도 시간 0시를 기준으로 24시간 동안 하루 최대 5,500원(부가세 포함)까지만
+                                  청구돼요.
+                                </div>
+                              </v-expansion-panel-text>
+                            </div>
+                          </div>
+                        </v-expansion-panel>
+                      </v-expansion-panels>
+                    </div>
+                    <!-- // 자주하는 질문 -->
+
+                    <!-- 배너추가 -->
+                    <div class="inner-section">
+                      <div class="txt_wrap">
+                        <p class="tit">
+                          더
+                          <strong>빠른</strong> 속도로 데이터를 <br v-if="isMobile" />이용하고 싶다면?
+                        </p>
+                        <p class="txt">
+                          같은 비용으로 더 많은 데이터를 쓰고,<br />
+                          제휴 혜택도 받을 수 있는 U<sup>+</sup> 해외로밍 요금제에 <br v-if="isMobile" />가입해 보세요.
+                        </p>
+                      </div>
+
+                      <ul class="adbvice-list ty02">
+                        <li>
+                          <NuxtLink to="/" class="bg_fde9e7">
+                            <div class="txt_box">
+                              <p class="tit">로밍패스</p>
+                              <span class="txt">
+                                대폭 확대된 데이터 용량으로<br />
+                                최대 30일 동안 실속있게!
+                              </span>
+                            </div>
+                            <div class="thumb"><img src="/images/roaming/ico_bn_ty0201.png" alt="" /></div>
+                          </NuxtLink>
+                        </li>
+
+                        <li>
+                          <NuxtLink to="/" class="bg_e8f1fc">
+                            <div class="txt_box">
+                              <p class="tit">제로 프리미엄</p>
+                              <span class="txt">
+                                데이터, 음성통화, 테더링까지<br />
+                                무제한으로 이용 가능!
+                              </span>
+                            </div>
+                            <div class="thumb"><img src="/images/roaming/ico_bn_ty0202.png" alt="" /></div>
+                          </NuxtLink>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- 배너추가 -->
+                    <!-- // 20250613 -->
                   </div>
                 </template>
                 <!-- // tab02 -->
@@ -355,6 +470,237 @@
                         </div>
                         <!-- // 상단 배너 -->
 
+                        <!-- 아코디언 -->
+                        <div class="inner-section">
+                          <v-expansion-panels class="acd_bottom_notice" v-model="firstOpenPannel" multiple>
+                            <!-- s : 서비스안내 -->
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>서비스 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">데이터</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          요금제에 가입하지 않고 해외에서 데이터를 사용하면 1KB당 부가세 포함 0.55원의
+                                          요금이 부과됩니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">음성통화</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          해외에서 이용하는 음성통화요금은 국가마다 발신 및 수신 요금을 다르게
+                                          적용합니다.
+                                        </li>
+                                        <li>전화를 받는 경우에도 해외 로밍 요금이 발생합니다.</li>
+                                        <li>
+                                          한국에서 해외 로밍을 이용 중인 고객에게 음성통화를 하면 한국 발신자에게 추가
+                                          요금은 없으며, 해외 로밍을 이용 중인 고객에게만 수신료가 청구됩니다.
+                                        </li>
+                                        <li>
+                                          일부 국가에서는 통화 연결이 되지 않아도 통화연결음 시작부터 통화료가
+                                          발생합니다. - 문자 발신 : 건 당 150원 (VAT 제외) - 문자 수신 : 무료
+                                        </li>
+                                        <li>
+                                          하루에 2개 이상의 국가에서 이용하는 경우, 마지막으로 사용한 국가의 시간을
+                                          기준으로 요금이 계산됩니다.
+                                        </li>
+                                        <li>
+                                          휴대폰에서 국제전화카드를 사용하여 통화할 경우,방문 국가 또는 사업자에 따라
+                                          해외 로밍 요금이 중복 청구될 수 있으니 국제전화카드는 공중전화 또는 일반전화를
+                                          이용하세요.
+                                        </li>
+                                        <li>
+                                          해외 로밍 요금제에 가입하면 할인된 가격으로 서비스를 이용할 수 있습니다.
+                                        </li>
+                                        <li>
+                                          통화연결음 시작부터 요금이 발생하는 국가 : 미국, 캐나다, 멕시코, 푸에르토리코,
+                                          버진 아일랜드, 괌, 사이판 - 음성 발신이 일 600 분을 초과할 경우 - 음성 발신의
+                                          상대방 착신번호가 일 100 회선을 초과할 경우
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">3G 음성로밍 시 주의 사항</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          미국 T-Mobile을 통한 3G 음성통화는 이용이 어렵습니다. <br />(2022년 7월
+                                          1일부터 서비스 종료)
+                                        </li>
+                                        <li>3G 음성로밍 미지원 국가에서는 VoLTE를 통한 음성로밍 이용이 가능합니다.</li>
+                                        <li>
+                                          VoLTE 음성로밍 사용을 위해서는 출국 전 고객센터를 통해 VoLTE 로밍부가서비스
+                                          등록이 필요합니다.<br />※ 일부 단말기에서는 VoLTE 로밍 이용이 미지원 될 수
+                                          있습니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">이용불가 단말기</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>안드로이드 OS 11 이전 버전</li>
+                                        <li>20년 3월 이전 출시된 자급제 단말기</li>
+                                        <li>유모바일 유심개통 후 단말기정보를 등록하지 않은 경우</li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">문자 메시지</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          단문메시지를 보낼 경우
+                                          <ul class="text-list dash">
+                                            <li>아시아, 북미 건당 165원</li>
+                                            <li>유럽, 오세아니아, 중남미, 아프리카 건당 330원</li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          장문메시지를 보낼 경우
+                                          <ul class="text-list dash">
+                                            <li>모든 국가 건당 550원</li>
+                                          </ul>
+                                        </li>
+                                        <li>모든 금액은 부가세 포함 금액입니다.</li>
+                                        <li>문자메시지 수신은 무료입니다.</li>
+                                        <li>장문메시지는 데이터 해외 로밍을 이용 중일 경우에만 확인할 수 있습니다.</li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">요금 청구</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>태블릿에서도 데이터 해외 로밍 서비스를 이용할 수 있습니다.</li>
+                                        <li>
+                                          해외 로밍 금액은 국내 요금과 별도의 항목으로 구분되어 다음 달 청구서에
+                                          반영됩니다.
+                                        </li>
+                                        <li>현지 네트워크 환경에 따라 서비스가 원활하게 제공되지 않을 수 있습니다.</li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+                            <!-- e : 서비스안내 -->
+
+                            <!-- s : 해외 데이터 로밍 이용 안내 -->
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>해외 데이터 로밍 이용 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">안드로이드폰(삼성, LG 등)</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>해외에서 전화 거는 방법 안내 내용</li>
+                                      </ul>
+                                    </dd>
+
+                                    <dt class="info-title">아이폰(애플)</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>해외에서 전화 거는 방법 안내 내용</li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+                            <!-- e : 해외 데이터 로밍 이용 안내 -->
+
+                            <!-- s : 해외에서 전화 거는 방법 안내 -->
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>해외에서 전화 거는 방법 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">해외 이동통신사 설정 안내 타이틀</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>해외 이동통신사 설정 안내 내용</li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+                            <!-- e : 해외에서 전화 거는 방법 안내 -->
+
+                            <!-- s : 해외 이동통신사 설정 안내 -->
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>해외 이동통신사 설정 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">안드로이드폰(삼성, LG 등)</dt>
+                                    <dd>
+                                      <ul class="text-list">
+                                        <li>
+                                          <p>휴대폰 설정 메뉴 사용</p>
+                                          설정 → 네트워크 → 해외 로밍 → 해외 이동통신사 설정 → ‘이동통신사 자동 설정’
+                                          끄기를 누른 후 하단에 보이는 해외 사업자를  직접 선택하여 이용할 수 있습니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+                            <!-- e : 해외 이동통신사 설정 안내 -->
+
+                            <!-- s : 네트워크 연결이 원활하지 않을 때 해결 방법 안내 -->
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title
+                                  >네트워크 연결이 원활하지 않을 때 해결 방법 안내</v-expansion-panel-title
+                                >
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">안드로이드폰(삼성, LG 등)</dt>
+                                    <dd>
+                                      <ul class="text-list">
+                                        <li>
+                                          <p>휴대폰 설정 메뉴 사용</p>
+                                          설정 → 네트워크 → 해외 로밍 → 로밍 환경 설정 → 설정 초기화 → 휴대폰 전원이
+                                          껐다 켜지면 네트워크가 초기화됩니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+
+                                    <dt class="info-title">아이폰(애플)</dt>
+                                    <dd>
+                                      <ul class="text-list">
+                                        <li>
+                                          <p>휴대폰 설정 메뉴 사용</p>
+                                          휴대폰 → 설정 → 일반 → 재설정 → 네트워크 설정 재설정 → 휴대폰 전원이 껐다
+                                          켜지면 네트워크가 초기화됩니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+                            <!-- e : 네트워크 연결이 원활하지 않을 때 해결 방법 안내 -->
+                          </v-expansion-panels>
+                        </div>
+                        <!-- // 아코디언 -->
+                      </template>
+                      <!-- // in-tab01 -->
+
+                      <!-- in-tab02 -->
+                      <template #content2>
                         <!-- 아코디언 -->
                         <div class="inner-section">
                           <v-expansion-panels class="acd_bottom_notice" v-model="firstOpenPannel" multiple>
@@ -508,213 +854,161 @@
                         </div>
                         <!-- // 아코디언 -->
                       </template>
-                      <!-- // in-tab01 -->
-
-                      <!-- in-tab02 -->
-                      <template #content2>
-                        <!-- 아코디언 -->
-                        <v-expansion-panels class="acd_bottom_notice" v-model="firstOpenPannel" multiple>
-                          <!-- 01 -->
-                          <v-expansion-panel class="acd_item">
-                            <div class="acd_title">
-                              <v-expansion-panel-title>데이터 로밍 이용 안내</v-expansion-panel-title>
-                            </div>
-                            <div class="acd_panel">
-                              <v-expansion-panel-text>
-                                <!-- 탭메뉴내용1 -->
-                                <div class="tag-contents-wrap">
-                                  <div class="tag-header">
-                                    <div class="scroll-wrap">
-                                      <button class="item on" onclick="onTagShoHideHandler(this, '.contents .item')">
-                                        IOS
-                                      </button>
-                                      <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">
-                                        안드로이드
-                                      </button>
-                                    </div>
-                                  </div>
-                                  <div class="contents">
-                                    <div class="table-wrap tag">
-                                      <div class="scroll-wrap">
-                                        <!-- item-1 -->
-                                        <div class="item on">
-                                          <dl class="info-wrap">
-                                            <dt class="info-title">휴대폰 설정 메뉴에서 설정하기</dt>
-                                            <dd>
-                                              <div class="gallery-wrap">
-                                                <div>844x529</div>
-                                              </div>
-                                              <ul class="text-list bull">
-                                                <li>
-                                                  LTE 데이터 로밍을 사용하더라도 현지 사정에 따라 LTE데이터 통신이
-                                                  원활하지 않을 경우 3G데이터로 접속 될 수 있습니다.
-                                                </li>
-                                                <li>
-                                                  3G 데이터 로밍 보다 더 빠른 로밍을 이용하고 싶을 경우 LTE 데이터
-                                                  로밍을 설정해주세요.<br class="pc_hide" />
-                                                  단, 3G 로밍 보다 데이터가 빠르게 차감됩니다.
-                                                </li>
-                                              </ul>
-                                            </dd>
-                                          </dl>
-                                        </div>
-                                        <!-- //item-1 -->
-                                        <div class="item">안드로이드 내용1</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- //탭메뉴내용1 -->
-                              </v-expansion-panel-text>
-                            </div>
-                          </v-expansion-panel>
-                          <!-- 01 -->
-
-                          <!-- 02 -->
-                          <v-expansion-panel class="acd_item">
-                            <div class="acd_title">
-                              <v-expansion-panel-title>통화 방법 안내</v-expansion-panel-title>
-                            </div>
-                            <div class="acd_panel">
-                              <v-expansion-panel-text>
-                                <dl class="info-wrap">
-                                  <dt class="info-title">통화 방법 안내 타이틀</dt>
-                                  <dd>
-                                    <ul class="text-list bull">
-                                      <li>통화 방법 안내 내용</li>
-                                    </ul>
-                                  </dd>
-                                </dl>
-                              </v-expansion-panel-text>
-                            </div>
-                          </v-expansion-panel>
-                          <!-- 02 -->
-
-                          <!-- 03 -->
-                          <v-expansion-panel class="acd_item">
-                            <div class="acd_title">
-                              <v-expansion-panel-title>이동통신사 설정 안내</v-expansion-panel-title>
-                            </div>
-                            <div class="acd_panel">
-                              <v-expansion-panel-text>
-                                <dl class="info-wrap">
-                                  <dt class="info-title">이동통신사 설정 안내 타이틀</dt>
-                                  <dd>
-                                    <ul class="text-list bull">
-                                      <li>이동통신사 설정 안내 내용</li>
-                                    </ul>
-                                  </dd>
-                                </dl>
-                              </v-expansion-panel-text>
-                            </div>
-                          </v-expansion-panel>
-                          <!-- 03 -->
-
-                          <!-- 04 -->
-                          <v-expansion-panel class="acd_item">
-                            <div class="acd_title">
-                              <v-expansion-panel-title
-                                >네트워크 연결이 원활하지 않을 때 해결 방법 안내</v-expansion-panel-title
-                              >
-                            </div>
-                            <div class="acd_panel">
-                              <v-expansion-panel-text>
-                                <dl class="info-wrap">
-                                  <dt class="info-title">네트워크 연결이 원활하지 않을 때 해결 방법 안내 타이틀</dt>
-                                  <dd>
-                                    <ul class="text-list bull">
-                                      <li>네트워크 연결이 원활하지 않을 때 해결 방법 안내 내용</li>
-                                    </ul>
-                                  </dd>
-                                </dl>
-                              </v-expansion-panel-text>
-                            </div>
-                          </v-expansion-panel>
-                          <!-- 04 -->
-                        </v-expansion-panels>
-                        <!-- // 아코디언 -->
-                      </template>
                       <!-- // in-tab02 -->
 
                       <!-- in-tab03 -->
                       <template #content3>
                         <!-- 아코디언 -->
-                        <v-expansion-panels class="acd_bottom_notice" v-model="firstOpenPannel" multiple>
-                          <!-- 01 -->
-                          <v-expansion-panel class="acd_item">
-                            <div class="acd_title">
-                              <v-expansion-panel-title>네트워크 초기화 방법 안내</v-expansion-panel-title>
-                            </div>
-                            <div class="acd_panel">
-                              <v-expansion-panel-text>
-                                <!-- 탭메뉴내용1 -->
-                                <div class="tag-contents-wrap">
-                                  <div class="tag-header">
-                                    <div class="scroll-wrap">
-                                      <button class="item on" onclick="onTagShoHideHandler(this, '.contents .item')">
-                                        IOS
-                                      </button>
-                                      <button class="item" onclick="onTagShoHideHandler(this, '.contents .item')">
-                                        안드로이드
-                                      </button>
-                                    </div>
-                                  </div>
-                                  <div class="contents">
-                                    <div class="table-wrap tag">
-                                      <div class="scroll-wrap">
-                                        <!-- item-1 -->
-                                        <div class="item on">
-                                          <dl class="info-wrap">
-                                            <dd>
-                                              <ul class="text-list bull">
-                                                <li>
-                                                  LTE 데이터 로밍을 사용하더라도 현지 사정에 따라 LTE데이터 통신이
-                                                  원활하지 않을 경우 3G데이터로 접속 될 수 있습니다.
-                                                </li>
-                                                <li>
-                                                  3G 데이터 로밍 보다 더 빠른 로밍을 이용하고 싶을 경우 LTE 데이터
-                                                  로밍을 설정해주세요.<br class="pc_hide" />
-                                                  단, 3G 로밍 보다 데이터가 빠르게 차감됩니다.
-                                                </li>
-                                              </ul>
-                                              <div class="gallery-wrap">
-                                                <div>844x529</div>
-                                              </div>
-                                            </dd>
-                                          </dl>
-                                        </div>
-                                        <!-- //item-1 -->
-                                        <div class="item">안드로이드 내용2</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!-- //탭메뉴내용1 -->
-                              </v-expansion-panel-text>
-                            </div>
-                          </v-expansion-panel>
-                          <!-- 01 -->
+                        <div class="inner-section">
+                          <v-expansion-panels class="acd_bottom_notice" v-model="firstOpenPannel" multiple>
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>서비스 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">데이터</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          요금제에 가입하지 않고 해외에서 데이터를 사용하면 1KB당 부가세 포함 0.55원의
+                                          요금이 부과됩니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">음성통화</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          해외에서 이용하는 음성통화요금은 국가마다 발신 및 수신 요금을 다르게
+                                          적용합니다.
+                                        </li>
+                                        <li>전화를 받는 경우에도 해외 로밍 요금이 발생합니다.</li>
+                                        <li>
+                                          한국에서 해외 로밍을 이용 중인 고객에게 음성통화를 하면 한국 발신자에게 추가
+                                          요금은 없으며, 해외 로밍을 이용 중인 고객에게만 수신료가 청구됩니다.
+                                        </li>
+                                        <li>
+                                          일부 국가에서는 통화 연결이 되지 않아도 통화연결음 시작부터 통화료가
+                                          발생합니다. - 문자 발신 : 건 당 150원 (VAT 제외) - 문자 수신 : 무료
+                                        </li>
+                                        <li>
+                                          하루에 2개 이상의 국가에서 이용하는 경우, 마지막으로 사용한 국가의 시간을
+                                          기준으로 요금이 계산됩니다.
+                                        </li>
+                                        <li>
+                                          휴대폰에서 국제전화카드를 사용하여 통화할 경우,방문 국가 또는 사업자에 따라
+                                          해외 로밍 요금이 중복 청구될 수 있으니 국제전화카드는 공중전화 또는 일반전화를
+                                          이용하세요.
+                                        </li>
+                                        <li>
+                                          해외 로밍 요금제에 가입하면 할인된 가격으로 서비스를 이용할 수 있습니다.
+                                        </li>
+                                        <li>
+                                          통화연결음 시작부터 요금이 발생하는 국가 : 미국, 캐나다, 멕시코, 푸에르토리코,
+                                          버진 아일랜드, 괌, 사이판 - 음성 발신이 일 600 분을 초과할 경우 - 음성 발신의
+                                          상대방 착신번호가 일 100 회선을 초과할 경우
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">3G 음성로밍 시 주의 사항</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          미국 T-Mobile을 통한 3G 음성통화는 이용이 어렵습니다. <br />(2022년 7월
+                                          1일부터 서비스 종료)
+                                        </li>
+                                        <li>3G 음성로밍 미지원 국가에서는 VoLTE를 통한 음성로밍 이용이 가능합니다.</li>
+                                        <li>
+                                          VoLTE 음성로밍 사용을 위해서는 출국 전 고객센터를 통해 VoLTE 로밍부가서비스
+                                          등록이 필요합니다.<br />※ 일부 단말기에서는 VoLTE 로밍 이용이 미지원 될 수
+                                          있습니다.
+                                        </li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">이용불가 단말기</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>안드로이드 OS 11 이전 버전</li>
+                                        <li>20년 3월 이전 출시된 자급제 단말기</li>
+                                        <li>유모바일 유심개통 후 단말기정보를 등록하지 않은 경우</li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">문자 메시지</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>
+                                          단문메시지를 보낼 경우
+                                          <ul class="text-list dash">
+                                            <li>아시아, 북미 건당 165원</li>
+                                            <li>유럽, 오세아니아, 중남미, 아프리카 건당 330원</li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          장문메시지를 보낼 경우
+                                          <ul class="text-list dash">
+                                            <li>모든 국가 건당 550원</li>
+                                          </ul>
+                                        </li>
+                                        <li>모든 금액은 부가세 포함 금액입니다.</li>
+                                        <li>문자메시지 수신은 무료입니다.</li>
+                                        <li>장문메시지는 데이터 해외 로밍을 이용 중일 경우에만 확인할 수 있습니다.</li>
+                                      </ul>
+                                    </dd>
+                                    <dt class="info-title">요금 청구</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>태블릿에서도 데이터 해외 로밍 서비스를 이용할 수 있습니다.</li>
+                                        <li>
+                                          해외 로밍 금액은 국내 요금과 별도의 항목으로 구분되어 다음 달 청구서에
+                                          반영됩니다.
+                                        </li>
+                                        <li>현지 네트워크 환경에 따라 서비스가 원활하게 제공되지 않을 수 있습니다.</li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
 
-                          <!-- 02  -->
-                          <v-expansion-panel class="acd_item">
-                            <div class="acd_title">
-                              <v-expansion-panel-title>로밍 요금제 해지 방법</v-expansion-panel-title>
-                            </div>
-                            <div class="acd_panel">
-                              <v-expansion-panel-text>
-                                <dl class="info-wrap">
-                                  <dt class="info-title">로밍 요금제 해지 방법 타이틀</dt>
-                                  <dd>
-                                    <ul class="text-list bull">
-                                      <li>로밍 요금제 해지 방법 내용</li>
-                                    </ul>
-                                  </dd>
-                                </dl>
-                              </v-expansion-panel-text>
-                            </div>
-                          </v-expansion-panel>
-                          <!-- 02 -->
-                        </v-expansion-panels>
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>해외에서 전화 거는 방법 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">해외에서 전화 거는 방법 안내 타이틀</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>해외에서 전화 거는 방법 안내 내용</li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+
+                            <v-expansion-panel class="acd_item">
+                              <div class="acd_title">
+                                <v-expansion-panel-title>해외 이동통신사 설정 안내</v-expansion-panel-title>
+                              </div>
+                              <div class="acd_panel">
+                                <v-expansion-panel-text>
+                                  <dl class="info-wrap">
+                                    <dt class="info-title">해외 이동통신사 설정 안내 타이틀</dt>
+                                    <dd>
+                                      <ul class="text-list bull">
+                                        <li>해외 이동통신사 설정 안내 내용</li>
+                                      </ul>
+                                    </dd>
+                                  </dl>
+                                </v-expansion-panel-text>
+                              </div>
+                            </v-expansion-panel>
+                          </v-expansion-panels>
+                        </div>
                         <!-- // 아코디언 -->
                       </template>
                       <!-- // in-tab03 -->

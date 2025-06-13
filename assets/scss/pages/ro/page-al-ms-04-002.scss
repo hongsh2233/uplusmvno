@@ -34,7 +34,7 @@
                   display: flex;
                   flex-direction: column;
                   .text_info_wrap {
-                    @include Hd_Lg_s30_lh36;
+                    @include Hd_Md_s26_lh32;
 
                     .txt {
                       margin-top: rem(8);
@@ -164,7 +164,7 @@
           height: rem(92);
 
           .tit {
-            @include Pg_Md_s16_lh22;
+            @include Pg_Lg_s18_lh24;
           }
           img {
             margin-left: auto;
@@ -176,6 +176,7 @@
 
           &:nth-child(1) {
             background-color: #fffce8;
+            border: 1px solid #ffcaa9;
 
             .tit {
               color: #e34140;
@@ -256,7 +257,7 @@
           background: #f9fafc;
 
           .tit {
-            @include Pg_Md_s16_lh22;
+            @include Pg_Lg_s18_lh24;
           }
           .thumb {
             width: rem(60);
@@ -270,6 +271,8 @@
 
           &:nth-child(1) {
             background: #fffced;
+            border: 1px solid #ffcaa9;
+
             .tit {
               color: #e34140;
             }
@@ -297,7 +300,7 @@
           text-align: center;
 
           .tit {
-            @include Pg_Sm_s14_lh20;
+            @include Pg_Md_s16_lh22;
             word-break: keep-all;
           }
           img {
@@ -362,6 +365,48 @@
   // end - 해외 로밍이란?
 
   // start - 해외 데이터 안심옵션
+  .txt_wrap {
+    display: flex;
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+    flex-direction: column;
+    align-items: center;
+    gap: rem(12);
+    text-align: center;
+
+    .tit01 {
+      @include Pg_Lg_s18_lh24;
+    }
+    .tit {
+      @include Hd_Md_s26_lh32;
+
+      strong {
+        color: #e34140;
+      }
+    }
+    .txt {
+      @include Pg_Md_s16_lh22;
+      color: #66707a;
+    }
+  }
+
+  .mobile & {
+    .txt_wrap {
+      padding: 0;
+
+      .tit01 {
+        @include Pg_Md_s16_lh22;
+      }
+      .tit {
+        @include Pg_xLg_s20_lh26;
+        font-weight: 700;
+      }
+      .txt {
+        @include Pg_Sm_s14_lh20;
+      }
+    }
+  }
+
   .tab_con02 {
     .info-box-list {
       &.ty04 {
@@ -372,31 +417,6 @@
             }
           }
         }
-      }
-    }
-
-    .txt_wrap {
-      display: flex;
-      padding-top: rem(16);
-      padding-bottom: rem(16);
-      flex-direction: column;
-      align-items: center;
-      gap: rem(12);
-      text-align: center;
-
-      .tit01 {
-        @include Pg_Lg_s18_lh24;
-      }
-      .tit {
-        @include Hd_Md_s26_lh32;
-
-        strong {
-          color: #e34140;
-        }
-      }
-      .txt {
-        @include Pg_Md_s16_lh22;
-        color: #66707a;
       }
     }
 
@@ -468,22 +488,95 @@
       }
     }
 
-    .mobile & {
-      .txt_wrap {
-        padding: 0;
+    // star - 해외데이터 안심옵션 추가내용
+    .v-expansion-panel:not(:first-child)::after {
+      border: none;
+    }
 
-        .tit01 {
-          @include Pg_Md_s16_lh22;
-        }
-        .tit {
-          @include Pg_xLg_s20_lh26;
-          font-weight: 700;
-        }
-        .txt {
-          @include Pg_Sm_s14_lh20;
+    .v-expansion-panel-title {
+      min-height: auto;
+    }
+    .v-expansion-panels {
+      &.type-accordion-faq {
+        &.no-ico {
+          margin-top: rem(32);
+
+          .v-expansion-panel {
+            border-radius: rem(12);
+
+            .inner-panner-wrap {
+              padding: 3.2rem 4rem;
+            }
+
+            .info-wrap {
+              padding-left: rem(0) !important;
+              color: #66707a;
+            }
+
+            .title-text-wrap {
+              padding-left: 0 !important;
+
+              &::before {
+                display: none;
+              }
+            }
+          }
         }
       }
+    }
 
+    .adbvice-list {
+      &.ty02 {
+        margin-top: rem(24);
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+        flex-direction: row;
+
+        li {
+          width: 100%;
+          border-radius: rem(14);
+          overflow: hidden;
+
+          a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 3.2rem 3.2rem 3.2rem 4.8rem;
+
+            .txt_box {
+              .tit {
+                @include Pg_xLg_s20_lh26;
+                margin-bottom: rem(12);
+                font-weight: 700;
+              }
+              .txt {
+                color: #66707a;
+                font-size: rem(16);
+                font-weight: 500;
+                line-height: rem(22);
+                letter-spacing: -0.5px;
+              }
+            }
+
+            .thumb {
+              margin-left: auto;
+              width: rem(162);
+            }
+          }
+
+          .bg_fde9e7 {
+            background-color: #fde9e7;
+          }
+          .bg_e8f1fc {
+            background-color: #e8f1fc;
+          }
+        }
+      }
+    }
+    // end - 해외데이터 안심옵션 추가내용
+
+    .mobile & {
       .banner_wrap {
         grid-template-columns: repeat(1, 1fr);
         gap: rem(40);
@@ -522,6 +615,60 @@
           margin-top: rem(24);
           padding: 1.4rem 2.4rem;
           @include Lb_Md_s16_lh22;
+        }
+      }
+
+      .v-expansion-panels {
+        &.type-accordion-faq {
+          &.no-ico {
+            margin-top: rem(24);
+
+            .v-expansion-panel {
+              .inner-panner-wrap {
+                padding: 2.4rem 2rem;
+
+                .info-wrap {
+                  margin-top: rem(12);
+                }
+              }
+
+              .title-text-wrap {
+                @include Pg_Md_s16_lh22;
+              }
+            }
+          }
+        }
+      }
+
+      .adbvice-list {
+        &.ty02 {
+          padding: 0;
+          border-radius: 0;
+          background: none;
+          border: none;
+          flex-direction: column;
+          gap: rem(12);
+
+          li {
+            a {
+              padding: 2.4rem 2rem;
+
+              .txt_box {
+                .tit {
+                  @include Pg_Lg_s18_lh24;
+                  font-weight: 700;
+                  margin-bottom: rem(6);
+                }
+                .txt {
+                  @include Pg_Sm_s14_lh20;
+                }
+              }
+
+              .thumb {
+                width: rem(114);
+              }
+            }
+          }
         }
       }
     }
