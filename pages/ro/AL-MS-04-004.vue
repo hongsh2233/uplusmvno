@@ -62,56 +62,276 @@
               </div>
               <div class="acd_panel">
                 <v-expansion-panel-text>
-                  <dl class="info-wrap">
-                    <dt class="info-title">83개국에서 최대 30일 동안 데이터를 끊임없이 이용할 수 있는 요금제입니다.</dt>
-                    <dd>
-                      <ul class="text-list bull">
-                        <li>
-                          <span class="fc01"
-                            >해외에서 데이터는 무제한으로, 받는 음성전화 무료, 거는 음성전화 1.98원/초로 이용 가능</span
-                          >
-                        </li>
-                        <li>
-                          설정한 사용 기간 동안 해외에서 데이터 및 음성 전화를 한 번이라도 이용하는 경우 요금이
-                          발생합니다.
-                        </li>
-                        <li>
-                          해외로밍을 이용 중인 고객에게 한국에서 음성통화를 하면 한국 발신자에게는 국제 전화 요금이
-                          청구되지 않습니다.
-                        </li>
-                        <li>
-                          영상통화를 이용하거나 문자메시지를 보내는 경우 추가 요금이 발생합니다.
-                          <ul class="text-list dash">
-                            <li>문자 발신 : 건 당 150원 (VAT 제외)</li>
-                            <li>문자 수신 : 무료</li>
-                          </ul>
-                        </li>
-                        <li>
-                          하루에 2개 이상의 국가에서 이용하는 경우, 마지막으로 사용한 국가의 시간을 기준으로 요금이
-                          계산됩니다.
-                        </li>
-                        <li>
-                          해외로밍 이용 요금은 국내 통신료와 별도의 항목으로 구분되어 1개월 이후 청구서에 반영됩니다.
-                        </li>
-                        <li>
-                          KT 114 직접연결수수료 및 통화료, KT 114 전화번호 안내 서비스, 수신자부담(콜렉트콜),
-                          소액결제이용료, 060 등 정보이용료, 유료부가서비스 이용료 등은 별도 청구됩니다.
-                        </li>
-                        <li>
-                          불법적, 상업적, 비정상적 음성 발신 유발을 억제하고, 이에 따른 다른 가입자의 피해를 방지하고자
-                          다음의 경우에 해당 할 경우,해당 일 이후 상품 해지 및 당월 상품 가입이 제한됩니다.
-                          <ul class="text-list dash">
-                            <li>음성 발신이 일 600 분을 초과할 경우</li>
-                            <li>음성 발신의 상대방 착신번호가 일 100 회선을 초과할 경우</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </dd>
-                  </dl>
+                  <div class="admin-insert-contents">
+                    <div class="info-wrap">
+                      <div class="banner-wrap type-only-image-1">
+                        <div class="info-image pc_hide">
+                          <a href="#">
+                            <img src="/images/data/roaming/data-roaming-banner-mgc-1-mobile.png" alt="mgc커피" />
+                          </a>
+                        </div>
+                        <div class="info-image mobile_hide">
+                          <a href="#">
+                            <img src="/images/data/roaming/data-roaming-banner-mgc-1-pc.png" alt="mgc커피" />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- 텍스트 이미지 유형 -->
+                      <!-- <div class="banner-wrap type-text-image-1">
+                        <div class="info-group-text">
+                          <p class="text-title">
+                            알닷에서 로밍 신청하면 <strong>메가커피 아메리카노 100% 증정</strong>
+                          </p>
+                          <p class="text-title">알뜰폰 개통하고 로밍 신청하면 <strong>최대 1만원 혜택 추가</strong></p>
+                          <p class="text-link"><a href="#">알닷만의 로밍 혜택 자세히 보기 ></a></p>
+                        </div>
+                        <div class="info-image pc_hide">
+                          <img src="/images/data/roaming/data-roaming-banner-mgc-mobile.png" alt="mgc커피" />
+                        </div>
+                        <div class="info-image mobile_hide">
+                          <img src="/images/data/roaming/data-roaming-banner-mgc-pc.png" alt="mgc커피" />
+                        </div>
+                      </div> -->
+                    </div>
+                    <ul class="info-wrap service admin-card-list">
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow last-image">
+                          <div class="info-group-text">
+                            <div class="title">데이터 3GB+1GB 쓸 수 있어요</div>
+                            <div class="desc">
+                              <p>
+                                <span class="fc00"
+                                  >데이터 3GB <br class="mobile_hide" />
+                                  다 써도 최대 400Kbps</span
+                                >
+                                속도로 <br />
+                                무한 사용이 가능해요.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roamgin-detail-1-1.png" alt="" /></i>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow last-image">
+                          <div class="info-group-text">
+                            <div class="title">83개국에서 사용해요</div>
+                            <div class="desc">
+                              <p>
+                                여행 기간에 맞춰 주요 <span class="fc00">83개국</span>에서<br />
+                                이용할 수 있어요
+                              </p>
+                            </div>
+                          </div>
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roamgin-detail-1-2.png" alt="" /></i>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow last-image">
+                          <div class="info-group-text">
+                            <div class="title">최대 30일간 이용해요</div>
+                            <div class="desc">
+                              <p>
+                                <span class="fc00">고객이 설정한 사용 시작 시각</span>부터<br />
+                                <span class="fc00">최대 30일간</span> 이용 후에<br class="mobile_hide" />
+                                자동으로 만료돼요
+                              </p>
+                            </div>
+                          </div>
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roamgin-detail-1-3.png" alt="" /></i>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <dl class="info-wrap">
+                      <dt class="info-title">
+                        83개국에서 최대 30일 동안 데이터를 끊임없이 이용할 수 있는 요금제입니다.
+                      </dt>
+                      <dd>
+                        <ul class="text-list bull">
+                          <li>
+                            <span class="fc01"
+                              >해외에서 데이터는 무제한으로, 받는 음성전화 무료, 거는 음성전화 1.98원/초로 이용
+                              가능</span
+                            >
+                          </li>
+                          <li>
+                            설정한 사용 기간 동안 해외에서 데이터 및 음성 전화를 한 번이라도 이용하는 경우 요금이
+                            발생합니다.
+                          </li>
+                          <li>
+                            해외로밍을 이용 중인 고객에게 한국에서 음성통화를 하면 한국 발신자에게는 국제 전화 요금이
+                            청구되지 않습니다.
+                          </li>
+                          <li>
+                            영상통화를 이용하거나 문자메시지를 보내는 경우 추가 요금이 발생합니다.
+                            <ul class="text-list dash">
+                              <li>문자 발신 : 건 당 150원 (VAT 제외)</li>
+                              <li>문자 수신 : 무료</li>
+                            </ul>
+                          </li>
+                          <li>
+                            하루에 2개 이상의 국가에서 이용하는 경우, 마지막으로 사용한 국가의 시간을 기준으로 요금이
+                            계산됩니다.
+                          </li>
+                          <li>
+                            해외로밍 이용 요금은 국내 통신료와 별도의 항목으로 구분되어 1개월 이후 청구서에 반영됩니다.
+                          </li>
+                          <li>
+                            KT 114 직접연결수수료 및 통화료, KT 114 전화번호 안내 서비스, 수신자부담(콜렉트콜),
+                            소액결제이용료, 060 등 정보이용료, 유료부가서비스 이용료 등은 별도 청구됩니다.
+                          </li>
+                          <li>
+                            불법적, 상업적, 비정상적 음성 발신 유발을 억제하고, 이에 따른 다른 가입자의 피해를
+                            방지하고자 다음의 경우에 해당 할 경우,해당 일 이후 상품 해지 및 당월 상품 가입이 제한됩니다.
+                            <ul class="text-list dash">
+                              <li>음성 발신이 일 600 분을 초과할 경우</li>
+                              <li>음성 발신의 상대방 착신번호가 일 100 회선을 초과할 경우</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
                 </v-expansion-panel-text>
               </div>
             </v-expansion-panel>
             <!-- //2025-05-19 1747637726 (정C) 첫 내용은 아코디언 기능 삭제 (로밍 요금제 상세, 로밍 부가서비스 상세) -->
+            <v-expansion-panel class="acd_item" disabled>
+              <div class="acd_title">
+                <v-expansion-panel-title hide-actions>가입 안내</v-expansion-panel-title>
+              </div>
+              <div class="acd_panel">
+                <v-expansion-panel-text>
+                  <div class="admin-insert-contents">
+                    <ul class="info-wrap join admin-card-list">
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow first-image">
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roaming-detail-2-1.png" alt="" /></i>
+                          </div>
+                          <div class="info-group-text">
+                            <div class="title">알닷 홈페이지</div>
+                            <div class="desc">
+                              원하는 요금제를 선택하고<br class="mobile_hide" />
+                              바로 신청하기
+                            </div>
+                          </div>
+                          <div class="info-link-text">
+                            <NuxtLink to="/" class="link-text-right-22">알닷 해외로밍 상품 보기</NuxtLink>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow first-image">
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roaming-detail-2-2.png" alt="" /></i>
+                          </div>
+                          <div class="info-group-text">
+                            <div class="title">카카오 로밍 상담</div>
+                            <div class="desc">
+                              24시간 동안<br class="mobile_hide" />
+                              언제든 편하게 신청하기
+                            </div>
+                          </div>
+                          <div class="info-link-text">
+                            <NuxtLink to="/" class="link-text-right-22">카카오 로밍상담 채널 바로가기</NuxtLink>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow first-image">
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roaming-detail-2-3.png" alt="" /></i>
+                          </div>
+                          <div class="info-group-text">
+                            <div class="title">고객센터</div>
+                            <div class="desc">
+                              가입하신 파트너사의<br class="mobile_hide" />
+                              고객센터를 통해 가입하기
+                            </div>
+                          </div>
+                          <div class="info-link-text">
+                            <NuxtLink to="/" class="link-text-right-22">파트너사 정보 확인하기</NuxtLink>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="card-design-box type-round has-showdow first-image">
+                          <div class="info-image">
+                            <i><img src="/images/roaming/icons/ico-roaming-detail-2-4.png" alt="" /></i>
+                          </div>
+                          <div class="info-group-text">
+                            <div class="title">공항 로밍 센터</div>
+                            <div class="desc">
+                              인천공항, 김포공항, 김해공항<br class="mobile_hide" />
+                              로밍 센터에서 직접 신청하기
+                            </div>
+                          </div>
+                          <div class="info-link-text">
+                            <NuxtLink to="/" class="link-text-right-22">공항 로밍 센터 위치 안내</NuxtLink>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <!-- <dl class="info-wrap">
+                      <dt class="info-title">
+                        83개국에서 최대 30일 동안 데이터를 끊임없이 이용할 수 있는 요금제입니다.
+                      </dt>
+                      <dd>
+                        <ul class="text-list bull">
+                          <li>
+                            <span class="fc01"
+                              >해외에서 데이터는 무제한으로, 받는 음성전화 무료, 거는 음성전화 1.98원/초로 이용
+                              가능</span
+                            >
+                          </li>
+                          <li>
+                            설정한 사용 기간 동안 해외에서 데이터 및 음성 전화를 한 번이라도 이용하는 경우 요금이
+                            발생합니다.
+                          </li>
+                          <li>
+                            해외로밍을 이용 중인 고객에게 한국에서 음성통화를 하면 한국 발신자에게는 국제 전화 요금이
+                            청구되지 않습니다.
+                          </li>
+                          <li>
+                            영상통화를 이용하거나 문자메시지를 보내는 경우 추가 요금이 발생합니다.
+                            <ul class="text-list dash">
+                              <li>문자 발신 : 건 당 150원 (VAT 제외)</li>
+                              <li>문자 수신 : 무료</li>
+                            </ul>
+                          </li>
+                          <li>
+                            하루에 2개 이상의 국가에서 이용하는 경우, 마지막으로 사용한 국가의 시간을 기준으로 요금이
+                            계산됩니다.
+                          </li>
+                          <li>
+                            해외로밍 이용 요금은 국내 통신료와 별도의 항목으로 구분되어 1개월 이후 청구서에 반영됩니다.
+                          </li>
+                          <li>
+                            KT 114 직접연결수수료 및 통화료, KT 114 전화번호 안내 서비스, 수신자부담(콜렉트콜),
+                            소액결제이용료, 060 등 정보이용료, 유료부가서비스 이용료 등은 별도 청구됩니다.
+                          </li>
+                          <li>
+                            불법적, 상업적, 비정상적 음성 발신 유발을 억제하고, 이에 따른 다른 가입자의 피해를
+                            방지하고자 다음의 경우에 해당 할 경우,해당 일 이후 상품 해지 및 당월 상품 가입이 제한됩니다.
+                            <ul class="text-list dash">
+                              <li>음성 발신이 일 600 분을 초과할 경우</li>
+                              <li>음성 발신의 상대방 착신번호가 일 100 회선을 초과할 경우</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl> -->
+                  </div>
+                </v-expansion-panel-text>
+              </div>
+            </v-expansion-panel>
 
             <v-expansion-panel class="acd_item">
               <div class="acd_title">
@@ -119,14 +339,36 @@
               </div>
               <div class="acd_panel">
                 <v-expansion-panel-text>
-                  <dl class="info-wrap">
-                    <dt class="info-title">이용안내 타이틀</dt>
-                    <dd>
-                      <ul class="text-list bull">
-                        <li>이용안내 타이틀 내용</li>
-                      </ul>
-                    </dd>
-                  </dl>
+                  <div class="info-wrap">
+                    <ul class="text-list bull">
+                      <li>
+                        기본 제공되는 데이터를 모두 사용한 경우, 데이터는 400kbps로 제한된 속도로 계속 이용 가능합니다.
+                      </li>
+                      <li>
+                        고객님께서 설정한 시작일로부터 최대 30일이 지나면 로밍패스 요금제는 자동 만료되며, 로밍 데이터와
+                        음성 혜택도 자동으로 종료됩니다.
+                      </li>
+                      <li>
+                        로밍패스는 83개국에서 이용 가능하며 LG유플러스와 계약을 맺은 통신 사업자의 네트워크만 이용할 수
+                        있습니다.
+                      </li>
+                      <li>가입 전 요금제 적용 국가를 확인 부탁드립니다.</li>
+                      <li>다른 해외 로밍 요금제와 중복으로 이용할 수 없습니다.</li>
+                      <li>선불 휴대폰 이용 고객은 가입할 수 없습니다.</li>
+                      <li>
+                        공항 및 터미널 해외 로밍 고객센터를 방문하여 요금제에 가입하는 경우 명의자 확인을 위한 신분증이
+                        필요합니다.
+                      </li>
+                      <li>
+                        불법적, 상업적, 비정상적 음성 발신 유발을 억제하고, 이에 따른 다른 가입자의 피해를 방지하고자
+                        다음의 경우에 해당 할 경우,해당 일 이후 상품 해지 및 당월 상품 가입이 제한됩니다.
+                        <ul class="text-list dash">
+                          <li>음성 발신이 일 600 분을 초과할 경우</li>
+                          <li>음성 발신의 상대방 착신 번호가 일 100 회선을 초과할 경우</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
                 </v-expansion-panel-text>
               </div>
             </v-expansion-panel>
@@ -137,14 +379,32 @@
               </div>
               <div class="acd_panel">
                 <v-expansion-panel-text>
-                  <dl class="info-wrap">
-                    <dt class="info-title">요금안내 타이틀</dt>
-                    <dd>
-                      <ul class="text-list bull">
-                        <li>요금안내 내용</li>
-                      </ul>
-                    </dd>
-                  </dl>
+                  <div class="info-wrap">
+                    <ul class="text-list bull">
+                      <li>
+                        사용하는 시점부터 현지 수도 시간 1일 기준으로 데이터 및 음성 전화를 한 번이라도 이용하는 경우
+                        요금이 발생합니다.
+                      </li>
+                      <li>
+                        해외 로밍을 이용 중인 고객에게 한국에서 음성통화를 하면 한국 발신자에게는 국제 전화 요금이
+                        청구되지 않습니다.
+                      </li>
+                      <li>
+                        영상통화를 이용하거나 문자메시지를 보내는 경우 추가 요금이 발생합니다.
+                        <ul class="text-list dash">
+                          <li>문자 발신: 건 당 150원 (VAT 제외)</li>
+                          <li>문자 수신: 무료</li>
+                        </ul>
+                      </li>
+                      <li>
+                        해외로밍 이용 요금은 국내 통신료와 별도의 항목으로 구분되어 1개월 이후 청구서에 반영됩니다.
+                      </li>
+                      <li>
+                        KT 114 직접 연결 수수료 및 통화료, KT 114 전화번호 안내 서비스, 수신자 부담(콜렉트콜), 소액결제
+                        이용료, 060 등 정보이용료, 유료 부가서비스 이용료 등은 별도 청구됩니다.
+                      </li>
+                    </ul>
+                  </div>
                 </v-expansion-panel-text>
               </div>
             </v-expansion-panel>
@@ -884,18 +1144,53 @@
 
             <v-expansion-panel class="acd_item">
               <div class="acd_title">
-                <v-expansion-panel-title>유의사항</v-expansion-panel-title>
+                <v-expansion-panel-title>할인사업자 수동 설정 안내</v-expansion-panel-title>
               </div>
               <div class="acd_panel">
                 <v-expansion-panel-text>
-                  <dl class="info-wrap">
-                    <dt class="info-title">유의사항 타이틀</dt>
-                    <dd>
-                      <ul class="text-list bull">
-                        <li>유의사항 내용</li>
-                      </ul>
-                    </dd>
-                  </dl>
+                  <div class="info-wrap">
+                    <ul class="text-list bull">
+                      <li>해외 로밍 이용 시 LG유플러스와 계약한 현지 사업자 통신망으로 자동 연결됩니다.</li>
+                      <li>
+                        네트워크 상황에 따라 연결이 원활하지 않은 경우 아래와 같은 방법으로 사업자를 직접 선택할 수
+                        있습니다.
+                      </li>
+                    </ul>
+                    <div class="table-wrap tag mgt16">
+                      <table class="table table-bordered">
+                        <colgroup>
+                          <col width="160" />
+                          <col width="*" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td class="ta-c">
+                              <img src="/images/roaming/icons/ico-roaming-detail-3-1.png" alt="Android" />
+                            </td>
+                            <td class="ta-l">
+                              <p>LG폰, 삼성폰 등 안드로이드폰</p>
+                              <p class="mgt6 fc-gray-200">
+                                휴대폰 → 설정 → 해외로밍 → 해외 이동통신사 설정 → ‘이동통신사 자동 설정’ 끄기를 누른 후
+                                하단에 보이는 해외사업자를 직접 선택하여 이용할 수 있습니다.
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="ta-c">
+                              <img src="/images/roaming/icons/ico-roaming-detail-3-2.png" alt="IOS" />
+                            </td>
+                            <td class="ta-l">
+                              <p>애플 아이폰</p>
+                              <p class="mgt6 fc-gray-200">
+                                휴대폰 → 설정 → 네트워크 사업자 → ‘네트워크 사업자’의 ‘자동’ 끄기를 누른 후 하단에
+                                보이는 해외사업자를 직접 선택하여 이용할 수 있습니다.
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </v-expansion-panel-text>
               </div>
             </v-expansion-panel>
@@ -931,9 +1226,10 @@
                                 90일 이내 번호이동을 신청하는 경우, 아래의 절차를 먼저 거쳐주셔야 번호이동이
                                 가능합니다.<br /><br />
                                 1. 제한기간이내 번호이동 신청서 작성<br />
-                                - 한국통신사업자연합회(KTOA) 홈페이지 내 양식 다운로드<br /> &nbsp;- 다운로드 URL :
-                                ktoa.or.kr<br /><br />2. 3개월 이내 번호이동 제한 해제 요청<br />- 작성완료
-                                신청서+신분증 (주민등록번호 뒷자리 마스킹) E-mail 발송<br />- E-mail : rnp@ktoa.or.kr<br /><br />
+                                - 한국통신사업자연합회(KTOA) 홈페이지 내 양식 다운로드<br />
+                                &nbsp;- 다운로드 URL : ktoa.or.kr<br /><br />2. 3개월 이내 번호이동 제한 해제 요청<br />-
+                                작성완료 신청서+신분증 (주민등록번호 뒷자리 마스킹) E-mail 발송<br />- E-mail :
+                                rnp@ktoa.or.kr<br /><br />
                                 3.번호이동 제한 해제 확인<br />
                                 - 중립기관 해제 완료 답변 확인<br /><br />
                                 중립기관 해체 완료 답변 받으시고, 계속 진행하시기 바랍니다.
@@ -1169,7 +1465,7 @@ onMounted(() => {
   emit("setLayout", layout);
 });
 
-const firstOpenPannel = ref([0]);
+const firstOpenPannel = ref([0, 1]);
 // const firstOpenPannelFaq = ref([0]);
 </script>
 

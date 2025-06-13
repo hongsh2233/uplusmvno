@@ -303,16 +303,16 @@
                     </div>
 
                     <p class="txt">
-                      통화 키 패드에서 [<span>*#06#</span>] 입력하여 표시되는 화면을 캡쳐하여<br />
+                      통화 키 패드에서 [<span>*#06#</span>] 입력하여 표시되는 화면을 캡쳐하여<br class="mobile_hide" />
                       이미지를 올려주세요.
                     </p>
 
                     <div class="btn-area">
-                      <button type="button" class="btn-rounded btn fz16-pc">이미지 올리기</button>
+                      <button type="button" class="btn-rounded btn btn-sm">이미지 올리기</button>
                     </div>
 
                     <div class="btn-area">
-                      <button type="button" class="btn-rounded btn fz16-pc">이미지 다시 올리기</button>
+                      <button type="button" class="btn-rounded btn btn-sm">이미지 다시 올리기</button>
                     </div>
                   </div>
 

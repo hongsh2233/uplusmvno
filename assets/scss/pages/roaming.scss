@@ -21,6 +21,10 @@
   --color-primary: #e34140;
 }
 
+.fc-gray-200 {
+  color: #66707a !important;
+}
+
 @mixin product-detail {
   display: flex;
   align-items: center;
@@ -82,6 +86,11 @@
     &.circle-num {
       &.type-vertical {
         grid-template-columns: repeat(1, 1fr);
+        li {
+          p {
+            line-height: 1.375;
+          }
+        }
       }
     }
     &.text-normal {
@@ -670,7 +679,7 @@
           line-height: rem(26);
         }
         .pc & {
-          @include pc-lo-title-h3($fs: 20px, $mt: 0px, $mb: 0px);
+          @include pc-lo-title-h3($fs: 26px, $mt: 0px, $mb: 0px);
           line-height: rem(26);
         }
       }
@@ -1483,8 +1492,8 @@
 
   @include generate-fs((10, 14, 16, 18, 20, 22, 24));
 
-  @include generate-mgt((8, 16, 24, 32, 40, 56, 60, 64));
-  @include generate-mgb((8, 16, 24, 32, 40, 56, 60, 64));
+  @include generate-mgt((6, 8, 16, 24, 32, 40, 56, 60, 64));
+  @include generate-mgb((8, 12, 16, 24, 32, 40, 56, 60, 64));
   @include generate-pdxy((0, 8, 16, 32, 40, 56, 60, 64));
   @include generate-mgxy((0, 8, 16, 32, 40, 56, 60, 64));
 
@@ -2052,10 +2061,23 @@
         }
       }
     }
-    .card-group-bottom-botton {
-    }
   }
 
+  .link-text-right-22 {
+    display: block;
+    font-size: rem(14);
+    // vertical-align: middle;
+    &::after {
+      content: "";
+      position: relative;
+      top: rem(-1);
+      vertical-align: middle;
+      display: inline-block;
+      width: rem(22);
+      height: rem(22);
+      background: url("/images/roaming/icons/ico-arrow-right-22.svg") no-repeat 50% 50% / 100% auto;
+    }
+  }
   @include form-ver3;
   @include result-message;
   @include tabmenu;

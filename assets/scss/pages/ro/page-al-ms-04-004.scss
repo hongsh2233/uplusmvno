@@ -2,6 +2,100 @@
 @use "@/assets/scss/abstract/_mixin.scss" as *;
 
 .AL-MS-04-004 {
+  @include admin-insert-contents;
+
+  .admin-insert-contents {
+    &:deep() {
+      .admin-card-list {
+        &.service {
+          display: flex;
+          .pc & {
+            gap: rem(17);
+            .item {
+              flex: 1;
+              display: flex;
+              align-items: stretch;
+            }
+            .card-design-box {
+              width: 100%;
+              .desc {
+                // border: 1px solid #000;
+                height: rem(68);
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+              }
+              .info-image {
+                img {
+                }
+              }
+            }
+          }
+          .mobile & {
+            flex-direction: column;
+            gap: rem(8);
+          }
+        }
+        &.join {
+          display: flex;
+          .card-design-box {
+            justify-content: space-between;
+            .info-image {
+              img {
+                width: rem(80);
+                height: rem(80);
+              }
+            }
+          }
+          .info-link-text {
+            // white-space: nowrap;
+          }
+          .pc & {
+            gap: rem(16);
+            .item {
+              flex: 1;
+              display: flex;
+              align-items: stretch;
+            }
+            .info-link-text {
+              padding-top: rem(16);
+              // white-space: nowrap;
+            }
+            .card-design-box {
+              width: 100%;
+              padding-left: rem(16);
+              padding-right: rem(16);
+              * + .info-group-text {
+                padding-top: rem(24);
+              }
+            }
+          }
+          .mobile & {
+            flex-wrap: wrap;
+            gap: rem(8);
+            .item {
+              display: flex;
+              align-items: stretch;
+              width: calc(50% - 4px);
+              .card-design-box {
+                width: 100%;
+                // gap: rem(16);
+                * + .info-group-text {
+                  padding-top: rem(16);
+                }
+              }
+              &:only-child {
+                width: 100%;
+              }
+              .info-link-text {
+                padding-top: rem(8);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .flag {
     .bag {
       margin-bottom: rem(12);
